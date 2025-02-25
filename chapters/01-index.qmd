@@ -13,8 +13,6 @@ format:
 editor: visual
 ---
 
-## Preface {.unnumbered}
-
 This collection of handouts provides a hands-on introduction to data
 analysis and statistical methods in quantitative corpus linguistics with
 R. It is designed with accessibility in mind, assuming no prior

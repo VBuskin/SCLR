@@ -1,0 +1,10 @@
+[
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/chapters/01-basics.html",
+      "/chapters/01-rqs.html",
+      "/chapters/01-linguistic_variables.html"
+    ]
+  }
+]

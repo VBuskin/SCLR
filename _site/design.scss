@@ -1,0 +1,145 @@
+/*-- scss:defaults --*/
+$primary: #3A6A92 !default;
+$font-size-root: 18px !default;
+
+/*-- scss:rules --*/
+/* Justify the main text */
+p {
+  text-align: justify;
+  hyphens: auto;
+}
+
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+
+p code {
+  white-space: inherit;
+}
+
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+
+pre code {
+  white-space: inherit;
+}
+
+/* Sidebar styling */
+.sidebar-navigation {
+  background-color: #d3d3d3; /* Light grey background */
+}
+
+/* Toggle button styling for collapsible sidebar */
+.sidebar-toggle {
+  color: $primary;
+  background-color: transparent;
+  border: none;
+}
+
+/* Style for the navigation */
+.navbar {
+  text-transform: none;   /* Remove uppercase transformation */
+  font-size: 1rem;        /* Adjust font size as needed */
+  color: #0066cc;         /* Change text color */
+  margin-bottom: 1rem;    /* Space below the navigation bar */
+}
+
+/* Sidebar title and items */
+.sidebar-title {
+  color: #3A6A92;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.sidebar-item-container {
+  font-size: 0.8rem;
+}
+
+.sidebar-item-container .active {
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.sidebar nav[role=doc-toc] ul>li>a.active, 
+.sidebar nav[role=doc-toc] ul>li>ul>li>a.active {
+  font-weight: bold;
+}
+
+/* Figure styling */
+.figure {
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 1rem 0;
+  margin-bottom: 1.5rem;
+}
+
+figcaption {
+  text-align: center;
+  font-style: italic;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.quarto-figure-number::before {
+  content: "Figure " counter(figure) ": ";
+  font-weight: bold;
+}
+
+/* Headings */
+#title-block-header.quarto-title-block.default .quarto-title h1.title {
+  margin-bottom: 0.5rem;
+  color: #2A5982;
+}
+
+h1 { color: #2A5982; margin-top: 2rem; }
+h2 { color: #336699; margin-top: 2rem; margin-bottom: 1rem; font-size: 1.4rem; font-weight: 600; }
+h3 { color: #3C73B0; margin-top: 1.5em; font-size: 1.2rem; font-weight: 500; }
+h4 { color: #4580C7; margin-top: 1.5em; font-size: 1.1rem; }
+h5 { color: #4580C7; margin-top: 1.5em; font-size: 1rem; }
+h6 { color: #4580C7; }
+
+.quarto-section-identifier {
+  color: #555555;
+  font-weight: normal;
+}
+
+/* Code */
+code {
+  color: #373a3c;
+}
+
+code a:any-link {
+  text-decoration: underline;
+  text-decoration-color: #ccc;
+}
+
+pre {
+  background-color: #ffffff;
+  background-image: none;
+}
+
+/* Add these rules to support collapsible sidebar */
+/* For toggle button visibility */
+.sidebar-toggle-container {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 10px;
+}
+
+/* For narrow screens - hide sidebar by default */
+@media (max-width: 991.98px) {
+  .sidebar-navigation {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar-navigation.show {
+    transform: translateX(0);
+  }
+}
