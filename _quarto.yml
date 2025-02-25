@@ -1,19 +1,22 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "Stats_Website"
-  navbar:
+  title: "Statistics and Data Analysis for Corpus Linguists"
+  navbar:  # Switch to navbar instead of sidebar
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - href: blog.qmd
+        text: Overview
+  page-navigation: true  # Enables previous/next navigation between posts
+  
+blog:
+    order: date desc  # Newest first (or `order: date asc` for oldest first)
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
-
-editor: visual
-
+    bibliography: R.bib
+    number-sections: true
