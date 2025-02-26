@@ -1,1 +1,27 @@
-/* css styles */
+/* Increase the max width of the main content container */
+.quarto-container-content {
+  max-width: 1400px !important; /* Adjust this value as needed */
+}
+
+/* Make sure the content area uses more horizontal space */
+.content-block {
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 100%;
+}
+
+/* If you have a sidebar, adjust the main content positioning */
+.sidebar-content ~ .content-block {
+  padding-left: 20px;
+  max-width: calc(100% - 40px);
+}
+
+/* Justify text throughout the website */
+p, li, .description, .abstract, blockquote, .content-block {
+  text-align: justify !important;
+}
+
+/* Ensure headings remain left-aligned */
+h1, h2, h3, h4, h5, h6 {
+  text-align: left !important;
+}

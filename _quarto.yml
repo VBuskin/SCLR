@@ -1,20 +1,88 @@
 project:
   type: website
   output-dir: docs
+  
+  
+
 
 website:
-  title: "Statistics and Data Analysis for Corpus Linguists"
-  navbar:  # Switch to navbar instead of sidebar
+  title: "Statistics for Corpus Linguists: From Theory to Practice"
+  navbar:
+    background: dark
     left:
+      - text: "Overview"
+        href: blog.qmd
+      - text: "Datasets"
+        href: "datasets.qmd"
+      - text: "Resources"
+        menu:
+          - text: "R Cheatsheets"
+            href: "resources/cheatsheets.qmd"
+          - text: "Further Reading"
+            href: "resources/reading.qmd"
+    right:
+      - icon: github
+        href: https://github.com/VBuskin/SCLR
+  sidebar:
+    style: docked
+    search: true
+    contents:
       - href: blog.qmd
-        text: Overview
-  page-navigation: true  # Enables previous/next navigation between posts
+        text: "Overview"
+      - section: "1. Theory"
+        contents:
+          - href: "chapters/01-basics.qmd"
+            text: "1.1 Basics"
+          - href: "chapters/01-rqs.qmd"
+            text: "1.2 Research Questions"
+          - href: "chapters/01-linguistic_variables.qmd"
+            text: "1.3 Linguistic Variables"
+      - section: "2. Introduction to R"
+        contents:
+          - href: "chapters/02-vectors.qmd"
+            text: "2.1 Vectors I"
+          - href: "chapters/02-data_frames.qmd"
+            text: "2.2 Data frames I"
+          - href: "chapters/02-libraries.qmd"
+            text: "2.3 Libraries"
+          - href: "chapters/02-importing_exporting.qmd"
+            text: "2.4 Importing/Exporting"
+      - section: "3. NLP with R"
+        contents:
+          - text: "Coming soon"
+      - section: "4. Descriptive Statistics"
+        contents:
+          - text: "Coming soon"
+      - section: "5. Inferential Statistics"
+        contents:
+          - href: "chapters/05-hypothesis_testing.qmd"
+            text: "5.1 Hypothesis testing"
+          - href: "chapters/05-chi_square_test.qmd"
+            text: "5.2 Chi-squared test"
+          - href: "chapters/05-t_test.qmd"
+            text: "5.3 t-test"
+      - section: "6. Statistical Modelling"
+        contents:
+          - href: "chapters/06-linear_regression.qmd"
+            text: "6.1 Linear regression"
+          - href: "chapters/06-logistic_regression.qmd"
+            text: "6.2 Logistic regression"
+          - href: "chapters/06-mixed_effects_regression.qmd"
+            text: "6.3 Mixed-effects regression"
+          - href: "chapters/06-poisson_regression.qmd"
+            text: "6.4 Poisson regression"
+          - href: "chapters/06-ordinal_regression.qmd"
+            text: "6.5 Ordinal regression"
+          
+  page-navigation: true
+  
   
 blog:
     order: date desc  # Newest first (or `order: date asc` for oldest first)
 
 format:
   html:
+    page-layout: full  
     theme: cosmo
     css: styles.css
     toc: true
