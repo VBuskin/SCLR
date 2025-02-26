@@ -49,10 +49,18 @@ website:
             text: "2.4 Importing/Exporting"
       - section: "3. NLP with R"
         contents:
-          - text: "Coming soon"
+          - href: "chapters/03-concordancing.qmd"
+            text: "3.1 Concordancing"
+          - href: "chapters/03-regex.qmd"
+            text: "3.2 Regex"
+          - href: "chapters/03-data-annotation.qmd"
+            text: "3.3 Data Annotation"
       - section: "4. Descriptive Statistics"
         contents:
-          - text: "Coming soon"
+          - href: "chapters/04-categorical_data.qmd"
+            text: "4.2 Categorical data"
+          - href: "chapters/04-continuous_data.qmd"
+            text: "4.3 Continuous data"
       - section: "5. Inferential Statistics"
         contents:
           - href: "chapters/05-hypothesis_testing.qmd"
@@ -73,6 +81,18 @@ website:
             text: "6.4 Poisson regression"
           - href: "chapters/06-ordinal_regression.qmd"
             text: "6.5 Ordinal regression"
+          - href: "chapters/06-trees_forests.qmd"
+            text: "6.6 Tree-based methods"
+          - href: "chapters/06-gradient_boosting.qmd"
+            text: "6.7 Gradient boosting"
+      - section: "7. Multivariate data analysis"
+        contents:
+          - href: "chapters/07-PCA.qmd"
+            text: "7.1 PCA"
+          - href: "chapters/07-EFA.qmd"
+            text: "7.2 EFA"
+          - href: "chapters/07-Clustering.qmd"
+            text: "7.3 Clustering"
           
   page-navigation: true
   
@@ -86,5 +106,6 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+    reference-location: margin
     bibliography: R.bib
     number-sections: true

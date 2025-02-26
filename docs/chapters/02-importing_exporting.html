@@ -1723,7 +1723,7 @@ async function fuseSearch(query, fuse, fuseOptions) {
 }
 </script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/05-hypothesis_testing.html" rel="next">
+<link href="../chapters/03-concordancing.html" rel="next">
 <link href="../chapters/02-libraries.html" rel="prev">
 <script>const sectionChanged = new CustomEvent("quarto-sectionChanged", {
   detail: {},
@@ -4764,27 +4764,32 @@ vertical-align: -.125em;
 
 
 <style type="text/css">
-.quarto-container-content {
-max-width: 1400px !important; 
+.quarto-container {
+display: block;
+justify-content: center;
+width: 100%;
+max-width: none;
 }
 
-.content-block {
-padding-left: 10px;
-padding-right: 10px;
+.quarto-container-content {
 max-width: 100%;
+width: auto; 
 }
 
 .sidebar-content ~ .content-block {
 padding-left: 20px;
 max-width: calc(100% - 40px);
 }
-
 p, li, .description, .abstract, blockquote, .content-block {
 text-align: justify !important;
+hyphens: auto;
+word-spacing: -0.5px;
 }
-
 h1, h2, h3, h4, h5, h6 {
 text-align: left !important;
+}
+code, a {
+white-space: nowrap;
 }</style>
 </head>
 
@@ -4939,15 +4944,30 @@ text-align: left !important;
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">3. Corpus Linguistics with R</span></a>
+ <span class="menu-text">3. NLP with R</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
- <span class="menu-text">Coming soon</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-concordancing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.1 Concordancing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-regex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.2 Regex</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-data-annotation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.3 Data Annotation</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -4960,8 +4980,17 @@ text-align: left !important;
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
- <span class="menu-text">Coming soon</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-categorical_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.2 Categorical data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-continuous_data.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.3 Continuous data</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -5030,6 +5059,47 @@ text-align: left !important;
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-ordinal_regression.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">6.5 Ordinal regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-trees_forests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.6 Tree-based methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-gradient_boosting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.7 Gradient boosting</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">7. Multivariate data analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-PCA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.1 PCA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-EFA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.2 EFA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-Clustering.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.3 Clustering</span></a>
   </div>
 </li>
       </ul>
@@ -5833,8 +5903,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/05-hypothesis_testing.html" class="pagination-link" aria-label="5.1 Hypothesis testing">
-        <span class="nav-page-text">5.1 Hypothesis testing</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/03-concordancing.html" class="pagination-link" aria-label="3.1 Concordancing">
+        <span class="nav-page-text">3.1 Concordancing</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

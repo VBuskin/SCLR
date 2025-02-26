@@ -1723,6 +1723,7 @@ async function fuseSearch(query, fuse, fuseOptions) {
 }
 </script>
 <meta name="quarto:offset" content="../">
+<link href="../chapters/06-trees_forests.html" rel="next">
 <link href="../chapters/06-poisson_regression.html" rel="prev">
 <script>const sectionChanged = new CustomEvent("quarto-sectionChanged", {
   detail: {},
@@ -4902,31 +4903,36 @@ window.Quarto = {
 </script>
 
 <style type="text/css">
-.quarto-container-content {
-max-width: 1400px !important; 
+.quarto-container {
+display: block;
+justify-content: center;
+width: 100%;
+max-width: none;
 }
 
-.content-block {
-padding-left: 10px;
-padding-right: 10px;
+.quarto-container-content {
 max-width: 100%;
+width: auto; 
 }
 
 .sidebar-content ~ .content-block {
 padding-left: 20px;
 max-width: calc(100% - 40px);
 }
-
 p, li, .description, .abstract, blockquote, .content-block {
 text-align: justify !important;
+hyphens: auto;
+word-spacing: -0.5px;
 }
-
 h1, h2, h3, h4, h5, h6 {
 text-align: left !important;
+}
+code, a {
+white-space: nowrap;
 }</style>
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -5077,15 +5083,30 @@ text-align: left !important;
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">3. Corpus Linguistics with R</span></a>
+ <span class="menu-text">3. NLP with R</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
- <span class="menu-text">Coming soon</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-concordancing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.1 Concordancing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-regex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.2 Regex</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-data-annotation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.3 Data Annotation</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -5098,8 +5119,17 @@ text-align: left !important;
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
- <span class="menu-text">Coming soon</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-categorical_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.2 Categorical data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-continuous_data.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.3 Continuous data</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -5170,6 +5200,47 @@ text-align: left !important;
  <span class="menu-text">6.5 Ordinal regression</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-trees_forests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.6 Tree-based methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-gradient_boosting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.7 Gradient boosting</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">7. Multivariate data analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-PCA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.1 PCA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-EFA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.2 EFA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-Clustering.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.3 Clustering</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -5207,7 +5278,7 @@ text-align: left !important;
 </nav>
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
+<main class="content page-columns page-full column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/06-linear_regression.html">6. Statistical Modelling</a></li><li class="breadcrumb-item"><a href="../chapters/06-ordinal_regression.html">6.5 Ordinal regression</a></li></ol></nav>
 <div class="quarto-title">
@@ -5251,11 +5322,11 @@ text-align: left !important;
 <p><a href="https://cran.r-project.org/web/packages/ordinal/vignettes/clm_article.pdf">Documentation of Cumulative Link Models</a></p>
 </blockquote>
 </section>
-<section id="introduction" class="level2" data-number="2">
+<section id="introduction" class="level2 page-columns page-full" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2</span> Introduction</h2>
 <p>In her recent contribution, <span class="citation" data-cites="glassEnglishVerbsCan2021">Glass (<a href="#ref-glassEnglishVerbsCan2021" role="doc-biblioref">2021</a>)</span> examines possible reasons why certain transitive verbs have a stronger affinity towards object omission compared to others, placing special emphasis on the routinisation of the actions denoted by the verbs. Specifically, she assesses <strong>how high/low-routine contexts affect the acceptability of object omission</strong> for transitive verbs from different frequency bins.</p>
 <p>We will replicate her findings using her survey data <code>Glass_2021_survey_processed.csv</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p>
-<div class="cell">
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup> The original dataset can be retrieved from Lelia Glass’s OSF repository: <a href="https://osf.io/t6zw5" class="uri">https://osf.io/t6zw5</a> [Last accessed: 27th September, 2024].</p></div></div><div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -5290,7 +5361,7 @@ The following object is masked from &#39;package:dplyr&#39;:
 </div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjPlot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Learn more about sjPlot with &#39;browseVignettes(&quot;sjPlot&quot;)&#39;.</code></pre>
+<pre><code>Install package &quot;strengejacke&quot; from GitHub (`devtools::install_github(&quot;strengejacke/strengejacke&quot;)`) to load all sj-packages at once!</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(effects)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -6485,12 +6556,7 @@ Powers, Daniel A., and Yu Xie. 2008. <em>Statistical <span>Methods</span> for <s
 <div id="ref-woodGeneralizedAdditiveModels2006" class="csl-entry" role="listitem">
 Wood, Simon N. 2006. <em>Generalized <span>Additive</span> <span>Models</span>: <span>An</span> <span>Introduction</span> with <span>R</span></em>. Boca Raton: Chapman &amp; Hall/CRC.
 </div>
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>The original dataset can be retrieved from Lelia Glass’s OSF repository: <a href="https://osf.io/t6zw5" class="uri">https://osf.io/t6zw5</a> [Last accessed: 27th September, 2024].<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -6918,6 +6984,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../chapters/06-trees_forests.html" class="pagination-link" aria-label="6.6 Tree-based methods">
+        <span class="nav-page-text">6.6 Tree-based methods</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

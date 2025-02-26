@@ -4903,31 +4903,36 @@ window.Quarto = {
 </script>
 
 <style type="text/css">
-.quarto-container-content {
-max-width: 1400px !important; 
+.quarto-container {
+display: block;
+justify-content: center;
+width: 100%;
+max-width: none;
 }
 
-.content-block {
-padding-left: 10px;
-padding-right: 10px;
+.quarto-container-content {
 max-width: 100%;
+width: auto; 
 }
 
 .sidebar-content ~ .content-block {
 padding-left: 20px;
 max-width: calc(100% - 40px);
 }
-
 p, li, .description, .abstract, blockquote, .content-block {
 text-align: justify !important;
+hyphens: auto;
+word-spacing: -0.5px;
 }
-
 h1, h2, h3, h4, h5, h6 {
 text-align: left !important;
+}
+code, a {
+white-space: nowrap;
 }</style>
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -5078,15 +5083,30 @@ text-align: left !important;
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">3. Corpus Linguistics with R</span></a>
+ <span class="menu-text">3. NLP with R</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
- <span class="menu-text">Coming soon</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-concordancing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.1 Concordancing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-regex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.2 Regex</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-data-annotation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3.3 Data Annotation</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -5099,8 +5119,17 @@ text-align: left !important;
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
- <span class="menu-text">Coming soon</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-categorical_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.2 Categorical data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-continuous_data.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.3 Continuous data</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -5171,6 +5200,47 @@ text-align: left !important;
  <span class="menu-text">6.5 Ordinal regression</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-trees_forests.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.6 Tree-based methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-gradient_boosting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6.7 Gradient boosting</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">7. Multivariate data analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-PCA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.1 PCA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-EFA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.2 EFA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-Clustering.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7.3 Clustering</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -5186,7 +5256,7 @@ text-align: left !important;
   <li><a href="#suggested-reading" id="toc-suggested-reading" class="nav-link active" data-scroll-target="#suggested-reading"><span class="header-section-number">1</span> Suggested reading</a></li>
   <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation"><span class="header-section-number">2</span> Preparation</a></li>
   <li><a href="#the-pearson-chi2-test-of-independence" id="toc-the-pearson-chi2-test-of-independence" class="nav-link" data-scroll-target="#the-pearson-chi2-test-of-independence"><span class="header-section-number">3</span> The Pearson <span class="math inline">\(\chi^2\)</span>-test of independence</a>
-  <ul>
+  <ul class="collapse">
   <li><a href="#observerd-frequencies" id="toc-observerd-frequencies" class="nav-link" data-scroll-target="#observerd-frequencies"><span class="header-section-number">3.1</span> Observerd frequencies</a></li>
   <li><a href="#expected-frequencies" id="toc-expected-frequencies" class="nav-link" data-scroll-target="#expected-frequencies"><span class="header-section-number">3.2</span> Expected frequencies</a></li>
   <li><a href="#conducting-the-test" id="toc-conducting-the-test" class="nav-link" data-scroll-target="#conducting-the-test"><span class="header-section-number">3.3</span> Conducting the test</a></li>
@@ -5201,7 +5271,7 @@ text-align: left !important;
 </nav>
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
+<main class="content page-columns page-full column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/05-hypothesis_testing.html">5. Inferential Statistics</a></li><li class="breadcrumb-item"><a href="../chapters/05-chi_square_test.html">5.2 Chi-squared test</a></li></ol></nav>
 <div class="quarto-title">
@@ -5826,10 +5896,10 @@ V = \sqrt{\frac{\chi^2}{n \times (min(nrow, ncol) - 1)}}.
 </div>
 <p>The association between two categorical variables is stronger, the closer <span class="math inline">\(V\)</span> approximates 1. Conversely, if <span class="math inline">\(V = 0\)</span>, then the variables are completely independent. There are various guidelines in the literature that provide thresholds for “small”, “moderate” and “large” effects, yet these are rarely justified on theoretical grounds and could be viewed as arbitrary.</p>
 </section>
-<section id="only-one-variable-the-pearson-chi2-goodness-of-fit-test" class="level2" data-number="6">
+<section id="only-one-variable-the-pearson-chi2-goodness-of-fit-test" class="level2 page-columns page-full" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="only-one-variable-the-pearson-chi2-goodness-of-fit-test"><span class="header-section-number">6</span> Only one variable? The Pearson <span class="math inline">\(\chi^2\)</span> goodness-of-fit test</h2>
 <p>The <span class="math inline">\(\chi^2\)</span>-statistic can also be utilised in simpler scenarios that involve only one single categorical variable.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Consider the small <a href="https://osf.io/y5scq"><code>eat_obj_aspect.xlsx</code></a> dataset, where the <code>object_realisation</code> column indicates whether the object was realised or dropped in a given observation.</p>
-<div class="cell">
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup> For this reason, the distinction between dependent and independent variable is irrelevant here.</p></div></div><div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>eat <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;../datasets/eat_obj_aspect.xlsx&quot;</span>)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5929,12 +5999,7 @@ Heumann, Christian, Michael Schomaker, and Shalabh. 2022. <em>Introduction to St
 <div id="ref-krauth_lienert_kfa" class="csl-entry" role="listitem">
 Krauth, J., and G. A. Lienert. 1973. <em>Die Konfigurationsfrequenzanalyse (KFA) Und Ihre Anwendung in Psychologie Und Medizin</em>. Reprint 1995. Weinheim: Beltz Psychologie Verlagsunion.
 </div>
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>For this reason, the distinction between dependent and independent variable is irrelevant here.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
