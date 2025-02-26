@@ -153,28 +153,9 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./datasets.qmd"> 
-<span class="menu-text">Datasets</span></a>
-  </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resources" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Resources</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-resources">    
-        <li>
-    <a class="dropdown-item" href="./resources/cheatsheets.qmd">
- <span class="dropdown-text">R Cheatsheets</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./resources/reading.qmd">
- <span class="dropdown-text">Further Reading</span></a>
-  </li>  
-    </ul>
-  </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -467,15 +448,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#fundamentals-of-corpus-based-research" id="toc-fundamentals-of-corpus-based-research" class="nav-link active" data-scroll-target="#fundamentals-of-corpus-based-research"><span class="header-section-number">1</span> Fundamentals of Corpus-based Research</a></li>
-  <li><a href="#introduction-to-r" id="toc-introduction-to-r" class="nav-link" data-scroll-target="#introduction-to-r"><span class="header-section-number">2</span> Introduction to R</a></li>
-  <li><a href="#corpus-linguistics-with-r" id="toc-corpus-linguistics-with-r" class="nav-link" data-scroll-target="#corpus-linguistics-with-r"><span class="header-section-number">3</span> Corpus Linguistics with R</a></li>
-  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics"><span class="header-section-number">4</span> Descriptive Statistics</a>
+  <li><a href="#fundamentals-of-corpus-based-research" id="toc-fundamentals-of-corpus-based-research" class="nav-link active" data-scroll-target="#fundamentals-of-corpus-based-research">Fundamentals of Corpus-based Research</a></li>
+  <li><a href="#introduction-to-r" id="toc-introduction-to-r" class="nav-link" data-scroll-target="#introduction-to-r">Introduction to R</a></li>
+  <li><a href="#corpus-linguistics-with-r" id="toc-corpus-linguistics-with-r" class="nav-link" data-scroll-target="#corpus-linguistics-with-r">Corpus Linguistics with R</a></li>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">Descriptive Statistics</a>
   <ul class="collapse">
-  <li><a href="#chi-squared-test" id="toc-chi-squared-test" class="nav-link" data-scroll-target="#chi-squared-test"><span class="header-section-number">4.1</span> Chi-squared test</a></li>
+  <li><a href="#chi-squared-test" id="toc-chi-squared-test" class="nav-link" data-scroll-target="#chi-squared-test">Chi-squared test</a></li>
   </ul></li>
-  <li><a href="#inferential-statistics" id="toc-inferential-statistics" class="nav-link" data-scroll-target="#inferential-statistics"><span class="header-section-number">5</span> Inferential Statistics</a></li>
-  <li><a href="#statistical-modelling-and-machine-learning" id="toc-statistical-modelling-and-machine-learning" class="nav-link" data-scroll-target="#statistical-modelling-and-machine-learning"><span class="header-section-number">6</span> Statistical Modelling and Machine Learning</a></li>
+  <li><a href="#inferential-statistics" id="toc-inferential-statistics" class="nav-link" data-scroll-target="#inferential-statistics">Inferential Statistics</a></li>
+  <li><a href="#statistical-modelling-and-machine-learning" id="toc-statistical-modelling-and-machine-learning" class="nav-link" data-scroll-target="#statistical-modelling-and-machine-learning">Statistical Modelling and Machine Learning</a></li>
   </ul>
 </nav>
     </div>
@@ -532,8 +513,8 @@ window.Quarto = {
 
 <p>This collection of handouts provides a hands-on introduction to data analysis and statistical methods in quantitative corpus linguistics with R. It is designed with accessibility in mind, assuming no prior knowledge of programming or statistics. All you need to get started is a laptop; everything else will be explained within these pages.</p>
 <p>Primarily, this reader is geared towards students attending the classes <strong>Language Variation</strong> (BA) and <strong>Statistics for Linguistics</strong> (MA) at the Catholic University of Eichstätt-Ingolstadt (Germany). However, it is also meant to equip students currently working on their <strong>BA/MA/PhD theses</strong> with the tools they need to conduct empirical studies on a wide array of linguistic phenomena. The methods presented here reflect the state-of-the-art in corpus-linguistic research, providing readers with current and relevant analytical techniques.</p>
-<section id="fundamentals-of-corpus-based-research" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="fundamentals-of-corpus-based-research"><span class="header-section-number">1</span> Fundamentals of Corpus-based Research</h2>
+<section id="fundamentals-of-corpus-based-research" class="level2">
+<h2 class="anchored" data-anchor-id="fundamentals-of-corpus-based-research">Fundamentals of Corpus-based Research</h2>
 <div id="listing-fundamentals-listings" class="quarto-listing quarto-listing-container-table">
 <table class="quarto-listing-table table">
 <thead>
@@ -547,7 +528,7 @@ Description
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-categories="Theory" data-listing-file-modified-sort="1740574483628" data-listing-reading-time-sort="4" data-listing-word-count-sort="782" data-listing-title-sort="1.1 Basics" data-listing-filename-sort="01-basics.qmd">
+<tr data-index="0" data-categories="Theory" data-listing-file-modified-sort="1740594069665" data-listing-reading-time-sort="4" data-listing-word-count-sort="788" data-listing-title-sort="1.1 Basics" data-listing-filename-sort="01-basics.qmd">
 <td>
 <a href="./chapters/01-basics.html" class="title listing-title">1.1 Basics</a>
 </td>
@@ -555,7 +536,7 @@ Description
 <span class="listing-description">A short introduction to the basic structure of a sociolinguistic study.</span>
 </td>
 </tr>
-<tr data-index="1" data-categories="Theory" data-listing-file-modified-sort="1740521301000" data-listing-reading-time-sort="4" data-listing-word-count-sort="615" data-listing-title-sort="1.2 Research questions" data-listing-filename-sort="01-rqs.qmd">
+<tr data-index="1" data-categories="Theory" data-listing-file-modified-sort="1740591659774" data-listing-reading-time-sort="3" data-listing-word-count-sort="544" data-listing-title-sort="1.2 Research questions" data-listing-filename-sort="01-rqs.qmd">
 <td>
 <a href="./chapters/01-rqs.html" class="title listing-title">1.2 Research questions</a>
 </td>
@@ -578,29 +559,29 @@ No matching items
 </div>
 </div>
 </section>
-<section id="introduction-to-r" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="introduction-to-r"><span class="header-section-number">2</span> Introduction to R</h2>
+<section id="introduction-to-r" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-r">Introduction to R</h2>
 </section>
-<section id="corpus-linguistics-with-r" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="corpus-linguistics-with-r"><span class="header-section-number">3</span> Corpus Linguistics with R</h2>
+<section id="corpus-linguistics-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="corpus-linguistics-with-r">Corpus Linguistics with R</h2>
 </section>
-<section id="descriptive-statistics" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="descriptive-statistics"><span class="header-section-number">4</span> Descriptive Statistics</h2>
-<section id="chi-squared-test" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="chi-squared-test"><span class="header-section-number">4.1</span> <a href="chapters/04-chi_square_test.qmd">Chi-squared test</a></h3>
+<section id="descriptive-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="descriptive-statistics">Descriptive Statistics</h2>
+<section id="chi-squared-test" class="level3">
+<h3 class="anchored" data-anchor-id="chi-squared-test"><a href="chapters/04-chi_square_test.qmd">Chi-squared test</a></h3>
 </section>
 </section>
-<section id="inferential-statistics" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="inferential-statistics"><span class="header-section-number">5</span> Inferential Statistics</h2>
+<section id="inferential-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="inferential-statistics">Inferential Statistics</h2>
 </section>
-<section id="statistical-modelling-and-machine-learning" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="statistical-modelling-and-machine-learning"><span class="header-section-number">6</span> Statistical Modelling and Machine Learning</h2>
+<section id="statistical-modelling-and-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-modelling-and-machine-learning">Statistical Modelling and Machine Learning</h2>
 
 
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
