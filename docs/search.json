@@ -1803,5 +1803,137 @@
     "title": "An example from sociolinguistics",
     "section": "3 Exercises",
     "text": "3 Exercises\n\nExercise 1 As you read through the sections above, think about what might go wrong at each stage of the study!\n\n\nExercise 2 Read another sociolinguistic study (e.g., Unuabonah and Gut 2018). As you read, identify similar key sections or “building blocks” used in this study (e.g., introduction, research question etc.). What purpose does each section serve in the study’s overall structure?"
+  },
+  {
+    "objectID": "chapters/04-continuous_data.html",
+    "href": "chapters/04-continuous_data.html",
+    "title": "4.3 Continuous data",
+    "section": "",
+    "text": "Heumann et al. (2022: Chapter 3)",
+    "crumbs": [
+      "Overview",
+      "4. Descriptive Statistics",
+      "4.3 Continuous data"
+    ]
+  },
+  {
+    "objectID": "chapters/04-continuous_data.html#suggested-reading",
+    "href": "chapters/04-continuous_data.html#suggested-reading",
+    "title": "4.3 Continuous data",
+    "section": "",
+    "text": "Heumann et al. (2022: Chapter 3)",
+    "crumbs": [
+      "Overview",
+      "4. Descriptive Statistics",
+      "4.3 Continuous data"
+    ]
+  },
+  {
+    "objectID": "chapters/04-continuous_data.html#preparation",
+    "href": "chapters/04-continuous_data.html#preparation",
+    "title": "4.3 Continuous data",
+    "section": "2 Preparation",
+    "text": "2 Preparation\nWe will use the dataset from the previous unit:\n\n# Libraries\nlibrary(\"readxl\")\nlibrary(\"tidyverse\")\n\n# Load data from working directory\ncl.order &lt;- read_xlsx(\"../datasets/Paquot_Larsson_2020_data.xlsx\")",
+    "crumbs": [
+      "Overview",
+      "4. Descriptive Statistics",
+      "4.3 Continuous data"
+    ]
+  },
+  {
+    "objectID": "chapters/04-continuous_data.html#measures-of-central-tendency",
+    "href": "chapters/04-continuous_data.html#measures-of-central-tendency",
+    "title": "4.3 Continuous data",
+    "section": "3 Measures of central tendency",
+    "text": "3 Measures of central tendency\n\n3.1 The mean\nA useful summary statistic is the arithmetic mean \\(\\bar{x}\\). Consider a continuous variable \\(X\\) with observations \\(\\{x_1, x_2, ..., x_n\\}\\) from a sample of size \\(n\\). The sample mean \\(\\bar{x}\\) then corresponds to\n\\[\n\\bar{x} = \\frac{x_1 + x_2 + ... + x_n}{n} \\\\ = \\frac{1}{n}\\sum_{i=1}^n{x_i}.\n\\tag{1}\\]\n\n\n\n\n\n\nHold on, what does this large Σ symbol mean?\n\n\n\nThe summation symbol \\(\\sum\\) (Greek ‘upper-case sigma’) is a concise way to express the sum of a sequence of numbers.\nIt works like this:\n\nThe expression below the \\(\\sum\\) (e.g., \\(i = 1\\)) indicates the starting value of the index \\(i\\).\nThe number above the \\(\\sum\\) (e.g., \\(n\\)) is the ending value of the index \\(i\\).\nThe expression to the right of the \\(\\sum\\) (e.g., \\(x_i\\)) is the term to be summed.\n\nFor instance, the more general expression \\(\\sum_{i=1}^n{x_i}\\) means “sum the values of \\(x_i\\) starting from \\(i = 1\\) up to \\(i = n\\).” In other words, it adds up the values \\(x_1 + x_2 + \\dots + x_n\\).\n\n\nIn R, we can obtain the average value of a numeric vector with the mean() function. Let’s do that for the length of main clauses found in the cl.order data:\n\nmean(cl.order$LEN_MC)\n\n[1] 9.265509\n\n\nThe output returned by this function provides a one-value summary of all observations contained in LEN_MC. Because the the mean \\(\\bar{x}\\) takes into account all data points, it is prone to the influence of outliers, i.e., extreme values.\nThe distribution of continuous variables is best visualised in terms of histograms or density plots, which are illustrated for LEN_MC. The blue line indicates the sample mean.\n\nHistogram (ggplot2)Density plot (ggplot2)Histogram (Base R)Density plot (Base R)\n\n\n\n# Plot distribution of LEN_MC\ncl.length.hist &lt;- ggplot(cl.order, aes(x = LEN_MC)) +\n                  geom_histogram(binwidth = 2)\n\ncl.length.hist +\n  # Add mean\n  geom_vline(aes(xintercept = mean(LEN_MC)),\n             color = \"steelblue\",\n             linewidth = 1) +\n  theme_classic()\n\n\n\n\n\n\n\n\n\n\n\n# Plot distribution of LEN_MC\ncl.length.dens &lt;- ggplot(cl.order, aes(x = LEN_MC)) +\n                  geom_density()\n\ncl.length.dens +\n  # Add mean\n  geom_vline(aes(xintercept = mean(LEN_MC)),\n             color = \"steelblue\",\n             linewidth = 1) +\n  theme_classic()\n\n\n\n\n\n\n\n\n\n\n\nhist(cl.order$LEN_MC)\n  abline(v=mean(cl.order$LEN_MC),lwd=3, col = \"steelblue\")\n\n\n\n\n\n\n\n\n\n\n\nplot(density(cl.order$LEN_MC))\n  abline(v=mean(cl.order$LEN_MC),lwd=3, col = \"steelblue\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n3.2 The median\nThe median() function computes the “the halfway point of the data (50% of the data are above the median; 50% of the data are below” (Winter 2020: 58). As such, it is the measure of choice for data with many outliers as well as for ordinal data (e.g. Likert-scale ratings).\n\\[\n\\tilde{x}_{0.5} =\n\\begin{cases}\nx_{((n+1)/2)} & \\text{if } n \\text{ is odd.} \\\\\n\\frac{1}{2}(x_{n/2}+x_{(n/2+1)}) & \\text{if } n \\text{ is even.}\n\\end{cases}\n\\tag{2}\\]\n\nmedian(cl.order$LEN_MC)\n\n[1] 8\n\n\nThe median of LEN_MC is represented by the red vertical line.\n\nHistogram (ggplot2)Density plot (ggplot2)Histogram (Base R)Density plot (Base R)\n\n\n\ncl.length.hist +\n  # Add mean\n  geom_vline(aes(xintercept = mean(LEN_MC)), color = \"steelblue\", linewidth = 1) +\n  # Add median\n  geom_vline(aes(xintercept = median(LEN_MC)), color = \"red\", linewidth = 1) +\n  theme_classic()\n\n\n\n\n\n\n\n\n\n\n\ncl.length.dens +\n  # Add mean\n  geom_vline(aes(xintercept = mean(LEN_MC)), color = \"steelblue\", linewidth = 1) +\n  # Add median\n  geom_vline(aes(xintercept = median(LEN_MC)), color = \"red\", linewidth = 1) +\n  theme_classic()\n\n\n\n\n\n\n\n\n\n\n\nhist(cl.order$LEN_MC)\n  abline(v=mean(cl.order$LEN_MC),lwd=3, col = \"steelblue\")\n  abline(v=median(cl.order$LEN_MC),lwd=3, col = \"red\")\n\n\n\n\n\n\n\n\n\n\n\nplot(density(cl.order$LEN_MC))\n  abline(v=mean(cl.order$LEN_MC),lwd=3, col = \"steelblue\")\n  abline(v=mean(cl.order$LEN_MC),lwd=3, col = \"red\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n3.3 Sample variance and standard deviation\nIn order to assess how well the mean represents the data, it is instructive to compute the variance var() and the standard deviation sd() for a sample. The component \\(\\sum_{i=1}^n (x_i - \\bar{x})^2\\) is also known as the squared error.\nThe sample variance \\(s^2\\) is defined as\n\\[\ns^2 = \\frac{1}{n}\\sum_{i=1}^n{(x_i - \\bar{x})^2}.\n\\tag{3}\\]\nIn other words, it stands for the average squared deviation of all observations from the sample mean.\n\nvar(cl.order$LEN_MC)\n\n[1] 25.12585\n\n\nCorrespondingly, the standard deviation of the mean is the square root of the variance:\n\\[\ns = \\sqrt{\\frac{1}{n}\\sum_{i=1}^n{(x_i - \\bar{x})^2}}\n\\tag{4}\\]\n\nsd(cl.order$LEN_MC)\n\n[1] 5.012569\n\n\nVisualisation:\n\nExample 1Example 2\n\n\n\ncl.length.hist +\n  # Add verticle line for the mean\n  geom_vline(aes(xintercept = mean(LEN_MC)), color = \"steelblue\", linewidth = 1) +\n  # Add -1sd\n  geom_vline(aes(xintercept = mean(LEN_MC) - sd(LEN_MC)), color = \"orange\", linewidth = 1) +\n  # Add +1sd\n  geom_vline(aes(xintercept = mean(LEN_MC) + sd(LEN_MC)), color = \"orange\", linewidth = 1) +\n  theme_classic()\n\n\n\n\n\n\n\n\n\n\n\n# Create data frame with mean and sd for each clause ORDER\n\ncl.order %&gt;% \n  # Select variables of interest\n  select(ORDER, LEN_MC) %&gt;% \n  # Group results of following operations by ORDER\n  group_by(ORDER) %&gt;% \n    # Create grouped summary of mean and sd for each ORDER\n    summarise(mean = mean(LEN_MC),\n                sd = sd(LEN_MC)) -&gt; cl_mean_sd; cl_mean_sd\n\n# A tibble: 2 × 3\n  ORDER  mean    sd\n  &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 mc-sc  9.04  4.91\n2 sc-mc  9.75  5.22\n\n# Plot results \n\nggplot(cl_mean_sd, aes(x = ORDER, y = mean)) +\n  # Barplot with a specific variable mapped onto y-axis\n  geom_col() +\n  # Add mean and standard deviation to the plot\n  geom_errorbar(aes(x = ORDER,\n                    ymin = mean-sd,\n                    ymax = mean+sd), width = .2) +\n  theme_classic() +\n  labs(y = \"Mean length of main clauses\", x = \"Clause order\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n3.4 Quantiles\nWhile median() divides the data into two equal sets (i.e., two 50% quantiles), the quantile() function makes it possible to partition the data further.\n\nquantile(cl.order$LEN_MC)\n\n  0%  25%  50%  75% 100% \n   2    6    8   11   31 \n\n\nquantile(x, 0) and quantile(x, 1) thus show the minimum and maximum values, respectively.\n\nquantile(cl.order$LEN_MC, 0)\n\n0% \n 2 \n\nquantile(cl.order$LEN_MC, 1)\n\n100% \n  31 \n\n\n\n\n3.5 Quartiles and boxplots\nConsider the distribution of clause length by clause order:\n\nBoxplot (Base R)Boxplot (ggplot2)\n\n\n\nboxplot(LEN_MC ~ ORDER, cl.order)\n\n\n\n\n\n\n\n\n\n\n\nggplot(cl.order, aes(x = ORDER, y = LEN_MC)) +\n  geom_boxplot() +\n  theme_classic()\n\n\n\n\n\n\n\n\n\n\n\nCompare it to the corresponding rotated density plot:\n\nggplot(cl.order, aes(x = LEN_MC, fill = ORDER)) +\n  geom_density(alpha = 0.5) +\n  coord_flip() +\n  theme_classic()",
+    "crumbs": [
+      "Overview",
+      "4. Descriptive Statistics",
+      "4.3 Continuous data"
+    ]
+  },
+  {
+    "objectID": "chapters/04-continuous_data.html#visualising-mixed-data",
+    "href": "chapters/04-continuous_data.html#visualising-mixed-data",
+    "title": "4.3 Continuous data",
+    "section": "4 Visualising mixed data",
+    "text": "4 Visualising mixed data\n\n4.1 A numerical and categorical variable\n\nBoxplot with geom_boxplot()\n\n\nggplot(cl.order, aes(x = ORDER, y = LEN_MC)) +\n  geom_boxplot()\n\n\n\n\n\n\n\n\n\nDensitiy plot using the optional arguments color and/or fill\n\n\nggplot(cl.order, aes(x = LEN_MC, fill = ORDER)) +\n  geom_density(alpha = 0.5)\n\n\n\n\n\n\n\n\n\nA barplot with geom_col()\n\n\nggplot(cl.order, aes(x = ORDER, y = LEN_MC)) +\n  geom_col(aes(x = ORDER, y = LEN_MC))\n\n\n\n\n\n\n\n\n\n\n4.2 Multivariate plots\n\nAdvanced scatterplot with four variables: LEN_MC (x), LEN_SC (y), ORDER (colour) and SUBORDTYPE (shape)\n\n\n# 4 variables\nggplot(cl.order, aes(x = LEN_MC, y = LEN_SC)) +\n  geom_point(aes(color = ORDER, shape = SUBORDTYPE))\n\n\n\n\n\n\n\n\n\nFacets\n\n\n# 5 variables\nggplot(cl.order, aes(x = LEN_MC, y = LEN_SC)) +\n  geom_point(aes(color = ORDER, shape = SUBORDTYPE)) +\n  facet_wrap(~MORETHAN2CL)",
+    "crumbs": [
+      "Overview",
+      "4. Descriptive Statistics",
+      "4.3 Continuous data"
+    ]
+  },
+  {
+    "objectID": "chapters/04-variables.html",
+    "href": "chapters/04-variables.html",
+    "title": "Data types",
+    "section": "",
+    "text": "Heumann, Schomaker, and Shalabh (2022): Chapter 1\nBaguley (2012): Chapter 1\nAgresti and Kateri (2022): Chapter 1.2",
+    "crumbs": [
+      "Overview",
+      "4. Descriptive Statistics",
+      "4.1 Data types"
+    ]
+  },
+  {
+    "objectID": "chapters/04-variables.html#recommended-reading",
+    "href": "chapters/04-variables.html#recommended-reading",
+    "title": "Data types",
+    "section": "",
+    "text": "Heumann, Schomaker, and Shalabh (2022): Chapter 1\nBaguley (2012): Chapter 1\nAgresti and Kateri (2022): Chapter 1.2",
+    "crumbs": [
+      "Overview",
+      "4. Descriptive Statistics",
+      "4.1 Data types"
+    ]
+  },
+  {
+    "objectID": "chapters/04-variables.html#preparation",
+    "href": "chapters/04-variables.html#preparation",
+    "title": "Data types",
+    "section": "2 Preparation",
+    "text": "2 Preparation\n\n\n\n\n\n\nScript\n\n\n\nYou can find the full R script associated with this unit here.\n\n\nPlease download the file Paquot_Larsson_2020_data.xlsx (Paquot and Larsson 2020) and store it in your working directory.\n\n# Load libraries\nlibrary(readxl)\nlibrary(tidyverse)\n\n# Load data\ncl.order &lt;- read_xlsx(\"../datasets/Paquot_Larsson_2020_data.xlsx\")\n\n# Inspect data\nstr(cl.order)\nhead(cl.order)\n\n\n\n\n\n\n\nWhat’s in the file? The str() function\n\n\n\n\n\nThe easiest way to get a general overview of the full data set is to apply the str() function to the respective data frame.\n\nstr(cl.order)\n\ntibble [403 × 8] (S3: tbl_df/tbl/data.frame)\n $ CASE       : num [1:403] 4777 1698 953 1681 4055 ...\n $ ORDER      : chr [1:403] \"sc-mc\" \"mc-sc\" \"sc-mc\" \"mc-sc\" ...\n $ SUBORDTYPE : chr [1:403] \"temp\" \"temp\" \"temp\" \"temp\" ...\n $ LEN_MC     : num [1:403] 4 7 12 6 9 9 9 4 6 4 ...\n $ LEN_SC     : num [1:403] 10 6 7 15 5 5 12 2 24 11 ...\n $ LENGTH_DIFF: num [1:403] -6 1 5 -9 4 4 -3 2 -18 -7 ...\n $ CONJ       : chr [1:403] \"als/when\" \"als/when\" \"als/when\" \"als/when\" ...\n $ MORETHAN2CL: chr [1:403] \"no\" \"no\" \"yes\" \"no\" ...\n\n\nThis shows us that the data frame has 8 columns, as the $ operators indicate ($ Case, $ ORDER, …). The column names are followed by\n\nthe data type (num for numeric and chr for character strings)\nthe number of values (`[1:403]`) and\nthe first few observations.\n\nAnother intuitive way to display the structure of a data matrix is to simply show the first few rows:\n\nhead(cl.order)\n\n# A tibble: 6 × 8\n   CASE ORDER SUBORDTYPE LEN_MC LEN_SC LENGTH_DIFF CONJ     MORETHAN2CL\n  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;      \n1  4777 sc-mc temp            4     10          -6 als/when no         \n2  1698 mc-sc temp            7      6           1 als/when no         \n3   953 sc-mc temp           12      7           5 als/when yes        \n4  1681 mc-sc temp            6     15          -9 als/when no         \n5  4055 sc-mc temp            9      5           4 als/when yes        \n6   967 sc-mc temp            9      5           4 als/when yes        \n\n\n\n\n\n\n\n\n\n\n\nFurther details on the variables\n\n\n\n\n\n\nORDER: Does the subordinate clause come before or after the main clause?\nSUBORDTYPE: Is the subordinate clause temporal or causal?\nMORETHAN2CL: Are there most clauses in the sentence than just one subordinate clause and one main clause?\nLEN_MC: How many words does the main clause contain?\nLEN_SC: How many words does the subordinate clause contain?\nLENGTH_DIFF: What is the length difference in words between the main clause and subordinate clause?",
+    "crumbs": [
+      "Overview",
+      "4. Descriptive Statistics",
+      "4.1 Data types"
+    ]
+  },
+  {
+    "objectID": "chapters/04-variables.html#the-big-picture-populations-and-samples",
+    "href": "chapters/04-variables.html#the-big-picture-populations-and-samples",
+    "title": "Data types",
+    "section": "3 The big picture: Populations and samples",
+    "text": "3 The big picture: Populations and samples\nIn order to investigate one or more linguistic features, we first need to collect relevant observations, which typically correspond to linguistic utterances in a corpus-linguistic context. Since it is not feasible to examine, for instance, the entirety of all linguistic utterances ever produced, i.e., the virtually infinite population, we rely on subsets of it: samples. Good research is characterised by good sampling procedures that limit the bias present in any sample, thus improving the generalisability of potential findings.\nTo state this more formally, let \\(\\omega\\) (‘lower-case Omega’) denote a single observation of interest. The full set of theoretically possible observations is contained in \\(\\Omega\\) (‘upper-case Omega’), with \\(\\Omega = \\{\\omega_1, \\omega_2, \\dots, \\omega_n \\}\\). Here \\(n\\) represents the \\(n\\)-th observation and should be a natural number. A sample is then simply a selection of elements from \\(\\Omega\\).",
+    "crumbs": [
+      "Overview",
+      "4. Descriptive Statistics",
+      "4.1 Data types"
+    ]
+  },
+  {
+    "objectID": "chapters/04-variables.html#variables",
+    "href": "chapters/04-variables.html#variables",
+    "title": "Data types",
+    "section": "4 Variables",
+    "text": "4 Variables\nThe concept of the variable is very handy in that it allows us to quantify different aspects our linguistic observations, such the age or gender of the speaker, the register of the speech situation, the variety of English, the length of an utterance, a syntactic construction or a grammatical category, among many other theoretically possible features. For each observation, we should be able to assign a specific value to our variables; for instance, a variable Register could assume a value such as informal, or Utterance length a hypothetical value of 5 (e.g., 5 words).\nIn the statistical literature, variables are usually represented by upper-case letters, such as \\(X\\). For each observation \\(\\omega \\in \\Omega\\), \\(X\\) has a value \\(x\\). The set \\(S\\) comprises all possible unique values of \\(X\\), e.g.,\n\n\\(S_{\\text{Register}} = \\{\\text{informal}, \\text{formal}, ...\\}\\),\n\\(S_{\\text{Utterance length}} = \\{1, 2, 3, \\dots \\}\\),\n…\n\n\n\n\n\n\n\nNumber of (unique) values in R\n\n\n\n\n\nTo count the number of items in a vector, which correspond to the total number \\(n\\) of attested values of \\(X\\), we can use length():\n\nlength(cl.order$SUBORDTYPE)\n\n[1] 403\n\n\nIn fact, it is equivalent to the number of rows in the full data frame:\n\nnrow(cl.order)\n\n[1] 403\n\n\nThe function unique() shows all unique items (= types) in a vector, which reflect the possible outcomes in \\(S\\):\n\nunique(cl.order$SUBORDTYPE)\n\n[1] \"temp\" \"caus\"\n\n\n\n\n\n\n4.1 Datasets\nInformation on variables and their values is conventionally arranged in a dataset, which is essentially a matrix with rows (= observations) and columns (= variables). Consider the head() of the clause data:\n\n\n\n\n\n\nCASE\nORDER\nSUBORDTYPE\nLEN_MC\nLEN_SC\nLENGTH_DIFF\nCONJ\nMORETHAN2CL\n\n\n\n\n1\n4777\nsc-mc\ntemp\n4\n10\n-6\nals/when\nno\n\n\n2\n1698\nmc-sc\ntemp\n7\n6\n1\nals/when\nno\n\n\n3\n953\nsc-mc\ntemp\n12\n7\n5\nals/when\nyes\n\n\n4\n1681\nmc-sc\ntemp\n6\n15\n-9\nals/when\nno\n\n\n5\n4055\nsc-mc\ntemp\n9\n5\n4\nals/when\nyes\n\n\n6\n967\nsc-mc\ntemp\n9\n5\n4\nals/when\nyes\n\n\n\n\n\n\n\n\nAssuming that \\(n\\) denotes the row number and \\(p\\) the column number, the abstract form of a dataset is an \\(n \\times p\\) matrix of the form in Equation 1.\n\\[\n\\begin{pmatrix}\n    \\omega & X_1 & X_2 & \\cdots &  X_p \\\\\n    1 & x_{11} & x_{12} & \\cdots & x_{1p} \\\\\n    2 & x_{21} & x_{22} & \\cdots & x_{2p} \\\\\n    \\vdots & \\vdots & \\vdots &  & \\vdots \\\\\n    n & x_{n1} & x_{n2} & \\cdots & x_{np}\n\\end{pmatrix}\n\\tag{1}\\]\n\n\n4.2 Data types\nIn general, we distinguish between discrete variables, which can only take a limited set of unique values, and continuous variables, which can take infinitely many values within a specified range.\nWe can further subdivide discrete and continuous variables into into nominal, ordinal, interval-scaled and ratio-scaled ones:\n\n\n\n\n\n\nNominal/categorical\n\n\n\n\n\nThese variables comprise a limited number of categories which cannot be ordered in a meaningful way. For instance, it does not matter which value of SUBORDTYPE or MORETHAN2CL comes first or last:\n\n    unique(cl.order$SUBORDTYPE)\n\n[1] \"temp\" \"caus\"\n\n    unique(cl.order$MORETHAN2CL)\n\n[1] \"no\"  \"yes\"\n\n\n\n\n\n\n\n\n\n\n\nOrdinal/categorical\n\n\n\n\n\nOrdinal variables are ordered. However, the intervals between their individual values are not interpretable. Heumann (2022: 6) provides a pertinent example:\n\n[T]he satisfaction with a product (unsatisfied–satisfied–very satisfied) is an ordinal variable because the values this variable can take can be ordered but the differences between ‘unsatisfied–satisfied’ and ‘satisfied–very satisfied’ cannot be compared in a numerical way.\n\n\n\n\n\n\n\n\n\n\nInterval-scaled/continuous\n\n\n\n\n\n\nIn the case of interval-scaled variables, the differences between the values can be interpreted, but their ratios must be treated with caution. A temperature of 4°C is 6 degrees warmer than -2°C; however, this does not imply that 4°C is three times warmer than -2°C. This is because the temperature scale has no true zero point; 0°C simply signifies another point on the scale and not the absence of temperature altogether.\n\n\n\n\n\n\n\n\n\n\nRatio-scaled/continuous\n\n\n\n\n\n\nRatio-scaled variables allow both a meaningful interpretation of the differences between their values and (!) of the ratios between them. Within the context of clause length, LENGTH_DIFF values such as 4 and 8 not only suggest that the latter is four units greater than the former but also that their ratio \\(\\frac{8}{4} = 2\\) is a valid way to describe the relationship between these values. Here a LENGTH_DIFF of 0 can be clearly viewed as the absence of a length difference.\n\n\n\n\n\n\n4.3 Dependent vs. independent variables\nIn empirical studies, it is often of interest whether one variable leads to changes in the values of another variable. When exploring such associations (or correlations), we need to take another heuristic step to clarify the direction of the influence.\nIn a linguistic context, we denote the variable whose usage patterns we’d like to explain as the dependent or response variable. A list of possible dependent variables is provided in the section on Linguistic variables).\nIts outcomes are said to depend on one or more independent variables. These are also often referred to as explanatory variables as they are supposed to explain variation in the response variable. These can be AGE, SEX or the VARIETY of English at hand.",
+    "crumbs": [
+      "Overview",
+      "4. Descriptive Statistics",
+      "4.1 Data types"
+    ]
+  },
+  {
+    "objectID": "chapters/04-variables.html#exercises",
+    "href": "chapters/04-variables.html#exercises",
+    "title": "Data types",
+    "section": "5 Exercises",
+    "text": "5 Exercises\n\nExercise 1 Consider the following statement:\n\nThis paper examines the influence of clause length on the ordering of main and subordinate clauses.\n\n\nWhat is the dependent variable?\nWhat is the independent variable?\nWhat would it mean if they were reversed?\n\n\n\nExercise 2 Is frequency data a discrete or a continuous variable?\n\n\nExercise 3 Identify the variable types (nominal, ordinal etc.) for all columns in the cl.order dataset.\n\n\nExercise 4 Consider the general form of the data matrix from Equation 1.\n\nWhat would the labels \\(\\omega\\), \\(X\\) and \\(x\\) correspond to in the cl.order dataset?\nWhat would be \\(\\Omega\\) and \\(S\\)?",
+    "crumbs": [
+      "Overview",
+      "4. Descriptive Statistics",
+      "4.1 Data types"
+    ]
   }
 ]

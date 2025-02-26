@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Thomas Brunner">
 <meta name="author" content="Vladimir Buskin">
 
-<title>1.2 Research questions – Statistics for Corpus Linguists: From Theory to Practice</title>
+<title>Data types – Statistics for Corpus Linguists: From Theory to Practice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +19,40 @@ ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
+}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+}
+pre.numberSource { margin-left: 3em; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 
 div.csl-bib-body { }
@@ -1690,8 +1723,8 @@ async function fuseSearch(query, fuse, fuseOptions) {
 }
 </script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/01-linguistic_variables.html" rel="next">
-<link href="../chapters/01-basics.html" rel="prev">
+<link href="../chapters/04-categorical_data.html" rel="next">
+<link href="../chapters/03-data-annotation.html" rel="prev">
 <script>const sectionChanged = new CustomEvent("quarto-sectionChanged", {
   detail: {},
   bubbles: true,
@@ -4728,7 +4761,230 @@ vertical-align: -.125em;
     "search-label": "Search"
   }
 }</script>
-<script src="custom_numbering.js"></script>
+<script>$(document).ready(function(){
+    if (typeof $('[data-toggle="tooltip"]').tooltip === 'function') {
+        $('[data-toggle="tooltip"]').tooltip();
+    }
+    if ($('[data-toggle="popover"]').popover === 'function') {
+        $('[data-toggle="popover"]').popover();
+    }
+});
+</script>
+<style type="text/css">
+.lightable-minimal {
+border-collapse: separate;
+border-spacing: 16px 1px;
+width: 100%;
+margin-bottom: 10px;
+}
+.lightable-minimal td {
+margin-left: 5px;
+margin-right: 5px;
+}
+.lightable-minimal th {
+margin-left: 5px;
+margin-right: 5px;
+}
+.lightable-minimal thead tr:last-child th {
+border-bottom: 2px solid #00000050;
+empty-cells: hide;
+}
+.lightable-minimal tbody tr:first-child td {
+padding-top: 0.5em;
+}
+.lightable-minimal.lightable-hover tbody tr:hover {
+background-color: #f5f5f5;
+}
+.lightable-minimal.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-classic {
+border-top: 0.16em solid #111111;
+border-bottom: 0.16em solid #111111;
+width: 100%;
+margin-bottom: 10px;
+margin: 10px 5px;
+}
+.lightable-classic tfoot tr td {
+border: 0;
+}
+.lightable-classic tfoot tr:first-child td {
+border-top: 0.14em solid #111111;
+}
+.lightable-classic caption {
+color: #222222;
+}
+.lightable-classic td {
+padding-left: 5px;
+padding-right: 5px;
+color: #222222;
+}
+.lightable-classic th {
+padding-left: 5px;
+padding-right: 5px;
+font-weight: normal;
+color: #222222;
+}
+.lightable-classic thead tr:last-child th {
+border-bottom: 0.10em solid #111111;
+}
+.lightable-classic.lightable-hover tbody tr:hover {
+background-color: #F9EEC1;
+}
+.lightable-classic.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-classic-2 {
+border-top: 3px double #111111;
+border-bottom: 3px double #111111;
+width: 100%;
+margin-bottom: 10px;
+}
+.lightable-classic-2 tfoot tr td {
+border: 0;
+}
+.lightable-classic-2 tfoot tr:first-child td {
+border-top: 3px double #111111;
+}
+.lightable-classic-2 caption {
+color: #222222;
+}
+.lightable-classic-2 td {
+padding-left: 5px;
+padding-right: 5px;
+color: #222222;
+}
+.lightable-classic-2 th {
+padding-left: 5px;
+padding-right: 5px;
+font-weight: normal;
+color: #222222;
+}
+.lightable-classic-2 tbody tr:last-child td {
+border-bottom: 3px double #111111;
+}
+.lightable-classic-2 thead tr:last-child th {
+border-bottom: 1px solid #111111;
+}
+.lightable-classic-2.lightable-hover tbody tr:hover {
+background-color: #F9EEC1;
+}
+.lightable-classic-2.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-material {
+min-width: 100%;
+white-space: nowrap;
+table-layout: fixed;
+font-family: Roboto, sans-serif;
+border: 1px solid #EEE;
+border-collapse: collapse;
+margin-bottom: 10px;
+}
+.lightable-material tfoot tr td {
+border: 0;
+}
+.lightable-material tfoot tr:first-child td {
+border-top: 1px solid #EEE;
+}
+.lightable-material th {
+height: 56px;
+padding-left: 16px;
+padding-right: 16px;
+}
+.lightable-material td {
+height: 52px;
+padding-left: 16px;
+padding-right: 16px;
+border-top: 1px solid #eeeeee;
+}
+.lightable-material.lightable-hover tbody tr:hover {
+background-color: #f5f5f5;
+}
+.lightable-material.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-material.lightable-striped tbody td {
+border: 0;
+}
+.lightable-material.lightable-striped thead tr:last-child th {
+border-bottom: 1px solid #ddd;
+}
+.lightable-material-dark {
+min-width: 100%;
+white-space: nowrap;
+table-layout: fixed;
+font-family: Roboto, sans-serif;
+border: 1px solid #FFFFFF12;
+border-collapse: collapse;
+margin-bottom: 10px;
+background-color: #363640;
+}
+.lightable-material-dark tfoot tr td {
+border: 0;
+}
+.lightable-material-dark tfoot tr:first-child td {
+border-top: 1px solid #FFFFFF12;
+}
+.lightable-material-dark th {
+height: 56px;
+padding-left: 16px;
+padding-right: 16px;
+color: #FFFFFF60;
+}
+.lightable-material-dark td {
+height: 52px;
+padding-left: 16px;
+padding-right: 16px;
+color: #FFFFFF;
+border-top: 1px solid #FFFFFF12;
+}
+.lightable-material-dark.lightable-hover tbody tr:hover {
+background-color: #FFFFFF12;
+}
+.lightable-material-dark.lightable-striped tbody tr:nth-child(even) {
+background-color: #FFFFFF12;
+}
+.lightable-material-dark.lightable-striped tbody td {
+border: 0;
+}
+.lightable-material-dark.lightable-striped thead tr:last-child th {
+border-bottom: 1px solid #FFFFFF12;
+}
+.lightable-paper {
+width: 100%;
+margin-bottom: 10px;
+color: #444;
+}
+.lightable-paper tfoot tr td {
+border: 0;
+}
+.lightable-paper tfoot tr:first-child td {
+border-top: 1px solid #00000020;
+}
+.lightable-paper thead tr:last-child th {
+color: #666;
+vertical-align: bottom;
+border-bottom: 1px solid #00000020;
+line-height: 1.15em;
+padding: 10px 5px;
+}
+.lightable-paper td {
+vertical-align: middle;
+border-bottom: 1px solid #00000010;
+line-height: 1.15em;
+padding: 7px 5px;
+}
+.lightable-paper.lightable-hover tbody tr:hover {
+background-color: #F9EEC1;
+}
+.lightable-paper.lightable-striped tbody tr:nth-child(even) {
+background-color: #00000008;
+}
+.lightable-paper.lightable-striped tbody td {
+border: 0;
+}
+</style>
 
   <script>/*
  * Polyfill service v3.111.0
@@ -4959,7 +5215,7 @@ white-space: nowrap;
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-basics.html">1. Theory</a></li><li class="breadcrumb-item"><a href="../chapters/01-rqs.html">1.2 Research Questions</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-variables.html">4. Descriptive Statistics</a></li><li class="breadcrumb-item"><a href="../chapters/04-variables.html">4.1 Data types</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -4987,13 +5243,13 @@ white-space: nowrap;
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">1. Theory</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/01-basics.html" class="sidebar-item-text sidebar-link">
@@ -5002,7 +5258,7 @@ white-space: nowrap;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/01-rqs.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapters/01-rqs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1.2 Research Questions</span></a>
   </div>
 </li>
@@ -5016,13 +5272,13 @@ white-space: nowrap;
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">2. Introduction to R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-vectors.html" class="sidebar-item-text sidebar-link">
@@ -5051,13 +5307,13 @@ white-space: nowrap;
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">3. NLP with R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/03-concordancing.html" class="sidebar-item-text sidebar-link">
@@ -5089,7 +5345,7 @@ white-space: nowrap;
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/04-variables.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/04-variables.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">4.1 Data types</span></a>
   </div>
 </li>
@@ -5101,7 +5357,7 @@ white-space: nowrap;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/04-continuous_data.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/04-continuous_data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">4.3 Continuous data</span></a>
   </div>
 </li>
@@ -5109,13 +5365,13 @@ white-space: nowrap;
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">5. Inferential Statistics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/05-hypothesis_testing.html" class="sidebar-item-text sidebar-link">
@@ -5138,13 +5394,13 @@ white-space: nowrap;
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
  <span class="menu-text">6. Statistical Modelling</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-linear_regression.html" class="sidebar-item-text sidebar-link">
@@ -5191,13 +5447,13 @@ white-space: nowrap;
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
  <span class="menu-text">7. Multivariate data analysis</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/07-PCA.html" class="sidebar-item-text sidebar-link">
@@ -5228,40 +5484,32 @@ white-space: nowrap;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-makes-a-good-research-question" id="toc-what-makes-a-good-research-question" class="nav-link active" data-scroll-target="#what-makes-a-good-research-question">What makes a good research question?</a>
+  <li><a href="#recommended-reading" id="toc-recommended-reading" class="nav-link active" data-scroll-target="#recommended-reading"><span class="header-section-number">1</span> Recommended reading</a></li>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation"><span class="header-section-number">2</span> Preparation</a></li>
+  <li><a href="#the-big-picture-populations-and-samples" id="toc-the-big-picture-populations-and-samples" class="nav-link" data-scroll-target="#the-big-picture-populations-and-samples"><span class="header-section-number">3</span> The big picture: Populations and samples</a></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">4</span> Variables</a>
   <ul class="collapse">
-  <li><a href="#the-structure-of-research-questions" id="toc-the-structure-of-research-questions" class="nav-link" data-scroll-target="#the-structure-of-research-questions">The structure of research questions</a></li>
-  <li><a href="#hints-for-good-research-questions" id="toc-hints-for-good-research-questions" class="nav-link" data-scroll-target="#hints-for-good-research-questions">Hints for good research questions</a></li>
-  <li><a href="#hypotheses" id="toc-hypotheses" class="nav-link" data-scroll-target="#hypotheses">Hypotheses</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets"><span class="header-section-number">4.1</span> Datasets</a></li>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types"><span class="header-section-number">4.2</span> Data types</a></li>
+  <li><a href="#dependent-vs.-independent-variables" id="toc-dependent-vs.-independent-variables" class="nav-link" data-scroll-target="#dependent-vs.-independent-variables"><span class="header-section-number">4.3</span> Dependent vs. independent variables</a></li>
   </ul></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">5</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-basics.html">1. Theory</a></li><li class="breadcrumb-item"><a href="../chapters/01-rqs.html">1.2 Research Questions</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-variables.html">4. Descriptive Statistics</a></li><li class="breadcrumb-item"><a href="../chapters/04-variables.html">4.1 Data types</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">1.2 Research questions</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Theory</div>
-  </div>
-  </div>
+<h1 class="title">Data types</h1>
+</div>
 
 
 <div class="quarto-title-meta-author column-body">
-  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Author</div>
   <div class="quarto-title-meta-heading">Affiliation</div>
   
-    <div class="quarto-title-meta-contents">
-    <p class="author">Thomas Brunner </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Catholic University of Eichstätt-Ingolstadt
-          </p>
-      </div>
     <div class="quarto-title-meta-contents">
     <p class="author">Vladimir Buskin <a href="https://orcid.org/0009-0005-5824-1012" class="quarto-title-author-orcid"> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
@@ -5284,89 +5532,407 @@ white-space: nowrap;
 </header>
 
 
-<section id="what-makes-a-good-research-question" class="level2">
-<h2 class="anchored" data-anchor-id="what-makes-a-good-research-question">What makes a good research question?</h2>
-<section id="the-structure-of-research-questions" class="level3">
-<h3 class="anchored" data-anchor-id="the-structure-of-research-questions">The structure of research questions</h3>
-<p><strong>Example</strong>: I am studying the pronunciation of [r] in New York because I want to find out whether different social groups differ with respect to their pronunciation, in order to help my readers understand how social factors influence our linguistic behavior.</p>
-<ol type="1">
-<li><p><strong>Topic</strong>: <code>I am studying...</code></p></li>
-<li><p><strong>Indirect question</strong>: <code>Because I want to find out what, why, how...</code></p></li>
-<li><p><strong>(General) linguistic significance</strong>: <code>... in order to help the readers understand how, why, or whether...</code></p></li>
-</ol>
+<section id="recommended-reading" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="recommended-reading"><span class="header-section-number">1</span> Recommended reading</h2>
 <blockquote class="blockquote">
-<p>Cf. <span class="citation" data-cites="boothCraftResearch2008">Booth, Colomb, and Williams (<a href="#ref-boothCraftResearch2008" role="doc-biblioref">2008</a>)</span>: 45–48</p>
+<p><span class="citation" data-cites="heumann_introduction_2022">Heumann, Schomaker, and Shalabh (<a href="#ref-heumann_introduction_2022" role="doc-biblioref">2022</a>)</span>: Chapter 1</p>
+<p><span class="citation" data-cites="baguleySeriousStatsGuide2012">Baguley (<a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">2012</a>)</span>: Chapter 1</p>
+<p><span class="citation" data-cites="agrestiFoundationsStatisticsData2022">Agresti and Kateri (<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">2022</a>)</span>: Chapter 1.2</p>
 </blockquote>
 </section>
-<section id="hints-for-good-research-questions" class="level3">
-<h3 class="anchored" data-anchor-id="hints-for-good-research-questions">Hints for good research questions</h3>
+<section id="preparation" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="preparation"><span class="header-section-number">2</span> Preparation</h2>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+Script
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li><p>A research question must be <strong>simple, specific, and doable</strong>. It is better to make a small contribution to a particular problem than to aim at covering a whole subfield of sociolinguistics.</p></li>
-<li><p>Keep a research question <strong>stable</strong> in your paper, even if you come across interesting new ideas as you work on it.</p></li>
-<li><p>The research question must be an <strong>explicit part of your paper</strong>. Mention it in the introduction and keep referring back to it from time to time.</p></li>
-<li><p>Keep in mind that the research question will determine both <strong>methodology</strong> and <strong>data</strong>.</p></li>
-</ol>
+<p>You can find the full R script associated with this unit <a href="https://osf.io/xn76k">here</a>.</p>
+</div>
+</div>
+<p>Please download the file <a href="https://osf.io/eu4gw"><code>Paquot_Larsson_2020_data.xlsx</code></a> <span class="citation" data-cites="paquotDescriptiveStatisticsVisualization2020">(<a href="#ref-paquotDescriptiveStatisticsVisualization2020" role="doc-biblioref">Paquot and Larsson 2020</a>)</span> and store it in your working directory.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>cl.order <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;../datasets/Paquot_Larsson_2020_data.xlsx&quot;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect data</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(cl.order)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cl.order)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="What&#39;s in the file? The `str()` function">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What’s in the file? The <code>str()</code> function
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The easiest way to get a general overview of the full data set is to apply the <code>str()</code> function to the respective data frame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(cl.order)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [403 × 8] (S3: tbl_df/tbl/data.frame)
+ $ CASE       : num [1:403] 4777 1698 953 1681 4055 ...
+ $ ORDER      : chr [1:403] &quot;sc-mc&quot; &quot;mc-sc&quot; &quot;sc-mc&quot; &quot;mc-sc&quot; ...
+ $ SUBORDTYPE : chr [1:403] &quot;temp&quot; &quot;temp&quot; &quot;temp&quot; &quot;temp&quot; ...
+ $ LEN_MC     : num [1:403] 4 7 12 6 9 9 9 4 6 4 ...
+ $ LEN_SC     : num [1:403] 10 6 7 15 5 5 12 2 24 11 ...
+ $ LENGTH_DIFF: num [1:403] -6 1 5 -9 4 4 -3 2 -18 -7 ...
+ $ CONJ       : chr [1:403] &quot;als/when&quot; &quot;als/when&quot; &quot;als/when&quot; &quot;als/when&quot; ...
+ $ MORETHAN2CL: chr [1:403] &quot;no&quot; &quot;no&quot; &quot;yes&quot; &quot;no&quot; ...</code></pre>
+</div>
+</div>
+<p>This shows us that the data frame has 8 columns, as the <code>$</code> operators indicate (<code>$ Case</code>, <code>$ ORDER</code>, …). The column names are followed by</p>
+<ul>
+<li><p>the data type (<code>num</code> for numeric and <code>chr</code> for character strings)</p></li>
+<li><p>the number of values (<code>`[1:403]`</code>) and</p></li>
+<li><p>the first few observations.</p></li>
+</ul>
+<p>Another intuitive way to display the structure of a data matrix is to simply show the first few rows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cl.order)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+   CASE ORDER SUBORDTYPE LEN_MC LEN_SC LENGTH_DIFF CONJ     MORETHAN2CL
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;      
+1  4777 sc-mc temp            4     10          -6 als/when no         
+2  1698 mc-sc temp            7      6           1 als/when no         
+3   953 sc-mc temp           12      7           5 als/when yes        
+4  1681 mc-sc temp            6     15          -9 als/when no         
+5  4055 sc-mc temp            9      5           4 als/when yes        
+6   967 sc-mc temp            9      5           4 als/when yes        </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Further details on the variables">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Further details on the variables
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><code>ORDER</code>: Does the subordinate clause come before or after the main clause?</p></li>
+<li><p><code>SUBORDTYPE</code>: Is the subordinate clause temporal or causal?</p></li>
+<li><p><code>MORETHAN2CL</code>: Are there most clauses in the sentence than just one subordinate clause and one main clause?</p></li>
+<li><p><code>LEN_MC</code>: How many words does the main clause contain?</p></li>
+<li><p><code>LEN_SC</code>: How many words does the subordinate clause contain?</p></li>
+<li><p><code>LENGTH_DIFF</code>: What is the length difference in words between the main clause and subordinate clause?</p></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="the-big-picture-populations-and-samples" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="the-big-picture-populations-and-samples"><span class="header-section-number">3</span> The big picture: Populations and samples</h2>
+<p>In order to investigate one or more linguistic features, we first need to collect relevant <strong>observations</strong>, which typically correspond to linguistic utterances in a corpus-linguistic context. Since it is not feasible to examine, for instance, the entirety of all linguistic utterances ever produced, i.e., the virtually infinite <strong>population</strong>, we rely on subsets of it: <strong>samples</strong>. Good research is characterised by good <strong>sampling procedures</strong> that limit the <strong>bias</strong> present in any sample, thus improving the generalisability of potential findings.</p>
+<p>To state this more formally, let <span class="math inline">\(\omega\)</span> (‘lower-case Omega’) denote a single observation of interest. The full set of theoretically possible observations is contained in <span class="math inline">\(\Omega\)</span> (‘upper-case Omega’), with <span class="math inline">\(\Omega = \{\omega_1, \omega_2, \dots, \omega_n \}\)</span>. Here <span class="math inline">\(n\)</span> represents the <span class="math inline">\(n\)</span>-th observation and should be a natural number. A sample is then simply a selection of elements from <span class="math inline">\(\Omega\)</span>.</p>
+</section>
+<section id="variables" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="variables"><span class="header-section-number">4</span> Variables</h2>
+<p>The concept of the <strong>variable</strong> is very handy in that it allows us to quantify different aspects our linguistic observations, such the age or gender of the speaker, the register of the speech situation, the variety of English, the length of an utterance, a syntactic construction or a grammatical category, among many other theoretically possible features. For each observation, we should be able to assign a specific <strong>value</strong> to our variables; for instance, a variable <code>Register</code> could assume a value such as <code>informal</code>, or <code>Utterance length</code> a hypothetical value of <code>5</code> (e.g., 5 words).</p>
+<p>In the statistical literature, variables are usually represented by upper-case letters, such as <span class="math inline">\(X\)</span>. For each observation <span class="math inline">\(\omega \in \Omega\)</span>, <span class="math inline">\(X\)</span> has a value <span class="math inline">\(x\)</span>. The set <span class="math inline">\(S\)</span> comprises all possible unique values of <span class="math inline">\(X\)</span>, e.g.,</p>
+<ul>
+<li><p><span class="math inline">\(S_{\text{Register}} = \{\text{informal}, \text{formal}, ...\}\)</span>,</p></li>
+<li><p><span class="math inline">\(S_{\text{Utterance length}} = \{1, 2, 3, \dots \}\)</span>,</p></li>
+<li><p>…</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Number of (unique) values in R">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Number of (unique) values in R
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To count the number of items in a vector, which correspond to the total number <span class="math inline">\(n\)</span> of attested values of <span class="math inline">\(X\)</span>, we can use <code>length()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(cl.order<span class="sc">$</span>SUBORDTYPE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 403</code></pre>
+</div>
+</div>
+<p>In fact, it is equivalent to the number of rows in the full data frame:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(cl.order)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 403</code></pre>
+</div>
+</div>
+<p>The function <code>unique()</code> shows all unique items (= types) in a vector, which reflect the possible outcomes in <span class="math inline">\(S\)</span>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(cl.order<span class="sc">$</span>SUBORDTYPE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;temp&quot; &quot;caus&quot;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="datasets" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="datasets"><span class="header-section-number">4.1</span> Datasets</h3>
+<p>Information on variables and their values is conventionally arranged in a <strong>dataset</strong>, which is essentially a matrix with <strong>rows</strong> (= observations) and <strong>columns</strong> (= variables). Consider the <code>head()</code> of the clause data:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="lightable-classic caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">CASE</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">ORDER</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">SUBORDTYPE</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">LEN_MC</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">LEN_SC</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">LENGTH_DIFF</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">CONJ</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">MORETHAN2CL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">4777</td>
+<td style="text-align: left;">sc-mc</td>
+<td style="text-align: left;">temp</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">-6</td>
+<td style="text-align: left;">als/when</td>
+<td style="text-align: left;">no</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1698</td>
+<td style="text-align: left;">mc-sc</td>
+<td style="text-align: left;">temp</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">als/when</td>
+<td style="text-align: left;">no</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">953</td>
+<td style="text-align: left;">sc-mc</td>
+<td style="text-align: left;">temp</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">als/when</td>
+<td style="text-align: left;">yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: right;">1681</td>
+<td style="text-align: left;">mc-sc</td>
+<td style="text-align: left;">temp</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">-9</td>
+<td style="text-align: left;">als/when</td>
+<td style="text-align: left;">no</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: right;">4055</td>
+<td style="text-align: left;">sc-mc</td>
+<td style="text-align: left;">temp</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">als/when</td>
+<td style="text-align: left;">yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: right;">967</td>
+<td style="text-align: left;">sc-mc</td>
+<td style="text-align: left;">temp</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">als/when</td>
+<td style="text-align: left;">yes</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<div style="margin-top: 10px;"></div>
+<p>Assuming that <span class="math inline">\(n\)</span> denotes the row number and <span class="math inline">\(p\)</span> the column number, the abstract form of a dataset is an <span class="math inline">\(n \times p\)</span> matrix of the form in <a href="#eq-dataset" class="quarto-xref">Equation 1</a>.</p>
+<p><span id="eq-dataset"><span class="math display">\[
+\begin{pmatrix}
+    \omega &amp; X_1 &amp; X_2 &amp; \cdots &amp;  X_p \\
+    1 &amp; x_{11} &amp; x_{12} &amp; \cdots &amp; x_{1p} \\
+    2 &amp; x_{21} &amp; x_{22} &amp; \cdots &amp; x_{2p} \\
+    \vdots &amp; \vdots &amp; \vdots &amp;  &amp; \vdots \\
+    n &amp; x_{n1} &amp; x_{n2} &amp; \cdots &amp; x_{np}
+\end{pmatrix}
+\tag{1}\]</span></span></p>
+</section>
+<section id="data-types" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="data-types"><span class="header-section-number">4.2</span> Data types</h3>
+<p>In general, we distinguish between <strong>discrete</strong> variables, which can only take a limited set of unique values, and <strong>continuous</strong> variables, which can take infinitely many values within a specified range.</p>
+<p>We can further subdivide discrete and continuous variables into into nominal, ordinal, interval-scaled and ratio-scaled ones:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Nominal/categorical">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nominal/categorical
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>These variables comprise a limited number of categories which <strong>cannot be ordered</strong> in a meaningful way. For instance, it does not matter which value of <code>SUBORDTYPE</code> or <code>MORETHAN2CL</code> comes first or last:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unique</span>(cl.order<span class="sc">$</span>SUBORDTYPE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;temp&quot; &quot;caus&quot;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unique</span>(cl.order<span class="sc">$</span>MORETHAN2CL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;no&quot;  &quot;yes&quot;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Ordinal/categorical">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ordinal/categorical
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ordinal variables are <strong>ordered</strong>. However, the intervals between their individual values are not interpretable. Heumann <span class="citation" data-cites="heumann_introduction_2022">(<a href="#ref-heumann_introduction_2022" role="doc-biblioref">2022</a>: 6)</span> provides a pertinent example:</p>
 <blockquote class="blockquote">
-<p>Cf. <span class="citation" data-cites="hazenIntroductionLanguage2015">Hazen (<a href="#ref-hazenIntroductionLanguage2015" role="doc-biblioref">2015</a>)</span>: 9–10</p>
+<p>[T]he satisfaction with a product (unsatisfied–satisfied–very satisfied) is an ordinal variable because the values this variable can take can be ordered but the differences between ‘unsatisfied–satisfied’ and ‘satisfied–very satisfied’ cannot be compared in a numerical way.</p>
 </blockquote>
 </div>
 </div>
-</section>
-<section id="hypotheses" class="level3">
-<h3 class="anchored" data-anchor-id="hypotheses">Hypotheses</h3>
-<p>Research questions must be complemented by a set of falsifiable hypotheses. These will be covered in-depth in the chapter on <a href="Hypothesis_testing.qmd">hypothesis testing</a>. In short,</p>
-<ul>
-<li><p><strong>Hypothesis</strong> <span class="math inline">\(H_1\)</span> predicts a specific relationship between a dependent variable and an independent variable. If <span class="math inline">\(H_1\)</span> holds, studies often speak of a correlation (or association) between variables.</p></li>
-<li><p>its <strong>opposite</strong>, <strong>Hypothesis</strong> <span class="math inline">\(H_0\)</span>, describes the state of affairs where the predicted relationship between the variables does not hold.</p></li>
-</ul>
-<p>The predictions made by the hypotheses are based on previous research. Here is an example:</p>
-<p><strong>Research question</strong>: I am studying the pronunciation of [r] in New York because I want to find out whether different social groups differ with respect to their pronunciation, in order to help my readers understand how social factors influence our linguistic behavior.</p>
-<ul>
-<li><p><strong>Hypothesis</strong> <span class="math inline">\(H_1\)</span>: There is a difference in the use of postvocalic /r/ between upper-class and lower-class speakers.</p></li>
-<li><p><strong>Hypothesis</strong> <span class="math inline">\(H_0\)</span>: There is <strong>no</strong> difference in the use of postvocalic /r/ between upper-class and lower-class speakers.</p></li>
-</ul>
-</section>
-<section id="exercises" class="level3">
-<h3 class="anchored" data-anchor-id="exercises">Exercises</h3>
-<div id="exr-rqs-1" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1</strong></span> Assess the following research questions!</p>
-<ol type="a">
-<li><p>I will try to find the specific linguistic features which a Shetlander uses when speaking Scottish standard English, i.e., Shetland accent in Scottish Standard English.</p></li>
-<li><p>In this paper, I am going to analyze the use of American and Indian dialect features among Indian immigrants to the US because I want to find out whether they correlate with their willingness to integrate into American society; this will show the degree to which linguistic adaptation depends on cultural orientation.</p></li>
-<li><p>In this paper, I am going to address the question of how gender influences language.</p></li>
-<li><p>The study aims to contribute to the investigation of the controversial question of the effect of speaker’s age and sex on quotative use in American English, focusing on the newer quotatives <em>be like</em>, <em>go</em>, <em>be all</em>.</p></li>
-<li><p>In this paper, adverts by Coca-Cola and Pepsi will be analyzed for the use of verb forms.</p></li>
-</ol>
 </div>
-<div id="exr-rqs-2" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> Develop valid research questions on the basis of the following linguistic variables:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Interval-scaled/continuous">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Interval-scaled/continuous
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>In the case of <strong>interval</strong>-scaled variables, the differences between the values can be interpreted, but their ratios must be treated with caution. A temperature of 4°C is 6 degrees warmer than -2°C; however, this does not imply that 4°C is three times warmer than -2°C. This is because the temperature scale has no true zero point; 0°C simply signifies another point on the scale and not the absence of temperature altogether.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Ratio-scaled/continuous">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ratio-scaled/continuous
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Ratio</strong>-scaled variables allow both a meaningful interpretation of the differences between their values and (!) of the ratios between them. Within the context of clause length, <code>LENGTH_DIFF</code> values such as 4 and 8 not only suggest that the latter is four units greater than the former but also that their ratio <span class="math inline">\(\frac{8}{4} = 2\)</span> is a valid way to describe the relationship between these values. Here a <code>LENGTH_DIFF</code> of 0 can be clearly viewed as the absence of a length difference.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="dependent-vs.-independent-variables" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="dependent-vs.-independent-variables"><span class="header-section-number">4.3</span> Dependent vs. independent variables</h3>
+<p>In empirical studies, it is often of interest whether one variable leads to changes in the values of another variable. When exploring such <strong>associations</strong> (or <strong>correlations</strong>), we need to take another heuristic step to clarify the direction of the influence.</p>
+<p>In a linguistic context, we denote the variable whose usage patterns we’d like to explain as the <strong>dependent</strong> or <strong>response</strong> variable. A list of possible dependent variables is provided in the section on <a href="Linguistic_variables.qmd">Linguistic variables</a>).</p>
+<p>Its outcomes are said to depend on one or more <strong>independent variables</strong>. These are also often referred to as <strong>explanatory</strong> variables as they are supposed to explain variation in the response variable. These can be <code>AGE</code>, <code>SEX</code> or the <code>VARIETY</code> of English at hand.</p>
+</section>
+</section>
+<section id="exercises" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">5</span> Exercises</h2>
+<div id="exr-var-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1</strong></span> Consider the following statement:</p>
+<blockquote class="blockquote">
+<p>This paper examines the influence of clause length on the ordering of main and subordinate clauses.</p>
+</blockquote>
 <ol type="1">
-<li><p>Speakers in bilingual conversations are especially likely to code-switch when there is a significant change of topic.</p></li>
-<li><p>Women use more tentative language in conversations than men.</p></li>
+<li><p>What is the dependent variable?</p></li>
+<li><p>What is the independent variable?</p></li>
+<li><p>What would it mean if they were reversed?</p></li>
+</ol>
+</div>
+<div id="exr-var-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 2</strong></span> Is frequency data a discrete or a continuous variable?</p>
+</div>
+<div id="exr-var-3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3</strong></span> Identify the variable types (nominal, ordinal etc.) for all columns in the <code>cl.order</code> dataset.</p>
+</div>
+<div id="exr-var-4" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4</strong></span> Consider the general form of the data matrix from <a href="#eq-dataset" class="quarto-xref">Equation 1</a>.</p>
+<ol type="1">
+<li><p>What would the labels <span class="math inline">\(\omega\)</span>, <span class="math inline">\(X\)</span> and <span class="math inline">\(x\)</span> correspond to in the <code>cl.order</code> dataset?</p></li>
+<li><p>What would be <span class="math inline">\(\Omega\)</span> and <span class="math inline">\(S\)</span>?</p></li>
 </ol>
 </div>
 
 
 
-</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-boothCraftResearch2008" class="csl-entry" role="listitem">
-Booth, Wayne C., Gregory G. Colomb, and Joseph M. Williams. 2008. <em>The Craft of Research</em>. 3rd ed. Chicago: The University of Chicago Press.
+<div id="ref-agrestiFoundationsStatisticsData2022" class="csl-entry" role="listitem">
+Agresti, Alan, and Maria Kateri. 2022. <em>Foundations of Statistics for Data Scientists: With r and Python</em>. Boca Raton: <span>CRC</span> Press.
 </div>
-<div id="ref-hazenIntroductionLanguage2015" class="csl-entry" role="listitem">
-Hazen, Kirk. 2015. <em>An Introduction to Language</em>. Chichester: Wiley Blackwell.
+<div id="ref-baguleySeriousStatsGuide2012" class="csl-entry" role="listitem">
+Baguley, Thomas. 2012. <em>Serious <span>Stats</span>: <span>A</span> <span>Guide</span> to <span>Advanced</span> <span>Statistics</span> for the <span>Behavioral</span> <span>Sciences</span></em>. Houndmills, Basingstoke: Palgrave Macmillan.
+</div>
+<div id="ref-heumann_introduction_2022" class="csl-entry" role="listitem">
+Heumann, Christian, Michael Schomaker, and Shalabh. 2022. <em>Introduction to Statistics and Data Analysis: With Exercises, Solutions and Applications in r</em>. 2nd ed. Cham: Springer. <a href="https://doi.org/10.1007/978-3-031-11833-3">https://doi.org/10.1007/978-3-031-11833-3</a>.
+</div>
+<div id="ref-paquotDescriptiveStatisticsVisualization2020" class="csl-entry" role="listitem">
+Paquot, Magali, and Tove Larsson. 2020. <span>“Descriptive Statistics and Visualization with r.”</span> In <em>A Practical Handbook of Corpus Linguistics</em>, edited by Magali Paquot and Stefan Thomas Gries, 375–99. Cham: Springer.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -5791,13 +6357,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/01-basics.html" class="pagination-link" aria-label="1.1 Basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">1.1 Basics</span>
+      <a href="../chapters/03-data-annotation.html" class="pagination-link" aria-label="3.3 Data Annotation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">3.3 Data Annotation</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/01-linguistic_variables.html" class="pagination-link" aria-label="1.3 Linguistic Variables">
-        <span class="nav-page-text">1.3 Linguistic Variables</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/04-categorical_data.html" class="pagination-link" aria-label="4.2 Categorical data">
+        <span class="nav-page-text">4.2 Categorical data</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
