@@ -91,7 +91,7 @@ website:
             text: "7.1 PCA"
           - href: "chapters/07-EFA.qmd"
             text: "7.2 EFA"
-          - href: "chapters/07-Clustering.qmd"
+          - href: "chapters/07-clustering.qmd"
             text: "7.3 Clustering"
           
   page-navigation: true
