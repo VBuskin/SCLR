@@ -1723,7 +1723,7 @@ async function fuseSearch(query, fuse, fuseOptions) {
 }
 </script>
 <meta name="quarto:offset" content="../">
-<link href="data:application/octet-stream;base64,LS0tCnRpdGxlOiAiNy4zIENsdXN0ZXJpbmciCmF1dGhvcjoKICBuYW1lOiAiVmxhZGltaXIgQnVza2luIiAKICBvcmNpZDogIjAwMDktMDAwNS01ODI0LTEwMTIiCiAgYWZmaWxpYXRpb246IAogICAgbmFtZTogIkNhdGhvbGljIFVuaXZlcnNpdHkgb2YgRWljaHN0w6R0dC1JbmdvbHN0YWR0IgogICAgZGVwYXJ0bWVudDogIkVuZ2xpc2ggTGFuZ3VhZ2UgYW5kIExpbmd1aXN0aWNzIgpmb3JtYXQ6CiAgaHRtbDoKICAgIHNlbGYtY29udGFpbmVkOiB0cnVlCiAgICB0b2M6IHRydWUKLS0tCgojIyBSZWNvbW1lbmRlZCByZWFkaW5nCgo+IEBqYW1lc19pbnRyb2R1Y3Rpb25fMjAyMTogQ2hhcHRlciAxMgo+Cj4gQGhhc3RpZTIwMTc6IENoYXB0ZXJzIDE0LjMuNiwgMTQuMy4xMCAmIDE0LjMuMTIKCiMjIFByZXBhcmF0aW9uCgojIyBDbHVzdGVyaW5nIGFsZ29yaXRobXMKCjo6OiBjYWxsb3V0LXdhcm5pbmcKVGhpcyBwYWdlIGlzIHN0aWxsIHVuZGVyIGNvbnN0cnVjdGlvbi4gTW9yZSBjb250ZW50IHdpbGwgYmUgYWRkZWQgc29vbiEKOjo6CgojIyMgJGskLW1lYW5zCgojIyMgUGFydGl0aW9uaW5nIGFyb3VuZCBtZWRvaWRzIChQQU0pCgojIyMgSGllcmFyY2hpY2FsIGFnZ2xvbWVyYXRpdmUgY2x1c3RlcmluZwo=" rel="next">
+<link href="../chapters/07-clustering.html" rel="next">
 <link href="../chapters/07-PCA.html" rel="prev">
 <script>const sectionChanged = new CustomEvent("quarto-sectionChanged", {
   detail: {},
@@ -4929,7 +4929,8 @@ text-align: left !important;
 }
 code, a {
 white-space: nowrap;
-}</style>
+}
+</style>
 </head>
 
 <body class="nav-sidebar docked nav-fixed slimcontent">
@@ -4982,6 +4983,11 @@ white-space: nowrap;
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -5120,13 +5126,19 @@ white-space: nowrap;
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/04-variables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4.1 Data types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/04-categorical_data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">4.2 Categorical data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/04-continuous_data.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/04-continuous_data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">4.3 Continuous data</span></a>
   </div>
 </li>
@@ -5237,7 +5249,7 @@ white-space: nowrap;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/07-Clustering.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/07-clustering.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">7.3 Clustering</span></a>
   </div>
 </li>
@@ -5557,7 +5569,7 @@ Interpreting the EFA output
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-james_introduction_2021" class="csl-entry" role="listitem">
 James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2021. <em>An Introduction to Statistical Learning: With Applications in r</em>. New York: Springer. <a href="https://doi.org/10.1007/978-1-0716-1418-1">https://doi.org/10.1007/978-1-0716-1418-1</a>.
 </div>
@@ -5995,7 +6007,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/07-Clustering.qmd" class="pagination-link" aria-label="7.3 Clustering">
+      <a href="../chapters/07-clustering.html" class="pagination-link" aria-label="7.3 Clustering">
         <span class="nav-page-text">7.3 Clustering</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
