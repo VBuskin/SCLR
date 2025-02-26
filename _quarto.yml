@@ -4,21 +4,12 @@ project:
 
 website:
   reader-mode: true
-  back-to-top-navigation: true
   title: "Statistics for Corpus Linguists: From Theory to Practice"
   navbar:
     background: dark
     left:
       - text: "Overview"
-        href: blog.qmd
-      - text: "Datasets"
-        href: "datasets.qmd"
-      - text: "Resources"
-        menu:
-          - text: "R Cheatsheets"
-            href: "resources/cheatsheets.qmd"
-          - text: "Further Reading"
-            href: "resources/reading.qmd"
+        href: "index.qmd"
     right:
       - icon: github
         href: https://github.com/VBuskin/SCLR
@@ -109,4 +100,5 @@ format:
     toc: true
     reference-location: margin
     bibliography: R.bib
-    number-sections: true
+    number-sections: false
+    code-overflow: wrap

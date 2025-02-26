@@ -9,11 +9,10 @@
 
 /* Ensure the content itself does not stretch too wide */
 .quarto-container-content {
-  max-width: 100%;
-  width: auto; /* Ensures it adapts dynamically */
+  max-width: 900px; /* A fixed width that works well for readability */
+  width: 90%; /* Percentage-based width for responsiveness */
+  margin: 0 auto; /* Center the content */
 }
-
-
 
 /* If you have a sidebar, adjust the main content positioning */
 .sidebar-content ~ .content-block {
@@ -31,7 +30,16 @@ h1, h2, h3, h4, h5, h6 {
   text-align: left !important;
 }
 
-code, a {
+a {
   white-space: nowrap;
 }
+
+pre code {
+  white-space: pre-wrap;
+}
+
+code:not(pre code) {
+  white-space: nowrap;
+}
+
 
