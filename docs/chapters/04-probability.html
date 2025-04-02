@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Thomas Brunner">
 <meta name="author" content="Vladimir Buskin">
 
-<title>Statistics for Corpus Linguists: From Theory to Practice - 1.2 Research questions</title>
+<title>Statistics for Corpus Linguists: From Theory to Practice - Probability theory</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -1604,8 +1603,8 @@ function fuseSearch(query, fuse, fuseOptions) {
 }
 </script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/01-linguistic_variables.html" rel="next">
-<link href="../chapters/01-basics.html" rel="prev">
+<link href="../chapters/04-categorical_data.html" rel="next">
+<link href="../chapters/04-variables.html" rel="prev">
 <script>const sectionChanged = new CustomEvent("quarto-sectionChanged", {
   detail: {},
   bubbles: true,
@@ -4632,7 +4631,6 @@ vertical-align: -.125em;
     "search-label": "Search"
   }
 }</script>
-<script src="custom_numbering.js"></script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   
@@ -4684,7 +4682,7 @@ white-space: nowrap;
 </style>
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -4728,7 +4726,7 @@ white-space: nowrap;
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-basics.html">1. Theory</a></li><li class="breadcrumb-item"><a href="../chapters/01-rqs.html">1.2 Research Questions</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-variables.html">4. Descriptive Statistics</a></li><li class="breadcrumb-item"><a href="../chapters/04-probability.html">4.2 Probability theory</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label onclick="window.quartoOpenSearch();">
@@ -4771,7 +4769,7 @@ white-space: nowrap;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/01-rqs.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapters/01-rqs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1.2 Research Questions</span></a>
   </div>
 </li>
@@ -4795,13 +4793,13 @@ white-space: nowrap;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-vectors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.1 Vectors I</span></a>
+ <span class="menu-text">2.1 Vectors</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/02-data_frames.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">2.2 Data frames I</span></a>
+ <span class="menu-text">2.2 Data frames</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -4864,14 +4862,20 @@ white-space: nowrap;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/04-probability.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">4.2 Probability theory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/04-categorical_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.2 Categorical data</span></a>
+ <span class="menu-text">4.3 Categorical data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/04-continuous_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.3 Continuous data</span></a>
+ <span class="menu-text">4.4 Continuous data</span></a>
   </div>
 </li>
       </ul>
@@ -4997,40 +5001,29 @@ white-space: nowrap;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-makes-a-good-research-question" id="toc-what-makes-a-good-research-question" class="nav-link active" data-scroll-target="#what-makes-a-good-research-question">What makes a good research question?</a>
+  <li><a href="#recommended-reading" id="toc-recommended-reading" class="nav-link active" data-scroll-target="#recommended-reading">Recommended reading</a></li>
+  <li><a href="#defining-probability" id="toc-defining-probability" class="nav-link" data-scroll-target="#defining-probability">Defining probability</a>
   <ul class="collapse">
-  <li><a href="#the-structure-of-research-questions" id="toc-the-structure-of-research-questions" class="nav-link" data-scroll-target="#the-structure-of-research-questions">The structure of research questions</a></li>
-  <li><a href="#hints-for-good-research-questions" id="toc-hints-for-good-research-questions" class="nav-link" data-scroll-target="#hints-for-good-research-questions">Hints for good research questions</a></li>
-  <li><a href="#hypotheses" id="toc-hypotheses" class="nav-link" data-scroll-target="#hypotheses">Hypotheses</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#relative-frequency" id="toc-relative-frequency" class="nav-link" data-scroll-target="#relative-frequency">Relative frequency</a></li>
+  <li><a href="#kolmogorovs-axioms" id="toc-kolmogorovs-axioms" class="nav-link" data-scroll-target="#kolmogorovs-axioms">Kolmogorov’s axioms</a></li>
   </ul></li>
+  <li><a href="#probability-distributions" id="toc-probability-distributions" class="nav-link" data-scroll-target="#probability-distributions">Probability distributions</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
+<main class="content page-columns page-full column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/01-basics.html">1. Theory</a></li><li class="breadcrumb-item"><a href="../chapters/01-rqs.html">1.2 Research Questions</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-variables.html">4. Descriptive Statistics</a></li><li class="breadcrumb-item"><a href="../chapters/04-probability.html">4.2 Probability theory</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">1.2 Research questions</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Theory</div>
-  </div>
-  </div>
+<h1 class="title">Probability theory</h1>
+</div>
 
 
 <div class="quarto-title-meta-author column-body">
-  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Author</div>
   <div class="quarto-title-meta-heading">Affiliation</div>
   
-    <div class="quarto-title-meta-contents">
-    <p class="author">Thomas Brunner </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Catholic University of Eichstätt-Ingolstadt
-          </p>
-      </div>
     <div class="quarto-title-meta-contents">
     <p class="author">Vladimir Buskin <a href="https://orcid.org/0009-0005-5824-1012" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
@@ -5053,89 +5046,73 @@ white-space: nowrap;
 </header>
 
 
-<section id="what-makes-a-good-research-question" class="level2">
-<h2 class="anchored" data-anchor-id="what-makes-a-good-research-question">What makes a good research question?</h2>
-<section id="the-structure-of-research-questions" class="level3">
-<h3 class="anchored" data-anchor-id="the-structure-of-research-questions">The structure of research questions</h3>
-<p><strong>Example</strong>: I am studying the pronunciation of [r] in New York because I want to find out whether different social groups differ with respect to their pronunciation, in order to help my readers understand how social factors influence our linguistic behavior.</p>
-<ol type="1">
-<li><p><strong>Topic</strong>: <code>I am studying...</code></p></li>
-<li><p><strong>Indirect question</strong>: <code>Because I want to find out what, why, how...</code></p></li>
-<li><p><strong>(General) linguistic significance</strong>: <code>... in order to help the readers understand how, why, or whether...</code></p></li>
-</ol>
+<section id="recommended-reading" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-reading">Recommended reading</h2>
 <blockquote class="blockquote">
-<p>Cf. <span class="citation" data-cites="boothCraftResearch2008">Booth, Colomb, and Williams (<a href="#ref-boothCraftResearch2008" role="doc-biblioref">2008</a>)</span>: 45–48</p>
+<p><span class="citation" data-cites="heumann_introduction_2022">Heumann, Schomaker, and Shalabh (<a href="#ref-heumann_introduction_2022" role="doc-biblioref">2022a</a>)</span>: Chapter 7</p>
 </blockquote>
 </section>
-<section id="hints-for-good-research-questions" class="level3">
-<h3 class="anchored" data-anchor-id="hints-for-good-research-questions">Hints for good research questions</h3>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li><p>A research question must be <strong>simple, specific, and doable</strong>. It is better to make a small contribution to a particular problem than to aim at covering a whole subfield of sociolinguistics.</p></li>
-<li><p>Keep a research question <strong>stable</strong> in your paper, even if you come across interesting new ideas as you work on it.</p></li>
-<li><p>The research question must be an <strong>explicit part of your paper</strong>. Mention it in the introduction and keep referring back to it from time to time.</p></li>
-<li><p>Keep in mind that the research question will determine both <strong>methodology</strong> and <strong>data</strong>.</p></li>
-</ol>
+<section id="defining-probability" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="defining-probability">Defining probability</h2>
+<p>The OED provides several non-technical definition of term <em>probability</em>, including</p>
+<ul>
+<li><p>‘the extent to which something is likely to happen or be the case’<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and</p></li>
+<li><p>‘thing judged likely to be true, to exist, or to happen’<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>,</p></li>
+</ul>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup> See <a href="https://doi.org/10.1093/OED/1639707847" class="uri">https://doi.org/10.1093/OED/1639707847</a>.</p></li><li id="fn2"><p><sup>2</sup> See <a href="https://doi.org/10.1093/OED/3638534852" class="uri">https://doi.org/10.1093/OED/3638534852</a>.</p></li></div><p>which seem to express a subjective and gradable certainty of the speaker about the (non-)occurrence of processes in the world. This is a good point of departure, but in order to incorporate this concept into empirical research, a more rigorous definition is called for.</p>
+<section id="relative-frequency" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="relative-frequency">Relative frequency</h3>
+<p>Agresti &amp; Kateri <span class="citation" data-cites="agrestiFoundationsStatisticsData2022">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">2022</a>: 29)</span> adduce a frequency-based interpretation of probability.</p>
 <blockquote class="blockquote">
-<p>Cf. <span class="citation" data-cites="hazenIntroductionLanguage2015">Hazen (<a href="#ref-hazenIntroductionLanguage2015" role="doc-biblioref">2015</a>)</span>: 9–10</p>
+<p>“For an observation of a random phenomenon, the <strong>probability</strong> of a particular outcome is the proportion of times that outcome would occur in an indefinitely long sequence of like observations, under the same conditions.”</p>
 </blockquote>
-</div>
-</div>
+<p>In other words, the probability of an <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> <span class="math inline">\(A\)</span>, denoted <span class="math inline">\(P(A)\)</span>, is equivalent to the long-term relative frequency of <span class="math inline">\(A\)</span> as the number of observations <span class="math inline">\(n\)</span> increases. The relative frequency <span class="math inline">\(f(A)\)</span> is obtained by dividing the frequency of occurrence <span class="math inline">\(n(A)\)</span> by the sample size <span class="math inline">\(n\)</span>, i.e.,</p>
+<div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup> An event is understood as any subset of the sample space <span class="math inline">\(S\)</span>, comprising one or more outcomes.</p></li></div><p><span class="math display">\[
+f(A) = \frac{n(A)}{n}.
+\]</span></p>
+<p>Heumann et al. <span class="citation" data-cites="heumannIntroductionStatisticsData2022">(<a href="#ref-heumannIntroductionStatisticsData2022" role="doc-biblioref">2022b</a>: 118)</span> explains that <span class="math inline">\(f(A)\)</span> converges to the probability <span class="math inline">\(P(A)\)</span> as <span class="math inline">\(n\)</span> approaches infinity:</p>
+<p><span class="math display">\[
+P(A) = \lim_{n\to\infty} \frac{n(A)}{n}.
+\]</span></p>
 </section>
-<section id="hypotheses" class="level3">
-<h3 class="anchored" data-anchor-id="hypotheses">Hypotheses</h3>
-<p>Research questions must be complemented by a set of falsifiable hypotheses. These will be covered in-depth in the chapter on <a href="../chapters/05-hypothesis_testing.html">hypothesis testing</a>. In short,</p>
-<ul>
-<li><p><strong>Hypothesis</strong> <span class="math inline">\(H_1\)</span> predicts a specific relationship between a dependent variable and an independent variable. If <span class="math inline">\(H_1\)</span> holds, studies often speak of a correlation (or association) between variables.</p></li>
-<li><p>its <strong>opposite</strong>, <strong>Hypothesis</strong> <span class="math inline">\(H_0\)</span>, describes the state of affairs where the predicted relationship between the variables does not hold.</p></li>
-</ul>
-<p>The predictions made by the hypotheses are based on previous research. Here is an example:</p>
-<p><strong>Research question</strong>: I am studying the pronunciation of [r] in New York because I want to find out whether different social groups differ with respect to their pronunciation, in order to help my readers understand how social factors influence our linguistic behavior.</p>
-<ul>
-<li><p><strong>Hypothesis</strong> <span class="math inline">\(H_1\)</span>: There is a difference in the use of postvocalic /r/ between upper-class and lower-class speakers.</p></li>
-<li><p><strong>Hypothesis</strong> <span class="math inline">\(H_0\)</span>: There is <strong>no</strong> difference in the use of postvocalic /r/ between upper-class and lower-class speakers.</p></li>
-</ul>
-</section>
-<section id="exercises" class="level3">
-<h3 class="anchored" data-anchor-id="exercises">Exercises</h3>
-<div id="exr-rqs-1" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1 </strong></span>Assess the following research questions!</p>
-<ol type="a">
-<li><p>I will try to find the specific linguistic features which a Shetlander uses when speaking Scottish standard English, i.e., Shetland accent in Scottish Standard English.</p></li>
-<li><p>In this paper, I am going to analyze the use of American and Indian dialect features among Indian immigrants to the US because I want to find out whether they correlate with their willingness to integrate into American society; this will show the degree to which linguistic adaptation depends on cultural orientation.</p></li>
-<li><p>In this paper, I am going to address the question of how gender influences language.</p></li>
-<li><p>The study aims to contribute to the investigation of the controversial question of the effect of speaker’s age and sex on quotative use in American English, focusing on the newer quotatives <em>be like</em>, <em>go</em>, <em>be all</em>.</p></li>
-<li><p>In this paper, adverts by Coca-Cola and Pepsi will be analyzed for the use of verb forms.</p></li>
-</ol>
-</div>
-<div id="exr-rqs-2" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2 </strong></span>Develop valid research questions on the basis of the following linguistic variables:</p>
+<section id="kolmogorovs-axioms" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="kolmogorovs-axioms">Kolmogorov’s axioms</h3>
+<p>On the most abstract level, probabilities are defined as functions that associate elements from the sample space <span class="math inline">\(S = \{s_1, s_2, ..., s_n\}\)</span> with values in the interval <span class="math inline">\([0, 1]\)</span>, subject to certain conditions.</p>
+<p>The Russian Mathematician Andrei Kolmogorov (1903–1987) proposed three axioms that a probability function <span class="math inline">\(P\)</span> must satisfy:</p>
 <ol type="1">
-<li><p>Speakers in bilingual conversations are especially likely to code-switch when there is a significant change of topic.</p></li>
-<li><p>Women use more tentative language in conversations than men.</p></li>
+<li>Every event <span class="math inline">\(A\)</span> in the sample space <span class="math inline">\(S\)</span> has a probability</li>
 </ol>
-</div>
+<p><span class="math display">\[P(A) \geq 0.\]</span></p>
+<ol start="2" type="1">
+<li>The probability of the sample</li>
+</ol>
+<p><span class="math display">\[P(S) = 1.\]</span></p>
+<ol start="3" type="1">
+<li>Assuming two disjoint (i.e., mutually exclusive) events<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> <span class="math inline">\(A_1\)</span> and <span class="math inline">\(A_2\)</span>, then</li>
+</ol>
+<div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup> Note that this axiom can be generalised to infinite series of pairwise disjoint events <span class="math inline">\(A_i\)</span>:</p>
+<p><span class="math display">\[
+P\left(\bigcup\limits_{i=1}^{\infty} A_i\right) = \sum\limits_{i=1}^{\infty} P(A_i).
+\]</span></p></li></div><p><span class="math display">\[P(A \cap B) = P(A) + P(B).\]</span></p>
+</section>
+</section>
+<section id="probability-distributions" class="level2">
+
 
 
 
 </section>
-</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-boothCraftResearch2008" class="csl-entry" role="listitem">
-Booth, Wayne C., Gregory G. Colomb, and Joseph M. Williams. 2008. <em>The Craft of Research</em>. 3rd ed. Chicago: The University of Chicago Press.
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Probability distributions</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-agrestiFoundationsStatisticsData2022" class="csl-entry" role="listitem">
+Agresti, Alan, and Maria Kateri. 2022. <em>Foundations of Statistics for Data Scientists: With r and Python</em>. Boca Raton: <span>CRC</span> Press.
 </div>
-<div id="ref-hazenIntroductionLanguage2015" class="csl-entry" role="listitem">
-Hazen, Kirk. 2015. <em>An Introduction to Language</em>. Chichester: Wiley Blackwell.
+<div id="ref-heumannIntroductionStatisticsData2022" class="csl-entry" role="listitem">
+Heumann, Christian, Michael Schomaker, and Shalabh. 2022b. <em>Introduction to <span>Statistics</span> and <span>Data</span> <span>Analysis</span>: With <span>Exercises</span>, <span>Solutions</span> and <span>Applications</span> in <span>R</span></em>. 2nd ed. Cham: Springer.
+</div>
+<div id="ref-heumann_introduction_2022" class="csl-entry" role="listitem">
+———. 2022a. <em>Introduction to Statistics and Data Analysis: With Exercises, Solutions and Applications in r</em>. 2nd ed. Cham: Springer. <a href="https://doi.org/10.1007/978-3-031-11833-3">https://doi.org/10.1007/978-3-031-11833-3</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -5537,13 +5514,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/01-basics.html" class="pagination-link  aria-label=" 1.1 basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">1.1 Basics</span>
+      <a href="../chapters/04-variables.html" class="pagination-link  aria-label=" 4.1 data types">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">4.1 Data types</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/01-linguistic_variables.html" class="pagination-link" aria-label="1.3 Linguistic Variables">
-        <span class="nav-page-text">1.3 Linguistic Variables</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/04-categorical_data.html" class="pagination-link" aria-label="4.3 Categorical data">
+        <span class="nav-page-text">4.3 Categorical data</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

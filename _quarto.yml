@@ -30,9 +30,9 @@ website:
       - section: "2. Introduction to R"
         contents:
           - href: "chapters/02-vectors.qmd"
-            text: "2.1 Vectors I"
+            text: "2.1 Vectors"
           - href: "chapters/02-data_frames.qmd"
-            text: "2.2 Data frames I"
+            text: "2.2 Data frames"
           - href: "chapters/02-libraries.qmd"
             text: "2.3 Libraries"
           - href: "chapters/02-importing_exporting.qmd"
@@ -48,11 +48,13 @@ website:
       - section: "4. Descriptive Statistics"
         contents:
           - href: "chapters/04-variables.qmd"
-            text: "4.1 Data types"        
+            text: "4.1 Data types"
+          - href: "chapters/04-probability.qmd"
+            text: "4.2 Probability theory"        
           - href: "chapters/04-categorical_data.qmd"
-            text: "4.2 Categorical data"
+            text: "4.3 Categorical data"
           - href: "chapters/04-continuous_data.qmd"
-            text: "4.3 Continuous data"
+            text: "4.4 Continuous data"
       - section: "5. Inferential Statistics"
         contents:
           - href: "chapters/05-hypothesis_testing.qmd"
