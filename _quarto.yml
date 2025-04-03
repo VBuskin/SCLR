@@ -19,7 +19,7 @@ website:
     contents:
       - href: blog.qmd
         text: "Overview"
-      - section: "1. Theory"
+      - section: "1. Fundamentals"
         contents:
           - href: "chapters/01-basics.qmd"
             text: "1.1 Basics"
@@ -45,7 +45,7 @@ website:
             text: "3.2 Regex"
           - href: "chapters/03-data-annotation.qmd"
             text: "3.3 Data Annotation"
-      - section: "4. Descriptive Statistics"
+      - section: "4. Introduction to Statistics"
         contents:
           - href: "chapters/04-variables.qmd"
             text: "4.1 Data types"
@@ -55,7 +55,7 @@ website:
             text: "4.3 Categorical data"
           - href: "chapters/04-continuous_data.qmd"
             text: "4.4 Continuous data"
-      - section: "5. Inferential Statistics"
+      - section: "5. Significance Testing"
         contents:
           - href: "chapters/05-hypothesis_testing.qmd"
             text: "5.1 Hypothesis testing"
@@ -79,7 +79,7 @@ website:
             text: "6.6 Tree-based methods"
           - href: "chapters/06-gradient_boosting.qmd"
             text: "6.7 Gradient boosting"
-      - section: "7. Multivariate data analysis"
+      - section: "7. Multivariate Approaches"
         contents:
           - href: "chapters/07-PCA.qmd"
             text: "7.1 PCA"
