@@ -27,6 +27,8 @@ website:
             text: "1.2 Research Questions"
           - href: "chapters/01-linguistic_variables.qmd"
             text: "1.3 Linguistic Variables"
+          - href: "chapters/01-maths.qmd"
+            text: "1.4 Formal aspects"
       - section: "2. Introduction to R"
         contents:
           - href: "chapters/02-vectors.qmd"
