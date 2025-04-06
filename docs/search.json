@@ -74,7 +74,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n Back to top"
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "Exploring_RStudio.html",
@@ -102,13 +102,12 @@
     ]
   },
   {
-    "objectID": "chapters/03-concordancing.html#suggested-reading",
-    "href": "chapters/03-concordancing.html#suggested-reading",
+    "objectID": "chapters/03-concordancing.html#recommended-reading",
+    "href": "chapters/03-concordancing.html#recommended-reading",
     "title": "3.1 Concordancing",
     "section": "",
-    "text": "In-depth introduction to concordancing with R:\n\nSchweinberger (2024)\n\nNaturale Language Processing (NLP) with quanteda:\n\nBenoit et al. (2018)\nOnline reference\n\nOn corpus-linguistic theory:\n\nWulff and Baker (2020)\nLange and Leuckert (2020)\nMcEnery, Xiao, and Yukio (2006)",
+    "text": "In-depth introduction to concordancing with R:\n\n\nSchweinberger (2024)\n\n\nNatural Language Processing (NLP) with quanteda:\n\n\nBenoit et al. (2018)\nOnline reference\n\n\nOn corpus-linguistic theory:\n\n\nWulff and Baker (2020)\nLange and Leuckert (2020)\nMcEnery, Xiao, and Yukio (2006)",
     "crumbs": [
-      "Overview",
       "3. NLP with R",
       "3.1 Concordancing"
     ]
@@ -147,13 +146,12 @@
     ]
   },
   {
-    "objectID": "chapters/03-concordancing.html#i-need-a-proper-user-interface-some-alternatives",
-    "href": "chapters/03-concordancing.html#i-need-a-proper-user-interface-some-alternatives",
+    "objectID": "chapters/03-concordancing.html#alternative-concordancing-software",
+    "href": "chapters/03-concordancing.html#alternative-concordancing-software",
     "title": "3.1 Concordancing",
-    "section": "“I need a proper user interface”: Some alternatives",
-    "text": "“I need a proper user interface”: Some alternatives\nThere is a wide variety of concordancing software available, both free and paid. Among the most popular options are AntConc (Anthony 2020) and SketchEngine (Kilgarriff et al. 2004). However, as Schweinberger (2024) notes, the exact processes these tools use to generate output are not always fully transparent, making them something of a “black box.” In contrast, programming languages like R or Python allow researchers to document each step of their analysis clearly, providing full transparency from start to finish.\nThe following apps attempt to reconcile the need for an intuitive user interface with transparent data handling. The full source code is documented in the respective GitHub repositories.\n\nQuantedaApp is an interface for the R package quanteda (Benoit et al. 2018).\nPyConc is an interface for the Python package spaCy (Honnibal and Montani 2017).",
+    "section": "Alternative concordancing software",
+    "text": "Alternative concordancing software\nThere is a wide variety of concordancing software available, both free and paid. Among the most popular options are AntConc (Anthony 2020) and SketchEngine (Kilgarriff et al. 2004). However, as Schweinberger (2024) notes, the exact processes these tools use to generate output are not always fully transparent, making them something of a “black box.” In contrast, programming languages like R or Python allow researchers to document each step of their analysis clearly, providing full transparency from start to finish.\nThe following apps attempt to reconcile the need for an intuitive user interface with transparent data handling. The full source code is documented in the respective GitHub repositories.\n\nQuantedaApp is an interface for the R package quanteda (Benoit et al. 2018).\nPyConc is an interface for the Python package spaCy (Honnibal and Montani 2017).",
     "crumbs": [
-      "Overview",
       "3. NLP with R",
       "3.1 Concordancing"
     ]
@@ -324,14 +322,36 @@
     ]
   },
   {
-    "objectID": "chapters/02-data_frames.html#exercises",
-    "href": "chapters/02-data_frames.html#exercises",
-    "title": "2.2 Data frames",
-    "section": "Exercises",
-    "text": "Exercises\n\n\n\n\n\n\nSolutions\n\n\n\nYou can find the solutions to the exercises here.\n\n\n\nTier 1\n\nExercise 1 Recreate the barplot from the previous unit by subsetting the data variable accordingly.\n\n\nExercise 2 Print the following elements by subsetting the data frame data accordingly.\n\n337\nbegin\nenjoy\nenjoy 139\nthe entire frequency column\n\n\n\n\nTier 2\n\nExercise 3 Verify that the following verbs are represented in the lemma column: enjoy, hit, find, begin. If they are in the data frame, print their frequency information.\n\n\nExercise 4 Use which() to find the rows where the frequency is greater than 200, and then print the lemma and frequency of only those rows.",
+    "objectID": "chapters/02-data_frames.html#tier-1",
+    "href": "chapters/02-data_frames.html#tier-1",
+    "title": "2.4 Data frames",
+    "section": "Tier 1",
+    "text": "Tier 1\n\nExercise 1 Recreate the barplot from the previous unit by subsetting the data variable accordingly.\n\n\nExercise 2 Print the following elements by subsetting the data frame data accordingly.\n\n337\nbegin\nenjoy\nenjoy 139\nthe entire frequency column",
     "crumbs": [
       "2. Introduction to R",
-      "2.2 Data frames I"
+      "2.4 Data frames"
+    ]
+  },
+  {
+    "objectID": "chapters/02-data_frames.html#tier-2",
+    "href": "chapters/02-data_frames.html#tier-2",
+    "title": "2.4 Data frames",
+    "section": "Tier 2",
+    "text": "Tier 2\n\nExercise 3 (Extension of Ex. 3 from Vectors) Verify that the following verbs are represented in the lemma column: enjoy, hit, find, begin. If they are in the data frame, print their frequency information.\n\n\nExercise 4 (Extension of Ex. 4 from Vectors) Use which() to find the rows where the frequency is greater than 200, and then print the lemma and frequency of those rows only.",
+    "crumbs": [
+      "2. Introduction to R",
+      "2.4 Data frames"
+    ]
+  },
+  {
+    "objectID": "chapters/02-data_frames.html#tier-3",
+    "href": "chapters/02-data_frames.html#tier-3",
+    "title": "2.4 Data frames",
+    "section": "Tier 3",
+    "text": "Tier 3\n\nExercise 5 Diachronic corpora comprise data on language use across different time periods. This data frame indicates the frequencies of certain modal verbs across three time periods:\n\nmodals_df &lt;- data.frame(\n  modal = c(\"can\", \"could\", \"may\", \"might\", \"must\", \"shall\", \"should\", \"will\", \"would\"),\n  period1 = c(128, 68, 55, 21, 44, 19, 35, 85, 97),\n  period2 = c(142, 83, 41, 30, 39, 12, 52, 94, 119)\n)\n\n\nFind the most and least frequent modal verb in each time period.\nCalculate the percentage change in frequency for each modal verb between period1 and period2.\nCreate a new column trend with the values \"increasing\" and \"decreasing\" based on whether the frequency increased or decreased across periods.\n\n\n\nExercise 6 (Extension of Ex. 8 in Vectors.) Write a function that performs part-of-speech (POS) annotation on the sentence The quick brown fox jumps over the lazy dog. Here are a few code snippets to help you get started:\n\nYou can split up sentences into tokens using tokenize_words() from the tokenizers library.\n\n\nlibrary(tokenizers)\nlibrary(tidyverse)\n\ntext &lt;- \"Colorless green ideas sleep furiously.\"\ntext_tokenized &lt;- tokenize_words(text)\n\n# To lowercase the tokens\ntokens_lower &lt;- tolower(text_tokenized[[1]])\n\n\nVectors can have name attributes:\n\n\nword &lt;- \"read\"\n\n# Give it a name\nnames(word) &lt;- \"verb\"\n\n# Get rid of its name\nword &lt;- unname(word)\n\n\nThere are several ways to apply conditional logic:\n\n\nthings &lt;- c(\"apple\", \"cherry\", \"pear\", \"cucumber\", \"coconut\")\nfruits &lt;- c(\"apple\", \"cherry\", \"pear\")\nvegetables &lt;- c(\"cabbage\", \"carrot\", \"cucumber\")\n\n# Base R\nfood_analysis &lt;- ifelse(things %in% fruits, \"fruit\", \"not_fruit\")\n\n# Tidyverse\nfood_analysis2 &lt;- case_when(\n  things %in% fruits ~ \"yes\", # if elements from \"things\" are in \"fruits\", print \"yes\", else\n  TRUE ~ \"no\"                 # print \"no\" (default)\n)\n\n\nIf multiple conditions should be checked, the statements/cases have to be nested appropriately:\n\n\n# Base R\ncomplex_food_analysis &lt;- ifelse(things %in% fruits, \"fruit\",\n       ifelse(things %in% vegetables, \"vegatable\",\n              \"unknown\"))\n\n# Tidyverse\ncomplex_food_analysis2 &lt;- case_when(\n  things %in% fruits ~ \"fruit\", # if elements from \"things\" are in \"fruits\", print \"yes\", else\n  things %in% vegetables ~ \"vegetable\", # if they're in \"vegetables\", print \"yes\", else\n  TRUE ~ \"unknown\"     # print \"unknown\"           \n)",
+    "crumbs": [
+      "2. Introduction to R",
+      "2.4 Data frames"
     ]
   },
   {
@@ -537,7 +557,7 @@
     "href": "chapters/06-ordinal_regression.html#introduction",
     "title": "6.5 Ordinal regression",
     "section": "Introduction",
-    "text": "Introduction\nIn her recent contribution, Glass (2021) examines possible reasons why certain transitive verbs have a stronger affinity towards object omission compared to others, placing special emphasis on the routinisation of the actions denoted by the verbs. Specifically, she assesses how high/low-routine contexts affect the acceptability of object omission for transitive verbs from different frequency bins.\nWe will replicate her findings using her survey data Glass_2021_survey_processed.csv1:\n1 The original dataset can be retrieved from Lelia Glass’s OSF repository: https://osf.io/t6zw5 [Last accessed: 27th September, 2024].\n# Load libraries\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(ordinal)\n\n\nAttaching package: 'ordinal'\n\nThe following object is masked from 'package:dplyr':\n\n    slice\n\nlibrary(MASS)\n\n\nAttaching package: 'MASS'\n\nThe following object is masked from 'package:dplyr':\n\n    select\n\nlibrary(sjPlot)\n\nInstall package \"strengejacke\" from GitHub (`devtools::install_github(\"strengejacke/strengejacke\")`) to load all sj-packages at once!\n\nlibrary(effects)\n\nLoading required package: carData\nlattice theme set by effectsTheme()\nSee ?effectsTheme for details.\n\nlibrary(ggeffects)\nlibrary(ggpubr)\n\n# For additional tests\nlibrary(DescTools)\nlibrary(generalhoslem)\n\nLoading required package: reshape\n\nAttaching package: 'reshape'\n\nThe following object is masked from 'package:lubridate':\n\n    stamp\n\nThe following object is masked from 'package:dplyr':\n\n    rename\n\nThe following objects are masked from 'package:tidyr':\n\n    expand, smiths\n\nlibrary(brant)\n\n# Load data\nsurvey &lt;- read.csv(\"../datasets/Glass_2021_survey_processed.csv\")\n\n# Inspect dataset\nstr(survey)\n\n'data.frame':   784 obs. of  5 variables:\n $ rating       : int  3 4 3 3 2 4 3 2 3 2 ...\n $ freq         : chr  \"hi\" \"lo\" \"lo\" \"hi\" ...\n $ verb         : chr  \"pick\" \"catch\" \"throw\" \"break\" ...\n $ ParticipantID: chr  \"Participant1\" \"Participant1\" \"Participant1\" \"Participant1\" ...\n $ routine      : chr  \"hi\" \"lo\" \"lo\" \"lo\" ...\n\nhead(survey)\n\n  rating freq   verb ParticipantID routine\n1      3   hi   pick  Participant1      hi\n2      4   lo  catch  Participant1      lo\n3      3   lo  throw  Participant1      lo\n4      3   hi  break  Participant1      lo\n5      2   hi  taste  Participant1      hi\n6      4   hi bottle  Participant1      hi\n\n\n\n\n\n\n\n\nShort breakdown of the variables\n\n\n\n\n\n\nroutine: In Glass’s study, transitive verbs were randomly assigned to one of the following conditions:\n\n\n\n(High routine condition:) I worked at my poultry farm. Just like I always do, I butchered some chickens. Then I gathered some eggs.\n(Low-routine condition:) I visited a friend’s job. Just because people wanted me to try it, I butchered some chickens. Then I went for a walk.\n\nCf. Glass (2021: 66)\n\n\nunique(survey$routine)\n\n[1] \"hi\" \"lo\"\n\n\n\nrating records the responses of participants to a follow-up question regarding the acceptability of object omission. The answers are recorded on a 1-5 Likert scale.\n\n\nThe next time Caroline talks about butchering chickens the day before, how likely do you think she is to say the following?\n‘I butchered yesterday’\nCf. Glass (2021: 66)\n\n\nunique(survey$rating)\n\n[1] 3 4 2 5 1\n\n\n\nverb contains the items to be rated for the conditions in routine\n\n\nunique(survey$verb)\n\n[1] \"pick\"   \"catch\"  \"throw\"  \"break\"  \"taste\"  \"bottle\" \"sell\"   \"chop\"  \n\n\n\nfrequency relates to the frequency bins of the verbs:\n\n\nunique(survey$freq)\n\n[1] \"hi\" \"lo\"\n\n\n\nParticipantID identifies each of the 98 subjects who provided ratings",
+    "text": "Introduction\nIn her recent contribution, Glass (2021) examines possible reasons why certain transitive verbs have a stronger affinity towards object omission compared to others, placing special emphasis on the routinisation of the actions denoted by the verbs. Specifically, she assesses how high/low-routine contexts affect the acceptability of object omission for transitive verbs from different frequency bins.\nWe will replicate her findings using her survey data Glass_2021_survey_processed.csv1:\n1 The original dataset can be retrieved from Lelia Glass’s OSF repository: https://osf.io/t6zw5 [Last accessed: 27th September, 2024].\n# Load libraries\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(ordinal)\n\n\nAttaching package: 'ordinal'\n\nThe following object is masked from 'package:dplyr':\n\n    slice\n\nlibrary(MASS)\n\n\nAttaching package: 'MASS'\n\nThe following object is masked from 'package:dplyr':\n\n    select\n\nlibrary(sjPlot)\nlibrary(effects)\n\nLoading required package: carData\nlattice theme set by effectsTheme()\nSee ?effectsTheme for details.\n\nlibrary(ggeffects)\nlibrary(ggpubr)\n\n# For additional tests\nlibrary(DescTools)\nlibrary(generalhoslem)\n\nLoading required package: reshape\n\nAttaching package: 'reshape'\n\nThe following object is masked from 'package:lubridate':\n\n    stamp\n\nThe following object is masked from 'package:dplyr':\n\n    rename\n\nThe following objects are masked from 'package:tidyr':\n\n    expand, smiths\n\nlibrary(brant)\n\n# Load data\nsurvey &lt;- read.csv(\"../datasets/Glass_2021_survey_processed.csv\")\n\n# Inspect dataset\nstr(survey)\n\n'data.frame':   784 obs. of  5 variables:\n $ rating       : int  3 4 3 3 2 4 3 2 3 2 ...\n $ freq         : chr  \"hi\" \"lo\" \"lo\" \"hi\" ...\n $ verb         : chr  \"pick\" \"catch\" \"throw\" \"break\" ...\n $ ParticipantID: chr  \"Participant1\" \"Participant1\" \"Participant1\" \"Participant1\" ...\n $ routine      : chr  \"hi\" \"lo\" \"lo\" \"lo\" ...\n\nhead(survey)\n\n  rating freq   verb ParticipantID routine\n1      3   hi   pick  Participant1      hi\n2      4   lo  catch  Participant1      lo\n3      3   lo  throw  Participant1      lo\n4      3   hi  break  Participant1      lo\n5      2   hi  taste  Participant1      hi\n6      4   hi bottle  Participant1      hi\n\n\n\n\n\n\n\n\nShort breakdown of the variables\n\n\n\n\n\n\nroutine: In Glass’s study, transitive verbs were randomly assigned to one of the following conditions:\n\n\n\n(High routine condition:) I worked at my poultry farm. Just like I always do, I butchered some chickens. Then I gathered some eggs.\n(Low-routine condition:) I visited a friend’s job. Just because people wanted me to try it, I butchered some chickens. Then I went for a walk.\n\nCf. Glass (2021: 66)\n\n\nunique(survey$routine)\n\n[1] \"hi\" \"lo\"\n\n\n\nrating records the responses of participants to a follow-up question regarding the acceptability of object omission. The answers are recorded on a 1-5 Likert scale.\n\n\nThe next time Caroline talks about butchering chickens the day before, how likely do you think she is to say the following?\n‘I butchered yesterday’\nCf. Glass (2021: 66)\n\n\nunique(survey$rating)\n\n[1] 3 4 2 5 1\n\n\n\nverb contains the items to be rated for the conditions in routine\n\n\nunique(survey$verb)\n\n[1] \"pick\"   \"catch\"  \"throw\"  \"break\"  \"taste\"  \"bottle\" \"sell\"   \"chop\"  \n\n\n\nfrequency relates to the frequency bins of the verbs:\n\n\nunique(survey$freq)\n\n[1] \"hi\" \"lo\"\n\n\n\nParticipantID identifies each of the 98 subjects who provided ratings",
     "crumbs": [
       "6. Statistical Modelling",
       "6.5 Ordinal regression"
@@ -632,72 +652,6 @@
     ]
   },
   {
-    "objectID": "chapters/04-categorical_data.html",
-    "href": "chapters/04-categorical_data.html",
-    "title": "4.3 Categorical data",
-    "section": "",
-    "text": "Script\n\n\n\nYou can find the full R script associated with this unit here.\n\n\nPlease download the file Paquot_Larsson_2020_data.xlsx (Paquot and Larsson 2020)1 and store it in the same folder as your currently active R-script. Then run the code lines below:\n1 The original supplementary materials can be downloaded from the publisher’s website [Last accessed April 28, 2024].\n# Libraries\nlibrary(readxl)\nlibrary(tidyverse)\n# For publication-ready tables\nlibrary(crosstable)\nlibrary(flextable)\n\n# Load data from working directory\ncl.order &lt;- read_xlsx(\"../datasets/Paquot_Larsson_2020_data.xlsx\")\n\n# Check the structure of the data frame\nhead(cl.order)",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.3 Categorical data"
-    ]
-  },
-  {
-    "objectID": "chapters/04-categorical_data.html#preparation",
-    "href": "chapters/04-categorical_data.html#preparation",
-    "title": "4.3 Categorical data",
-    "section": "",
-    "text": "Script\n\n\n\nYou can find the full R script associated with this unit here.\n\n\nPlease download the file Paquot_Larsson_2020_data.xlsx (Paquot and Larsson 2020)1 and store it in the same folder as your currently active R-script. Then run the code lines below:\n1 The original supplementary materials can be downloaded from the publisher’s website [Last accessed April 28, 2024].\n# Libraries\nlibrary(readxl)\nlibrary(tidyverse)\n# For publication-ready tables\nlibrary(crosstable)\nlibrary(flextable)\n\n# Load data from working directory\ncl.order &lt;- read_xlsx(\"../datasets/Paquot_Larsson_2020_data.xlsx\")\n\n# Check the structure of the data frame\nhead(cl.order)",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.3 Categorical data"
-    ]
-  },
-  {
-    "objectID": "chapters/04-categorical_data.html#describing-categorical-data",
-    "href": "chapters/04-categorical_data.html#describing-categorical-data",
-    "title": "4.3 Categorical data",
-    "section": "Describing categorical data",
-    "text": "Describing categorical data\nA categorical variable is made up of two or more discrete values. An intuitive way to describe categorical data would be to count how often each category occurs in the sample. These counts are then typically summarised in frequency tables and accompanied by suitable graphs (e.g., barplots).\n\nFrequency tables (one variable)\nAssume we are interested in how often each clause ordering type ( \"mc-sc\" vs. \"sc-mc\") is attested in our data. In R, we can obtain their frequencies by inspecting the ORDER column of the cl.order dataset. Since manual counting isn’t really an option, we will make use of the convenient functions table() and xtabs().\n\n\n\n\n\n\nThe workhorse: table()\n\n\n\n\n\nThis function requires a character vector. We use the notation cl.order$ORDER to subset the cl.order data frame according to the column ORDER (cf. data frames). We store the results in the variable order_freq1 (you may choose a different name if you like) and display the output by applying to it the print() function.\n\n# Count occurrences of ordering types (\"mc-sc\" and \"sc-mc\") in the data frame\norder_freq1 &lt;- table(cl.order$ORDER) \n\n# Print table\nprint(order_freq1)\n\n\nmc-sc sc-mc \n  275   128 \n\n\n\n\n\n\n\n\n\n\n\nMore detailed: xtabs()\n\n\n\n\n\nAlternatively, you could use xtabs() to achieve the same result. The syntax is a little different, but it returns a slightly more more detailed table with explicit variable label(s).\n\n# Count occurrences of ordering types (\"mc-sc\" and \"sc-mc\")\norder_freq2 &lt;- xtabs(~ ORDER, cl.order)\n\n# Print table\nprint(order_freq2)\n\nORDER\nmc-sc sc-mc \n  275   128 \n\n\n\n\n\n\n\nFrequency tables (\\(\\geq\\) 2 variables)\nIf we are interested in the relationship between multiple categorical variables, we can cross-tabulate the frequencies of their categories. For example, what is the distribution of clause order depending on the type of subordinate clause? The output is also referred to as a contingency table.\n\n\n\n\n\n\nThe table() way\n\n\n\n\n\n\n# Get frequencies of ordering tpyes (\"mc-sc\" vs. \"sc-mc\") depending on the type of subordinate clause (\"caus\" vs. \"temp\")\norder_counts1 &lt;- table(cl.order$ORDER, cl.order$SUBORDTYPE)\n\n# Print contingency table\nprint(order_counts1)\n\n       \n        caus temp\n  mc-sc  184   91\n  sc-mc   15  113\n\n\n\n\n\n\n\n\n\n\n\nThe xtabs() way\n\n\n\n\n\n\n# Cross-tabulate ORDER and SUBORDTYPE\norder_counts2 &lt;- xtabs(~ ORDER + SUBORDTYPE, cl.order)\n\n# Print cross-table\nprint(order_counts2)\n\n       SUBORDTYPE\nORDER   caus temp\n  mc-sc  184   91\n  sc-mc   15  113\n\n\n\n\n\n\n\nPercentage tables\nThere are several ways to compute percentages for your cross-tables, but by far the simplest is via the prop.table() function. As it only provides proportions, you can multiply the output by 100 to obtain real percentages.\n\n\n\n\n\n\nGet percentages for a table() object\n\n\n\n\n\n\n# Convert to % using the prop.table() function\npct1 &lt;- prop.table(order_counts1) * 100\n\n# Print percentages\nprint(pct1)\n\n       \n             caus      temp\n  mc-sc 45.657568 22.580645\n  sc-mc  3.722084 28.039702\n\n\n\n\n\n\n\n\n\n\n\nGet percentages for an xtabs() object\n\n\n\n\n\n\n# Convert to % using the prop.table() function\npct2 &lt;- prop.table(order_counts2) * 100\n\n# Print percentages\nprint(pct2)\n\n       SUBORDTYPE\nORDER        caus      temp\n  mc-sc 45.657568 22.580645\n  sc-mc  3.722084 28.039702\n\n\nNotice how pct2 still carries the variable labels SUBORDTYPE and ORDER, which is very convenient.",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.3 Categorical data"
-    ]
-  },
-  {
-    "objectID": "chapters/04-categorical_data.html#plotting-categorical-data",
-    "href": "chapters/04-categorical_data.html#plotting-categorical-data",
-    "title": "4.3 Categorical data",
-    "section": "Plotting categorical data",
-    "text": "Plotting categorical data\nThis section demonstrates both the in-built plotting functions of R (‘Base R’) as well as the more modern versions provided by the tidyverse package.\n\n\n\n\n\n\nMosaicplots (raw counts)\n\n\n\n\n\nA straightforward way to visualise a contingency table is the mosaicplot:\n\n# Works with raw counts and percentages\n# Using the output of xtabs() as input\nmosaicplot(order_counts2, color = TRUE)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBarplots (raw counts)\n\n\n\n\n\nThe workhorse of categorical data analysis is the barplot. Base R functions usually require a table object as input, whereas ggplot2 can operate on the raw dataset.\n\nOne variable\n\nBase Rggplot2\n\n\n\nBase R barplot with barplot(); requires the counts as computed by tables() or xtabs()\n\n\n# Generate cross-table\norder_freq1 &lt;- table(cl.order$ORDER)\n\n# Create barplot\nbarplot(order_freq1)\n\n\n\n\n\n\n\n\n\n\n\nBarplot with geom_bar() using the raw input data\n\n\n# Requirement: library(tidyverse)\n\n# Raw input data\nhead(cl.order)\n\n# A tibble: 6 × 8\n   CASE ORDER SUBORDTYPE LEN_MC LEN_SC LENGTH_DIFF CONJ     MORETHAN2CL\n  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;      \n1  4777 sc-mc temp            4     10          -6 als/when no         \n2  1698 mc-sc temp            7      6           1 als/when no         \n3   953 sc-mc temp           12      7           5 als/when yes        \n4  1681 mc-sc temp            6     15          -9 als/when no         \n5  4055 sc-mc temp            9      5           4 als/when yes        \n6   967 sc-mc temp            9      5           4 als/when yes        \n\n# Create barplot\nggplot(cl.order, aes(x = ORDER)) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\n\n\nTwo variables\nBivariate barplots can be obtained by either supplying a contingency table (Base R) or by mapping the second variable onto the fill argument using the raw data.\n\nBase RBase R (fully customised)ggplot2ggplot2 (fully customised)\n\n\n\n# Generate cross-table with two variables\norder_counts2 &lt;- xtabs(~ ORDER + SUBORDTYPE, cl.order)\n\n# Create simple barplot\nbarplot(order_counts2, \n        beside = TRUE,  # Make bars side-by-side\n        legend = TRUE)  # Add a legend\n\n\n\n\n\n\n\n\n\n\n\n# Generate cross-table with two variables\norder_counts2 &lt;- xtabs(~ ORDER + SUBORDTYPE, cl.order)\n\n# Customise barplot with axis labels, colours and legend\nbarplot(order_counts2, \n        beside = TRUE,  # Make bars dodged (i.e., side by side)\n        main = \"Distribution of ORDER by SUBORDTYPE (Base R)\", \n        xlab = \"ORDER\", \n        ylab = \"Frequency\", \n        col = c(\"lightblue\", \"lightgreen\"), # Customize colors\n        legend = TRUE,  # Add a legend\n        args.legend = list(title = \"SUBORDTYPE\", x = \"topright\"))\n\n\n\n\n\n\n\n\n\n\n\n# Requirement: library(tidyverse)\n\n# Create simple barplot with the ggplot() function\nggplot(cl.order, aes(x = ORDER, fill = SUBORDTYPE)) +\n  geom_bar(position = \"dodge\")\n\n\n\n\n\n\n\n\n\n\n\n# Requirement: library(tidyverse)\n\n# Fully customised ggplot2 object\nggplot(cl.order, aes(x = ORDER, fill = SUBORDTYPE)) +\n  geom_bar(position = \"dodge\") +\n  labs(\n    title = \"Clause order by subordinate clause type\",\n    x = \"Clause order\",\n    y = \"Frequency\",\n    fill = \"Type of subordinate clause\"\n  ) +\n  theme_bw()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBarplots (percentages)\n\n\n\n\n\n\nBase Rggplot2\n\n\nIn very much the same way as with the raw counts:\n\n# Create simple barplot with a percentage table as input\nbarplot(pct1, \n        beside = TRUE,  # Make bars side-by-side\n        legend = TRUE)  # Add a legend\n\n\n\n\n\n\n\n\n\n\nHere, a few tweaks are necessary. Because the ggplot() function prefers to works with data frames rather than cross-tables, we’ll have to coerce it into one first:\n\n# Convert a percentage table to a data frame\n# My recommendation: Use the pct2 object, which was generated using xtabs() because it will keep the variable names\npct2_df &lt;- as.data.frame(pct2)\n\nprint(pct2_df)\n\n  ORDER SUBORDTYPE      Freq\n1 mc-sc       caus 45.657568\n2 sc-mc       caus  3.722084\n3 mc-sc       temp 22.580645\n4 sc-mc       temp 28.039702\n\n\nNow we can plot the percentages with geom_col(). This geom (= ‘geometric object’) allows us to manually specify what should be mapped onto the y-axis:\n\n# Requirement: library(tidyverse)\n\n# Create barplot with user-defined y-axis, which requires geom_col() rather than geom_bar()\nggplot(pct2_df, aes(x = ORDER, y = Freq, fill = SUBORDTYPE)) +\n  geom_col(position = \"dodge\") +\n  labs(y = \"Frequency (in %)\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBubble plot (percentages)\n\n\n\n\n\n\n# Requirement: library(tidyverse)\n\n# Bubble plot\nggplot(pct2_df, aes(x = ORDER, y = SUBORDTYPE, size = Freq)) +\n  geom_point(color = \"skyblue\", alpha = 0.7) +\n  scale_size_continuous(range = c(5, 20)) +  # Adjust bubble size range\n  labs(title = \"Bubble Plot of ORDER by SUBORDTYPE\",\n       x = \"ORDER\",\n       y = \"SUBORDTYPE\",\n       size = \"Percentage\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAlluvial plot (percentages)\n\n\n\n\n\n\n# Make sure to install this library prior to running the code below \nlibrary(ggalluvial)\n\nggplot(pct2_df,\n       aes(axis1 = ORDER, axis2 = SUBORDTYPE, y = Freq)) +\n  geom_alluvium(aes(fill = ORDER)) +\n  geom_stratum(fill = \"gray\") +\n  geom_text(stat = \"stratum\", aes(label = after_stat(stratum))) +\n  labs(title = \"Alluvial Plot of ORDER by SUBORDTYPE\",\n       x = \"Categories\", y = \"Percentage\") +\n  theme_minimal()",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.3 Categorical data"
-    ]
-  },
-  {
-    "objectID": "chapters/04-categorical_data.html#exporting-tables-to-ms-word",
-    "href": "chapters/04-categorical_data.html#exporting-tables-to-ms-word",
-    "title": "4.3 Categorical data",
-    "section": "Exporting tables to MS Word",
-    "text": "Exporting tables to MS Word\nThe crosstable and flextable packages make it very easy to export elegant tables to MS Word.\n\n\n\n\n\n\nClean and to the point: crosstable()\n\n\n\n\n\nThis is perhaps the most elegant solution. Generate a crosstable() object by supplying at the very least …\n\nthe original dataset (data = cl.order),\nthe dependent variable (cols = ORDER), and\nthe independent variable (by = SUBORDTYPE).\n\nYou can further specify …\n\nwhether to include column totals, row totals or both (here: total = both),\nthe rounding scheme (here: percent_digits = 2),\n…\n\n\n# Required libraries:\n# library(crosstable)\n# library(flextable)\n\n# Create the cross table\noutput1 &lt;- crosstable(data = cl.order,\n                      cols = ORDER, \n                      by = SUBORDTYPE, \n                      total = \"both\",\n                      percent_digits = 2)\n\n# Generate file\nas_flextable(output1)\n\nlabelvariableSUBORDTYPETotalcaustempORDERmc-sc184 (66.91%)91 (33.09%)275 (68.24%)sc-mc15 (11.72%)113 (88.28%)128 (31.76%)Total199 (49.38%)204 (50.62%)403 (100.00%)\n\n\n\n\n\n\n\n\n\n\n\nHow much info do you need? Yes.\n\n\n\n\n\nIt also possible to use as_flextable() without pre-processing the data with crosstable(); supplying a table preferably created with xtabs() is sufficient. Without any doubt, the output is extremely informative, yet it is everything but reader-friendly.\nFor this reason, I recommend relying on the less overwhelming crosstable() option above if a plain and easy result is desired. However, readers who would like to leverage the full capabilities of the flextable() package and familiarise themselves with the abundant options for customisation, can find the detailed documentation here.\n\n# Requires the following library:\n# library(flextable)\n\n# Create a table\ntab1 &lt;- xtabs(~ ORDER + SUBORDTYPE, cl.order)\n\n# Directly convert a table to a flextable with as_flextable()\noutput_1 &lt;- as_flextable(tab1)\n\n# Print output\nprint(output_1)",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.3 Categorical data"
-    ]
-  },
-  {
-    "objectID": "chapters/04-categorical_data.html#workflow-exercises",
-    "href": "chapters/04-categorical_data.html#workflow-exercises",
-    "title": "4.3 Categorical data",
-    "section": "Workflow exercises",
-    "text": "Workflow exercises\n\n\n\n\n\n\nSolutions\n\n\n\nYou can find the solutions to the exercises here.\n\n\n\nExercise 1 Download the dataset objects.xlsx from https://osf.io/j2mnx. Load it into R and store it in a variable objects. Make sure to load all the necessary libraries.\n\n\nExercise 2 Many rows from are irrelevant for the analysis. Exclude all rows from that are marked as containing passive clauses (see Clause_voice column). Store this reduced subset in a new variable objects_filtered.\n\n\nExercise 3 Investigate the relationship between\n\nObject_realisation and Register as well as\nObject_realisation and Lemma\n\nby computing frequency tables and percentages based on objects_filtered. Plot your results and export your tables and figures to a Microsoft Word document.\n\n\nExercise 4 Which verb has the highest \\(\\frac{\\text{null}}{\\text{null} + \\text{overt}}\\) ratio and which one has the lowest?",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.3 Categorical data"
-    ]
-  },
-  {
     "objectID": "chapters/05-binomial_test.html",
     "href": "chapters/05-binomial_test.html",
     "title": "4.7 Chi-squared test",
@@ -771,8 +725,8 @@
     "objectID": "chapters/01-index.html#collaborators",
     "href": "chapters/01-index.html#collaborators",
     "title": "Preface",
-    "section": "1 Collaborators",
-    "text": "1 Collaborators\nVladimir Buskin, PhD student at the Department of English Language and Linguistics, Catholic University of Eichstätt-Ingolstadt\nThomas Brunner, Assistant Professor at the Department of English Language and Linguistics, Catholic University of Eichstätt-Ingolstadt\nPhilippa Adolf, PhD student at the Department of Romance Studies, University of Vienna"
+    "section": "Collaborators",
+    "text": "Collaborators\nVladimir Buskin, PhD student at the Department of English Language and Linguistics, Catholic University of Eichstätt-Ingolstadt\nThomas Brunner, Assistant Professor at the Department of English Language and Linguistics, Catholic University of Eichstätt-Ingolstadt\nPhilippa Adolf, PhD student at the Department of Romance Studies, University of Vienna"
   },
   {
     "objectID": "chapters/06-logistic_regression.html",
@@ -801,7 +755,7 @@
     "href": "chapters/06-logistic_regression.html#preparation",
     "title": "6.2 Logistic Regression",
     "section": "Preparation",
-    "text": "Preparation\nConsider the data from Buskin’s (n.d.)1 corpus-study on subject pronoun realisation:\n1 The input data can be downloaded from this OSF repository: https://osf.io/qgnms.\n# Load libraries\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(rms)\n\nLoading required package: Hmisc\n\nAttaching package: 'Hmisc'\n\nThe following objects are masked from 'package:dplyr':\n\n    src, summarize\n\nThe following objects are masked from 'package:base':\n\n    format.pval, units\n\nlibrary(broom)\nlibrary(sjPlot)\n\nLearn more about sjPlot with 'browseVignettes(\"sjPlot\")'.\n\nlibrary(ggeffects)\nlibrary(ggpubr)\n\n# Load data\ndata_pro &lt;- read.csv(\"../datasets/INPUT_pronouns.csv\", sep = \",\", header = TRUE)\n\n# Inspect data\nstr(data_pro)\n\n'data.frame':   4838 obs. of  5 variables:\n $ Reference     : chr  \"overt\" \"overt\" \"overt\" \"overt\" ...\n $ Person        : chr  \"3\" \"3\" \"3\" \"3\" ...\n $ Register      : chr  \"S1A\" \"S1A\" \"S1A\" \"S1A\" ...\n $ Variety       : chr  \"GB\" \"GB\" \"GB\" \"GB\" ...\n $ Referentiality: chr  \"referential\" \"referential\" \"referential\" \"referential\" ...\n\nhead(data_pro)\n\n  Reference Person Register Variety Referentiality\n1     overt      3      S1A      GB    referential\n2     overt      3      S1A      GB    referential\n3     overt      3      S1A      GB    referential\n4     overt      3      S1A      GB    referential\n5     overt      3      S1A      GB    referential\n6     overt      3      S1A      GB    referential\n\n\n\nTarget variable:\n\nReference (‘overt’, ‘null’)\n\nExplanatory variables:\n\nPerson (‘1.p.’, ‘2.p’, ‘3.p’ as well as the dummy pronouns ‘it’ and ‘there’)\nRegister (the text category in the International Corpus of English; ‘S1A’ are informal conversations, whereas ‘S1B’ comprises formal class lessons)\nVariety (British English ‘GB’, Singapore English ‘SING’ and Hong Kong English ‘HK’), and\nReferentiality (‘referential’ with an identifiable referent or ‘non-referential’ with no/generic reference)\n\n\n\nhead(data_pro)\n\n  Reference Person Register Variety Referentiality\n1     overt      3      S1A      GB    referential\n2     overt      3      S1A      GB    referential\n3     overt      3      S1A      GB    referential\n4     overt      3      S1A      GB    referential\n5     overt      3      S1A      GB    referential\n6     overt      3      S1A      GB    referential\n\ntable(data_pro$Reference)\n\n\n null overt \n  174  4664 \n\n\n\nDescriptive overview",
+    "text": "Preparation\nConsider the data from Buskin’s (n.d.)1 corpus-study on subject pronoun realisation:\n1 The input data can be downloaded from this OSF repository: https://osf.io/qgnms.\n# Load libraries\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(rms)\n\nLoading required package: Hmisc\n\nAttaching package: 'Hmisc'\n\nThe following objects are masked from 'package:dplyr':\n\n    src, summarize\n\nThe following objects are masked from 'package:base':\n\n    format.pval, units\n\nlibrary(broom)\nlibrary(sjPlot)\nlibrary(ggeffects)\nlibrary(ggpubr)\n\n# Load data\ndata_pro &lt;- read.csv(\"../datasets/INPUT_pronouns.csv\", sep = \",\", header = TRUE)\n\n# Inspect data\nstr(data_pro)\n\n'data.frame':   4838 obs. of  5 variables:\n $ Reference     : chr  \"overt\" \"overt\" \"overt\" \"overt\" ...\n $ Person        : chr  \"3\" \"3\" \"3\" \"3\" ...\n $ Register      : chr  \"S1A\" \"S1A\" \"S1A\" \"S1A\" ...\n $ Variety       : chr  \"GB\" \"GB\" \"GB\" \"GB\" ...\n $ Referentiality: chr  \"referential\" \"referential\" \"referential\" \"referential\" ...\n\nhead(data_pro)\n\n  Reference Person Register Variety Referentiality\n1     overt      3      S1A      GB    referential\n2     overt      3      S1A      GB    referential\n3     overt      3      S1A      GB    referential\n4     overt      3      S1A      GB    referential\n5     overt      3      S1A      GB    referential\n6     overt      3      S1A      GB    referential\n\n\n\nTarget variable:\n\nReference (‘overt’, ‘null’)\n\nExplanatory variables:\n\nPerson (‘1.p.’, ‘2.p’, ‘3.p’ as well as the dummy pronouns ‘it’ and ‘there’)\nRegister (the text category in the International Corpus of English; ‘S1A’ are informal conversations, whereas ‘S1B’ comprises formal class lessons)\nVariety (British English ‘GB’, Singapore English ‘SING’ and Hong Kong English ‘HK’), and\nReferentiality (‘referential’ with an identifiable referent or ‘non-referential’ with no/generic reference)\n\n\n\nhead(data_pro)\n\n  Reference Person Register Variety Referentiality\n1     overt      3      S1A      GB    referential\n2     overt      3      S1A      GB    referential\n3     overt      3      S1A      GB    referential\n4     overt      3      S1A      GB    referential\n5     overt      3      S1A      GB    referential\n6     overt      3      S1A      GB    referential\n\ntable(data_pro$Reference)\n\n\n null overt \n  174  4664 \n\n\n\nDescriptive overview",
     "crumbs": [
       "6. Statistical Modelling",
       "6.2 Logistic regression"
@@ -841,58 +795,58 @@
     ]
   },
   {
-    "objectID": "chapters/07-EFA.html",
-    "href": "chapters/07-EFA.html",
-    "title": "7.4 Exploratory Factor Analysis",
+    "objectID": "chapters/01-maths.html",
+    "href": "chapters/01-maths.html",
+    "title": "1.4 Formal aspects",
     "section": "",
-    "text": "For linguists:\n\nLevshina (2015: Chapter 18)\n\nGeneral:\n\nMair (2018: Chapter 2)",
+    "text": "Throughout this reader—particularly in later chapters—we will frequently rely on fundamental concepts from set theory and mathematics. These frameworks provide a precise and concise way to express complex ideas, making them essential tools for statistical science. The aim of this unit is to introduce key formalisms and build foundational literacy in their use. While a comprehensive treatment is beyond the scope of this reader, the following resources offer further guidance:\n\nPartee, Meulen, and Wall (1990)\nHalmos (1974)\nSpivak (1994)\nHammack (2018)",
     "crumbs": [
-      "7. Machine Learning",
-      "7.4 EFA"
+      "1. Fundamentals",
+      "1.4 Formal aspects"
     ]
   },
   {
-    "objectID": "chapters/07-EFA.html#recommended-reading",
-    "href": "chapters/07-EFA.html#recommended-reading",
-    "title": "7.4 Exploratory Factor Analysis",
+    "objectID": "chapters/01-maths.html#introduction",
+    "href": "chapters/01-maths.html#introduction",
+    "title": "1.4 Formal aspects",
     "section": "",
-    "text": "For linguists:\n\nLevshina (2015: Chapter 18)\n\nGeneral:\n\nMair (2018: Chapter 2)",
+    "text": "Throughout this reader—particularly in later chapters—we will frequently rely on fundamental concepts from set theory and mathematics. These frameworks provide a precise and concise way to express complex ideas, making them essential tools for statistical science. The aim of this unit is to introduce key formalisms and build foundational literacy in their use. While a comprehensive treatment is beyond the scope of this reader, the following resources offer further guidance:\n\nPartee, Meulen, and Wall (1990)\nHalmos (1974)\nSpivak (1994)\nHammack (2018)",
     "crumbs": [
-      "7. Machine Learning",
-      "7.4 EFA"
+      "1. Fundamentals",
+      "1.4 Formal aspects"
     ]
   },
   {
-    "objectID": "chapters/07-EFA.html#preparation",
-    "href": "chapters/07-EFA.html#preparation",
-    "title": "7.4 Exploratory Factor Analysis",
-    "section": "Preparation",
-    "text": "Preparation\nThe implementation of Exploratory Factor Analysis in R is very similar to that of Principle Components Analysis. To highlight these similarities, we will use the same libraries (most importantly psych) and the same dataset scope_sem_sub as in the unit on PCA (see ?@sec-pca-prep for further details).\n\n# Load libraries\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(purrr)\nlibrary(psych)\n\n\nAttaching package: 'psych'\n\nThe following objects are masked from 'package:ggplot2':\n\n    %+%, alpha\n\nlibrary(GPArotation)\n\n\nAttaching package: 'GPArotation'\n\nThe following objects are masked from 'package:psych':\n\n    equamax, varimin\n\nlibrary(gridExtra)\n\n\nAttaching package: 'gridExtra'\n\nThe following object is masked from 'package:dplyr':\n\n    combine\n\n# Load data\nscope_sem_df &lt;- readRDS(\"../datasets/scope_sem.RDS\")\n\n# Select subset\nscope_sem_sub &lt;- scope_sem_df[,1:11]\n\n# Overview\nglimpse(scope_sem_sub)\n\nRows: 1,702\nColumns: 11\n$ Verb               &lt;chr&gt; \"abstain\", \"abstract\", \"abuse\", \"accelerate\", \"acce…\n$ Resnik_strength    &lt;dbl&gt; 0.40909889, 0.18206692, 0.12473608, -0.76972217, -1…\n$ Conc_Brys          &lt;dbl&gt; -0.94444378, -1.92983639, -0.59478833, 0.22107437, …\n$ Nsenses_WordNet    &lt;dbl&gt; -0.68843996, 0.27755219, 0.00155443, -0.68843996, 0…\n$ Nmeanings_Websters &lt;dbl&gt; -0.95559835, 0.73781281, 0.73781281, -0.27823388, 0…\n$ Visual_Lanc        &lt;dbl&gt; -2.2545455, 0.6103733, 1.3354358, -0.4342084, -0.34…\n$ Auditory_Lanc      &lt;dbl&gt; -0.84225787, -0.35605108, 1.54797548, 0.18795651, 1…\n$ Haptic_Lanc        &lt;dbl&gt; -0.75523987, -0.29089287, 1.25099360, -0.18911818, …\n$ Olfactory_Lanc     &lt;dbl&gt; -0.14444936, -0.37350419, -0.53335522, -0.37350419,…\n$ Gustatory_Lanc     &lt;dbl&gt; 0.27698988, -0.10105698, -0.36148925, -0.52110903, …\n$ Interoceptive_Lanc &lt;dbl&gt; 1.08153427, -0.06560311, 1.64313895, 1.45452985, 0.…",
+    "objectID": "chapters/01-maths.html#set-theory",
+    "href": "chapters/01-maths.html#set-theory",
+    "title": "1.4 Formal aspects",
+    "section": "Set theory",
+    "text": "Set theory\nSets are finite or infinite collections of elements and are conventionally denoted by capital letters. These elements can be virtually anything – letters, numbers, or even sets themselves. For example, let us define a set \\(L\\) which should contains the words eat, drink, sleep, bathe:\n\\[\nL = \\{eat, drink, sleep, bathe\\}\n\\]\nIt is clear that eat is in \\(L\\), i.e., \\(eat \\in L\\), but the verb convince is not: \\(convince \\notin L\\).\nLet’s define a new set\n\\[F = \\{eat, drink\\}.\\]\nIt has the interesting property that all of its elements are also represented in \\(L\\). This makes \\(F\\) a subset of \\(L\\), written \\(F \\subseteq L\\). If two sets contain exactly the same elements, they are equal.\nA set that does not contain any elements is an empty set \\(\\emptyset\\).",
     "crumbs": [
-      "7. Machine Learning",
-      "7.4 EFA"
+      "1. Fundamentals",
+      "1.4 Formal aspects"
     ]
   },
   {
-    "objectID": "chapters/07-EFA.html#exploratory-factor-analysis-vs.-pca",
-    "href": "chapters/07-EFA.html#exploratory-factor-analysis-vs.-pca",
-    "title": "7.4 Exploratory Factor Analysis",
-    "section": "Exploratory Factor Analysis vs. PCA",
-    "text": "Exploratory Factor Analysis vs. PCA\nExploratory Factor Analysis (EFA) is quite similar to PCA in that it compresses the high-dimensional feature space, yet the core idea is not to capture as much variance as possible with as few variables as possible, but rather reveal latent (= invisible) variables, i.e., factors.\nThe computation bears some resemblance to that of PCA, with the main difference being that an observation \\(x_m\\) is assumed to be generated by combinations of factor loadings \\(\\lambda_{1}, \\lambda_{2}, \\dots, \\lambda_{mp}\\) with the underlying factors \\(\\xi_{1}, \\xi_{2}, \\dots, \\xi_{p}\\) (see Equation 1). Everything to the right of the equation can only be obtained by running estimation procedures such as Principle Axis Factoring or Maximum Likelihood Estimation.\n\\[\nx_1 = \\lambda_{11}\\xi_{11} + \\lambda_{12}\\xi_{12} + \\dots + \\lambda_{1p}\\xi_{p} + \\epsilon_1\n\\tag{1}\\]\nWhen retrieving PCA and EFA loadings, several interpretive differences must be kept in mind:\n\n\n\n\n\n\nKey differences between EFA and PCA\n\n\n\n\nPCA: PCA weights can be conceptualised as “directions in feature space along which the data vary the most” (James et al. 2021: 503) and are analogous to regression slopes. Features with similar loadings on a given PC will be very close to each other in a biplot and could be understood as correlated with each other.\nEFA: The factor loadings in an EFA, on the other hand, directly indicate how strong a factor is correlated with an existing independent variable in the dataset. As such, they help identify and interpret the underlying constructs that have given rise to the data. We can think of EFA loadings as regression coefficients and correlation coefficients at the same time.",
+    "objectID": "chapters/01-maths.html#set-theoretic-operations",
+    "href": "chapters/01-maths.html#set-theoretic-operations",
+    "title": "1.4 Formal aspects",
+    "section": "Set-theoretic operations",
+    "text": "Set-theoretic operations\n\nDefinition 1 (Union) The union of two sets \\(A\\) and \\(B\\) is defined as \\[\nA \\cup B = \\{ x : x \\in A \\text{ or } x \\in B\\}.\n\\]\n\n\nExample 1 (Union) Let \\(M = \\{eat, walk, run, sleep\\}\\). If we form the union \\(M \\cup F\\), we state that an element \\(x\\) is either in \\(M\\) or in \\(F\\):\n\\[\nM \\cup F = \\{eat, drink, walk, run, sleep\\}\n\\]\n\n\nDefinition 2 (Intersection) The intersection of two sets \\(A\\) and \\(B\\) is defined as \\[\nA \\cap B = \\{ x : x \\in A \\text{ and } x \\in B\\}.\n\\]\n\n\nExample 2 (Intersection) There is only one element that is both in \\(M\\) and in \\(F\\):\n\\[\nM \\cap F = \\{eat\\}\n\\]",
     "crumbs": [
-      "7. Machine Learning",
-      "7.4 EFA"
+      "1. Fundamentals",
+      "1.4 Formal aspects"
     ]
   },
   {
-    "objectID": "chapters/07-EFA.html#application-in-r",
-    "href": "chapters/07-EFA.html#application-in-r",
-    "title": "7.4 Exploratory Factor Analysis",
-    "section": "Application in R",
-    "text": "Application in R\nWe use our insights from the PCA analysis, according to which three latent variables are enough to capture the bulk of variance in the dataset. When fitting an EFA model, principle axis factoring is the default solution, but could also be changed to fm = \"ml\" to perform Maximum Likelihood Estimation.\n\nefa1 &lt;- fa(scope_sem_sub[,-1], nfactors = 3, rotate = \"none\", fm = \"pa\")\n\nThe remaining printing and plotting methods are identical to PCA.\n\nPrint loadings:\n\n\nloadings(efa1)\n\n\nLoadings:\n                   PA1    PA2    PA3   \nResnik_strength            0.419 -0.269\nConc_Brys           0.800  0.228 -0.300\nNsenses_WordNet     0.560 -0.628  0.236\nNmeanings_Websters  0.495 -0.555  0.233\nVisual_Lanc         0.576  0.141 -0.255\nAuditory_Lanc      -0.270 -0.132  0.153\nHaptic_Lanc         0.608  0.123       \nOlfactory_Lanc      0.291  0.482  0.441\nGustatory_Lanc      0.263  0.513  0.657\nInteroceptive_Lanc -0.245         0.386\n\n                 PA1   PA2   PA3\nSS loadings    2.196 1.482 1.143\nProportion Var 0.220 0.148 0.114\nCumulative Var 0.220 0.368 0.482\n\n\n\nPlot loadings:\n\n\nplot(efa1, labels = colnames(scope_sem_sub[,-1]), main = NA)\n\n\n\n\n\n\n\n\n\nPlot PA scores and loadings:\n\n\nbiplot(efa1, choose = c(1, 2), main = NA,\n       pch = 20, col = c(\"darkgrey\", \"blue\"))\n\n\n\n\n\n\n\nbiplot(efa1, choose = c(2, 3), main = NA,\n       pch = 20, col = c(\"darkgrey\", \"blue\"))\n\n\n\n\n\n\n\n\n\nRotation\nFactors are typically rotated in order to aid in their interpretation, resulting in much clearer loading patterns. Varimax rotation is the default technique and does not affect the model fit (i.e., there is no loss in explained variance; for details see (Mair 2018: 26-29).1\n1 Varimax is a so-called orthogonal rotation technique and, therefore, does not introduce correlations between the factors. If correlated factors are explicitly desired, oblique rotations such as oblimin and promax provide apt alternatives (Mair 2018: 27).\nefa2 &lt;- fa(scope_sem_sub[,-1], nfactors = 3, rotate = \"Varimax\", fm = \"pa\")\n\nloadings(efa2)\n\n\nLoadings:\n                   PA1    PA2    PA3   \nResnik_strength     0.188 -0.470       \nConc_Brys           0.868  0.130  0.107\nNsenses_WordNet     0.145  0.861       \nNmeanings_Websters  0.115  0.771       \nVisual_Lanc         0.638              \nAuditory_Lanc      -0.336              \nHaptic_Lanc         0.572  0.192  0.165\nOlfactory_Lanc      0.164         0.694\nGustatory_Lanc                    0.873\nInteroceptive_Lanc -0.410         0.199\n\n                 PA1   PA2   PA3\nSS loadings    1.868 1.627 1.326\nProportion Var 0.187 0.163 0.133\nCumulative Var 0.187 0.350 0.482\n\n\nThe rotated EFA object paints a picture that is very similar to the PCA result from the previous unit.\n\ndiagram(efa2, main = NA)\n\n\n\n\n\n\n\n\n\nbiplot(efa2, choose = c(1, 2), main = NA,\n       pch = 20, col = c(\"darkgrey\", \"blue\"))\n\n\n\n\n\n\n\nbiplot(efa2, choose = c(2, 3), main = NA,\n       pch = 20, col = c(\"darkgrey\", \"blue\"))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInterpreting the EFA output\n\n\n\n\nPerception: The first principle axis is once more loaded heavily (and positively) by increasing concreteness scores in addition to higher visual and haptic ratings. Moreover, they display strong linear relationships. The negative association with interoceptive ratings suggests that referents that tend be perceived directly with their senses (concreteness) do not tend to be perceived inside their body.\nSenses: In PA2 we find the inverse pattern of PC2 – very strong positive correlations with sense-related features and a weaker, yet notable negative correlation with selectional preference strength. If a verb has more senses, it tends to carry less information about its context.\nIngestion: Interoceptive ratings are no longer part of the picture, thus giving way to the gustatory and olfactory perception of referents.",
+    "objectID": "chapters/01-maths.html#other-common-operations",
+    "href": "chapters/01-maths.html#other-common-operations",
+    "title": "1.4 Formal aspects",
+    "section": "Other common operations",
+    "text": "Other common operations\n\nSums and products\nWe can express a sum such as \\(a_1 + a_2 + \\dots + a_n\\) in a more compact way using the Greek letter \\(\\Sigma\\):\n\\[\n\\sum_{i=1}^n a_i = a_1 + a_2 + a_3 + \\dots + a_n.\n\\]\nHere, \\(i\\) is the index with starting value \\(1\\) and final value \\(n\\).1 In set-theoretic notation, we could say that \\(i \\in \\{1, 2, 3, \\dots, n\\}\\).2\n1 Note that if the summation has no upper limit, it is an infinite sum:\n\\[\n\\sum_{i=1}^{\\infty} = a_1 + a_2 + a_3 + \\dots + a_i+ \\dots.\n\\]2 The index can also be denoted by different letters (\\(j, k\\) etc.) except for \\(n\\).Alternatively, we can also use set-based indexing. If we define \\(A =\\{a_1, a_2, \\ldots, a_n\\}\\) as the set of elements we want to sum, we can write:\n\\[\n\\sum_{a \\in A} a = a_1 + a_2 + a_3 + \\dots +\na_n.\n\\]\nSums are ubiquituous in corpus linguistics. For instance, if \\(f_i\\) represents the frequency of the \\(i\\)-th word in a corpus, then \\(\\sum_{i=1}^n f_i\\) represents the total size of the corpus.\nFor products, the letter \\(\\Pi\\) is used instead of \\(\\Sigma\\). It follows the same pattern:\n\\[\n\\prod_{i=1}^n a_i = a_1 \\cdot a_2 \\cdot a_3 \\cdots a_n.\n\\]\n\n\nUnion and intersection\nAssume we have sets \\(A_1, A_2, \\dots, A_n\\). As an extension of Definition 1, we can represent their union as\n\\[\n\\bigcup_{i=1}^n A_i = A_1 \\cup A_2 \\cup A_3 \\cup  \\dots \\cup A_n.\n\\]\nThe same logic can be applied to Definition 2:\n\\[\n\\bigcap_{i=1}^n A_i = A_1 \\cap A_2 \\cap A_3 \\cap \\dots \\cap A_n.\n\\]",
     "crumbs": [
-      "7. Machine Learning",
-      "7.4 EFA"
+      "1. Fundamentals",
+      "1.4 Formal aspects"
     ]
   },
   {
@@ -982,6 +936,133 @@
       "4. Introduction to Statistics",
       "4.7 Chi-squared test"
     ]
+  },
+  {
+    "objectID": "chapters/07-EFA.html",
+    "href": "chapters/07-EFA.html",
+    "title": "7.4 Exploratory Factor Analysis",
+    "section": "",
+    "text": "For linguists:\n\nLevshina (2015: Chapter 18)\n\nGeneral:\n\nMair (2018: Chapter 2)",
+    "crumbs": [
+      "7. Machine Learning",
+      "7.4 EFA"
+    ]
+  },
+  {
+    "objectID": "chapters/07-EFA.html#recommended-reading",
+    "href": "chapters/07-EFA.html#recommended-reading",
+    "title": "7.4 Exploratory Factor Analysis",
+    "section": "",
+    "text": "For linguists:\n\nLevshina (2015: Chapter 18)\n\nGeneral:\n\nMair (2018: Chapter 2)",
+    "crumbs": [
+      "7. Machine Learning",
+      "7.4 EFA"
+    ]
+  },
+  {
+    "objectID": "chapters/07-EFA.html#preparation",
+    "href": "chapters/07-EFA.html#preparation",
+    "title": "7.4 Exploratory Factor Analysis",
+    "section": "Preparation",
+    "text": "Preparation\nThe implementation of Exploratory Factor Analysis in R is very similar to that of Principle Components Analysis. To highlight these similarities, we will use the same libraries (most importantly psych) and the same dataset scope_sem_sub as in the unit on PCA (see ?@sec-pca-prep for further details).\n\n# Load libraries\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(purrr)\nlibrary(psych)\n\n\nAttaching package: 'psych'\n\nThe following objects are masked from 'package:ggplot2':\n\n    %+%, alpha\n\nlibrary(GPArotation)\n\n\nAttaching package: 'GPArotation'\n\nThe following objects are masked from 'package:psych':\n\n    equamax, varimin\n\nlibrary(gridExtra)\n\n\nAttaching package: 'gridExtra'\n\nThe following object is masked from 'package:dplyr':\n\n    combine\n\n# Load data\nscope_sem_df &lt;- readRDS(\"../datasets/scope_sem.RDS\")\n\n# Select subset\nscope_sem_sub &lt;- scope_sem_df[,1:11]\n\n# Overview\nglimpse(scope_sem_sub)\n\nRows: 1,702\nColumns: 11\n$ Verb               &lt;chr&gt; \"abstain\", \"abstract\", \"abuse\", \"accelerate\", \"acce…\n$ Resnik_strength    &lt;dbl&gt; 0.40909889, 0.18206692, 0.12473608, -0.76972217, -1…\n$ Conc_Brys          &lt;dbl&gt; -0.94444378, -1.92983639, -0.59478833, 0.22107437, …\n$ Nsenses_WordNet    &lt;dbl&gt; -0.68843996, 0.27755219, 0.00155443, -0.68843996, 0…\n$ Nmeanings_Websters &lt;dbl&gt; -0.95559835, 0.73781281, 0.73781281, -0.27823388, 0…\n$ Visual_Lanc        &lt;dbl&gt; -2.2545455, 0.6103733, 1.3354358, -0.4342084, -0.34…\n$ Auditory_Lanc      &lt;dbl&gt; -0.84225787, -0.35605108, 1.54797548, 0.18795651, 1…\n$ Haptic_Lanc        &lt;dbl&gt; -0.75523987, -0.29089287, 1.25099360, -0.18911818, …\n$ Olfactory_Lanc     &lt;dbl&gt; -0.14444936, -0.37350419, -0.53335522, -0.37350419,…\n$ Gustatory_Lanc     &lt;dbl&gt; 0.27698988, -0.10105698, -0.36148925, -0.52110903, …\n$ Interoceptive_Lanc &lt;dbl&gt; 1.08153427, -0.06560311, 1.64313895, 1.45452985, 0.…",
+    "crumbs": [
+      "7. Machine Learning",
+      "7.4 EFA"
+    ]
+  },
+  {
+    "objectID": "chapters/07-EFA.html#exploratory-factor-analysis-vs.-pca",
+    "href": "chapters/07-EFA.html#exploratory-factor-analysis-vs.-pca",
+    "title": "7.4 Exploratory Factor Analysis",
+    "section": "Exploratory Factor Analysis vs. PCA",
+    "text": "Exploratory Factor Analysis vs. PCA\nExploratory Factor Analysis (EFA) is quite similar to PCA in that it compresses the high-dimensional feature space, yet the core idea is not to capture as much variance as possible with as few variables as possible, but rather reveal latent (= invisible) variables, i.e., factors.\nThe computation bears some resemblance to that of PCA, with the main difference being that an observation \\(x_m\\) is assumed to be generated by combinations of factor loadings \\(\\lambda_{1}, \\lambda_{2}, \\dots, \\lambda_{mp}\\) with the underlying factors \\(\\xi_{1}, \\xi_{2}, \\dots, \\xi_{p}\\) (see Equation 1). Everything to the right of the equation can only be obtained by running estimation procedures such as Principle Axis Factoring or Maximum Likelihood Estimation.\n\\[\nx_1 = \\lambda_{11}\\xi_{11} + \\lambda_{12}\\xi_{12} + \\dots + \\lambda_{1p}\\xi_{p} + \\epsilon_1\n\\tag{1}\\]\nWhen retrieving PCA and EFA loadings, several interpretive differences must be kept in mind:\n\n\n\n\n\n\nKey differences between EFA and PCA\n\n\n\n\nPCA: PCA weights can be conceptualised as “directions in feature space along which the data vary the most” (James et al. 2021: 503) and are analogous to regression slopes. Features with similar loadings on a given PC will be very close to each other in a biplot and could be understood as correlated with each other.\nEFA: The factor loadings in an EFA, on the other hand, directly indicate how strong a factor is correlated with an existing independent variable in the dataset. As such, they help identify and interpret the underlying constructs that have given rise to the data. We can think of EFA loadings as regression coefficients and correlation coefficients at the same time.",
+    "crumbs": [
+      "7. Machine Learning",
+      "7.4 EFA"
+    ]
+  },
+  {
+    "objectID": "chapters/07-EFA.html#application-in-r",
+    "href": "chapters/07-EFA.html#application-in-r",
+    "title": "7.4 Exploratory Factor Analysis",
+    "section": "Application in R",
+    "text": "Application in R\nWe use our insights from the PCA analysis, according to which three latent variables are enough to capture the bulk of variance in the dataset. When fitting an EFA model, principle axis factoring is the default solution, but could also be changed to fm = \"ml\" to perform Maximum Likelihood Estimation.\n\nefa1 &lt;- fa(scope_sem_sub[,-1], nfactors = 3, rotate = \"none\", fm = \"pa\")\n\nThe remaining printing and plotting methods are identical to PCA.\n\nPrint loadings:\n\n\nloadings(efa1)\n\n\nLoadings:\n                   PA1    PA2    PA3   \nResnik_strength            0.419 -0.269\nConc_Brys           0.800  0.228 -0.300\nNsenses_WordNet     0.560 -0.628  0.236\nNmeanings_Websters  0.495 -0.555  0.233\nVisual_Lanc         0.576  0.141 -0.255\nAuditory_Lanc      -0.270 -0.132  0.153\nHaptic_Lanc         0.608  0.123       \nOlfactory_Lanc      0.291  0.482  0.441\nGustatory_Lanc      0.263  0.513  0.657\nInteroceptive_Lanc -0.245         0.386\n\n                 PA1   PA2   PA3\nSS loadings    2.196 1.482 1.143\nProportion Var 0.220 0.148 0.114\nCumulative Var 0.220 0.368 0.482\n\n\n\nPlot loadings:\n\n\nplot(efa1, labels = colnames(scope_sem_sub[,-1]), main = NA)\n\n\n\n\n\n\n\n\n\nPlot PA scores and loadings:\n\n\nbiplot(efa1, choose = c(1, 2), main = NA,\n       pch = 20, col = c(\"darkgrey\", \"blue\"))\n\n\n\n\n\n\n\nbiplot(efa1, choose = c(2, 3), main = NA,\n       pch = 20, col = c(\"darkgrey\", \"blue\"))\n\n\n\n\n\n\n\n\n\nRotation\nFactors are typically rotated in order to aid in their interpretation, resulting in much clearer loading patterns. Varimax rotation is the default technique and does not affect the model fit (i.e., there is no loss in explained variance; for details see (Mair 2018: 26-29).1\n1 Varimax is a so-called orthogonal rotation technique and, therefore, does not introduce correlations between the factors. If correlated factors are explicitly desired, oblique rotations such as oblimin and promax provide apt alternatives (Mair 2018: 27).\nefa2 &lt;- fa(scope_sem_sub[,-1], nfactors = 3, rotate = \"Varimax\", fm = \"pa\")\n\nloadings(efa2)\n\n\nLoadings:\n                   PA1    PA2    PA3   \nResnik_strength     0.188 -0.470       \nConc_Brys           0.868  0.130  0.107\nNsenses_WordNet     0.145  0.861       \nNmeanings_Websters  0.115  0.771       \nVisual_Lanc         0.638              \nAuditory_Lanc      -0.336              \nHaptic_Lanc         0.572  0.192  0.165\nOlfactory_Lanc      0.164         0.694\nGustatory_Lanc                    0.873\nInteroceptive_Lanc -0.410         0.199\n\n                 PA1   PA2   PA3\nSS loadings    1.868 1.627 1.326\nProportion Var 0.187 0.163 0.133\nCumulative Var 0.187 0.350 0.482\n\n\nThe rotated EFA object paints a picture that is very similar to the PCA result from the previous unit.\n\ndiagram(efa2, main = NA)\n\n\n\n\n\n\n\n\n\nbiplot(efa2, choose = c(1, 2), main = NA,\n       pch = 20, col = c(\"darkgrey\", \"blue\"))\n\n\n\n\n\n\n\nbiplot(efa2, choose = c(2, 3), main = NA,\n       pch = 20, col = c(\"darkgrey\", \"blue\"))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInterpreting the EFA output\n\n\n\n\nPerception: The first principle axis is once more loaded heavily (and positively) by increasing concreteness scores in addition to higher visual and haptic ratings. Moreover, they display strong linear relationships. The negative association with interoceptive ratings suggests that referents that tend be perceived directly with their senses (concreteness) do not tend to be perceived inside their body.\nSenses: In PA2 we find the inverse pattern of PC2 – very strong positive correlations with sense-related features and a weaker, yet notable negative correlation with selectional preference strength. If a verb has more senses, it tends to carry less information about its context.\nIngestion: Interoceptive ratings are no longer part of the picture, thus giving way to the gustatory and olfactory perception of referents.",
+    "crumbs": [
+      "7. Machine Learning",
+      "7.4 EFA"
+    ]
+  },
+  {
+    "objectID": "sections/01-fundamentals.html",
+    "href": "sections/01-fundamentals.html",
+    "title": "1. Fundamentals",
+    "section": "",
+    "text": "This section covers the fundamental concepts needed to understand statistics for corpus linguistics.\n\n\n\n1.1 Basics\n1.2 Research Questions\n1.3 Linguistic Variables\n1.4 Formal aspects"
+  },
+  {
+    "objectID": "sections/01-fundamentals.html#chapters",
+    "href": "sections/01-fundamentals.html#chapters",
+    "title": "1. Fundamentals",
+    "section": "",
+    "text": "1.1 Basics\n1.2 Research Questions\n1.3 Linguistic Variables\n1.4 Formal aspects"
+  },
+  {
+    "objectID": "chapters/04-probability.html",
+    "href": "chapters/04-probability.html",
+    "title": "4.2 Probability theory",
+    "section": "",
+    "text": "Most accessible:\n\nBaguley (2012): Chapter 2\n\nTechnical:\n\nHeumann, Schomaker, and Shalabh (2022a): Chapter 7\nAgresti and Kateri (2022): Chapter 2\n\nProof-based:\n\nCasella and Berger (2002): Chapters 1 & 2",
+    "crumbs": [
+      "4. Introduction to Statistics",
+      "4.2 Probability theory"
+    ]
+  },
+  {
+    "objectID": "chapters/04-probability.html#recommended-reading",
+    "href": "chapters/04-probability.html#recommended-reading",
+    "title": "4.2 Probability theory",
+    "section": "",
+    "text": "Most accessible:\n\nBaguley (2012): Chapter 2\n\nTechnical:\n\nHeumann, Schomaker, and Shalabh (2022a): Chapter 7\nAgresti and Kateri (2022): Chapter 2\n\nProof-based:\n\nCasella and Berger (2002): Chapters 1 & 2",
+    "crumbs": [
+      "4. Introduction to Statistics",
+      "4.2 Probability theory"
+    ]
+  },
+  {
+    "objectID": "chapters/04-probability.html#defining-probability",
+    "href": "chapters/04-probability.html#defining-probability",
+    "title": "4.2 Probability theory",
+    "section": "Defining probability",
+    "text": "Defining probability\nThe OED provides several non-technical definition of term probability, including\n\n‘the extent to which something is likely to happen or be the case’1 and\n‘thing judged likely to be true, to exist, or to happen’2,\n\n1 See https://doi.org/10.1093/OED/1639707847.2 See https://doi.org/10.1093/OED/3638534852.which seem to express a speaker’s subjective and gradable certainty about the (non-)occurrence of processes in the world. This is a good point of departure, but in order to incorporate this concept into empirical research, a more rigorous definition is called for.\n\nRelative frequency\nAgresti & Kateri (2022: 29) adduce a frequency-based interpretation of probability:\n\n“For an observation of a random phenomenon, the probability of a particular outcome is the proportion of times that outcome would occur in an indefinitely long sequence of like observations, under the same conditions.”\n\nIn other words, the probability of an 3 \\(A\\), denoted \\(P(A)\\), is equivalent to the long-term relative frequency of \\(A\\) as the number of observations \\(n\\) increases. The relative frequency \\(f(A)\\) is obtained by dividing the frequency of occurrence \\(n(A)\\) by the sample size \\(n\\), i.e.,\n3 An event is understood as any subset of the sample space \\(S\\), comprising one or more outcomes.\\[\nf(A) = \\frac{n(A)}{n}.\n\\]\nHeumann et al. (2022b: 118) explains that \\(f(A)\\) converges to the probability \\(P(A)\\) as \\(n\\) approaches infinity:\n\\[\nP(A) = \\lim_{n\\to\\infty} \\frac{n(A)}{n}.\n\\]\n\n\nKolmogorov’s axioms\nOn the most abstract level, probabilities are defined as functions that associate elements from the sample space \\(S = \\{s_1, s_2, ..., s_n\\}\\) with values in the interval \\([0, 1]\\), subject to certain conditions.\nThe Russian Mathematician Andrei Kolmogorov (1903–1987) proposed three axioms that a probability function \\(P\\) must satisfy:\n\nEvery event \\(A\\) in the sample space \\(S\\) has a probability\n\n\\[P(A) \\geq 0.\\]\n\nThe probability of the sample space \\(S\\)\n\n\\[P(S) = 1.\\]\n\nAssuming two disjoint (i.e., mutually exclusive) events4 \\(A_1\\) and \\(A_2\\), then\n\n4 Note that this axiom can be generalised to infinite series of pairwise disjoint events \\(A_i\\):\n\\[\nP\\left(\\bigcup\\limits_{i=1}^{\\infty} A_i\\right) = \\sum\\limits_{i=1}^{\\infty} P(A_i).\n\\]\\[P(A \\cap B) = P(A) + P(B).\\]",
+    "crumbs": [
+      "4. Introduction to Statistics",
+      "4.2 Probability theory"
+    ]
+  },
+  {
+    "objectID": "chapters/04-probability.html#probability-distributions",
+    "href": "chapters/04-probability.html#probability-distributions",
+    "title": "4.2 Probability theory",
+    "section": "Probability distributions",
+    "text": "Probability distributions\nRecall the concept of random variables introduced in 4.1 Data types. They describe random processes, which means that the outcomes of the experiment are not pre-determined in any way; there is always some degree of uncertainty involved. Each outcome occurs with a certain probability.\nWhen we associate each outcome of a random variable with a probability, we obtain its probability distribution. A function that explicitly maps probabilities onto the discrete outcomes of a discrete random variable \\(X\\) is called probability mass function (\\(pmf\\)). In the continuous case, we speak of a probability density function (\\(pdf\\)).\nDiscrete random variables have discrete probability distributions, and continuous variables have continuous probability distributions. For each distribution, we can compute\n\nthe expected (‘average’ or ‘typical’) value \\(E(X)\\),\nthe variance \\(Var(X) = E(X-E(X))^2\\), which describes the spread around the expectation, and\nthe standard deviation \\(\\sqrt{Var(X)}\\), the average distance from the mean.\n\nThe are several further measures we can use to describe probability distributions, including\n\nskewness (symmetry) \\(E(X-E(X))^3\\) and\nkurtosis (‘peakedness’ or ‘flatness’) \\(E(X-E(X))^4\\).\n\n\nDiscrete distributions\n\nUniform distribution\nIf all discrete outcomes have the same probability, their distribution is called uniform. A well-known example is the toss of a coin: If the coin is fair, the outcomes \\(\\{\\text{Heads}\\}\\) and \\(\\{\\text{Tails}\\}\\) are equally likely. More generally, if a discrete random variable \\(X\\) has \\(k\\) different outcomes, then any outcome \\(x_i\\) has the probability\n\\[\nP(X = x_i) = \\frac{1}{k}.\n\\]\nIf we toss a fair coin once, the sample space is \\(S = \\{\\text{Heads}, \\text{Tails}\\}\\), and we have \\(P(\\text{Heads}) = P(\\text{Tails}) = \\frac{1}{2}\\).\nNote that all probabilities have to add up to 1, i.e.,\n\\[\n\\sum_{x\\in X} P(x) = 1.\n\\]\n\n\nShow the code\n# Load libraries\nlibrary(tidyverse)\n\n# First, set a seed for reproducibility; this ensure that we always generate the 'same' random numbers\nset.seed(123)\n\n# Simulate 10,000 rolls of a fair six-sided die\ndie_rolls &lt;- sample(1:6, size = 10000, replace = TRUE)\n\n# Plot the probability mass function\nggplot(data.frame(die_rolls), aes(x = factor(die_rolls))) +\n  geom_bar(aes(y = ..count../sum(..count..)), fill = \"steelblue\") +\n  geom_hline(yintercept = 1/6, col = \"black\") +\n  labs(title = \"Rolling a die 10000 times (k = 6, p = 1/6)\",\n       y = \"Probability\",\n       x = \"Outcome\") +\n  scale_y_continuous(limits = c(0, 0.25)) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExpectation and variance\n\n\n\n\n\n\\[\n\\begin{align}\nE(X) &= \\frac{k+1}{2} \\\\\nVar(X) &= \\frac{1}{12}(k^2-1)\n\\end{align}\n\\] Let’s compute the typical outcome of a dice throw:\n\n# Define outcomes and probabilities\noutcomes &lt;- 1:6\nprobs &lt;- rep(1/6, 6)  # Equal probability for each outcome\n\n# Expectation\nexpectation &lt;- sum(outcomes * probs)\n\nprint(expectation)\n\n[1] 3.5\n\n\nWe can obtain the variance and standard deviation as follows:\n\n# Variance\nvariance &lt;- sum((outcomes - expectation)^2 * probs)\n\nprint(variance)\n\n[1] 2.916667\n\n# Standard deviation\nsd &lt;- sqrt(variance)\n\nprint(sd)\n\n[1] 1.707825\n\n\n\n\n\n\n\nBinomial distribution\nMany corpus-linguistic studies are concerned with discrete random variables \\(X\\) that have exactly two outcomes, such as the dative alternation (give somebody something vs. give something to somebody), the particle placement alternation (pick something up vs. pick up something), or subject and object realisation (overt vs. null).\nAssume we make \\(n\\) independent binary observations (also known as Bernoulli trials) of \\(X\\). If one of the two outcomes of \\(X\\) has a fixed probability \\(\\pi\\) (often denoted ‘success’) and the other one the probability \\(1 - \\pi\\) (‘failure’), \\(X\\) follows a binomial distribution.5 We can also use the shorthand notation\n5 The natural extension of the binomial distribution to \\(k\\) different outcomes is called the multinomial distribution with index \\(n\\) and probabilities \\(\\pi_1, \\pi_2, \\dots, \\pi_k\\).\\[\nX \\sim Binom(n, \\pi).\n\\]The elements inside the parentheses are the parameters of the distribution, determining the outcomes of \\(X\\): the number \\(n\\) of independent observations and the probability \\(\\pi\\) of ‘success’.\n\n\nShow the code\n# Set seed for reproducibility\nset.seed(123)\n\n# Set parameters for binomial distribution\nn &lt;- 30    # Number of trials\npi &lt;- 0.5  # Probability of HEADS\n\n# Set up the pmf\nsuccesses &lt;- 0:n\nprob_mass &lt;- dbinom(successes, size = n, prob = pi)\n\n# Create a data frame for plotting\nbinom_data &lt;- data.frame(successes = successes, probability = prob_mass)\n\n# Basic plot approach\nggplot(binom_data, aes(x = successes, y = probability)) +\n  geom_segment(aes(xend = successes, yend = 0), linewidth = 1.2) +\n  labs(title = \"PMF of n = 30 coin tosses with P({Heads}) = 0.5\",\n       x = \"Occurrences of {Heads}\", y = \"Probability\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExpectation and variance\n\n\n\n\n\n\\[\n\\begin{align}\nE(X) &= n\\pi \\\\\nVar(X) &= n\\pi(1-\\pi)\n\\end{align}\n\\]\n\n# Expectation\nbinom_exp &lt;- n * pi; binom_exp\n\n[1] 15\n\n# Variance\nbinom_var &lt;- n * pi * (1 - pi); binom_var\n\n[1] 7.5\n\n# Standard deviation\nbinom_sd &lt;- sqrt(binom_var); binom_sd\n\n[1] 2.738613\n\n\n\n\n\n\n\nPoisson distribution\nThe Poisson distribution is particularly suitable for frequency data, which is ubiquitous in corpus linguistics. A Poisson-distributed random variable is fully determined by its parameter \\(\\lambda\\), which determines how often events occur.\n\\[\nX \\sim Pois(\\lambda).\n\\]\nNote that \\(\\lambda\\) is both the expected value and variance of the distribution.\n\n\nShow the code\n# Define the occurrence rate\nlambda &lt;- 3\n\n# Define the range of x values\nx_range &lt;- 0:15 \n\n# Compute PMF values using dpois()\npoisson_pmf &lt;- data.frame(\n  x = x_range,\n  probability = dpois(x_range, lambda)\n)\n\n# Create the PMF plot using ggplot\nggplot(poisson_pmf, aes(x = x, y = probability)) +\n  geom_segment(aes(xend = x, yend = 0), linewidth = 1.2) + \n  labs(title = \"Poisson PMF with λ = 5\",\n       x = \"Number of events\",\n       y = \"Probability\") +\n  scale_x_continuous(breaks = x_range) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nA common alternative to the Poisson distribution, which is often deemed more flexible, is the negative binomial distribution, as it provides two distinct parameters for its expectation and variance each.\n\n\n\nContinuous distributions\n\nThe normal distribution\nA great number of numerical variables in the world follow the well-known normal (or Gaussian) distribution, which includes test scores, weight and height, among many others. The plot below illustrates its characteristic bell-shape: Most observations are in the middle, with considerably fewer near the fringes. For example, most people are rather “average” in height; there are only few people that are extremely short or extremely tall.\nThe normal distribution is typically described in terms of two parameters: The population mean \\(\\mu\\) and the population standard deviation \\(\\sigma\\). If a random variable \\(X\\) is normally distributed, we typically use the notation in Equation 1.\n\\[ X \\sim N(\\mu, \\sigma^2).\n\\tag{1}\\]\n\n\nShow the code\n# Set parameters for normal distribution\nmu &lt;- 0     # Mean (expectation)\nsigma &lt;- 1  # Standard deviation (square root of variance)\nvariance &lt;- sigma^2\n\n# Generate a sequence of x-values in a range of +/- 4 standard deviations from the mean\nx_values &lt;- seq(mu - 4*sigma, mu + 4*sigma, length.out = 1000)\n\n# Collect everything in a data frame\nnorm_data &lt;- data.frame(\n  x = x_values,\n  density = dnorm(x_values, mean = mu, sd = sigma)\n)\n\n# Plot the simulated data\nggplot(norm_data, aes(x = x, y = density)) +\n  geom_line(linewidth = 1, color = \"#0D47A1\") +\n  labs(\n    title = \"PDF for N(0, 1)\",\n    x = \"x\",\n    y = \"Probability density\") +\n  theme_minimal() \n\n\n\n\n\n\n\n\n\nIn the plot, the \\(y\\)-axis indicates the density of population values; note that since the Gaussian distribution is a continuous distribution with technically infinite \\(x\\)-values, the probability of any given value must be 0. We can only obtain probabilities for intervals of values, which are given by\n\\[\nP(a \\leq X \\leq b) = \\int_a^b f(x)dx.\n\\tag{2}\\]\n\n\n\n\n\n\nQuick facts about the Gaussian bell curve\n\n\n\n\n\nQuite interestingly,\n\n68% all values fall within one standard deviation of the mean,\n95% within two, and\n99.7% within three.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExpectation and variance\n\n\n\n\n\n\\[\n\\begin{align}\nE(X) &= \\mu \\\\\nVar(X) &= \\sigma^2\n\\end{align}\n\\]",
+    "crumbs": [
+      "4. Introduction to Statistics",
+      "4.2 Probability theory"
+    ]
+  },
+  {
+    "objectID": "chapters/01-fundamentals.html",
+    "href": "chapters/01-fundamentals.html",
+    "title": "1. Fundamentals",
+    "section": "",
+    "text": "This section covers the fundamental concepts needed to understand statistics for corpus linguistics.\n\n\n\n1.1 Basics\n1.2 Research Questions\n1.3 Linguistic Variables\n1.4 Formal aspects"
+  },
+  {
+    "objectID": "chapters/01-fundamentals.html#chapters",
+    "href": "chapters/01-fundamentals.html#chapters",
+    "title": "1. Fundamentals",
+    "section": "",
+    "text": "1.1 Basics\n1.2 Research Questions\n1.3 Linguistic Variables\n1.4 Formal aspects"
   },
   {
     "objectID": "chapters/01-linguistic_variables.html",
@@ -1171,6 +1252,72 @@
     ]
   },
   {
+    "objectID": "chapters/04-categorical_data.html",
+    "href": "chapters/04-categorical_data.html",
+    "title": "4.3 Categorical data",
+    "section": "",
+    "text": "Script\n\n\n\nYou can find the full R script associated with this unit here.\n\n\nPlease download the file Paquot_Larsson_2020_data.xlsx (Paquot and Larsson 2020)1 and store it in the same folder as your currently active R-script. Then run the code lines below:\n1 The original supplementary materials can be downloaded from the publisher’s website [Last accessed April 28, 2024].\n# Libraries\nlibrary(readxl)\nlibrary(tidyverse)\n# For publication-ready tables\nlibrary(crosstable)\nlibrary(flextable)\n\n# Load data from working directory\ncl.order &lt;- read_xlsx(\"../datasets/Paquot_Larsson_2020_data.xlsx\")\n\n# Check the structure of the data frame\nhead(cl.order)",
+    "crumbs": [
+      "4. Introduction to Statistics",
+      "4.3 Categorical data"
+    ]
+  },
+  {
+    "objectID": "chapters/04-categorical_data.html#preparation",
+    "href": "chapters/04-categorical_data.html#preparation",
+    "title": "4.3 Categorical data",
+    "section": "",
+    "text": "Script\n\n\n\nYou can find the full R script associated with this unit here.\n\n\nPlease download the file Paquot_Larsson_2020_data.xlsx (Paquot and Larsson 2020)1 and store it in the same folder as your currently active R-script. Then run the code lines below:\n1 The original supplementary materials can be downloaded from the publisher’s website [Last accessed April 28, 2024].\n# Libraries\nlibrary(readxl)\nlibrary(tidyverse)\n# For publication-ready tables\nlibrary(crosstable)\nlibrary(flextable)\n\n# Load data from working directory\ncl.order &lt;- read_xlsx(\"../datasets/Paquot_Larsson_2020_data.xlsx\")\n\n# Check the structure of the data frame\nhead(cl.order)",
+    "crumbs": [
+      "4. Introduction to Statistics",
+      "4.3 Categorical data"
+    ]
+  },
+  {
+    "objectID": "chapters/04-categorical_data.html#describing-categorical-data",
+    "href": "chapters/04-categorical_data.html#describing-categorical-data",
+    "title": "4.3 Categorical data",
+    "section": "Describing categorical data",
+    "text": "Describing categorical data\nA categorical variable is made up of two or more discrete values. An intuitive way to describe categorical data would be to count how often each category occurs in the sample. These counts are then typically summarised in frequency tables and accompanied by suitable graphs (e.g., barplots).\n\nFrequency tables (one variable)\nAssume we are interested in how often each clause ordering type ( \"mc-sc\" vs. \"sc-mc\") is attested in our data. In R, we can obtain their frequencies by inspecting the ORDER column of the cl.order dataset. Since manual counting isn’t really an option, we will make use of the convenient functions table() and xtabs().\n\n\n\n\n\n\nThe workhorse: table()\n\n\n\n\n\nThis function requires a character vector. We use the notation cl.order$ORDER to subset the cl.order data frame according to the column ORDER (cf. data frames). We store the results in the variable order_freq1 (you may choose a different name if you like) and display the output by applying to it the print() function.\n\n# Count occurrences of ordering types (\"mc-sc\" and \"sc-mc\") in the data frame\norder_freq1 &lt;- table(cl.order$ORDER) \n\n# Print table\nprint(order_freq1)\n\n\nmc-sc sc-mc \n  275   128 \n\n\n\n\n\n\n\n\n\n\n\nMore detailed: xtabs()\n\n\n\n\n\nAlternatively, you could use xtabs() to achieve the same result. The syntax is a little different, but it returns a slightly more more detailed table with explicit variable label(s).\n\n# Count occurrences of ordering types (\"mc-sc\" and \"sc-mc\")\norder_freq2 &lt;- xtabs(~ ORDER, cl.order)\n\n# Print table\nprint(order_freq2)\n\nORDER\nmc-sc sc-mc \n  275   128 \n\n\n\n\n\n\n\nFrequency tables (\\(\\geq\\) 2 variables)\nIf we are interested in the relationship between multiple categorical variables, we can cross-tabulate the frequencies of their categories. For example, what is the distribution of clause order depending on the type of subordinate clause? The output is also referred to as a contingency table.\n\n\n\n\n\n\nThe table() way\n\n\n\n\n\n\n# Get frequencies of ordering tpyes (\"mc-sc\" vs. \"sc-mc\") depending on the type of subordinate clause (\"caus\" vs. \"temp\")\norder_counts1 &lt;- table(cl.order$ORDER, cl.order$SUBORDTYPE)\n\n# Print contingency table\nprint(order_counts1)\n\n       \n        caus temp\n  mc-sc  184   91\n  sc-mc   15  113\n\n\n\n\n\n\n\n\n\n\n\nThe xtabs() way\n\n\n\n\n\n\n# Cross-tabulate ORDER and SUBORDTYPE\norder_counts2 &lt;- xtabs(~ ORDER + SUBORDTYPE, cl.order)\n\n# Print cross-table\nprint(order_counts2)\n\n       SUBORDTYPE\nORDER   caus temp\n  mc-sc  184   91\n  sc-mc   15  113\n\n\n\n\n\n\n\nPercentage tables\nThere are several ways to compute percentages for your cross-tables, but by far the simplest is via the prop.table() function. As it only provides proportions, you can multiply the output by 100 to obtain real percentages.\n\n\n\n\n\n\nGet percentages for a table() object\n\n\n\n\n\n\n# Convert to % using the prop.table() function\npct1 &lt;- prop.table(order_counts1) * 100\n\n# Print percentages\nprint(pct1)\n\n       \n             caus      temp\n  mc-sc 45.657568 22.580645\n  sc-mc  3.722084 28.039702\n\n\n\n\n\n\n\n\n\n\n\nGet percentages for an xtabs() object\n\n\n\n\n\n\n# Convert to % using the prop.table() function\npct2 &lt;- prop.table(order_counts2) * 100\n\n# Print percentages\nprint(pct2)\n\n       SUBORDTYPE\nORDER        caus      temp\n  mc-sc 45.657568 22.580645\n  sc-mc  3.722084 28.039702\n\n\nNotice how pct2 still carries the variable labels SUBORDTYPE and ORDER, which is very convenient.",
+    "crumbs": [
+      "4. Introduction to Statistics",
+      "4.3 Categorical data"
+    ]
+  },
+  {
+    "objectID": "chapters/04-categorical_data.html#plotting-categorical-data",
+    "href": "chapters/04-categorical_data.html#plotting-categorical-data",
+    "title": "4.3 Categorical data",
+    "section": "Plotting categorical data",
+    "text": "Plotting categorical data\nThis section demonstrates both the in-built plotting functions of R (‘Base R’) as well as the more modern versions provided by the tidyverse package.\n\n\n\n\n\n\nMosaicplots (raw counts)\n\n\n\n\n\nA straightforward way to visualise a contingency table is the mosaicplot:\n\n# Works with raw counts and percentages\n# Using the output of xtabs() as input\nmosaicplot(order_counts2, color = TRUE)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBarplots (raw counts)\n\n\n\n\n\nThe workhorse of categorical data analysis is the barplot. Base R functions usually require a table object as input, whereas ggplot2 can operate on the raw dataset.\n\nOne variable\n\nBase Rggplot2\n\n\n\nBase R barplot with barplot(); requires the counts as computed by tables() or xtabs()\n\n\n# Generate cross-table\norder_freq1 &lt;- table(cl.order$ORDER)\n\n# Create barplot\nbarplot(order_freq1)\n\n\n\n\n\n\n\n\n\n\n\nBarplot with geom_bar() using the raw input data\n\n\n# Requirement: library(tidyverse)\n\n# Raw input data\nhead(cl.order)\n\n# A tibble: 6 × 8\n   CASE ORDER SUBORDTYPE LEN_MC LEN_SC LENGTH_DIFF CONJ     MORETHAN2CL\n  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;      \n1  4777 sc-mc temp            4     10          -6 als/when no         \n2  1698 mc-sc temp            7      6           1 als/when no         \n3   953 sc-mc temp           12      7           5 als/when yes        \n4  1681 mc-sc temp            6     15          -9 als/when no         \n5  4055 sc-mc temp            9      5           4 als/when yes        \n6   967 sc-mc temp            9      5           4 als/when yes        \n\n# Create barplot\nggplot(cl.order, aes(x = ORDER)) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\n\n\nTwo variables\nBivariate barplots can be obtained by either supplying a contingency table (Base R) or by mapping the second variable onto the fill argument using the raw data.\n\nBase RBase R (fully customised)ggplot2ggplot2 (fully customised)\n\n\n\n# Generate cross-table with two variables\norder_counts2 &lt;- xtabs(~ ORDER + SUBORDTYPE, cl.order)\n\n# Create simple barplot\nbarplot(order_counts2, \n        beside = TRUE,  # Make bars side-by-side\n        legend = TRUE)  # Add a legend\n\n\n\n\n\n\n\n\n\n\n\n# Generate cross-table with two variables\norder_counts2 &lt;- xtabs(~ ORDER + SUBORDTYPE, cl.order)\n\n# Customise barplot with axis labels, colours and legend\nbarplot(order_counts2, \n        beside = TRUE,  # Make bars dodged (i.e., side by side)\n        main = \"Distribution of ORDER by SUBORDTYPE (Base R)\", \n        xlab = \"ORDER\", \n        ylab = \"Frequency\", \n        col = c(\"lightblue\", \"lightgreen\"), # Customize colors\n        legend = TRUE,  # Add a legend\n        args.legend = list(title = \"SUBORDTYPE\", x = \"topright\"))\n\n\n\n\n\n\n\n\n\n\n\n# Requirement: library(tidyverse)\n\n# Create simple barplot with the ggplot() function\nggplot(cl.order, aes(x = ORDER, fill = SUBORDTYPE)) +\n  geom_bar(position = \"dodge\")\n\n\n\n\n\n\n\n\n\n\n\n# Requirement: library(tidyverse)\n\n# Fully customised ggplot2 object\nggplot(cl.order, aes(x = ORDER, fill = SUBORDTYPE)) +\n  geom_bar(position = \"dodge\") +\n  labs(\n    title = \"Clause order by subordinate clause type\",\n    x = \"Clause order\",\n    y = \"Frequency\",\n    fill = \"Type of subordinate clause\"\n  ) +\n  theme_bw()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBarplots (percentages)\n\n\n\n\n\n\nBase Rggplot2\n\n\nIn very much the same way as with the raw counts:\n\n# Create simple barplot with a percentage table as input\nbarplot(pct1, \n        beside = TRUE,  # Make bars side-by-side\n        legend = TRUE)  # Add a legend\n\n\n\n\n\n\n\n\n\n\nHere, a few tweaks are necessary. Because the ggplot() function prefers to works with data frames rather than cross-tables, we’ll have to coerce it into one first:\n\n# Convert a percentage table to a data frame\n# My recommendation: Use the pct2 object, which was generated using xtabs() because it will keep the variable names\npct2_df &lt;- as.data.frame(pct2)\n\nprint(pct2_df)\n\n  ORDER SUBORDTYPE      Freq\n1 mc-sc       caus 45.657568\n2 sc-mc       caus  3.722084\n3 mc-sc       temp 22.580645\n4 sc-mc       temp 28.039702\n\n\nNow we can plot the percentages with geom_col(). This geom (= ‘geometric object’) allows us to manually specify what should be mapped onto the y-axis:\n\n# Requirement: library(tidyverse)\n\n# Create barplot with user-defined y-axis, which requires geom_col() rather than geom_bar()\nggplot(pct2_df, aes(x = ORDER, y = Freq, fill = SUBORDTYPE)) +\n  geom_col(position = \"dodge\") +\n  labs(y = \"Frequency (in %)\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBubble plot (percentages)\n\n\n\n\n\n\n# Requirement: library(tidyverse)\n\n# Bubble plot\nggplot(pct2_df, aes(x = ORDER, y = SUBORDTYPE, size = Freq)) +\n  geom_point(color = \"skyblue\", alpha = 0.7) +\n  scale_size_continuous(range = c(5, 20)) +  # Adjust bubble size range\n  labs(title = \"Bubble Plot of ORDER by SUBORDTYPE\",\n       x = \"ORDER\",\n       y = \"SUBORDTYPE\",\n       size = \"Percentage\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAlluvial plot (percentages)\n\n\n\n\n\n\n# Make sure to install this library prior to running the code below \nlibrary(ggalluvial)\n\nggplot(pct2_df,\n       aes(axis1 = ORDER, axis2 = SUBORDTYPE, y = Freq)) +\n  geom_alluvium(aes(fill = ORDER)) +\n  geom_stratum(fill = \"gray\") +\n  geom_text(stat = \"stratum\", aes(label = after_stat(stratum))) +\n  labs(title = \"Alluvial Plot of ORDER by SUBORDTYPE\",\n       x = \"Categories\", y = \"Percentage\") +\n  theme_minimal()",
+    "crumbs": [
+      "4. Introduction to Statistics",
+      "4.3 Categorical data"
+    ]
+  },
+  {
+    "objectID": "chapters/04-categorical_data.html#exporting-tables-to-ms-word",
+    "href": "chapters/04-categorical_data.html#exporting-tables-to-ms-word",
+    "title": "4.3 Categorical data",
+    "section": "Exporting tables to MS Word",
+    "text": "Exporting tables to MS Word\nThe crosstable and flextable packages make it very easy to export elegant tables to MS Word.\n\n\n\n\n\n\nClean and to the point: crosstable()\n\n\n\n\n\nThis is perhaps the most elegant solution. Generate a crosstable() object by supplying at the very least …\n\nthe original dataset (data = cl.order),\nthe dependent variable (cols = ORDER), and\nthe independent variable (by = SUBORDTYPE).\n\nYou can further specify …\n\nwhether to include column totals, row totals or both (here: total = both),\nthe rounding scheme (here: percent_digits = 2),\n…\n\n\n# Required libraries:\n# library(crosstable)\n# library(flextable)\n\n# Create the cross table\noutput1 &lt;- crosstable(data = cl.order,\n                      cols = ORDER, \n                      by = SUBORDTYPE, \n                      total = \"both\",\n                      percent_digits = 2)\n\n# Generate file\nas_flextable(output1)\n\nlabelvariableSUBORDTYPETotalcaustempORDERmc-sc184 (66.91%)91 (33.09%)275 (68.24%)sc-mc15 (11.72%)113 (88.28%)128 (31.76%)Total199 (49.38%)204 (50.62%)403 (100.00%)\n\n\n\n\n\n\n\n\n\n\n\nHow much info do you need? Yes.\n\n\n\n\n\nIt also possible to use as_flextable() without pre-processing the data with crosstable(); supplying a table preferably created with xtabs() is sufficient. Without any doubt, the output is extremely informative, yet it is everything but reader-friendly.\nFor this reason, I recommend relying on the less overwhelming crosstable() option above if a plain and easy result is desired. However, readers who would like to leverage the full capabilities of the flextable() package and familiarise themselves with the abundant options for customisation, can find the detailed documentation here.\n\n# Requires the following library:\n# library(flextable)\n\n# Create a table\ntab1 &lt;- xtabs(~ ORDER + SUBORDTYPE, cl.order)\n\n# Directly convert a table to a flextable with as_flextable()\noutput_1 &lt;- as_flextable(tab1)\n\n# Print output\nprint(output_1)",
+    "crumbs": [
+      "4. Introduction to Statistics",
+      "4.3 Categorical data"
+    ]
+  },
+  {
+    "objectID": "chapters/04-categorical_data.html#workflow-exercises",
+    "href": "chapters/04-categorical_data.html#workflow-exercises",
+    "title": "4.3 Categorical data",
+    "section": "Workflow exercises",
+    "text": "Workflow exercises\n\n\n\n\n\n\nSolutions\n\n\n\nYou can find the solutions to the exercises here.\n\n\n\nExercise 1 Download the dataset objects.xlsx from https://osf.io/j2mnx. Load it into R and store it in a variable objects. Make sure to load all the necessary libraries.\n\n\nExercise 2 Many rows from are irrelevant for the analysis. Exclude all rows from that are marked as containing passive clauses (see Clause_voice column). Store this reduced subset in a new variable objects_filtered.\n\n\nExercise 3 Investigate the relationship between\n\nObject_realisation and Register as well as\nObject_realisation and Lemma\n\nby computing frequency tables and percentages based on objects_filtered. Plot your results and export your tables and figures to a Microsoft Word document.\n\n\nExercise 4 Which verb has the highest \\(\\frac{\\text{null}}{\\text{null} + \\text{overt}}\\) ratio and which one has the lowest?",
+    "crumbs": [
+      "4. Introduction to Statistics",
+      "4.3 Categorical data"
+    ]
+  },
+  {
     "objectID": "chapters/02-vectors.html",
     "href": "chapters/02-vectors.html",
     "title": "2.3 Vectors",
@@ -1215,14 +1362,36 @@
     ]
   },
   {
-    "objectID": "chapters/02-vectors.html#exercises",
-    "href": "chapters/02-vectors.html#exercises",
-    "title": "2.1 Vectors",
-    "section": "Exercises",
-    "text": "Exercises\n\n\n\n\n\n\nSolutions\n\n\n\nYou can find the solutions to the exercises here.",
+    "objectID": "chapters/02-vectors.html#tier-1",
+    "href": "chapters/02-vectors.html#tier-1",
+    "title": "2.3 Vectors",
+    "section": "Tier 1",
+    "text": "Tier 1\n\nExercise 1 Create a vector that lists the third person personal pronouns of English (subject and object forms). Store them in a variable pp3.\n\n\nExercise 2 Now print …\n\n… the fourth element in pp3.\n… elements 3 through 5.\n… all elements.\n… elements 1, 3 and 5.",
     "crumbs": [
       "2. Introduction to R",
-      "2.1 Vectors I"
+      "2.3 Vectors"
+    ]
+  },
+  {
+    "objectID": "chapters/02-vectors.html#tier-2",
+    "href": "chapters/02-vectors.html#tier-2",
+    "title": "2.3 Vectors",
+    "section": "Tier 2",
+    "text": "Tier 2\n\nExercise 3 When working with large datasets, we often do not know whether an element is in the vector to begin with, let alone its position. For instance, if we wanted to check whether they is in pp3 or not, we could use the handy notation below, which returns a TRUE or FALSE value:\n\n\"they\" %in% pp3\n\nAscertain whether the following items are in pp3:\n\nhim\nyou\nit and them\nwe, us and me\n\n\n\nExercise 4 Once we are sure that an element is in the vector of interest, another common problem that arises is finding its location. In this case, we can use which() to return the index of an element.\n\nwhich(pp3 == \"they\")\n\nYou can read the code above as “Which element in pp3 is they?”. Note that the index number depends on the order of elements you’ve chosen when creating pp3. Find the positions of it and them in pp3!\n\n\nExercise 5 Consider the vector numbers.\n\nnumbers &lt;- c(500:1000)\n\n\nExplain the difference in output for the following two code lines:\n\n\nwhich(numbers &gt; 600)\n\n\nnumbers[which(numbers &gt; 600)]\n\n\nExamine the output of the code chunks below, and try to establish the meaning of the operators !=, &, and |.\n\n\nnumbers[numbers != 500]\n\n\nnumbers[numbers &gt; 500 & numbers &lt; 550]\n\n\nnumbers[numbers &lt; 510 | numbers &gt; 990]",
+    "crumbs": [
+      "2. Introduction to R",
+      "2.3 Vectors"
+    ]
+  },
+  {
+    "objectID": "chapters/02-vectors.html#tier-3",
+    "href": "chapters/02-vectors.html#tier-3",
+    "title": "2.3 Vectors",
+    "section": "Tier 3",
+    "text": "Tier 3\n\nExercise 6 Consider our frequency data again. When analysing linguistic patterns, we often need to transform our data. Starting with:\n\nlemma &lt;- c(\"start\", \"enjoy\", \"begin\", \"help\")\nfrequency &lt;- c(418, 139, 337, 281)\n\n\nCreate a new vector relative_freq that shows each frequency as a percentage of the total.\nCreate a vector log_freq containing the natural logarithm of each frequency value.\nSuppose these frequencies come from a corpus of 10,000 words. Create a vector freq_per_thousand that shows how many times each verb appears per 1,000 words.\n\n\n\nExercise 7 The function strsplit() can be used to split up a string into substrings.\n\nwords &lt;- c(\"read\", \"write\")\n\nsplit_words &lt;- strsplit(words, split = NULL)\n\nprint(split_words)\n\n[[1]]\n[1] \"r\" \"e\" \"a\" \"d\"\n\n[[2]]\n[1] \"w\" \"r\" \"i\" \"t\" \"e\"\n\n\nHere the output is a list with two objects enclosed by double square brackets ([[1]] and [[2]]). These can be used to subset split_words:\n\n# Get first list object\nsplit_words[[1]]\n\n[1] \"r\" \"e\" \"a\" \"d\"\n\n# Get second list object\nsplit_words[[2]]\n\n[1] \"w\" \"r\" \"i\" \"t\" \"e\"\n\n\nWrite an R script that identifies the number of (orthographic) vowels and consonants for the words consequence and parsimonious.\n\n\nExercise 8 R allows users to write their own functions in order to automate certain tasks. Say, we need a function that automatically computes percentages for a numeric vector. If we break down the individual steps, it has to\n\ntake a numeric vector as input,\ncompute the sum of its values,\ndivide the vector values by the sum to get relative frequencies.\nmultiply the relative frequencies by 100, and\nreturn the final vector with the percentages.\n\n\n# 1. Define function with input\nget_pct &lt;- function(vector) {\n\n  # 2. Compute sum\n  sum_values &lt;- sum(vector)\n  \n  # 3. Divide vector values by the sum\n  relative_freqs &lt;- vector/sum_values\n  \n  # 4. Multiply relative frequencies by 100\n  percentages &lt;- relative_freqs * 100\n  \n  # 5. Return the percentages\n  return(percentages)\n}\n\nNow we can apply it to a numeric vector of our choice:\n\nget_pct(frequency)\n\n[1] 35.57447 11.82979 28.68085 23.91489\n\n\nWrite a count_vowels() function and a count_consonants() function that immediately computes the number of vowels or consonants, respectively, for any word supplied.",
+    "crumbs": [
+      "2. Introduction to R",
+      "2.3 Vectors"
     ]
   },
   {
@@ -1237,11 +1406,15 @@
     ]
   },
   {
-    "objectID": "chapters/01-basics.html#barbierioldermenyounger2007-older-men-and-younger-women",
-    "href": "chapters/01-basics.html#barbierioldermenyounger2007-older-men-and-younger-women",
+    "objectID": "chapters/01-basics.html#defining-the-variable",
+    "href": "chapters/01-basics.html#defining-the-variable",
     "title": "1.1 Basics",
     "section": "",
-    "text": "New quotatives in American English: be like, go, be all:\n\n“I was like ‘well if it’s not leaking, I don’t care.’”\n“Do you, I asked I was running out and I go, ‘you’re trying to deliver a pizza here?’”\n“My sister’s all ‘excuse me would you mind if I gave you, if I want your autograph.’”\n\n\n\n\n\nPrevious results with regard to age: Be like is known to be preferred by younger speakers.\nPrevious results with regard to sex are inconclusive.\n\n\n\n\n\n“The study aims to contribute to the investigation of the controversial question of the effect of speaker’s age and sex on quotative use in American English, focusing on the newer quotatives be like, go, be all” (Barbieri 2007: 26).\n\n\n\n\n\nChoice of corpus: 450,000 words taken from the Conversation component of the Longman Spoken and Written English Corpus (all files where the age and gender of speakers were available), i.e., about 50 hours of casual conversation coded for speakers’ age and sex.\nData extraction: All forms of be like, be all, go, say extracted using corpus linguistic software; data entered into spreadsheet software; word counts of texts added via Delphi program.\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuotative\nAge group\nMale use (per 100,000 words)\nFemale use (per 100,000 words)\n\n\n\n\nsay\n16–26\n115\n149\n\n\n\n27–40\n101\n117\n\n\n\n41–54\n55\n214\n\n\n\n55+\n67\n433\n\n\nbe like\n16–26\n32\n329\n\n\n\n27–40\n66\n25\n\n\n\n41–54\n-\n1\n\n\n\n55+\n-\n19\n\n\ngo\n16–26\n25\n113\n\n\n\n27–40\n61\n18\n\n\n\n41–54\n-\n15\n\n\n\n55+\n-\n7\n\n\nbe all\n16–26\n14\n33\n\n\n\n\n\n\n\n\n\nReproduction of Barbieri’s Figure 5 ‘Proportional quotative use by men and women aged 16–26 and 27–40’\n\n\n\n\n\n\n\n“In sum, the patterns of proportional use and the results of the statistical analyses show that there are striking differences in the way that men and women under the age of forty use quotative verbs. In contrast, in conforming to the traditional quotative say, men and women over forty displayed similar behavior” (Barbieri 2007: 38–39).\n\n\n\n\n\n“In favoring be like over other quotatives, men in their late 20s and in their 30s display an ‘affinity’ with slightly younger women, women in their early 20s, rather than with women of their same age” (Barbieri 2007: 41)."
+    "text": "New quotatives in American English: be like, go, be all:\n\n“I was like ‘well if it’s not leaking, I don’t care.’”\n“Do you, I asked I was running out and I go, ‘you’re trying to deliver a pizza here?’”\n“My sister’s all ‘excuse me would you mind if I gave you, if I want your autograph.’”\n\n\n\n\nPrevious results with regard to age: Be like is known to be preferred by younger speakers.\nPrevious results with regard to sex are inconclusive.\n\n\n\n\n\n“The study aims to contribute to the investigation of the controversial question of the effect of speaker’s age and sex on quotative use in American English, focusing on the newer quotatives be like, go, be all” (Barbieri 2007: 26).\n\n\n\n\n\nChoice of corpus: 450,000 words taken from the Conversation component of the Longman Spoken and Written English Corpus (all files where the age and gender of speakers were available), i.e., about 50 hours of casual conversation coded for speakers’ age and sex.\nData extraction: All forms of be like, be all, go, say extracted using corpus linguistic software; data entered into spreadsheet software; word counts of texts added via Delphi program.\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuotative\nAge group\nMale use (per 100,000 words)\nFemale use (per 100,000 words)\n\n\n\n\nsay\n16–26\n115\n149\n\n\n\n27–40\n101\n117\n\n\n\n41–54\n55\n214\n\n\n\n55+\n67\n433\n\n\nbe like\n16–26\n32\n329\n\n\n\n27–40\n66\n25\n\n\n\n41–54\n-\n1\n\n\n\n55+\n-\n19\n\n\ngo\n16–26\n25\n113\n\n\n\n27–40\n61\n18\n\n\n\n41–54\n-\n15\n\n\n\n55+\n-\n7\n\n\nbe all\n16–26\n14\n33\n\n\n\n\n\n\n\n\n\nReproduction of Barbieri’s Figure 5 ‘Proportional quotative use by men and women aged 16–26 and 27–40’\n\n\n\n\n\n\n\n“In sum, the patterns of proportional use and the results of the statistical analyses show that there are striking differences in the way that men and women under the age of forty use quotative verbs. In contrast, in conforming to the traditional quotative say, men and women over forty displayed similar behavior” (Barbieri 2007: 38–39).\n\n\n\n\n\n“In favoring be like over other quotatives, men in their late 20s and in their 30s display an ‘affinity’ with slightly younger women, women in their early 20s, rather than with women of their same age” (Barbieri 2007: 41).",
+    "crumbs": [
+      "1. Fundamentals",
+      "1.1 Basics"
+    ]
   },
   {
     "objectID": "chapters/01-basics.html#principles-of-empirical-linguistics",
@@ -1354,36 +1527,91 @@
     ]
   },
   {
-    "objectID": "chapters/04-variables.html#the-big-picture-populations-and-samples",
-    "href": "chapters/04-variables.html#the-big-picture-populations-and-samples",
-    "title": "Data types",
-    "section": "The big picture: Populations and samples",
-    "text": "The big picture: Populations and samples\nIn order to investigate one or more linguistic features, we first need to collect relevant observations, which typically correspond to linguistic utterances in a corpus-linguistic context. Since it is not feasible to examine, for instance, the entirety of all linguistic utterances ever produced, i.e., the virtually infinite population, we rely on subsets of it: samples. Good research is characterised by good sampling procedures that limit the bias present in any sample, thus improving the generalisability of potential findings.\nTo state this more formally, let \\(\\omega\\) (‘lower-case Omega’) denote a single observation of interest. The full set of theoretically possible observations is contained in \\(\\Omega\\) (‘upper-case Omega’), with \\(\\Omega = \\{\\omega_1, \\omega_2, \\dots, \\omega_n \\}\\). Here \\(n\\) represents the \\(n\\)-th observation and should be a natural number. A sample is then simply a selection of elements from \\(\\Omega\\).",
+    "objectID": "chapters/04-variables.html#samples-and-populations",
+    "href": "chapters/04-variables.html#samples-and-populations",
+    "title": "4.1 Data, variables, samples",
+    "section": "Samples and populations",
+    "text": "Samples and populations\nIn order to investigate one or more linguistic features, we need to collect relevant observations. Actions that generate observations are called experiments, such as decision tasks or even corpus queries. Since it is not feasible to examine, for instance, the entirety of all linguistic utterances ever produced, i.e., the virtually infinite population, we rely on subsets of it: samples. Good research is characterised by good sampling procedures that limit the bias present in any sample, thus improving the generalisability of potential findings.\nTo state this more formally, let \\(\\omega\\) (‘lower-case Omega’) denote a single observation of interest. The full set of theoretically possible observations is contained in \\(\\Omega\\) (‘upper-case Omega’), with \\(\\Omega = \\{\\omega_1, \\omega_2, \\dots, \\omega_n \\}\\). Here \\(n\\) represents the \\(n\\)-th observation and should be a natural number. A sample is then simply a selection of elements from \\(\\Omega\\).",
     "crumbs": [
-      "4. Descriptive Statistics",
-      "4.1 Data types"
+      "4. Introduction to Statistics",
+      "4.1 Data, variables, samples"
     ]
   },
   {
-    "objectID": "chapters/04-variables.html#variables",
-    "href": "chapters/04-variables.html#variables",
-    "title": "Data types",
-    "section": "Variables",
-    "text": "Variables\nThe concept of the variable is very handy in that it enables researchers to quantify different aspects of linguistic observations, such as the age or gender of the speaker, the register of the speech situation, the variety of English, the length of an utterance, a syntactic construction or a grammatical category, among many other theoretically possible features.\nFor each observation, we should be able to assign a specific outcome to our variables. While the variable Register could have a small set of outcomes such as ‘informal’ and ‘formal’, other variables such as Utterance length or Reaction time could technically assume any value in the range [0, \\(\\infty\\)).\nIn the statistical literature, variables are usually represented by upper-case letters, such as \\(X\\). For each observation \\(\\omega \\in \\Omega\\), \\(X\\) has a value \\(x\\). The set \\(S\\) comprises all possible unique values of \\(X\\), e.g.,\n\n\\(S_{\\text{Register}} = \\{\\text{informal}, \\text{formal}, ...\\}\\),\n\\(S_{\\text{Utterance length}} = \\{1, 2, 3, \\dots \\}\\),\n…\n\n\n\n\n\n\n\nNumber of (unique) values in R\n\n\n\n\n\nTo count the number of items in a vector, which correspond to the total number \\(n\\) of attested values of \\(X\\), we can use length():\n\nlength(cl.order$SUBORDTYPE)\n\n[1] 403\n\n\nIn fact, it is equivalent to the number of rows in the full data frame:\n\nnrow(cl.order)\n\n[1] 403\n\n\nThe function unique() shows all unique items (= types) in a vector, which reflect the possible outcomes in \\(S\\):\n\nunique(cl.order$SUBORDTYPE)\n\n[1] \"temp\" \"caus\"\n\n\n\n\n\n\nDatasets\nInformation on variables and their values is conventionally arranged in a dataset, which is essentially a matrix with rows (= observations) and columns (= variables). Consider the head() of the clause data:\n\n\n\n\n\n\nCASE\nORDER\nSUBORDTYPE\nLEN_MC\nLEN_SC\nLENGTH_DIFF\nCONJ\nMORETHAN2CL\n\n\n\n\n1\n4777\nsc-mc\ntemp\n4\n10\n-6\nals/when\nno\n\n\n2\n1698\nmc-sc\ntemp\n7\n6\n1\nals/when\nno\n\n\n3\n953\nsc-mc\ntemp\n12\n7\n5\nals/when\nyes\n\n\n4\n1681\nmc-sc\ntemp\n6\n15\n-9\nals/when\nno\n\n\n5\n4055\nsc-mc\ntemp\n9\n5\n4\nals/when\nyes\n\n\n6\n967\nsc-mc\ntemp\n9\n5\n4\nals/when\nyes\n\n\n\n\n\n\n\n\nAssuming that \\(n\\) denotes the row number and \\(p\\) the column number, the abstract form of a dataset is an \\(n \\times p\\) matrix of the form in Equation 1.\n\\[\n\\begin{pmatrix}\n    \\omega & X_1 & X_2 & \\cdots &  X_p \\\\\n    1 & x_{11} & x_{12} & \\cdots & x_{1p} \\\\\n    2 & x_{21} & x_{22} & \\cdots & x_{2p} \\\\\n    \\vdots & \\vdots & \\vdots &  & \\vdots \\\\\n    n & x_{n1} & x_{n2} & \\cdots & x_{np}\n\\end{pmatrix}\n\\tag{1}\\]\n\n\nData types\nIn general, we distinguish between discrete variables, which can only take a limited set of unique values, and continuous variables, which can take infinitely many values within a specified range.\nWe can further subdivide discrete and continuous variables into into nominal, ordinal, interval-scaled and ratio-scaled ones:\n\n\n\n\n\n\nNominal/categorical\n\n\n\n\n\nThese variables comprise a limited number of categories which cannot be ordered in a meaningful way. For instance, it does not matter which value of SUBORDTYPE or MORETHAN2CL comes first or last:\n\n    unique(cl.order$SUBORDTYPE)\n\n[1] \"temp\" \"caus\"\n\n    unique(cl.order$MORETHAN2CL)\n\n[1] \"no\"  \"yes\"\n\n\n\n\n\n\n\n\n\n\n\nOrdinal/categorical\n\n\n\n\n\nOrdinal variables are ordered. However, the intervals between their individual values are not interpretable. Heumann (2022: 6) provides a pertinent example:\n\n[T]he satisfaction with a product (unsatisfied–satisfied–very satisfied) is an ordinal variable because the values this variable can take can be ordered but the differences between ‘unsatisfied–satisfied’ and ‘satisfied–very satisfied’ cannot be compared in a numerical way.\n\n\n\n\n\n\n\n\n\n\nInterval-scaled/continuous\n\n\n\n\n\n\nIn the case of interval-scaled variables, the differences between the values can be interpreted, but their ratios must be treated with caution. A temperature of 4°C is 6 degrees warmer than -2°C; however, this does not imply that 4°C is three times warmer than -2°C. This is because the temperature scale has no true zero point; 0°C simply signifies another point on the scale and not the absence of temperature altogether.\n\n\n\n\n\n\n\n\n\n\nRatio-scaled/continuous\n\n\n\n\n\n\nRatio-scaled variables allow both a meaningful interpretation of the differences between their values and (!) of the ratios between them. Within the context of clause length, LENGTH_DIFF values such as 4 and 8 not only suggest that the latter is four units greater than the former but also that their ratio \\(\\frac{8}{4} = 2\\) is a valid way to describe the relationship between these values. Here a LENGTH_DIFF of 0 can be clearly viewed as the absence of a length difference.\n\n\n\n\n\n\nDependent vs. independent variables\nIn empirical studies, it is often of interest whether one variable leads to changes in the values of another variable. When exploring such associations (or correlations), we need to take another heuristic step to clarify the direction of the influence.\nIn a linguistic context, we denote the variable whose usage patterns we’d like to explain as the dependent or response variable. A list of possible dependent variables is provided in the section on Linguistic variables).\nIts outcomes are said to depend on one or more independent variables. These are also often referred to as explanatory variables as they are supposed to explain variation in the response variable. These can be AGE, SEX or the VARIETY of English at hand.",
+    "objectID": "chapters/04-variables.html#random-variables",
+    "href": "chapters/04-variables.html#random-variables",
+    "title": "4.1 Data, variables, samples",
+    "section": "(Random) Variables",
+    "text": "(Random) Variables\nThe concept of the variable is very handy in that it enables researchers to quantify different aspects of linguistic observations, such as the age or gender of the speaker, the register of the speech situation, the variety of English, the length of an utterance, a syntactic construction or a grammatical category, among many other theoretically possible features.\nFor each observation, we should be able to assign a specific outcome to our variables. While the variable Genitive could have a small set of outcomes such as ‘s’ and ‘of’, other variables such as Utterance length or Reaction time could technically assume any value in the range [0, \\(\\infty\\)). The set of all possible outcomes in an experiment is known as the sample space \\(S\\).\nGiven a single observed NP which is marked for possessive case, we may characterise its formal marking as either ‘s’ (synthetic genitive) or as ‘of’ (analytic/periphrastic). For simplicity, I will call these options \\(S\\) and \\(O\\). The sample space of Genitive could be thus described as\n\\[\nS_{\\text{Genitive}} = \\{\\text{S}, \\text{O}\\}.\n\\]\nExperiments normally do not terminate after obtaining the first observation. As a result, the sample space becomes considerably more complex (and unwieldy), the more observations are gathered. For \\(n = 3\\) possessive NPs, the sample space would comprise the following combinations of outcomes:\n\\[\nS_{\\text{Genitive (3 NPs)}} = \\{\\text{SSS}, \\text{SSO},\\text{SOS}, \\text{SOO},\\text{OSS}, \\text{OSO}, \\text{OOS}, \\text{OOO}\\}.\n\\]\nWith \\(n = 10\\) we’d be dealing with \\(2^{10} = 1024\\) possible outcomes. If, for instance, we’re only interested in the total number of s-genitives, this isn’t a particularly efficient approach.\nRandom variables allow us to map outcomes from the sample space onto the real numbers \\(\\mathbb{R}\\). Quite conveniently, we could define a discrete random variable \\(X\\) that counts the total number of s-genitives in a sample of size \\(n\\). Note, however, that the random variable is not random – it is the result of a random process. Other random variables could be\n\nthe number of ‘heads’ after tossing a coin 30 times,\ngetting a ‘6’ when rolling a die 500 times, or\nhow many years it takes for your TV to break down.\n\n\n\n\n\n\n\nRandom variables: Formal definition\n\n\n\n\n\nA random variable is a function \\(X\\) which maps onto each outcome \\(s \\in S\\) exactly one number \\(X(s) = x\\) with \\(x \\in \\mathbb{R}\\).\nIn formal terms:\n\\[\nX : S \\to \\mathbb{R}.\n\\]\n\n\n\n\n\n\n\n\n\nNumber of (unique) values in R\n\n\n\n\n\nTo count the number of items in a vector, which correspond to the total number \\(n\\) of attested values of \\(X\\), we can use length():\n\nlength(cl.order$SUBORDTYPE)\n\n[1] 403\n\n\nIn fact, it is equivalent to the number of rows in the full data frame:\n\nnrow(cl.order)\n\n[1] 403\n\n\nThe function unique() shows all unique items (= types) in a vector, which reflect the possible outcomes in \\(S\\):\n\nunique(cl.order$SUBORDTYPE)\n\n[1] \"temp\" \"caus\"",
     "crumbs": [
-      "4. Descriptive Statistics",
-      "4.1 Data types"
+      "4. Introduction to Statistics",
+      "4.1 Data, variables, samples"
     ]
   },
   {
-    "objectID": "chapters/04-variables.html#exercises",
-    "href": "chapters/04-variables.html#exercises",
-    "title": "Data types",
-    "section": "Exercises",
-    "text": "Exercises\n\nExercise 1 Consider the following statement:\n\nThis paper examines the influence of clause length on the ordering of main and subordinate clauses.\n\n\nWhat is the dependent variable?\nWhat is the independent variable?\nWhat would it mean if they were reversed?\n\n\n\nExercise 2 Explain why frequency data is actually discrete.\n\n\nExercise 3 Identify the variable types (nominal, ordinal etc.) for all columns in the cl.order dataset.\n\n\nExercise 4 Consider the general form of the data matrix from Equation 1.\n\nWhat would the labels \\(\\omega\\), \\(X\\) and \\(x\\) correspond to in the cl.order dataset?\nWhat would be \\(\\Omega\\) and \\(S\\)?",
+    "objectID": "chapters/04-variables.html#datasets",
+    "href": "chapters/04-variables.html#datasets",
+    "title": "4.1 Data, variables, samples",
+    "section": "Datasets",
+    "text": "Datasets\nInformation on variables and their values is conventionally arranged in a dataset, which is essentially a matrix with rows (= observations) and columns (= variables). Assuming that \\(n\\) denotes the row number and \\(p\\) the column number, the abstract form of a dataset is an \\(n \\times p\\) matrix of the form in Equation 1.\n\\[\n\\begin{pmatrix}\n    \\omega & X_1 & X_2 & \\cdots &  X_p \\\\\n    1 & x_{11} & x_{12} & \\cdots & x_{1p} \\\\\n    2 & x_{21} & x_{22} & \\cdots & x_{2p} \\\\\n    \\vdots & \\vdots & \\vdots &  & \\vdots \\\\\n    n & x_{n1} & x_{n2} & \\cdots & x_{np}\n\\end{pmatrix}\n\\tag{1}\\]",
     "crumbs": [
-      "4. Descriptive Statistics",
-      "4.1 Data types"
+      "4. Introduction to Statistics",
+      "4.1 Data, variables, samples"
+    ]
+  },
+  {
+    "objectID": "chapters/04-variables.html#data-types",
+    "href": "chapters/04-variables.html#data-types",
+    "title": "4.1 Data, variables, samples",
+    "section": "Data types",
+    "text": "Data types\nIn general, we distinguish between discrete variables, which can only take a limited set of unique values, and continuous variables, which can take infinitely many values within a specified range.\nWe can further subdivide discrete and continuous variables into into nominal, ordinal, interval-scaled and ratio-scaled ones:\n\n\n\n\n\n\nNominal/categorical\n\n\n\n\n\nThese variables comprise a limited number of categories which cannot be ordered in a meaningful way. For instance, it does not matter which value of SUBORDTYPE or MORETHAN2CL comes first or last:\n\n    unique(cl.order$SUBORDTYPE)\n\n[1] \"temp\" \"caus\"\n\n    unique(cl.order$MORETHAN2CL)\n\n[1] \"no\"  \"yes\"\n\n\n\n\n\n\n\n\n\n\n\nOrdinal/categorical\n\n\n\n\n\nOrdinal variables are ordered. However, the intervals between their individual values are not interpretable. Heumann (2022: 6) provides a pertinent example:\n\n[T]he satisfaction with a product (unsatisfied–satisfied–very satisfied) is an ordinal variable because the values this variable can take can be ordered but the differences between ‘unsatisfied–satisfied’ and ‘satisfied–very satisfied’ cannot be compared in a numerical way.\n\n\n\n\n\n\n\n\n\n\nInterval-scaled/continuous\n\n\n\n\n\n\nIn the case of interval-scaled variables, the differences between the values can be interpreted, but their ratios must be treated with caution. A temperature of 4°C is 6 degrees warmer than -2°C; however, this does not imply that 4°C is three times warmer than -2°C. This is because the temperature scale has no true zero point; 0°C simply signifies another point on the scale and not the absence of temperature altogether.\n\n\n\n\n\n\n\n\n\n\nRatio-scaled/continuous\n\n\n\n\n\n\nRatio-scaled variables allow both a meaningful interpretation of the differences between their values and (!) of the ratios between them. Within the context of clause length, LENGTH_DIFF values such as 4 and 8 not only suggest that the latter is four units greater than the former but also that their ratio \\(\\frac{8}{4} = 2\\) is a valid way to describe the relationship between these values. Here a LENGTH_DIFF of 0 can be clearly viewed as the absence of a length difference.",
+    "crumbs": [
+      "4. Introduction to Statistics",
+      "4.1 Data, variables, samples"
+    ]
+  },
+  {
+    "objectID": "chapters/04-variables.html#dependent-vs.-independent-variables",
+    "href": "chapters/04-variables.html#dependent-vs.-independent-variables",
+    "title": "4.1 Data, variables, samples",
+    "section": "Dependent vs. independent variables",
+    "text": "Dependent vs. independent variables\nIn empirical studies, it is often of interest whether one variable leads to changes in the values of another variable. When exploring such associations (or correlations), we need to take another heuristic step to clarify the direction of the influence.\nIn a linguistic context, we denote the variable whose usage patterns we’d like to explain as the dependent or response variable. A list of possible dependent variables is provided in the section on Linguistic variables).\nIts outcomes are said to depend on one or more independent variables. These are also often referred to as explanatory variables as they are supposed to explain variation in the response variable. These can be AGE, SEX or the VARIETY of English at hand.",
+    "crumbs": [
+      "4. Introduction to Statistics",
+      "4.1 Data, variables, samples"
+    ]
+  },
+  {
+    "objectID": "chapters/04-variables.html#tier-1",
+    "href": "chapters/04-variables.html#tier-1",
+    "title": "4.1 Data, variables, samples",
+    "section": "Tier 1",
+    "text": "Tier 1\n\nExercise 1 Consider the following statement:\n\nThis paper examines the influence of clause length on the ordering of main and subordinate clauses.\n\n\nWhat is the dependent variable?\nWhat is the independent variable?\nWhat would it mean if they were reversed?\n\n\n\nExercise 2 Identify the variable types (nominal, ordinal etc.) for all columns in the cl.order dataset.",
+    "crumbs": [
+      "4. Introduction to Statistics",
+      "4.1 Data, variables, samples"
+    ]
+  },
+  {
+    "objectID": "chapters/04-variables.html#tier-2",
+    "href": "chapters/04-variables.html#tier-2",
+    "title": "4.1 Data, variables, samples",
+    "section": "Tier 2",
+    "text": "Tier 2\n\nExercise 3 Consider the general form of the data matrix from Equation 1. What would the labels \\(\\Omega\\), \\(\\omega\\), \\(X\\) and \\(x\\) correspond to in the cl.order dataset?\n\n\nExercise 4 Assuming three randomly chosen observations from the cl.order dataset, describe the sample space \\(S\\) for the variable ORDER. What random variables could you define with domain \\(S\\)?",
+    "crumbs": [
+      "4. Introduction to Statistics",
+      "4.1 Data, variables, samples"
+    ]
+  },
+  {
+    "objectID": "chapters/04-variables.html#tier-3",
+    "href": "chapters/04-variables.html#tier-3",
+    "title": "4.1 Data, variables, samples",
+    "section": "Tier 3",
+    "text": "Tier 3\n\nExercise 5 Explain why frequency data is actually discrete.",
+    "crumbs": [
+      "4. Introduction to Statistics",
+      "4.1 Data, variables, samples"
     ]
   },
   {
@@ -1449,7 +1677,7 @@
     "text": "Script\n\n\n\nYou can find the full R script associated with this unit here.",
     "crumbs": [
       "3. NLP with R",
-      "3.2 Regex"
+      "3.2 Regular expressions"
     ]
   },
   {
@@ -1460,19 +1688,18 @@
     "text": "Script\n\n\n\nYou can find the full R script associated with this unit here.",
     "crumbs": [
       "3. NLP with R",
-      "3.2 Regex"
+      "3.2 Regular expressions"
     ]
   },
   {
-    "objectID": "chapters/03-regex.html#suggested-reading",
-    "href": "chapters/03-regex.html#suggested-reading",
+    "objectID": "chapters/03-regex.html#recommended-reading",
+    "href": "chapters/03-regex.html#recommended-reading",
     "title": "3.2 Regular expressions",
-    "section": "2 Suggested reading",
-    "text": "2 Suggested reading\n\nLange and Leuckert (2020): Chapter 3.7\nDetailed cheatsheet (DataCamp)",
+    "section": "Recommended reading",
+    "text": "Recommended reading\n\nLange and Leuckert (2020): Chapter 3.7\nDetailed cheatsheet (DataCamp)",
     "crumbs": [
-      "Overview",
       "3. NLP with R",
-      "3.2 Regex"
+      "3.2 Regular expressions"
     ]
   },
   {
@@ -1483,7 +1710,7 @@
     "text": "Regular expressions\nRegular expressions (or ‘regex’) help us find more complex patterns in strings of text. Suppose we are interested in finding all inflectional forms of the lemma PROVIDE in a corpus, i.e., provide, provides, providing and provided. Insteading of searching for all forms individually, we can construct a regular expression of the form\n\\[\n\\text{provid(e(s)? | ing | ed)}\n\\] which can be read as\n\n‘Match the sequence of letters &lt;provid&gt; as well as when it is followed by the groups of letters &lt;es&gt; or &lt;ing&gt; or &lt;ed&gt;. Also make the &lt;s&gt; in &lt;es&gt; optional.’\n\nNotice how optionality is signified by the ? operator and alternatives by |.\nTo activate regular expression in a kwic() query, the valuetype argument has to be set to \"regex\":\n\n# Load library and corpus\nlibrary(quanteda)\n\nPackage version: 3.3.1\nUnicode version: 14.0\nICU version: 70.1\n\n\nParallel computing: 8 of 8 threads used.\n\n\nSee https://quanteda.io for tutorials and examples.\n\nICE_GB &lt;- readRDS(\"../datasets/ICE_GB.RDS\")\n\n# Perform query\nkwic_provide &lt;- kwic(ICE_GB,\n                     \"provid(e(s)?|ing|ed)\",\n                     valuetype = \"regex\",\n                     window = 20)\n\nThe number of hits has more than doubled. However, upon closer inspection, we’ll notice a few false positives, namely providential, provider and providers:\n\ntable(kwic_provide$keyword)\n\n\n     provide     provided     Provided    Provident providential     provider \n         165          118            5            1            1            1 \n   providers     provides    providing    Providing \n           3           72           52            1 \n\n\nThere are two ways to handle the output:\n\nRefine the search expression further to only match those cases of interest.\nManually sort out irrelevant cases during qualitative annotation in a spreadsheet software.\n\nAs a rule of thumb, you should consider improving your search expression if you obtain hundreds or even thousands of false hits. Should there be only few false positives, it’s usually easier to simply mark them as “irrelevant” in your spreadsheet. A full workflow is demonstrated in unit 13. Data annotation.",
     "crumbs": [
       "3. NLP with R",
-      "3.2 Regex"
+      "3.2 Regular expressions"
     ]
   },
   {
@@ -1494,7 +1721,7 @@
     "text": "A RegEx Cheatsheet\n\nBasic functions\n\n\n\nCommand\nDefinition\nExample\nFinds\n\n\n\n\n\n\npython\npython\n\n\n.\nAny character\n.ython\naython, bython…\n\n\n\n\n\nCharacter classes and alternatives\n\n\n\n\n\n\n\n\n\nCommand\nDefinition\nExample\nFinds\n\n\n\n\n[abc]\nClass of characters\n[jp]ython\njython, python\n\n\n[^pP]\nExcluded class of characters\n[^pP]ython\neverything but python, Python\n\n\n(...|...)\nAlternatives linked by logical operator or\nP(ython|eter)\nPython, Peter\n\n\n\n\n\nQuantifiers\n\n\n\n\n\n\n\n\n\nCommand\nDefinition\nExample\nFinds\n\n\n\n\n?\nOne or zero instances of the preceding symbol\nPy?thon\nPython, Pthon\n\n\n*\nNo matter how many times — also zero\nPy*thon\nPython, Pthon, Pyyyython…\n\n\n\n\nP[Yy]*thon\nPython, Pthon, PyYYython…\n\n\n+\nNo matter how many times but at least once\nPy+thon\nPython, Pyyython, Pyyyython\n\n\n{1,3}\n{min, max}\nPy{1,3}thon\nPython, Pyython, Pyyython\n\n\n\n\n\nPre-defined character classes\n\n\n\n\n\n\nNote\n\n\n\nThe double backslashes (\\\\) shown here are specific to the quanteda R package. In most other programming languages including Python, you only need a single backslash (e.g., \\w, \\d, \\s). This double-escaping is an R-specific requirement due to how R handles string literals.\n\n\n\n\n\n\n\n\n\n\n\nCommand\nDefinition\nExample\nFinds\n\n\n\n\n\\\\w\nAll alphanumeric characters (A-Z, a-z, 0-9)\n\\\\w+ing\nwalking, running, 42ing\n\n\n\\\\W\nAll non-alphanumeric characters\nhello\\\\W+world\nhello world, hello!!!world\n\n\n\\\\d\nAll decimal numbers (0-9)\n\\\\d{3}-\\\\d{4}\n555-1234, 867-5309\n\n\n\\\\D\nEverything which is not a decimal number\n\\\\D+\nHello!, Python_code\n\n\n\\\\s\nEmpty space\nword\\\\s+word\nword word\n\n\n\\\\b\nWord boundary\n\\\\bpython\\\\b\nMatches python as a whole word",
     "crumbs": [
       "3. NLP with R",
-      "3.2 Regex"
+      "3.2 Regular expressions"
     ]
   },
   {
@@ -1505,7 +1732,7 @@
     "text": "Querying parsed corpora\nThe range of linguistic patterns to be matched can be extended further if the corpus contains additional metadata, such as the part of speech (POS) of a token. POS-tagged corpora open up the option of looking for more abstract patterns, such as all instances of the verb eat that are followed by a pronoun or noun:\n\n# Load library and corpus\nICE_GB_POS &lt;- readRDS(\"../datasets/ICE_GB_POS.RDS\")\n\n# Perform query\nkwic_provide_POS2 &lt;- kwic(ICE_GB_POS,\n                     phrase(\"\\\\b(ate|eat(s|ing|en)?)_VERB\\\\b _(PRON|NOUN)\"),\n                     valuetype = \"regex\",\n                     window = 5)\n\nhead(kwic_provide_POS2)\n\n\n\n\n\n\ndocname\nfrom\nto\npre\nkeyword\npost\npattern\n\n\n\n\nS1A-009.txt\n1198\n1199\nI_PRON must_AUX &lt; , &gt;\neat_VERB them_PRON\n&lt; ICE-GB:S1A-009 #71 : 1\n\\b(ate|eat(s|ing|en)?)_VERB\\b _(PRON|NOUN)\n\n\nS1A-010.txt\n958\n959\nto &lt; , &gt; actually_ADV\neat_VERB it_PRON\nfor_ADP one_NOUN ' s_PART own_ADJ\n\\b(ate|eat(s|ing|en)?)_VERB\\b _(PRON|NOUN)\n\n\nS1A-011.txt\n3245\n3246\n: A &gt; I_PRON have_AUX\neaten_VERB my_PRON\nway_NOUN round_ADP the_DET Yorkshire_PROPN Dales_PROPN\n\\b(ate|eat(s|ing|en)?)_VERB\\b _(PRON|NOUN)\n\n\nS1A-011.txt\n4159\n4160\nI_PRON ended_VERB up_ADP uhm_NOUN just_ADV\neating_VERB sort_NOUN\nof_ADP_ADP lumps_NOUN of chicken_NOUN and_CCONJ\n\\b(ate|eat(s|ing|en)?)_VERB\\b _(PRON|NOUN)\n\n\nS1A-018.txt\n455\n456\norder_VERB on_ADPe_NUM first_ADJ and_CCONJ_CCONJ then_ADV_ADV\neat_VERB it_PRON\nand then sort_ADV of_ADV carry_VERB\n\\b(ate|eat(s|ing|en)?)_VERB\\b _(PRON|NOUN)\n\n\nS1A-019.txt\n1038\n1039\nA &gt; and_CCONJ everybody_PRON was_AUX\neating_VERB something_PRON\n&lt; ICE-GB:S1A-019 #76 : 1\n\\b(ate|eat(s|ing|en)?)_VERB\\b _(PRON|NOUN)\n\n\n\n\n\n\n\nOne R package that supplies functions for tokenisation, POS-tagging and even dependency parsing for dozens of languages is udpipe. They all rely on one common set of tags known as Universal Dependencies, which are listed here:\n\n\n\n\n\n\nUniversial dependencies – Tagset\n\n\n\n\n\nCf. https://universaldependencies.org/u/pos/.\n\n\n\n\n\n\n\nPOS Tag\nDescription\n\n\n\n\nADJ\nAdjective: describes a noun (e.g., big, old, green, first)\n\n\nADP\nAdposition: prepositions and postpositions (e.g., in, to, over)\n\n\nADV\nAdverb: modifies verbs, adjectives, or other adverbs (e.g., quickly, very)\n\n\nAUX\nAuxiliary: helps form verb tenses, moods, or voices (e.g., is, have, will)\n\n\nCCONJ\nCoordinating conjunction: links words, phrases, or clauses (e.g., and, or, but)\n\n\nDET\nDeterminer: introduces nouns (e.g., the, a, some, my)\n\n\nINTJ\nInterjection: expresses emotion or reaction (e.g., oh, wow, hello)\n\n\nNOUN\nNoun: person, place, thing, or concept (e.g., cat, city, idea)\n\n\nNUM\nNumeral: expresses a number or ranking (e.g., one, two, second)\n\n\nPART\nParticle: adds meaning without being an independent word class (e.g., not, to as in to run)\n\n\nPRON\nPronoun: replaces nouns (e.g., he, she, they, it)\n\n\nPROPN\nProper noun: names specific entities (e.g., London, Vladimir)\n\n\nPUNCT\nPunctuation: marks boundaries in text (. , ! ?)\n\n\nSCONJ\nSubordinating conjunction: links clauses, often indicating dependency (e.g., if, because, although)\n\n\nSYM\nSymbol: non-alphanumeric symbol (e.g., %, &, #)\n\n\nVERB\nVerb: action or state (e.g., run, be, have)\n\n\nX\nOther: used when a word doesn’t fit into other categories",
     "crumbs": [
       "3. NLP with R",
-      "3.2 Regex"
+      "3.2 Regular expressions"
     ]
   },
   {
@@ -1516,7 +1743,7 @@
     "text": "Working with other corpora\nSome corpus platforms such as BNCweb, CQPweb or our local KU corpora1 support a specialised query syntax known as CQP (Corpus Query Processor), which enables users to query for strings with specific meta-attributes (text category, age, gender etc.).\n1 Note that the corpus platform of the Catholic University of Eichstätt-Ingolstadt, which was set up by Dr. Thomas Brunner, is only accessible to students or staff via the local eduroam network or a VPN client which holds their credentials.\nBasic use\nOnce signed in on any of these platforms, the user interface will generally follow this layout:\n\n\n\nCQP query of PROVIDE in the GloWbE corpus\n\n\n\nTo select a different corpus, navigate to CQPweb main menu under About CQPweb in the left menu bar.\nTo restrict search results to specific parts of the corpus, select Restricted query and choose the relevant text categories, varieties, etc.\n\nYou can now enter a search expression into the white box using the following pattern:\n\n[attribute = \"property\"]\n\nFor example, to retrieve all inflectional forms2 of the verb provide, enter:\n2 Some corpora do not support the lemma attribute and require manual listing of all inflectional forms via regular expressions, such as [word = \"provid(e(s)?|d|ing)\"] for provide.\n[lemma = \"provide\"]\n\nTo search for a word with a specific part-of-speech (POS) tag – such as like used as a preposition – use:\n\n[word = \"like\" & pos = \"ii\"]\n\nFor a full list of POS-tags, refer to:\n\nCLAWS5 (for BNC)\nCLAWS7 (for COCA and GloWbE)\n\n\n\n\n\n\n\nNote\n\n\n\nIf the exact word string is not important and you are only interested in part-of-speech sequences, you can supply the regular expression .+ to the word attribute, which means ‘match everything’. For example, to find all common nouns (NN) that are followed by a general preposition io, we can write\n\n[word = \".+\" & pos = \"nn\"][word = \".+\" & pos = \"io\"]\n\nRegular expressions also allow you to match multiple POS-tags, such as all noun categories (nn, nn1, nn2, nna, etc.) or all prepositions (if, ii, io). The search term below generalises the previous example, making it more inclusive:\n\n[word = \".+\" & pos = \"n.+\"][word = \".+\" & pos = \"i.+\"]\n\nHowever, be cautious with overly broad search patterns, as they might return (nearly) the entire corpus! The last one yields 22,294,282 matches.\n\n\n\n\nExporting and importing your results\nTo export your KWIC-hits, select Download in the top-right corner and specify your output options (e.g., the size of the search window or the speaker metadata). While you can immediately read the downloaded concordance.txt file into R, it’s advisable to first perform some manual clean-up in spreadsheet software (e.g., MS Excel). This ensures all columns and rows are complete and properly formatted.\nTo do this in Excel:\n\nNavigate to File &gt; Import &gt; Text file.\nSelect your file and choose Delimited.\nClick Next, select Tab as the delimiter, then click Next &gt; Finish.\n\nMake sure to save your file, ideally with the extension .xlsx.\nFrom here, please refer to the unit Import/export data for further steps.",
     "crumbs": [
       "3. NLP with R",
-      "3.2 Regex"
+      "3.2 Regular expressions"
     ]
   },
   {
@@ -1527,7 +1754,7 @@
     "text": "Exercises\n\n\n\n\n\n\nSolutions\n\n\n\nYou can find the solutions to the exercises here.\n\n\n\nExercise 1 How could you refine the search expression for PROVIDE \"provid(e(s)?|ing|ed)\" to get rid of the irrelevant cases?\n\n\nExercise 2 Write elegant regular expressions which find all inflectional forms of the following verbs:\n\naccept\nattach\nswim\nknow\nforget\n\n\n\nExercise 3 Find all nouns ending in -er.\n\n\nExercise 4 Find all four-digit numbers.\n\n\nExercise 5 Find all verbs that are followed by a preposition.",
     "crumbs": [
       "3. NLP with R",
-      "3.2 Regex"
+      "3.2 Regular expressions"
     ]
   },
   {
@@ -1656,7 +1883,7 @@
     "href": "chapters/06-linear_regression.html#preparation",
     "title": "6.1 Linear regression",
     "section": "Preparation",
-    "text": "Preparation\n\n# Load libraries\nlibrary(readxl) # for reading in Excel data\nlibrary(tidyverse) # data manipulation and visualisation framework\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(broom) # converting models to data frames\nlibrary(sjPlot) # exporting regression tables\nlibrary(effects) # plot marginal effects\n\nLoading required package: carData\nlattice theme set by effectsTheme()\nSee ?effectsTheme for details.\n\nlibrary(ggeffects) # generating predictions\nlibrary(car) # model diagnostics\n\n\nAttaching package: 'car'\n\nThe following object is masked from 'package:dplyr':\n\n    recode\n\nThe following object is masked from 'package:purrr':\n\n    some\n\n# Load data\nELP &lt;- read_xlsx(\"../datasets/ELP.xlsx\")\n\n# Inspect data structure\nstr(ELP)\n\ntibble [880 × 5] (S3: tbl_df/tbl/data.frame)\n $ Word  : chr [1:880] \"rackets\" \"stepmother\" \"delineated\" \"swimmers\" ...\n $ Length: num [1:880] 7 10 10 8 6 5 5 8 8 6 ...\n $ Freq  : num [1:880] 0.96 4.24 0.04 1.49 1.06 3.33 0.1 0.06 0.43 5.41 ...\n $ POS   : chr [1:880] \"NN\" \"NN\" \"VB\" \"NN\" ...\n $ RT    : num [1:880] 791 693 960 771 882 ...",
+    "text": "Preparation\n\n# Load libraries\nlibrary(readxl) # for reading in Excel data\nlibrary(tidyverse) # data manipulation and visualisation framework\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(broom) # converting models to data frames\nlibrary(sjPlot) # exporting regression tables\n\nLearn more about sjPlot with 'browseVignettes(\"sjPlot\")'.\n\nlibrary(effects) # plot marginal effects\n\nLoading required package: carData\nlattice theme set by effectsTheme()\nSee ?effectsTheme for details.\n\nlibrary(ggeffects) # generating predictions\nlibrary(car) # model diagnostics\n\n\nAttaching package: 'car'\n\nThe following object is masked from 'package:dplyr':\n\n    recode\n\nThe following object is masked from 'package:purrr':\n\n    some\n\n# Load data\nELP &lt;- read_xlsx(\"../datasets/ELP.xlsx\")\n\n# Inspect data structure\nstr(ELP)\n\ntibble [880 × 5] (S3: tbl_df/tbl/data.frame)\n $ Word  : chr [1:880] \"rackets\" \"stepmother\" \"delineated\" \"swimmers\" ...\n $ Length: num [1:880] 7 10 10 8 6 5 5 8 8 6 ...\n $ Freq  : num [1:880] 0.96 4.24 0.04 1.49 1.06 3.33 0.1 0.06 0.43 5.41 ...\n $ POS   : chr [1:880] \"NN\" \"NN\" \"VB\" \"NN\" ...\n $ RT    : num [1:880] 791 693 960 771 882 ...",
     "crumbs": [
       "6. Statistical Modelling",
       "6.1 Linear regression"
@@ -1808,396 +2035,14 @@
     "objectID": "Basics.html#principles-of-empirical-linguistics",
     "href": "Basics.html#principles-of-empirical-linguistics",
     "title": "An example from sociolinguistics",
-    "section": "2 Principles of Empirical Linguistics",
-    "text": "2 Principles of Empirical Linguistics\n\nObjectivity — Independence from researchers or devices (→ replicability!)\nReliability — Studies should be replicable.\nValidity — A study must actually address the problem formulated in the research question."
+    "section": "Principles of Empirical Linguistics",
+    "text": "Principles of Empirical Linguistics\n\nObjectivity — Independence from researchers or devices (→ replicability!)\nReliability — Studies should be replicable.\nValidity — A study must actually address the problem formulated in the research question."
   },
   {
     "objectID": "Basics.html#exercises",
     "href": "Basics.html#exercises",
     "title": "An example from sociolinguistics",
-    "section": "3 Exercises",
-    "text": "3 Exercises\n\nExercise 1 As you read through the sections above, think about what might go wrong at each stage of the study!\n\n\nExercise 2 Read another sociolinguistic study (e.g., Unuabonah and Gut 2018). As you read, identify similar key sections or “building blocks” used in this study (e.g., introduction, research question etc.). What purpose does each section serve in the study’s overall structure?"
-  },
-  {
-    "objectID": "chapters/03-regex.html#recommended-reading",
-    "href": "chapters/03-regex.html#recommended-reading",
-    "title": "3.2 Regular expressions",
-    "section": "Recommended reading",
-    "text": "Recommended reading\n\nLange and Leuckert (2020): Chapter 3.7\nDetailed cheatsheet (DataCamp)",
-    "crumbs": [
-      "3. NLP with R",
-      "3.2 Regex"
-    ]
-  },
-  {
-    "objectID": "chapters/03-concordancing.html#recommended-reading",
-    "href": "chapters/03-concordancing.html#recommended-reading",
-    "title": "3.1 Concordancing",
-    "section": "",
-    "text": "In-depth introduction to concordancing with R:\n\n\nSchweinberger (2024)\n\n\nNatural Language Processing (NLP) with quanteda:\n\n\nBenoit et al. (2018)\nOnline reference\n\n\nOn corpus-linguistic theory:\n\n\nWulff and Baker (2020)\nLange and Leuckert (2020)\nMcEnery, Xiao, and Yukio (2006)",
-    "crumbs": [
-      "3. NLP with R",
-      "3.1 Concordancing"
-    ]
-  },
-  {
-    "objectID": "chapters/03-concordancing.html#alternative-concordancing-software",
-    "href": "chapters/03-concordancing.html#alternative-concordancing-software",
-    "title": "3.1 Concordancing",
-    "section": "Alternative concordancing software",
-    "text": "Alternative concordancing software\nThere is a wide variety of concordancing software available, both free and paid. Among the most popular options are AntConc (Anthony 2020) and SketchEngine (Kilgarriff et al. 2004). However, as Schweinberger (2024) notes, the exact processes these tools use to generate output are not always fully transparent, making them something of a “black box.” In contrast, programming languages like R or Python allow researchers to document each step of their analysis clearly, providing full transparency from start to finish.\nThe following apps attempt to reconcile the need for an intuitive user interface with transparent data handling. The full source code is documented in the respective GitHub repositories.\n\nQuantedaApp is an interface for the R package quanteda (Benoit et al. 2018).\nPyConc is an interface for the Python package spaCy (Honnibal and Montani 2017).",
-    "crumbs": [
-      "3. NLP with R",
-      "3.1 Concordancing"
-    ]
-  },
-  {
-    "objectID": "chapters/02-vectors.html#tier-1",
-    "href": "chapters/02-vectors.html#tier-1",
-    "title": "2.3 Vectors",
-    "section": "Tier 1",
-    "text": "Tier 1\n\nExercise 1 Create a vector that lists the third person personal pronouns of English (subject and object forms). Store them in a variable pp3.\n\n\nExercise 2 Now print …\n\n… the fourth element in pp3.\n… elements 3 through 5.\n… all elements.\n… elements 1, 3 and 5.",
-    "crumbs": [
-      "2. Introduction to R",
-      "2.3 Vectors"
-    ]
-  },
-  {
-    "objectID": "chapters/02-vectors.html#tier-2",
-    "href": "chapters/02-vectors.html#tier-2",
-    "title": "2.3 Vectors",
-    "section": "Tier 2",
-    "text": "Tier 2\n\nExercise 3 When working with large datasets, we often do not know whether an element is in the vector to begin with, let alone its position. For instance, if we wanted to check whether they is in pp3 or not, we could use the handy notation below, which returns a TRUE or FALSE value:\n\n\"they\" %in% pp3\n\nAscertain whether the following items are in pp3:\n\nhim\nyou\nit and them\nwe, us and me\n\n\n\nExercise 4 Once we are sure that an element is in the vector of interest, another common problem that arises is finding its location. In this case, we can use which() to return the index of an element.\n\nwhich(pp3 == \"they\")\n\nYou can read the code above as “Which element in pp3 is they?”. Note that the index number depends on the order of elements you’ve chosen when creating pp3. Find the positions of it and them in pp3!\n\n\nExercise 5 Consider the vector numbers.\n\nnumbers &lt;- c(500:1000)\n\n\nExplain the difference in output for the following two code lines:\n\n\nwhich(numbers &gt; 600)\n\n\nnumbers[which(numbers &gt; 600)]\n\n\nExamine the output of the code chunks below, and try to establish the meaning of the operators !=, &, and |.\n\n\nnumbers[numbers != 500]\n\n\nnumbers[numbers &gt; 500 & numbers &lt; 550]\n\n\nnumbers[numbers &lt; 510 | numbers &gt; 990]",
-    "crumbs": [
-      "2. Introduction to R",
-      "2.3 Vectors"
-    ]
-  },
-  {
-    "objectID": "chapters/02-vectors.html#tier-3",
-    "href": "chapters/02-vectors.html#tier-3",
-    "title": "2.3 Vectors",
-    "section": "Tier 3",
-    "text": "Tier 3\n\nExercise 6 Consider our frequency data again. When analysing linguistic patterns, we often need to transform our data. Starting with:\n\nlemma &lt;- c(\"start\", \"enjoy\", \"begin\", \"help\")\nfrequency &lt;- c(418, 139, 337, 281)\n\n\nCreate a new vector relative_freq that shows each frequency as a percentage of the total.\nCreate a vector log_freq containing the natural logarithm of each frequency value.\nSuppose these frequencies come from a corpus of 10,000 words. Create a vector freq_per_thousand that shows how many times each verb appears per 1,000 words.\n\n\n\nExercise 7 The function strsplit() can be used to split up a string into substrings.\n\nwords &lt;- c(\"read\", \"write\")\n\nsplit_words &lt;- strsplit(words, split = NULL)\n\nprint(split_words)\n\n[[1]]\n[1] \"r\" \"e\" \"a\" \"d\"\n\n[[2]]\n[1] \"w\" \"r\" \"i\" \"t\" \"e\"\n\n\nHere the output is a list with two objects enclosed by double square brackets ([[1]] and [[2]]). These can be used to subset split_words:\n\n# Get first list object\nsplit_words[[1]]\n\n[1] \"r\" \"e\" \"a\" \"d\"\n\n# Get second list object\nsplit_words[[2]]\n\n[1] \"w\" \"r\" \"i\" \"t\" \"e\"\n\n\nWrite an R script that identifies the number of (orthographic) vowels and consonants for the words consequence and parsimonious.\n\n\nExercise 8 R allows users to write their own functions in order to automate certain tasks. Say, we need a function that automatically computes percentages for a numeric vector. If we break down the individual steps, it has to\n\ntake a numeric vector as input,\ncompute the sum of its values,\ndivide the vector values by the sum to get relative frequencies.\nmultiply the relative frequencies by 100, and\nreturn the final vector with the percentages.\n\n\n# 1. Define function with input\nget_pct &lt;- function(vector) {\n\n  # 2. Compute sum\n  sum_values &lt;- sum(vector)\n  \n  # 3. Divide vector values by the sum\n  relative_freqs &lt;- vector/sum_values\n  \n  # 4. Multiply relative frequencies by 100\n  percentages &lt;- relative_freqs * 100\n  \n  # 5. Return the percentages\n  return(percentages)\n}\n\nNow we can apply it to a numeric vector of our choice:\n\nget_pct(frequency)\n\n[1] 35.57447 11.82979 28.68085 23.91489\n\n\nWrite a count_vowels() function and a count_consonants() function that immediately computes the number of vowels or consonants, respectively, for any word supplied.",
-    "crumbs": [
-      "2. Introduction to R",
-      "2.3 Vectors"
-    ]
-  },
-  {
-    "objectID": "chapters/02-data_frames.html#tier-1",
-    "href": "chapters/02-data_frames.html#tier-1",
-    "title": "2.4 Data frames",
-    "section": "Tier 1",
-    "text": "Tier 1\n\nExercise 1 Recreate the barplot from the previous unit by subsetting the data variable accordingly.\n\n\nExercise 2 Print the following elements by subsetting the data frame data accordingly.\n\n337\nbegin\nenjoy\nenjoy 139\nthe entire frequency column",
-    "crumbs": [
-      "2. Introduction to R",
-      "2.4 Data frames"
-    ]
-  },
-  {
-    "objectID": "chapters/02-data_frames.html#tier-2",
-    "href": "chapters/02-data_frames.html#tier-2",
-    "title": "2.4 Data frames",
-    "section": "Tier 2",
-    "text": "Tier 2\n\nExercise 3 (Extension of Ex. 3 from Vectors) Verify that the following verbs are represented in the lemma column: enjoy, hit, find, begin. If they are in the data frame, print their frequency information.\n\n\nExercise 4 (Extension of Ex. 4 from Vectors) Use which() to find the rows where the frequency is greater than 200, and then print the lemma and frequency of those rows only.",
-    "crumbs": [
-      "2. Introduction to R",
-      "2.4 Data frames"
-    ]
-  },
-  {
-    "objectID": "chapters/02-data_frames.html#tier-3",
-    "href": "chapters/02-data_frames.html#tier-3",
-    "title": "2.4 Data frames",
-    "section": "Tier 3",
-    "text": "Tier 3\n\nExercise 5 Diachronic corpora comprise data on language use across different time periods. This data frame indicates the frequencies of certain modal verbs across three time periods:\n\nmodals_df &lt;- data.frame(\n  modal = c(\"can\", \"could\", \"may\", \"might\", \"must\", \"shall\", \"should\", \"will\", \"would\"),\n  period1 = c(128, 68, 55, 21, 44, 19, 35, 85, 97),\n  period2 = c(142, 83, 41, 30, 39, 12, 52, 94, 119)\n)\n\n\nFind the most and least frequent modal verb in each time period.\nCalculate the percentage change in frequency for each modal verb between period1 and period2.\nCreate a new column trend with the values \"increasing\" and \"decreasing\" based on whether the frequency increased or decreased across periods.\n\n\n\nExercise 6 (Extension of Ex. 8 in Vectors.) Write a function that performs part-of-speech (POS) annotation on the sentence The quick brown fox jumps over the lazy dog. Here are a few code snippets to help you get started:\n\nYou can split up sentences into tokens using tokenize_words() from the tokenizers library.\n\n\nlibrary(tokenizers)\nlibrary(tidyverse)\n\ntext &lt;- \"Colorless green ideas sleep furiously.\"\ntext_tokenized &lt;- tokenize_words(text)\n\n# To lowercase the tokens\ntokens_lower &lt;- tolower(text_tokenized[[1]])\n\n\nVectors can have name attributes:\n\n\nword &lt;- \"read\"\n\n# Give it a name\nnames(word) &lt;- \"verb\"\n\n# Get rid of its name\nword &lt;- unname(word)\n\n\nThere are several ways to apply conditional logic:\n\n\nthings &lt;- c(\"apple\", \"cherry\", \"pear\", \"cucumber\", \"coconut\")\nfruits &lt;- c(\"apple\", \"cherry\", \"pear\")\nvegetables &lt;- c(\"cabbage\", \"carrot\", \"cucumber\")\n\n# Base R\nfood_analysis &lt;- ifelse(things %in% fruits, \"fruit\", \"not_fruit\")\n\n# Tidyverse\nfood_analysis2 &lt;- case_when(\n  things %in% fruits ~ \"yes\", # if elements from \"things\" are in \"fruits\", print \"yes\", else\n  TRUE ~ \"no\"                 # print \"no\" (default)\n)\n\n\nIf multiple conditions should be checked, the statements/cases have to be nested appropriately:\n\n\n# Base R\ncomplex_food_analysis &lt;- ifelse(things %in% fruits, \"fruit\",\n       ifelse(things %in% vegetables, \"vegatable\",\n              \"unknown\"))\n\n# Tidyverse\ncomplex_food_analysis2 &lt;- case_when(\n  things %in% fruits ~ \"fruit\", # if elements from \"things\" are in \"fruits\", print \"yes\", else\n  things %in% vegetables ~ \"vegetable\", # if they're in \"vegetables\", print \"yes\", else\n  TRUE ~ \"unknown\"     # print \"unknown\"           \n)",
-    "crumbs": [
-      "2. Introduction to R",
-      "2.4 Data frames"
-    ]
-  },
-  {
-    "objectID": "chapters/04-variables.html#samples-sample-spaces-and-populations",
-    "href": "chapters/04-variables.html#samples-sample-spaces-and-populations",
-    "title": "Data types",
-    "section": "Samples, sample spaces, and populations",
-    "text": "Samples, sample spaces, and populations\nIn order to investigate one or more linguistic features, we need to collect relevant observations. Actions that generate observations are called experiments, such as decision tasks or even corpus queries. Since it is not feasible to examine, for instance, the entirety of all linguistic utterances ever produced, i.e., the virtually infinite population, we rely on subsets of it: samples. Good research is characterised by good sampling procedures that limit the bias present in any sample, thus improving the generalisability of potential findings.\nTo state this more formally, let \\(\\omega\\) (‘lower-case Omega’) denote a single observation of interest. The full set of theoretically possible observations is contained in \\(\\Omega\\) (‘upper-case Omega’), with \\(\\Omega = \\{\\omega_1, \\omega_2, \\dots, \\omega_n \\}\\). Here \\(n\\) represents the \\(n\\)-th observation and should be a natural number. A sample is then simply a selection of elements from \\(\\Omega\\).",
-    "crumbs": [
-      "4. Descriptive Statistics",
-      "4.1 Data types"
-    ]
-  },
-  {
-    "objectID": "chapters/04-variables.html#random-variables",
-    "href": "chapters/04-variables.html#random-variables",
-    "title": "4.1 Data, variables, samples",
-    "section": "(Random) Variables",
-    "text": "(Random) Variables\nThe concept of the variable is very handy in that it enables researchers to quantify different aspects of linguistic observations, such as the age or gender of the speaker, the register of the speech situation, the variety of English, the length of an utterance, a syntactic construction or a grammatical category, among many other theoretically possible features.\nFor each observation, we should be able to assign a specific outcome to our variables. While the variable Genitive could have a small set of outcomes such as ‘s’ and ‘of’, other variables such as Utterance length or Reaction time could technically assume any value in the range [0, \\(\\infty\\)). The set of all possible outcomes in an experiment is known as the sample space \\(S\\).\nGiven a single observed NP which is marked for possessive case, we may characterise its formal marking as either ‘s’ (synthetic genitive) or as ‘of’ (analytic/periphrastic). For simplicity, I will call these options \\(S\\) and \\(O\\). The sample space of Genitive could be thus described as\n\\[\nS_{\\text{Genitive}} = \\{\\text{S}, \\text{O}\\}.\n\\]\nExperiments normally do not terminate after obtaining the first observation. As a result, the sample space becomes considerably more complex (and unwieldy), the more observations are gathered. For \\(n = 3\\) possessive NPs, the sample space would comprise the following combinations of outcomes:\n\\[\nS_{\\text{Genitive (3 NPs)}} = \\{\\text{SSS}, \\text{SSO},\\text{SOS}, \\text{SOO},\\text{OSS}, \\text{OSO}, \\text{OOS}, \\text{OOO}\\}.\n\\]\nWith \\(n = 10\\) we’d be dealing with \\(2^{10} = 1024\\) possible outcomes. If, for instance, we’re only interested in the total number of s-genitives, this isn’t a particularly efficient approach.\nRandom variables allow us to map outcomes from the sample space onto the real numbers \\(\\mathbb{R}\\). Quite conveniently, we could define a discrete random variable \\(X\\) that counts the total number of s-genitives in a sample of size \\(n\\). Note, however, that the random variable is not random – it is the result of a random process. Other random variables could be\n\nthe number of ‘heads’ after tossing a coin 30 times,\ngetting a ‘6’ when rolling a die 500 times, or\nhow many years it takes for your TV to break down.\n\n\n\n\n\n\n\nRandom variables: Formal definition\n\n\n\n\n\nA random variable is a function \\(X\\) which maps onto each outcome \\(s \\in S\\) exactly one number \\(X(s) = x\\) with \\(x \\in \\mathbb{R}\\).\nIn formal terms:\n\\[\nX : S \\to \\mathbb{R}.\n\\]\n\n\n\n\n\n\n\n\n\nNumber of (unique) values in R\n\n\n\n\n\nTo count the number of items in a vector, which correspond to the total number \\(n\\) of attested values of \\(X\\), we can use length():\n\nlength(cl.order$SUBORDTYPE)\n\n[1] 403\n\n\nIn fact, it is equivalent to the number of rows in the full data frame:\n\nnrow(cl.order)\n\n[1] 403\n\n\nThe function unique() shows all unique items (= types) in a vector, which reflect the possible outcomes in \\(S\\):\n\nunique(cl.order$SUBORDTYPE)\n\n[1] \"temp\" \"caus\"",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.1 Data, variables, samples"
-    ]
-  },
-  {
-    "objectID": "chapters/04-variables.html#tier-1",
-    "href": "chapters/04-variables.html#tier-1",
-    "title": "4.1 Data, variables, samples",
-    "section": "Tier 1",
-    "text": "Tier 1\n\nExercise 1 Consider the following statement:\n\nThis paper examines the influence of clause length on the ordering of main and subordinate clauses.\n\n\nWhat is the dependent variable?\nWhat is the independent variable?\nWhat would it mean if they were reversed?\n\n\n\nExercise 2 Identify the variable types (nominal, ordinal etc.) for all columns in the cl.order dataset.",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.1 Data, variables, samples"
-    ]
-  },
-  {
-    "objectID": "chapters/04-variables.html#tier-2",
-    "href": "chapters/04-variables.html#tier-2",
-    "title": "4.1 Data, variables, samples",
-    "section": "Tier 2",
-    "text": "Tier 2\n\nExercise 3 Consider the general form of the data matrix from Equation 1. What would the labels \\(\\Omega\\), \\(\\omega\\), \\(X\\) and \\(x\\) correspond to in the cl.order dataset?\n\n\nExercise 4 Assuming three randomly chosen observations from the cl.order dataset, describe the sample space \\(S\\) for the variable ORDER. What random variables could you define with domain \\(S\\)?",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.1 Data, variables, samples"
-    ]
-  },
-  {
-    "objectID": "chapters/04-variables.html#tier-3",
-    "href": "chapters/04-variables.html#tier-3",
-    "title": "4.1 Data, variables, samples",
-    "section": "Tier 3",
-    "text": "Tier 3\n\nExercise 5 Explain why frequency data is actually discrete.",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.1 Data, variables, samples"
-    ]
-  },
-  {
-    "objectID": "chapters/04-variables.html#samples-and-populations",
-    "href": "chapters/04-variables.html#samples-and-populations",
-    "title": "4.1 Data, variables, samples",
-    "section": "Samples and populations",
-    "text": "Samples and populations\nIn order to investigate one or more linguistic features, we need to collect relevant observations. Actions that generate observations are called experiments, such as decision tasks or even corpus queries. Since it is not feasible to examine, for instance, the entirety of all linguistic utterances ever produced, i.e., the virtually infinite population, we rely on subsets of it: samples. Good research is characterised by good sampling procedures that limit the bias present in any sample, thus improving the generalisability of potential findings.\nTo state this more formally, let \\(\\omega\\) (‘lower-case Omega’) denote a single observation of interest. The full set of theoretically possible observations is contained in \\(\\Omega\\) (‘upper-case Omega’), with \\(\\Omega = \\{\\omega_1, \\omega_2, \\dots, \\omega_n \\}\\). Here \\(n\\) represents the \\(n\\)-th observation and should be a natural number. A sample is then simply a selection of elements from \\(\\Omega\\).",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.1 Data, variables, samples"
-    ]
-  },
-  {
-    "objectID": "chapters/04-variables.html#datasets",
-    "href": "chapters/04-variables.html#datasets",
-    "title": "4.1 Data, variables, samples",
-    "section": "Datasets",
-    "text": "Datasets\nInformation on variables and their values is conventionally arranged in a dataset, which is essentially a matrix with rows (= observations) and columns (= variables). Assuming that \\(n\\) denotes the row number and \\(p\\) the column number, the abstract form of a dataset is an \\(n \\times p\\) matrix of the form in Equation 1.\n\\[\n\\begin{pmatrix}\n    \\omega & X_1 & X_2 & \\cdots &  X_p \\\\\n    1 & x_{11} & x_{12} & \\cdots & x_{1p} \\\\\n    2 & x_{21} & x_{22} & \\cdots & x_{2p} \\\\\n    \\vdots & \\vdots & \\vdots &  & \\vdots \\\\\n    n & x_{n1} & x_{n2} & \\cdots & x_{np}\n\\end{pmatrix}\n\\tag{1}\\]",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.1 Data, variables, samples"
-    ]
-  },
-  {
-    "objectID": "chapters/04-variables.html#data-types",
-    "href": "chapters/04-variables.html#data-types",
-    "title": "4.1 Data, variables, samples",
-    "section": "Data types",
-    "text": "Data types\nIn general, we distinguish between discrete variables, which can only take a limited set of unique values, and continuous variables, which can take infinitely many values within a specified range.\nWe can further subdivide discrete and continuous variables into into nominal, ordinal, interval-scaled and ratio-scaled ones:\n\n\n\n\n\n\nNominal/categorical\n\n\n\n\n\nThese variables comprise a limited number of categories which cannot be ordered in a meaningful way. For instance, it does not matter which value of SUBORDTYPE or MORETHAN2CL comes first or last:\n\n    unique(cl.order$SUBORDTYPE)\n\n[1] \"temp\" \"caus\"\n\n    unique(cl.order$MORETHAN2CL)\n\n[1] \"no\"  \"yes\"\n\n\n\n\n\n\n\n\n\n\n\nOrdinal/categorical\n\n\n\n\n\nOrdinal variables are ordered. However, the intervals between their individual values are not interpretable. Heumann (2022: 6) provides a pertinent example:\n\n[T]he satisfaction with a product (unsatisfied–satisfied–very satisfied) is an ordinal variable because the values this variable can take can be ordered but the differences between ‘unsatisfied–satisfied’ and ‘satisfied–very satisfied’ cannot be compared in a numerical way.\n\n\n\n\n\n\n\n\n\n\nInterval-scaled/continuous\n\n\n\n\n\n\nIn the case of interval-scaled variables, the differences between the values can be interpreted, but their ratios must be treated with caution. A temperature of 4°C is 6 degrees warmer than -2°C; however, this does not imply that 4°C is three times warmer than -2°C. This is because the temperature scale has no true zero point; 0°C simply signifies another point on the scale and not the absence of temperature altogether.\n\n\n\n\n\n\n\n\n\n\nRatio-scaled/continuous\n\n\n\n\n\n\nRatio-scaled variables allow both a meaningful interpretation of the differences between their values and (!) of the ratios between them. Within the context of clause length, LENGTH_DIFF values such as 4 and 8 not only suggest that the latter is four units greater than the former but also that their ratio \\(\\frac{8}{4} = 2\\) is a valid way to describe the relationship between these values. Here a LENGTH_DIFF of 0 can be clearly viewed as the absence of a length difference.",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.1 Data, variables, samples"
-    ]
-  },
-  {
-    "objectID": "chapters/04-variables.html#dependent-vs.-independent-variables",
-    "href": "chapters/04-variables.html#dependent-vs.-independent-variables",
-    "title": "4.1 Data, variables, samples",
-    "section": "Dependent vs. independent variables",
-    "text": "Dependent vs. independent variables\nIn empirical studies, it is often of interest whether one variable leads to changes in the values of another variable. When exploring such associations (or correlations), we need to take another heuristic step to clarify the direction of the influence.\nIn a linguistic context, we denote the variable whose usage patterns we’d like to explain as the dependent or response variable. A list of possible dependent variables is provided in the section on Linguistic variables).\nIts outcomes are said to depend on one or more independent variables. These are also often referred to as explanatory variables as they are supposed to explain variation in the response variable. These can be AGE, SEX or the VARIETY of English at hand.",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.1 Data, variables, samples"
-    ]
-  },
-  {
-    "objectID": "chapters/04-probability.html",
-    "href": "chapters/04-probability.html",
-    "title": "4.2 Probability theory",
-    "section": "",
-    "text": "Most accessible:\n\nBaguley (2012): Chapter 2\n\nTechnical:\n\nHeumann, Schomaker, and Shalabh (2022a): Chapter 7\nAgresti and Kateri (2022): Chapter 2\n\nProof-based:\n\nCasella and Berger (2002): Chapters 1 & 2",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.2 Probability theory"
-    ]
-  },
-  {
-    "objectID": "chapters/04-probability.html#recommended-reading",
-    "href": "chapters/04-probability.html#recommended-reading",
-    "title": "4.2 Probability theory",
-    "section": "",
-    "text": "Most accessible:\n\nBaguley (2012): Chapter 2\n\nTechnical:\n\nHeumann, Schomaker, and Shalabh (2022a): Chapter 7\nAgresti and Kateri (2022): Chapter 2\n\nProof-based:\n\nCasella and Berger (2002): Chapters 1 & 2",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.2 Probability theory"
-    ]
-  },
-  {
-    "objectID": "chapters/04-probability.html#defining-probability",
-    "href": "chapters/04-probability.html#defining-probability",
-    "title": "4.2 Probability theory",
-    "section": "Defining probability",
-    "text": "Defining probability\nThe OED provides several non-technical definition of term probability, including\n\n‘the extent to which something is likely to happen or be the case’1 and\n‘thing judged likely to be true, to exist, or to happen’2,\n\n1 See https://doi.org/10.1093/OED/1639707847.2 See https://doi.org/10.1093/OED/3638534852.which seem to express a speaker’s subjective and gradable certainty about the (non-)occurrence of processes in the world. This is a good point of departure, but in order to incorporate this concept into empirical research, a more rigorous definition is called for.\n\nRelative frequency\nAgresti & Kateri (2022: 29) adduce a frequency-based interpretation of probability:\n\n“For an observation of a random phenomenon, the probability of a particular outcome is the proportion of times that outcome would occur in an indefinitely long sequence of like observations, under the same conditions.”\n\nIn other words, the probability of an 3 \\(A\\), denoted \\(P(A)\\), is equivalent to the long-term relative frequency of \\(A\\) as the number of observations \\(n\\) increases. The relative frequency \\(f(A)\\) is obtained by dividing the frequency of occurrence \\(n(A)\\) by the sample size \\(n\\), i.e.,\n3 An event is understood as any subset of the sample space \\(S\\), comprising one or more outcomes.\\[\nf(A) = \\frac{n(A)}{n}.\n\\]\nHeumann et al. (2022b: 118) explains that \\(f(A)\\) converges to the probability \\(P(A)\\) as \\(n\\) approaches infinity:\n\\[\nP(A) = \\lim_{n\\to\\infty} \\frac{n(A)}{n}.\n\\]\n\n\nKolmogorov’s axioms\nOn the most abstract level, probabilities are defined as functions that associate elements from the sample space \\(S = \\{s_1, s_2, ..., s_n\\}\\) with values in the interval \\([0, 1]\\), subject to certain conditions.\nThe Russian Mathematician Andrei Kolmogorov (1903–1987) proposed three axioms that a probability function \\(P\\) must satisfy:\n\nEvery event \\(A\\) in the sample space \\(S\\) has a probability\n\n\\[P(A) \\geq 0.\\]\n\nThe probability of the sample space \\(S\\)\n\n\\[P(S) = 1.\\]\n\nAssuming two disjoint (i.e., mutually exclusive) events4 \\(A_1\\) and \\(A_2\\), then\n\n4 Note that this axiom can be generalised to infinite series of pairwise disjoint events \\(A_i\\):\n\\[\nP\\left(\\bigcup\\limits_{i=1}^{\\infty} A_i\\right) = \\sum\\limits_{i=1}^{\\infty} P(A_i).\n\\]\\[P(A \\cap B) = P(A) + P(B).\\]",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.2 Probability theory"
-    ]
-  },
-  {
-    "objectID": "chapters/04-probability.html#probability-distributions",
-    "href": "chapters/04-probability.html#probability-distributions",
-    "title": "4.2 Probability theory",
-    "section": "Probability distributions",
-    "text": "Probability distributions\nRecall the concept of random variables introduced in 4.1 Data types. They describe random processes, which means that the outcomes of the experiment are not pre-determined in any way; there is always some degree of uncertainty involved. Each outcome occurs with a certain probability.\nWhen we associate each outcome of a random variable with a probability, we obtain its probability distribution. A function that explicitly maps probabilities onto the discrete outcomes of a discrete random variable \\(X\\) is called probability mass function (\\(pmf\\)). In the continuous case, we speak of a probability density function (\\(pdf\\)).\nDiscrete random variables have discrete probability distributions, and continuous variables have continuous probability distributions. For each distribution, we can compute\n\nthe expected (‘average’ or ‘typical’) value \\(E(X)\\),\nthe variance \\(Var(X) = E(X-E(X))^2\\), which describes the spread around the expectation, and\nthe standard deviation \\(\\sqrt{Var(X)}\\), the average distance from the mean.\n\nThe are several further measures we can use to describe probability distributions, including\n\nskewness (symmetry) \\(E(X-E(X))^3\\) and\nkurtosis (‘peakedness’ or ‘flatness’) \\(E(X-E(X))^4\\).\n\n\nDiscrete distributions\n\nUniform distribution\nIf all discrete outcomes have the same probability, their distribution is called uniform. A well-known example is the toss of a coin: If the coin is fair, the outcomes \\(\\{\\text{Heads}\\}\\) and \\(\\{\\text{Tails}\\}\\) are equally likely. More generally, if a discrete random variable \\(X\\) has \\(k\\) different outcomes, then any outcome \\(x_i\\) has the probability\n\\[\nP(X = x_i) = \\frac{1}{k}.\n\\]\nIf we toss a fair coin once, the sample space is \\(S = \\{\\text{Heads}, \\text{Tails}\\}\\), and we have \\(P(\\text{Heads}) = P(\\text{Tails}) = \\frac{1}{2}\\).\nNote that all probabilities have to add up to 1, i.e.,\n\\[\n\\sum_{x\\in X} P(x) = 1.\n\\]\n\n\nShow the code\n# Load libraries\nlibrary(tidyverse)\n\n# First, set a seed for reproducibility; this ensure that we always generate the 'same' random numbers\nset.seed(123)\n\n# Simulate 10,000 rolls of a fair six-sided die\ndie_rolls &lt;- sample(1:6, size = 10000, replace = TRUE)\n\n# Plot the probability mass function\nggplot(data.frame(die_rolls), aes(x = factor(die_rolls))) +\n  geom_bar(aes(y = ..count../sum(..count..)), fill = \"steelblue\") +\n  geom_hline(yintercept = 1/6, col = \"black\") +\n  labs(title = \"Rolling a die 10000 times (k = 6, p = 1/6)\",\n       y = \"Probability\",\n       x = \"Outcome\") +\n  scale_y_continuous(limits = c(0, 0.25)) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExpectation and variance\n\n\n\n\n\n\\[\n\\begin{align}\nE(X) &= \\frac{k+1}{2} \\\\\nVar(X) &= \\frac{1}{12}(k^2-1)\n\\end{align}\n\\] Let’s compute the typical outcome of a dice throw:\n\n# Define outcomes and probabilities\noutcomes &lt;- 1:6\nprobs &lt;- rep(1/6, 6)  # Equal probability for each outcome\n\n# Expectation\nexpectation &lt;- sum(outcomes * probs)\n\nprint(expectation)\n\n[1] 3.5\n\n\nWe can obtain the variance and standard deviation as follows:\n\n# Variance\nvariance &lt;- sum((outcomes - expectation)^2 * probs)\n\nprint(variance)\n\n[1] 2.916667\n\n# Standard deviation\nsd &lt;- sqrt(variance)\n\nprint(sd)\n\n[1] 1.707825\n\n\n\n\n\n\n\nBinomial distribution\nMany corpus-linguistic studies are concerned with discrete random variables \\(X\\) that have exactly two outcomes, such as the dative alternation (give somebody something vs. give something to somebody), the particle placement alternation (pick something up vs. pick up something), or subject and object realisation (overt vs. null).\nAssume we make \\(n\\) independent binary observations (also known as Bernoulli trials) of \\(X\\). If one of the two outcomes of \\(X\\) has a fixed probability \\(\\pi\\) (often denoted ‘success’) and the other one the probability \\(1 - \\pi\\) (‘failure’), \\(X\\) follows a binomial distribution.5 We can also use the shorthand notation\n5 The natural extension of the binomial distribution to \\(k\\) different outcomes is called the multinomial distribution with index \\(n\\) and probabilities \\(\\pi_1, \\pi_2, \\dots, \\pi_k\\).\\[\nX \\sim Binom(n, \\pi).\n\\]The elements inside the parentheses are the parameters of the distribution, determining the outcomes of \\(X\\): the number \\(n\\) of independent observations and the probability \\(\\pi\\) of ‘success’.\n\n\nShow the code\n# Set seed for reproducibility\nset.seed(123)\n\n# Set parameters for binomial distribution\nn &lt;- 30    # Number of trials\npi &lt;- 0.5  # Probability of HEADS\n\n# Set up the pmf\nsuccesses &lt;- 0:n\nprob_mass &lt;- dbinom(successes, size = n, prob = pi)\n\n# Create a data frame for plotting\nbinom_data &lt;- data.frame(successes = successes, probability = prob_mass)\n\n# Basic plot approach\nggplot(binom_data, aes(x = successes, y = probability)) +\n  geom_segment(aes(xend = successes, yend = 0), linewidth = 1.2) +\n  labs(title = \"PMF of n = 30 coin tosses with P({Heads}) = 0.5\",\n       x = \"Occurrences of {Heads}\", y = \"Probability\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExpectation and variance\n\n\n\n\n\n\\[\n\\begin{align}\nE(X) &= n\\pi \\\\\nVar(X) &= n\\pi(1-\\pi)\n\\end{align}\n\\]\n\n# Expectation\nbinom_exp &lt;- n * pi; binom_exp\n\n[1] 15\n\n# Variance\nbinom_var &lt;- n * pi * (1 - pi); binom_var\n\n[1] 7.5\n\n# Standard deviation\nbinom_sd &lt;- sqrt(binom_var); binom_sd\n\n[1] 2.738613\n\n\n\n\n\n\n\nPoisson distribution\nThe Poisson distribution is particularly suitable for frequency data, which is ubiquitous in corpus linguistics. A Poisson-distributed random variable is fully determined by its parameter \\(\\lambda\\), which determines how often events occur.\n\\[\nX \\sim Pois(\\lambda).\n\\]\nNote that \\(\\lambda\\) is both the expected value and variance of the distribution.\n\n\nShow the code\n# Define the occurrence rate\nlambda &lt;- 3\n\n# Define the range of x values\nx_range &lt;- 0:15 \n\n# Compute PMF values using dpois()\npoisson_pmf &lt;- data.frame(\n  x = x_range,\n  probability = dpois(x_range, lambda)\n)\n\n# Create the PMF plot using ggplot\nggplot(poisson_pmf, aes(x = x, y = probability)) +\n  geom_segment(aes(xend = x, yend = 0), linewidth = 1.2) + \n  labs(title = \"Poisson PMF with λ = 5\",\n       x = \"Number of events\",\n       y = \"Probability\") +\n  scale_x_continuous(breaks = x_range) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nA common alternative to the Poisson distribution, which is often deemed more flexible, is the negative binomial distribution, as it provides two distinct parameters for its expectation and variance each.\n\n\n\nContinuous distributions\n\nThe normal distribution\nA great number of numerical variables in the world follow the well-known normal (or Gaussian) distribution, which includes test scores, weight and height, among many others. The plot below illustrates its characteristic bell-shape: Most observations are in the middle, with considerably fewer near the fringes. For example, most people are rather “average” in height; there are only few people that are extremely short or extremely tall.\nThe normal distribution is typically described in terms of two parameters: The population mean \\(\\mu\\) and the population standard deviation \\(\\sigma\\). If a random variable \\(X\\) is normally distributed, we typically use the notation in Equation 1.\n\\[ X \\sim N(\\mu, \\sigma^2).\n\\tag{1}\\]\n\n\nShow the code\n# Set parameters for normal distribution\nmu &lt;- 0     # Mean (expectation)\nsigma &lt;- 1  # Standard deviation (square root of variance)\nvariance &lt;- sigma^2\n\n# Generate a sequence of x-values in a range of +/- 4 standard deviations from the mean\nx_values &lt;- seq(mu - 4*sigma, mu + 4*sigma, length.out = 1000)\n\n# Collect everything in a data frame\nnorm_data &lt;- data.frame(\n  x = x_values,\n  density = dnorm(x_values, mean = mu, sd = sigma)\n)\n\n# Plot the simulated data\nggplot(norm_data, aes(x = x, y = density)) +\n  geom_line(linewidth = 1, color = \"#0D47A1\") +\n  labs(\n    title = \"PDF for N(0, 1)\",\n    x = \"x\",\n    y = \"Probability density\") +\n  theme_minimal() \n\n\n\n\n\n\n\n\n\nIn the plot, the \\(y\\)-axis indicates the density of population values; note that since the Gaussian distribution is a continuous distribution with technically infinite \\(x\\)-values, the probability of any given value must be 0. We can only obtain probabilities for intervals of values, which are given by\n\\[\nP(a \\leq X \\leq b) = \\int_a^b f(x)dx.\n\\tag{2}\\]\n\n\n\n\n\n\nQuick facts about the Gaussian bell curve\n\n\n\n\n\nQuite interestingly,\n\n68% all values fall within one standard deviation of the mean,\n95% within two, and\n99.7% within three.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExpectation and variance\n\n\n\n\n\n\\[\n\\begin{align}\nE(X) &= \\mu \\\\\nVar(X) &= \\sigma^2\n\\end{align}\n\\]",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.2 Probability theory"
-    ]
-  },
-  {
-    "objectID": "chapters/01-maths.html#large-operators",
-    "href": "chapters/01-maths.html#large-operators",
-    "title": "1.4 Formal aspects",
-    "section": "Large operators",
-    "text": "Large operators\n\nSummation\n\n\nProduct"
-  },
-  {
-    "objectID": "chapters/01-maths.html",
-    "href": "chapters/01-maths.html",
-    "title": "1.4 Formal aspects",
-    "section": "",
-    "text": "Throughout this reader—particularly in later chapters—we will frequently rely on fundamental concepts from set theory and mathematics. These frameworks provide a precise and concise way to express complex ideas, making them essential tools for statistical science. The aim of this unit is to introduce key formalisms and build foundational literacy in their use. While a comprehensive treatment is beyond the scope of this reader, the following resources offer further guidance:\n\nPartee, Meulen, and Wall (1990)\nHalmos (1974)\nSpivak (1994)\nHammack (2018)",
-    "crumbs": [
-      "1. Fundamentals",
-      "1.4 Formal aspects"
-    ]
-  },
-  {
-    "objectID": "chapters/01-maths.html#set-theory",
-    "href": "chapters/01-maths.html#set-theory",
-    "title": "1.4 Formal aspects",
-    "section": "Set theory",
-    "text": "Set theory\nSets are finite or infinite collections of elements and are conventionally denoted by capital letters. These elements can be virtually anything – letters, numbers, or even sets themselves. For example, let us define a set \\(L\\) which should contains the words eat, drink, sleep, bathe:\n\\[\nL = \\{eat, drink, sleep, bathe\\}\n\\]\nIt is clear that eat is in \\(L\\), i.e., \\(eat \\in L\\), but the verb convince is not: \\(convince \\notin L\\).\nLet’s define a new set\n\\[F = \\{eat, drink\\}.\\]\nIt has the interesting property that all of its elements are also represented in \\(L\\). This makes \\(F\\) a subset of \\(L\\), written \\(F \\subseteq L\\). If two sets contain exactly the same elements, they are equal.\nA set that does not contain any elements is an empty set \\(\\emptyset\\).",
-    "crumbs": [
-      "1. Fundamentals",
-      "1.4 Formal aspects"
-    ]
-  },
-  {
-    "objectID": "chapters/01-maths.html#introduction",
-    "href": "chapters/01-maths.html#introduction",
-    "title": "1.4 Formal aspects",
-    "section": "",
-    "text": "Throughout this reader—particularly in later chapters—we will frequently rely on fundamental concepts from set theory and mathematics. These frameworks provide a precise and concise way to express complex ideas, making them essential tools for statistical science. The aim of this unit is to introduce key formalisms and build foundational literacy in their use. While a comprehensive treatment is beyond the scope of this reader, the following resources offer further guidance:\n\nPartee, Meulen, and Wall (1990)\nHalmos (1974)\nSpivak (1994)\nHammack (2018)",
-    "crumbs": [
-      "1. Fundamentals",
-      "1.4 Formal aspects"
-    ]
-  },
-  {
-    "objectID": "chapters/01-maths.html#sequences",
-    "href": "chapters/01-maths.html#sequences",
-    "title": "1.4 Formal aspects",
-    "section": "Sequences",
-    "text": "Sequences\n\nSum\nWe can express a sum such as \\(a_1 + a_2 + \\dots + a_n\\) in a more compact way using the Greek letter \\(\\Sigma\\):\n\\[\n\\sum_{i=1}^n a_i = a_1 + a_2 + a_3 + \\dots + a_n.\n\\]\nHere, \\(i\\) is the index with starting value \\(1\\) and final value \\(n\\). In set-theoretic notation, we could say that \\(i \\in \\{1, 2, 3, \\dots, n\\}\\).1\n1 The index can also be denoted by different letters (\\(j, k\\) etc.) except for \\(n\\).Alternatively, we can also use set-based indexing. If we define \\(A =\\{a_1, a_2, \\ldots, a_n\\}\\) as the set of elements we want to sum, we can write:\n\\[\n\\sum_{a \\in A} a = a_1 + a_2 + a_3 + \\dots +\na_n.\n\\]\nSums are ubiquituous in corpus linguistics. For instance, if \\(f_i\\) represents the frequency of the \\(i\\)-th word in a corpus, then \\(\\sum_{i=1}^n f_i\\) represents the total size of the corpus.\nThe summation can start at any index, e.g., \\(\\sum_{i=0}^n a_i\\), and can be over any set: \\(\\sum_{w \\in V} f(w)\\) sums \\(f(w)\\) for all words \\(w\\) in vocabulary \\(V\\).\nIf the summation has no upper limit, it is an infinite sum:\n\\[\n\\sum_{i=1}^{\\infty} = a_1 + a_2 + a_3 + \\dots + a_i+ \\dots.\n\\]\n\n\nProduct\nFor products, the letter \\(\\Pi\\) is used instead of \\(\\Sigma\\). It follows the same pattern:\n\\[\n\\prod_{i=1}^n a_i = a_1 \\cdot a_2 \\cdot a_3 \\cdots a_n.\n\\] The infinite equivalent is:\n\\[\n\\prod_{i=1}^\\infty a_i = a_1 \\cdot a_2 \\cdot a_3 \\cdots a_i \\cdots.\n\\]\n\n\nUnion and intersection\nAssume we have sets \\(A_1, A_2, \\dots, A_n\\). We can represent their union as\n\\[\n\\bigcup_{i=1}^n A_i = A_1 \\cup A_2 \\cup A_3 \\cup  \\dots \\cup A_n.\n\\]\nConversely, their intersection is\n\\[\n\\bigcap_{i=1}^n A_i = A_1 \\cap A_2 \\cap A_3 \\cap \\dots \\cap A_n.\n\\]"
-  },
-  {
-    "objectID": "chapters/01-maths.html#union",
-    "href": "chapters/01-maths.html#union",
-    "title": "1.4 Formal aspects",
-    "section": "Union",
-    "text": "Union\nThe union of two sets \\(A\\) and \\(B\\) is defined as \\[\nA \\cup B = \\{ x : x \\in A \\text{ or } x \\in B\\}.\n\\]"
-  },
-  {
-    "objectID": "chapters/01-maths.html#set-theoretic-operations",
-    "href": "chapters/01-maths.html#set-theoretic-operations",
-    "title": "1.4 Formal aspects",
-    "section": "Set-theoretic operations",
-    "text": "Set-theoretic operations\n\nDefinition 1 (Union) The union of two sets \\(A\\) and \\(B\\) is defined as \\[\nA \\cup B = \\{ x : x \\in A \\text{ or } x \\in B\\}.\n\\]\n\n\nExample 1 (Union) Let \\(M = \\{eat, walk, run, sleep\\}\\). If we form the union \\(M \\cup F\\), we state that an element \\(x\\) is either in \\(M\\) or in \\(F\\):\n\\[\nM \\cup F = \\{eat, drink, walk, run, sleep\\}\n\\]\n\n\nDefinition 2 (Intersection) The intersection of two sets \\(A\\) and \\(B\\) is defined as \\[\nA \\cap B = \\{ x : x \\in A \\text{ and } x \\in B\\}.\n\\]\n\n\nExample 2 (Intersection) There is only one element that is both in \\(M\\) and in \\(F\\):\n\\[\nM \\cap F = \\{eat\\}\n\\]",
-    "crumbs": [
-      "1. Fundamentals",
-      "1.4 Formal aspects"
-    ]
-  },
-  {
-    "objectID": "chapters/01-maths.html#example",
-    "href": "chapters/01-maths.html#example",
-    "title": "1.4 Formal aspects",
-    "section": "Example",
-    "text": "Example\nLet \\(M = \\{eat, walk, run, sleep\\}\\). If we form the union \\(M \\cup F\\), we state that an element \\(x\\) is either in \\(M\\) or in \\(F\\):\n\\[\nM \\cup F = \\{eat, drink, walk, run, sleep\\}\n\\]"
-  },
-  {
-    "objectID": "chapters/01-maths.html#common-operators",
-    "href": "chapters/01-maths.html#common-operators",
-    "title": "1.4 Formal aspects",
-    "section": "Common operators",
-    "text": "Common operators\n\nSums\nWe can express a sum such as \\(a_1 + a_2 + \\dots + a_n\\) in a more compact way using the Greek letter \\(\\Sigma\\):\n\\[\n\\sum_{i=1}^n a_i = a_1 + a_2 + a_3 + \\dots + a_n.\n\\]\nHere, \\(i\\) is the index with starting value \\(1\\) and final value \\(n\\). In set-theoretic notation, we could say that \\(i \\in \\{1, 2, 3, \\dots, n\\}\\).1\n1 The index can also be denoted by different letters (\\(j, k\\) etc.) except for \\(n\\).Alternatively, we can also use set-based indexing. If we define \\(A =\\{a_1, a_2, \\ldots, a_n\\}\\) as the set of elements we want to sum, we can write:\n\\[\n\\sum_{a \\in A} a = a_1 + a_2 + a_3 + \\dots +\na_n.\n\\]\nSums are ubiquituous in corpus linguistics. For instance, if \\(f_i\\) represents the frequency of the \\(i\\)-th word in a corpus, then \\(\\sum_{i=1}^n f_i\\) represents the total size of the corpus.\nIf the summation has no upper limit, it is an infinite sum:\n\\[\n\\sum_{i=1}^{\\infty} = a_1 + a_2 + a_3 + \\dots + a_i+ \\dots.\n\\]\n\n\nProduct\nFor products, the letter \\(\\Pi\\) is used instead of \\(\\Sigma\\). It follows the same pattern:\n\\[\n\\prod_{i=1}^n a_i = a_1 \\cdot a_2 \\cdot a_3 \\cdots a_n.\n\\] The infinite equivalent is:\n\\[\n\\prod_{i=1}^\\infty a_i = a_1 \\cdot a_2 \\cdot a_3 \\cdots a_i \\cdots.\n\\]\n\n\nUnion and intersection\nAssume we have sets \\(A_1, A_2, \\dots, A_n\\). We can represent their union as\n\\[\n\\bigcup_{i=1}^n A_i = A_1 \\cup A_2 \\cup A_3 \\cup  \\dots \\cup A_n.\n\\]\nConversely, their intersection is\n\\[\n\\bigcap_{i=1}^n A_i = A_1 \\cap A_2 \\cap A_3 \\cap \\dots \\cap A_n.\n\\]"
-  },
-  {
-    "objectID": "chapters/01-maths.html#other-common-operations",
-    "href": "chapters/01-maths.html#other-common-operations",
-    "title": "1.4 Formal aspects",
-    "section": "Other common operations",
-    "text": "Other common operations\n\nSums and products\nWe can express a sum such as \\(a_1 + a_2 + \\dots + a_n\\) in a more compact way using the Greek letter \\(\\Sigma\\):\n\\[\n\\sum_{i=1}^n a_i = a_1 + a_2 + a_3 + \\dots + a_n.\n\\]\nHere, \\(i\\) is the index with starting value \\(1\\) and final value \\(n\\).1 In set-theoretic notation, we could say that \\(i \\in \\{1, 2, 3, \\dots, n\\}\\).2\n1 Note that if the summation has no upper limit, it is an infinite sum:\n\\[\n\\sum_{i=1}^{\\infty} = a_1 + a_2 + a_3 + \\dots + a_i+ \\dots.\n\\]2 The index can also be denoted by different letters (\\(j, k\\) etc.) except for \\(n\\).Alternatively, we can also use set-based indexing. If we define \\(A =\\{a_1, a_2, \\ldots, a_n\\}\\) as the set of elements we want to sum, we can write:\n\\[\n\\sum_{a \\in A} a = a_1 + a_2 + a_3 + \\dots +\na_n.\n\\]\nSums are ubiquituous in corpus linguistics. For instance, if \\(f_i\\) represents the frequency of the \\(i\\)-th word in a corpus, then \\(\\sum_{i=1}^n f_i\\) represents the total size of the corpus.\nFor products, the letter \\(\\Pi\\) is used instead of \\(\\Sigma\\). It follows the same pattern:\n\\[\n\\prod_{i=1}^n a_i = a_1 \\cdot a_2 \\cdot a_3 \\cdots a_n.\n\\]\n\n\nUnion and intersection\nAssume we have sets \\(A_1, A_2, \\dots, A_n\\). As an extension of Definition 1, we can represent their union as\n\\[\n\\bigcup_{i=1}^n A_i = A_1 \\cup A_2 \\cup A_3 \\cup  \\dots \\cup A_n.\n\\]\nThe same logic can be applied to Definition 2:\n\\[\n\\bigcap_{i=1}^n A_i = A_1 \\cap A_2 \\cap A_3 \\cap \\dots \\cap A_n.\n\\]",
-    "crumbs": [
-      "1. Fundamentals",
-      "1.4 Formal aspects"
-    ]
-  },
-  {
-    "objectID": "chapters/04-continuous_data.html#comparison-of-variances",
-    "href": "chapters/04-continuous_data.html#comparison-of-variances",
-    "title": "4.3 Continuous data",
-    "section": "Comparison of variances",
-    "text": "Comparison of variances",
-    "crumbs": [
-      "4. Introduction to Statistics",
-      "4.4 Continuous data"
-    ]
-  },
-  {
-    "objectID": "sections/01-fundamentals.html",
-    "href": "sections/01-fundamentals.html",
-    "title": "1. Fundamentals",
-    "section": "",
-    "text": "This section covers the fundamental concepts needed to understand statistics for corpus linguistics.\n\n\n\n1.1 Basics\n1.2 Research Questions\n1.3 Linguistic Variables\n1.4 Formal aspects"
-  },
-  {
-    "objectID": "sections/01-fundamentals.html#chapters",
-    "href": "sections/01-fundamentals.html#chapters",
-    "title": "1. Fundamentals",
-    "section": "",
-    "text": "1.1 Basics\n1.2 Research Questions\n1.3 Linguistic Variables\n1.4 Formal aspects"
-  },
-  {
-    "objectID": "chapters/01-basics.html#defining-the-variable",
-    "href": "chapters/01-basics.html#defining-the-variable",
-    "title": "1.1 Basics",
-    "section": "",
-    "text": "New quotatives in American English: be like, go, be all:\n\n“I was like ‘well if it’s not leaking, I don’t care.’”\n“Do you, I asked I was running out and I go, ‘you’re trying to deliver a pizza here?’”\n“My sister’s all ‘excuse me would you mind if I gave you, if I want your autograph.’”\n\n\n\n\nPrevious results with regard to age: Be like is known to be preferred by younger speakers.\nPrevious results with regard to sex are inconclusive.\n\n\n\n\n\n“The study aims to contribute to the investigation of the controversial question of the effect of speaker’s age and sex on quotative use in American English, focusing on the newer quotatives be like, go, be all” (Barbieri 2007: 26).\n\n\n\n\n\nChoice of corpus: 450,000 words taken from the Conversation component of the Longman Spoken and Written English Corpus (all files where the age and gender of speakers were available), i.e., about 50 hours of casual conversation coded for speakers’ age and sex.\nData extraction: All forms of be like, be all, go, say extracted using corpus linguistic software; data entered into spreadsheet software; word counts of texts added via Delphi program.\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuotative\nAge group\nMale use (per 100,000 words)\nFemale use (per 100,000 words)\n\n\n\n\nsay\n16–26\n115\n149\n\n\n\n27–40\n101\n117\n\n\n\n41–54\n55\n214\n\n\n\n55+\n67\n433\n\n\nbe like\n16–26\n32\n329\n\n\n\n27–40\n66\n25\n\n\n\n41–54\n-\n1\n\n\n\n55+\n-\n19\n\n\ngo\n16–26\n25\n113\n\n\n\n27–40\n61\n18\n\n\n\n41–54\n-\n15\n\n\n\n55+\n-\n7\n\n\nbe all\n16–26\n14\n33\n\n\n\n\n\n\n\n\n\nReproduction of Barbieri’s Figure 5 ‘Proportional quotative use by men and women aged 16–26 and 27–40’\n\n\n\n\n\n\n\n“In sum, the patterns of proportional use and the results of the statistical analyses show that there are striking differences in the way that men and women under the age of forty use quotative verbs. In contrast, in conforming to the traditional quotative say, men and women over forty displayed similar behavior” (Barbieri 2007: 38–39).\n\n\n\n\n\n“In favoring be like over other quotatives, men in their late 20s and in their 30s display an ‘affinity’ with slightly younger women, women in their early 20s, rather than with women of their same age” (Barbieri 2007: 41).",
-    "crumbs": [
-      "1. Fundamentals",
-      "1.1 Basics"
-    ]
-  },
-  {
-    "objectID": "chapters/01-fundamentals.html",
-    "href": "chapters/01-fundamentals.html",
-    "title": "1. Fundamentals",
-    "section": "",
-    "text": "This section covers the fundamental concepts needed to understand statistics for corpus linguistics.\n\n\n\n1.1 Basics\n1.2 Research Questions\n1.3 Linguistic Variables\n1.4 Formal aspects"
-  },
-  {
-    "objectID": "chapters/01-fundamentals.html#chapters",
-    "href": "chapters/01-fundamentals.html#chapters",
-    "title": "1. Fundamentals",
-    "section": "",
-    "text": "1.1 Basics\n1.2 Research Questions\n1.3 Linguistic Variables\n1.4 Formal aspects"
+    "section": "Exercises",
+    "text": "Exercises\n\nExercise 1 As you read through the sections above, think about what might go wrong at each stage of the study!\n\n\nExercise 2 Read another sociolinguistic study (e.g., Unuabonah and Gut 2018). As you read, identify similar key sections or “building blocks” used in this study (e.g., introduction, research question etc.). What purpose does each section serve in the study’s overall structure?"
   }
 ]
