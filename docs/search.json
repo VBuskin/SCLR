@@ -6,7 +6,7 @@
     "section": "",
     "text": "This collection of handouts provides a hands-on introduction to data analysis and statistical methods in quantitative corpus linguistics with R. It is designed with accessibility in mind, assuming no prior knowledge of programming or statistics. All you need to get started is a laptop; everything else will be explained within these pages.\nPrimarily, this reader is geared towards students attending the classes Language Variation (BA) and Statistics for Linguistics (MA) at the Catholic University of Eichstätt-Ingolstadt (Germany). However, it is also meant to equip students currently working on their BA/MA/PhD theses with the tools they need to conduct empirical studies on a wide array of linguistic phenomena. The methods presented here reflect the state-of-the-art in corpus-linguistic research, providing readers with current and relevant analytical techniques.",
     "crumbs": [
-      "Blog"
+      "Overview"
     ]
   },
   {
@@ -16,7 +16,7 @@
     "section": "Fundamentals of Corpus-based Research",
     "text": "Fundamentals of Corpus-based Research\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\n1.1 Basics\n\n\nA short introduction to the basic structure of a sociolinguistic study.\n\n\n\n\n1.2 Research questions\n\n\n\n\n\n\n\n1.3 Linguistic variables\n\n\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
-      "Blog"
+      "Overview"
     ]
   },
   {
@@ -26,7 +26,7 @@
     "section": "Introduction to R",
     "text": "Introduction to R",
     "crumbs": [
-      "Blog"
+      "Overview"
     ]
   },
   {
@@ -36,7 +36,7 @@
     "section": "Corpus Linguistics with R",
     "text": "Corpus Linguistics with R",
     "crumbs": [
-      "Blog"
+      "Overview"
     ]
   },
   {
@@ -46,7 +46,7 @@
     "section": "Descriptive Statistics",
     "text": "Descriptive Statistics\n\nChi-squared test",
     "crumbs": [
-      "Blog"
+      "Overview"
     ]
   },
   {
@@ -56,7 +56,7 @@
     "section": "Inferential Statistics",
     "text": "Inferential Statistics",
     "crumbs": [
-      "Blog"
+      "Overview"
     ]
   },
   {
@@ -66,7 +66,7 @@
     "section": "Statistical Modelling and Machine Learning",
     "text": "Statistical Modelling and Machine Learning",
     "crumbs": [
-      "Blog"
+      "Overview"
     ]
   },
   {
