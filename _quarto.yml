@@ -4,95 +4,131 @@ project:
 
 website:
   reader-mode: true
-  title: "Statistics for Corpus Linguists: From Theory to Practice"
+  title: "Statistics for Corpus Linguists"
   navbar:
     background: dark
     left:
       - text: "Overview"
-        href: "index.qmd"
+        href: "blog.qmd"
+      - text: "Fundamentals"
+        href: "chapters/01-basics.qmd"
+      - text: "Introduction to R"
+        href: "chapters/02-first_steps.qmd"
+      - text: "NLP"
+        href: "chapters/03-concordancing.qmd"
+      - text: "Statistics"
+        href: "chapters/04-variables.qmd"
+      - text: "Models"
+        href: "chapters/06-linear_regression.qmd"        
+      - text: "Machine Learning"
+        href: "chapters/06-trees_forests.qmd"        
+
+        
     right:
       - icon: github
         href: https://github.com/VBuskin/SCLR
+        
   sidebar:
-    style: docked
-    search: true
-    contents:
-      - href: blog.qmd
-        text: "Overview"
-      - section: "1. Fundamentals"
+      - id: overview
         contents:
-          - href: "chapters/01-basics.qmd"
-            text: "1.1 Basics"
-          - href: "chapters/01-rqs.qmd"
-            text: "1.2 Research Questions"
-          - href: "chapters/01-linguistic_variables.qmd"
-            text: "1.3 Linguistic Variables"
-          - href: "chapters/01-maths.qmd"
-            text: "1.4 Formal aspects"
-      - section: "2. Introduction to R"
+          - href: index.qmd
+            text: "Overview"
+          - href: blog.qmd
+            text: "Blog"
+            
+      - id: fundamentals
         contents:
-          - href: "chapters/02-vectors.qmd"
-            text: "2.1 Vectors"
-          - href: "chapters/02-data_frames.qmd"
-            text: "2.2 Data frames"
-          - href: "chapters/02-libraries.qmd"
-            text: "2.3 Libraries"
-          - href: "chapters/02-importing_exporting.qmd"
-            text: "2.4 Importing/Exporting"
-      - section: "3. NLP with R"
+          - section: "1. Fundamentals"
+            contents:
+              - href: "chapters/01-basics.qmd"
+                text: "1.1 Basics"
+              - href: "chapters/01-rqs.qmd"
+                text: "1.2 Research Questions"
+              - href: "chapters/01-linguistic_variables.qmd"
+                text: "1.3 Linguistic Variables"
+              - href: "chapters/01-maths.qmd"
+                text: "1.4 Formal aspects"
+                
+      - id: intro-to-r
         contents:
-          - href: "chapters/03-concordancing.qmd"
-            text: "3.1 Concordancing"
-          - href: "chapters/03-regex.qmd"
-            text: "3.2 Regex"
-          - href: "chapters/03-data-annotation.qmd"
-            text: "3.3 Data Annotation"
-      - section: "4. Introduction to Statistics"
+          - section: "2. Introduction to R"
+            contents:
+              - href: "chapters/02-first_steps.qmd"
+                text: "2.1 First steps"
+              - href: "chapters/02-exploring_rstudio.qmd"
+                text: "2.2 Exploring R Studio"
+              - href: "chapters/02-vectors.qmd"
+                text: "2.3 Vectors"
+              - href: "chapters/02-data_frames.qmd"
+                text: "2.4 Data frames"
+              - href: "chapters/02-libraries.qmd"
+                text: "2.5 Libraries"
+              - href: "chapters/02-importing_exporting.qmd"
+                text: "2.6 Importing/Exporting"
+                
+      - id: nlp-with-r
         contents:
-          - href: "chapters/04-variables.qmd"
-            text: "4.1 Data types"
-          - href: "chapters/04-probability.qmd"
-            text: "4.2 Probability theory"        
-          - href: "chapters/04-categorical_data.qmd"
-            text: "4.3 Categorical data"
-          - href: "chapters/04-continuous_data.qmd"
-            text: "4.4 Continuous data"
-      - section: "5. Significance Testing"
+          - section: "3. NLP with R"
+            contents:
+              - href: "chapters/03-concordancing.qmd"
+                text: "3.1 Concordancing"
+              - href: "chapters/03-regex.qmd"
+                text: "3.2 Regular expressions"
+              - href: "chapters/03-data-annotation.qmd"
+                text: "3.3 Data Annotation"
+                
+      - id: intro-to-stats
         contents:
-          - href: "chapters/05-hypothesis_testing.qmd"
-            text: "5.1 Hypothesis testing"
-          - href: "chapters/05-chi_square_test.qmd"
-            text: "5.2 Chi-squared test"
-          - href: "chapters/05-t_test.qmd"
-            text: "5.3 t-test"
-      - section: "6. Statistical Modelling"
+          - section: "4. Introduction to Statistics"
+            contents:
+              - href: "chapters/04-variables.qmd"
+                text: "4.1 Data, variables, samples"
+              - href: "chapters/04-probability.qmd"
+                text: "4.2 Probability theory"        
+              - href: "chapters/04-categorical_data.qmd"
+                text: "4.3 Categorical data"
+              - href: "chapters/04-continuous_data.qmd"
+                text: "4.4 Continuous data"
+              - href: "chapters/05-hypothesis_testing.qmd"
+                text: "4.5 Hypothesis testing"
+              - href: "chapters/05-binomial-test.qmd"
+                text: "4.6 Binomial test"
+              - href: "chapters/05-chi_square_test.qmd"
+                text: "4.7 Chi-squared test"
+              - href: "chapters/05-t_test.qmd"
+                text: "4.8 t-test"
+                
+      - id: models
         contents:
-          - href: "chapters/06-linear_regression.qmd"
-            text: "6.1 Linear regression"
-          - href: "chapters/06-logistic_regression.qmd"
-            text: "6.2 Logistic regression"
-          - href: "chapters/06-mixed_effects_regression.qmd"
-            text: "6.3 Mixed-effects regression"
-          - href: "chapters/06-poisson_regression.qmd"
-            text: "6.4 Poisson regression"
-          - href: "chapters/06-ordinal_regression.qmd"
-            text: "6.5 Ordinal regression"
-          - href: "chapters/06-trees_forests.qmd"
-            text: "6.6 Tree-based methods"
-          - href: "chapters/06-gradient_boosting.qmd"
-            text: "6.7 Gradient boosting"
-      - section: "7. Multivariate Approaches"
+          - section: "6. Statistical Modelling"
+            contents:
+              - href: "chapters/06-linear_regression.qmd"
+                text: "6.1 Linear regression"
+              - href: "chapters/06-logistic_regression.qmd"
+                text: "6.2 Logistic regression"
+              - href: "chapters/06-mixed_effects_regression.qmd"
+                text: "6.3 Mixed-effects regression"
+              - href: "chapters/06-poisson_regression.qmd"
+                text: "6.4 Poisson regression"
+              - href: "chapters/06-ordinal_regression.qmd"
+                text: "6.5 Ordinal regression"
+              
+      - id: machine-learning
         contents:
-          - href: "chapters/07-PCA.qmd"
-            text: "7.1 PCA"
-          - href: "chapters/07-EFA.qmd"
-            text: "7.2 EFA"
-          - href: "chapters/07-clustering.qmd"
-            text: "7.3 Clustering"
-          
+          - section: "7. Machine Learning"
+            contents:
+              - href: "chapters/06-trees_forests.qmd"
+                text: "7.1 Tree-based methods"
+              - href: "chapters/06-gradient_boosting.qmd"
+                text: "7.2 Gradient boosting"
+              - href: "chapters/07-PCA.qmd"
+                text: "7.3 PCA"
+              - href: "chapters/07-EFA.qmd"
+                text: "7.4 EFA"
+              - href: "chapters/07-clustering.qmd"
+                text: "7.5 Clustering"
+  
   page-navigation: true
-  
-  
 blog:
     order: date desc  # Newest first (or `order: date asc` for oldest first)
 
