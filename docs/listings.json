@@ -4,7 +4,34 @@
     "items": [
       "/chapters/01-basics.html",
       "/chapters/01-rqs.html",
-      "/chapters/01-linguistic_variables.html"
+      "/chapters/01-linguistic_variables.html",
+      "/chapters/01-maths.html",
+      "/chapters/02-first_steps.html",
+      "/chapters/02-exploring_rstudio.html",
+      "/chapters/02-vectors.html",
+      "/chapters/02-data_frames.html",
+      "/chapters/02-libraries.html",
+      "/chapters/02-importing_exporting.html",
+      "/chapters/03-concordancing.html",
+      "/chapters/03-regex.html",
+      "/chapters/03-data-annotation.html",
+      "/chapters/04-variables.html",
+      "/chapters/04-probability.html",
+      "/chapters/04-continuous_data.html",
+      "/chapters/05-hypothesis_testing.html",
+      "/chapters/05-binomial_test.html",
+      "/chapters/05-chi_square_test.html",
+      "/chapters/05-t_test.html",
+      "/chapters/06-linear_regression.html",
+      "/chapters/06-logistic_regression.html",
+      "/chapters/06-mixed_effects_regression.html",
+      "/chapters/06-poisson_regression.html",
+      "/chapters/06-ordinal_regression.html",
+      "/chapters/06-trees_forests.html",
+      "/chapters/06-gradient_boosting.html",
+      "/chapters/07-PCA.html",
+      "/chapters/07-EFA.html",
+      "/chapters/07-clustering.html"
     ]
   }
 ]

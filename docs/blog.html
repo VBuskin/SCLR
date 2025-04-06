@@ -98,6 +98,146 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-r-listings .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-r-listings'] = new List('listing-r-listings', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-nlp-listings .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-nlp-listings'] = new List('listing-nlp-listings', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-stats-listings .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-stats-listings'] = new List('listing-stats-listings', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-models-listings .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-models-listings'] = new List('listing-models-listings', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-ml-listings .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-ml-listings'] = new List('listing-ml-listings', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   </script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -346,13 +486,10 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#fundamentals-of-corpus-based-research" id="toc-fundamentals-of-corpus-based-research" class="nav-link active" data-scroll-target="#fundamentals-of-corpus-based-research">Fundamentals of Corpus-based Research</a></li>
   <li><a href="#introduction-to-r" id="toc-introduction-to-r" class="nav-link" data-scroll-target="#introduction-to-r">Introduction to R</a></li>
-  <li><a href="#corpus-linguistics-with-r" id="toc-corpus-linguistics-with-r" class="nav-link" data-scroll-target="#corpus-linguistics-with-r">Corpus Linguistics with R</a></li>
-  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">Descriptive Statistics</a>
-  <ul class="collapse">
-  <li><a href="#chi-squared-test" id="toc-chi-squared-test" class="nav-link" data-scroll-target="#chi-squared-test">Chi-squared test</a></li>
-  </ul></li>
-  <li><a href="#inferential-statistics" id="toc-inferential-statistics" class="nav-link" data-scroll-target="#inferential-statistics">Inferential Statistics</a></li>
-  <li><a href="#statistical-modelling-and-machine-learning" id="toc-statistical-modelling-and-machine-learning" class="nav-link" data-scroll-target="#statistical-modelling-and-machine-learning">Statistical Modelling and Machine Learning</a></li>
+  <li><a href="#nlp-with-r" id="toc-nlp-with-r" class="nav-link" data-scroll-target="#nlp-with-r">NLP with R</a></li>
+  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics">Statistics</a></li>
+  <li><a href="#models" id="toc-models" class="nav-link" data-scroll-target="#models">Models</a></li>
+  <li><a href="#machine-learning" id="toc-machine-learning" class="nav-link" data-scroll-target="#machine-learning">Machine Learning</a></li>
   </ul>
 </nav>
     </div>
@@ -448,6 +585,14 @@ Description
 <span class="listing-description"><strong>The classical view:</strong> Labov <span class="citation" data-cites="labov1972">(1972)</span> defines a linguistic variable as “two ways of saying the same thing.”</span>
 </td>
 </tr>
+<tr data-index="3" data-listing-file-modified-sort="1743946571211" data-listing-reading-time-sort="3" data-listing-word-count-sort="554" data-listing-title-sort="1.4 Formal aspects" data-listing-filename-sort="01-maths.qmd">
+<td>
+<a href="./chapters/01-maths.html" class="title listing-title">1.4 Formal aspects</a>
+</td>
+<td>
+<span class="listing-description">Throughout this reader—particularly in later chapters—we will frequently rely on fundamental concepts from set theory and mathematics. These frameworks provide a precise and…</span>
+</td>
+</tr>
 </tbody>
 </table>
 <div class="listing-no-matching d-none">
@@ -457,21 +602,321 @@ No matching items
 </section>
 <section id="introduction-to-r" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-to-r">Introduction to R</h2>
+<div id="listing-r-listings" class="quarto-listing quarto-listing-container-table">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Title
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-file-modified-sort="1743947671141" data-listing-reading-time-sort="3" data-listing-word-count-sort="429" data-listing-title-sort="2.1 First steps" data-listing-filename-sort="02-first_steps.qmd">
+<td>
+<a href="./chapters/02-first_steps.html" class="title listing-title">2.1 First steps</a>
+</td>
+<td>
+<span class="listing-description">When it comes to data analysis, learning R offers an overwhelming number of short- and long-term advantages over conventional spreadsheet software such as Microsoft Excel or…</span>
+</td>
+</tr>
+<tr data-index="1" data-listing-file-modified-sort="1743947668824" data-listing-reading-time-sort="3" data-listing-word-count-sort="446" data-listing-title-sort="2.2 Exploring RStudio" data-listing-filename-sort="02-exploring_rstudio.qmd">
+<td>
+<a href="./chapters/02-exploring_rstudio.html" class="title listing-title">2.2 Exploring RStudio</a>
+</td>
+<td>
+<span class="listing-description">Once you’ve opened RStudio, you will see several empty panes similar to this:</span>
+</td>
+</tr>
+<tr data-index="2" data-listing-file-modified-sort="1743947703023" data-listing-reading-time-sort="8" data-listing-word-count-sort="1453" data-listing-title-sort="2.3 Vectors" data-listing-filename-sort="02-vectors.qmd">
+<td>
+<a href="./chapters/02-vectors.html" class="title listing-title">2.3 Vectors</a>
+</td>
+<td>
+<span class="listing-description">You can find the full R script associated with this unit here.</span>
+</td>
+</tr>
+<tr data-index="3" data-listing-file-modified-sort="1743947711575" data-listing-reading-time-sort="7" data-listing-word-count-sort="1385" data-listing-title-sort="2.4 Data frames" data-listing-filename-sort="02-data_frames.qmd">
+<td>
+<a href="./chapters/02-data_frames.html" class="title listing-title">2.4 Data frames</a>
+</td>
+<td>
+<span class="listing-description">You can find the full R script associated with this unit here.</span>
+</td>
+</tr>
+<tr data-index="4" data-listing-file-modified-sort="1743947716750" data-listing-reading-time-sort="3" data-listing-word-count-sort="411" data-listing-title-sort="2.5 Libraries" data-listing-filename-sort="02-libraries.qmd">
+<td>
+<a href="./chapters/02-libraries.html" class="title listing-title">2.5 Libraries</a>
+</td>
+<td>
+<span class="listing-description"><span class="citation" data-cites="winter_statistics_2020">Winter (2020)</span>: Chapter 1.13</span>
+</td>
+</tr>
+<tr data-index="5" data-listing-file-modified-sort="1743947723528" data-listing-reading-time-sort="5" data-listing-word-count-sort="987" data-listing-title-sort="2.6 Import/export data" data-listing-filename-sort="02-importing_exporting.qmd">
+<td>
+<a href="./chapters/02-importing_exporting.html" class="title listing-title">2.6 Import/export data</a>
+</td>
+<td>
+<span class="listing-description">You can find the full R script associated with this unit here.</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
 </section>
-<section id="corpus-linguistics-with-r" class="level2">
-<h2 class="anchored" data-anchor-id="corpus-linguistics-with-r">Corpus Linguistics with R</h2>
+<section id="nlp-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="nlp-with-r">NLP with R</h2>
+<div id="listing-nlp-listings" class="quarto-listing quarto-listing-container-table">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Title
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-file-modified-sort="1743947857723" data-listing-reading-time-sort="9" data-listing-word-count-sort="1622" data-listing-title-sort="3.1 Concordancing" data-listing-filename-sort="03-concordancing.qmd">
+<td>
+<a href="./chapters/03-concordancing.html" class="title listing-title">3.1 Concordancing</a>
+</td>
+<td>
+<span class="listing-description"><span class="citation" data-cites="schweinberger2024kwics">Schweinberger (2024)</span></span>
+</td>
+</tr>
+<tr data-index="1" data-listing-file-modified-sort="1743947870192" data-listing-reading-time-sort="9" data-listing-word-count-sort="1692" data-listing-title-sort="3.2 Regular expressions" data-listing-filename-sort="03-regex.qmd">
+<td>
+<a href="./chapters/03-regex.html" class="title listing-title">3.2 Regular expressions</a>
+</td>
+<td>
+<span class="listing-description">You can find the full R script associated with this unit here.</span>
+</td>
+</tr>
+<tr data-index="2" data-listing-file-modified-sort="1743947863229" data-listing-reading-time-sort="5" data-listing-word-count-sort="858" data-listing-title-sort="3.3 Data annotation" data-listing-filename-sort="03-data-annotation.qmd">
+<td>
+<a href="./chapters/03-data-annotation.html" class="title listing-title">3.3 Data annotation</a>
+</td>
+<td>
+<span class="listing-description"><span class="citation" data-cites="gries_statistics_2013">S. T. Gries (2013)</span>: Chapter 1.3.3</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
 </section>
-<section id="descriptive-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="descriptive-statistics">Descriptive Statistics</h2>
-<section id="chi-squared-test" class="level3">
-<h3 class="anchored" data-anchor-id="chi-squared-test"><a href="chapters/04-chi_square_test.qmd">Chi-squared test</a></h3>
+<section id="statistics" class="level2">
+<h2 class="anchored" data-anchor-id="statistics">Statistics</h2>
+<div id="listing-stats-listings" class="quarto-listing quarto-listing-container-table">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Title
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-file-modified-sort="1743967581633" data-listing-reading-time-sort="8" data-listing-word-count-sort="1503" data-listing-title-sort="4.1 Data, variables, samples" data-listing-filename-sort="04-variables.qmd">
+<td>
+<a href="./chapters/04-variables.html" class="title listing-title">4.1 Data, variables, samples</a>
+</td>
+<td>
+<span class="listing-description"><span class="citation" data-cites="heumann_introduction_2022">Heumann, Schomaker, and Shalabh (2022)</span>: Chapters 1 &amp; 7</span>
+</td>
+</tr>
+<tr data-index="1" data-listing-file-modified-sort="1743966453036" data-listing-reading-time-sort="11" data-listing-word-count-sort="2184" data-listing-title-sort="4.2 Probability theory" data-listing-filename-sort="04-probability.qmd">
+<td>
+<a href="./chapters/04-probability.html" class="title listing-title">4.2 Probability theory</a>
+</td>
+<td>
+<span class="listing-description">Most accessible:</span>
+</td>
+</tr>
+<tr data-index="2" data-listing-file-modified-sort="1743948322816" data-listing-reading-time-sort="10" data-listing-word-count-sort="1808" data-listing-title-sort="4.4 Continuous data" data-listing-filename-sort="04-continuous_data.qmd">
+<td>
+<a href="./chapters/04-continuous_data.html" class="title listing-title">4.4 Continuous data</a>
+</td>
+<td>
+<span class="listing-description">Heumann et al. <span class="citation" data-cites="heumann_introduction_2022">(2022: Chapter 3)</span></span>
+</td>
+</tr>
+<tr data-index="3" data-listing-file-modified-sort="1743948711449" data-listing-reading-time-sort="11" data-listing-word-count-sort="2049" data-listing-title-sort="4.5 Hypothesis testing" data-listing-filename-sort="05-hypothesis_testing.qmd">
+<td>
+<a href="./chapters/05-hypothesis_testing.html" class="title listing-title">4.5 Hypothesis testing</a>
+</td>
+<td>
+<span class="listing-description">For linguists:</span>
+</td>
+</tr>
+<tr data-index="4" data-listing-file-modified-sort="1743948736408" data-listing-reading-time-sort="6" data-listing-word-count-sort="1132" data-listing-title-sort="4.7 Chi-squared test" data-listing-filename-sort="05-binomial_test.qmd">
+<td>
+<a href="./chapters/05-binomial_test.html" class="title listing-title">4.7 Chi-squared test</a>
+</td>
+<td>
+<span class="listing-description">A binomial distribution is a statistical distribution which can be found in an experiment with only two possible outcomes (<code>0</code> and <code>1</code>, also referred to as <code>failure</code> and <code>success</code>, respectively) and which are independent of each other in case of repetition. </span>
+</td>
+</tr>
+<tr data-index="5" data-categories="Inferential statistics" data-listing-file-modified-sort="1743948681595" data-listing-reading-time-sort="14" data-listing-word-count-sort="2611" data-listing-title-sort="4.7 Chi-squared test" data-listing-filename-sort="05-chi_square_test.qmd">
+<td>
+<a href="./chapters/05-chi_square_test.html" class="title listing-title">4.7 Chi-squared test</a>
+</td>
+<td>
+<span class="listing-description">The chi-squared (<span class="math inline">\(\chi^2\)</span>) test helps determine if there is a statistically significant association between two categorical variables. It compares the observed frequencies of categories with those expected under the null hypothesis. The <span class="math inline">\(\chi^2\)</span> (chi-squared) score quantifies the difference between observed and expected frequencies for every cell in a contingency table. The greater the difference between observed and expected, the higher the <span class="math inline">\(\chi^2\)</span> score and the lower the <span class="math inline">\(p\)</span>-value, given the degrees of freedom. It is recommended to compute effect size measures and inspect the residuals to assess the nature of the association. </span>
+</td>
+</tr>
+<tr data-index="6" data-listing-file-modified-sort="1743948753577" data-listing-reading-time-sort="4" data-listing-word-count-sort="777" data-listing-title-sort="4.8 t-test" data-listing-filename-sort="05-t_test.qmd">
+<td>
+<a href="./chapters/05-t_test.html" class="title listing-title">4.8 t-test</a>
+</td>
+<td>
+<span class="listing-description">Since the <span class="math inline">\(\chi^2\)</span> measure exclusively works with categorical variables, a separate test statistic is required if one of them is a continuous variable. The <span class="math inline">\(t\)</span> statistic…<span class="math inline"></span><span class="math inline"></span><span class="math inline"></span></span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
 </section>
+<section id="models" class="level2">
+<h2 class="anchored" data-anchor-id="models">Models</h2>
+<div id="listing-models-listings" class="quarto-listing quarto-listing-container-table">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Title
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-file-modified-sort="1743949107569" data-listing-reading-time-sort="15" data-listing-word-count-sort="2857" data-listing-title-sort="6.1 Linear regression" data-listing-filename-sort="06-linear_regression.qmd">
+<td>
+<a href="./chapters/06-linear_regression.html" class="title listing-title">6.1 Linear regression</a>
+</td>
+<td>
+<span class="listing-description">For linguists:</span>
+</td>
+</tr>
+<tr data-index="1" data-listing-file-modified-sort="1743949114941" data-listing-reading-time-sort="15" data-listing-word-count-sort="2920" data-listing-title-sort="6.2 Logistic Regression" data-listing-filename-sort="06-logistic_regression.qmd">
+<td>
+<a href="./chapters/06-logistic_regression.html" class="title listing-title">6.2 Logistic Regression</a>
+</td>
+<td>
+<span class="listing-description">For linguists:</span>
+</td>
+</tr>
+<tr data-index="2" data-listing-file-modified-sort="1743949131327" data-listing-reading-time-sort="10" data-listing-word-count-sort="1841" data-listing-title-sort="6.3 Mixed-effects regression" data-listing-filename-sort="06-mixed_effects_regression.qmd">
+<td>
+<a href="./chapters/06-mixed_effects_regression.html" class="title listing-title">6.3 Mixed-effects regression</a>
+</td>
+<td>
+<span class="listing-description">For linguists:</span>
+</td>
+</tr>
+<tr data-index="3" data-listing-file-modified-sort="1743949153123" data-listing-reading-time-sort="4" data-listing-word-count-sort="723" data-listing-title-sort="6.4 Poisson regression" data-listing-filename-sort="06-poisson_regression.qmd">
+<td>
+<a href="./chapters/06-poisson_regression.html" class="title listing-title">6.4 Poisson regression</a>
+</td>
+<td>
+<span class="listing-description"><span class="citation" data-cites="winter_statistics_2020">Winter (2020)</span>: Chapter 13</span>
+</td>
+</tr>
+<tr data-index="4" data-listing-file-modified-sort="1743949148316" data-listing-reading-time-sort="16" data-listing-word-count-sort="3151" data-listing-title-sort="6.5 Ordinal regression" data-listing-filename-sort="06-ordinal_regression.qmd">
+<td>
+<a href="./chapters/06-ordinal_regression.html" class="title listing-title">6.5 Ordinal regression</a>
+</td>
+<td>
+<span class="listing-description">General:</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
 </section>
-<section id="inferential-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="inferential-statistics">Inferential Statistics</h2>
-</section>
-<section id="statistical-modelling-and-machine-learning" class="level2">
-<h2 class="anchored" data-anchor-id="statistical-modelling-and-machine-learning">Statistical Modelling and Machine Learning</h2>
+<section id="machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="machine-learning">Machine Learning</h2>
+<div id="listing-ml-listings" class="quarto-listing quarto-listing-container-table">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Title
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-file-modified-sort="1743949182001" data-listing-reading-time-sort="9" data-listing-word-count-sort="1779" data-listing-title-sort="7.1 Tree-based methods" data-listing-filename-sort="06-trees_forests.qmd">
+<td>
+<a href="./chapters/06-trees_forests.html" class="title listing-title">7.1 Tree-based methods</a>
+</td>
+<td>
+<span class="listing-description">For linguists:</span>
+</td>
+</tr>
+<tr data-index="1" data-listing-file-modified-sort="1743949197254" data-listing-reading-time-sort="3" data-listing-word-count-sort="527" data-listing-title-sort="7.2 Gradient boosting" data-listing-filename-sort="06-gradient_boosting.qmd">
+<td>
+<a href="./chapters/06-gradient_boosting.html" class="title listing-title">7.2 Gradient boosting</a>
+</td>
+<td>
+<span class="listing-description">Gradient boosting constitutes a powerful extension of tree-based methods and is generally appreciated for its high predictive performance. Nevertheless, this family of methods, which includes implementations such as AdaBoost, XGBoost, and CatBoost, among many others, is not yet established in corpus-linguistic statistics. A practical scenario is presented to introduce the core ideas of gradient boosting, demonstrate its application to linguistic data as well as point out its advantages and drawbacks. </span>
+</td>
+</tr>
+<tr data-index="2" data-listing-file-modified-sort="1743949212927" data-listing-reading-time-sort="10" data-listing-word-count-sort="1970" data-listing-title-sort="7.3 Principal Components Analysis" data-listing-filename-sort="07-PCA.qmd">
+<td>
+<a href="./chapters/07-PCA.html" class="title listing-title">7.3 Principal Components Analysis</a>
+</td>
+<td>
+<span class="listing-description">For linguists:</span>
+</td>
+</tr>
+<tr data-index="3" data-listing-file-modified-sort="1743949220015" data-listing-reading-time-sort="4" data-listing-word-count-sort="745" data-listing-title-sort="7.4 Exploratory Factor Analysis" data-listing-filename-sort="07-EFA.qmd">
+<td>
+<a href="./chapters/07-EFA.html" class="title listing-title">7.4 Exploratory Factor Analysis</a>
+</td>
+<td>
+<span class="listing-description">For linguists:</span>
+</td>
+</tr>
+<tr data-index="4" data-listing-file-modified-sort="1743949226233" data-listing-reading-time-sort="1" data-listing-word-count-sort="33" data-listing-title-sort="7.5 Clustering" data-listing-filename-sort="07-clustering.qmd">
+<td>
+<a href="./chapters/07-clustering.html" class="title listing-title">7.5 Clustering</a>
+</td>
+<td>
+<span class="listing-description"><span class="citation" data-cites="james_introduction_2021">James et al. (2021)</span>: Chapter 12</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
 
 
 
