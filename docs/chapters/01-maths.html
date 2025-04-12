@@ -4949,12 +4949,14 @@ white-space: nowrap;
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#set-theory" id="toc-set-theory" class="nav-link" data-scroll-target="#set-theory">Set theory</a></li>
-  <li><a href="#set-theoretic-operations" id="toc-set-theoretic-operations" class="nav-link" data-scroll-target="#set-theoretic-operations">Set-theoretic operations</a></li>
-  <li><a href="#other-common-operations" id="toc-other-common-operations" class="nav-link" data-scroll-target="#other-common-operations">Other common operations</a>
+  <li><a href="#set-theory" id="toc-set-theory" class="nav-link" data-scroll-target="#set-theory">Set theory</a>
+  <ul class="collapse">
+  <li><a href="#subset-union-and-intersection" id="toc-subset-union-and-intersection" class="nav-link" data-scroll-target="#subset-union-and-intersection">Subset, union, and intersection</a></li>
+  </ul></li>
+  <li><a href="#large-operators" id="toc-large-operators" class="nav-link" data-scroll-target="#large-operators">Large operators</a>
   <ul class="collapse">
   <li><a href="#sums-and-products" id="toc-sums-and-products" class="nav-link" data-scroll-target="#sums-and-products">Sums and products</a></li>
-  <li><a href="#union-and-intersection" id="toc-union-and-intersection" class="nav-link" data-scroll-target="#union-and-intersection">Union and intersection</a></li>
+  <li><a href="#union-and-intersection-over-indexed-sets" id="toc-union-and-intersection-over-indexed-sets" class="nav-link" data-scroll-target="#union-and-intersection-over-indexed-sets">Union and intersection over indexed sets</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -5004,73 +5006,79 @@ white-space: nowrap;
 <p><span class="citation" data-cites="hammackBookProof2018">Hammack (<a href="#ref-hammackBookProof2018" role="doc-biblioref">2018</a>)</span></p>
 </blockquote>
 </section>
-<section id="set-theory" class="level2">
+<section id="set-theory" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="set-theory">Set theory</h2>
-<p>Sets are finite or infinite collections of elements and are conventionally denoted by capital letters. These elements can be virtually anything – letters, numbers, or even sets themselves. For example, let us define a set <span class="math inline">\(L\)</span> which should contains the words <em>eat</em>, <em>drink</em>, <em>sleep</em>, <em>bathe</em>:</p>
-<p><span class="math display">\[
-L = \{eat, drink, sleep, bathe\}
+<p>Sets are finite or infinite collections of elements. Typically, they are denoted by capital letters (<span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, etc.). Their elements can virtually anything – letters, numbers, functions, or even more sets. For example, define a set <span class="math inline">\(L\)</span> which contains the words <em>eat</em>, <em>drink</em>, <em>sleep</em>, <em>bathe</em>:<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup> Note that the order of the elements in a set is irrelevant; even if the elements of <span class="math inline">\(L\)</span> were rearranged, the elements themselves would remain identical: <span class="math inline">\(\{eat, drink, sleep, bathe\} = \{drink, bathe, sleep, eat\}\)</span>.</p></li></div><p><span class="math display">\[
+L = \{eat, drink, sleep, bathe\}.
 \]</span></p>
-<p>It is clear that <em>eat</em> is in <span class="math inline">\(L\)</span>, i.e., <span class="math inline">\(eat \in L\)</span>, but the verb <em>convince</em> is not: <span class="math inline">\(convince \notin L\)</span>.</p>
-<p>Let’s define a new set</p>
-<p><span class="math display">\[F = \{eat, drink\}.\]</span></p>
-<p>It has the interesting property that all of its elements are also represented in <span class="math inline">\(L\)</span>. This makes <span class="math inline">\(F\)</span> a <strong>subset</strong> of <span class="math inline">\(L\)</span>, written <span class="math inline">\(F \subseteq L\)</span>. If two sets contain exactly the same elements, they are <strong>equal</strong>.</p>
-<p>A set that does not contain any elements is an <strong>empty set</strong> <span class="math inline">\(\emptyset\)</span>.</p>
+<p>The <strong>cardinality</strong> (or ‘size’) of <span class="math inline">\(L\)</span> is 4 because it contains 4 unique elements. This is usually written as <span class="math inline">\(\mid L \mid = 4\)</span>.</p>
+<p>We can characterise the <strong>membership</strong> of individual elements with regard to a certain set. The element <em>eat</em> is in <span class="math inline">\(L\)</span>, i.e., <span class="math inline">\(eat \in L\)</span>. By contrast, <em>convince</em> is not, which is written <span class="math inline">\(convince \notin L\)</span>.</p>
+<p>A set that does not contain any elements is an <strong>empty set</strong> <span class="math inline">\(\emptyset = \{\}\)</span>. As such, it as a subset of every set – even of itself!<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup> Here is another strange observation: <span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(\{\emptyset\}\)</span> don’t express the same thing. While <span class="math inline">\(\emptyset\)</span> contains nothing (<span class="math inline">\(\mid\emptyset\mid = 0\)</span>), <span class="math inline">\(\{ \emptyset \}\)</span> is a set that has one element (<span class="math inline">\(\mid\{ \emptyset \}\mid = 1\)</span>), and this one element is actually nothing.</p></li></div><section id="subset-union-and-intersection" class="level3">
+<h3 class="anchored" data-anchor-id="subset-union-and-intersection">Subset, union, and intersection</h3>
+<p>Let’s define two new sets</p>
+<p><span class="math display">\[
+F = \{eat, drink\}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+M = \{eat, run\}.
+\]</span></p>
+<p>When comparing <span class="math inline">\(F\)</span> with <span class="math inline">\(L\)</span>, we can see that all of the elements in <span class="math inline">\(F\)</span> are also represented in <span class="math inline">\(L\)</span>. This renders <span class="math inline">\(F\)</span> a <strong>subset</strong> of <span class="math inline">\(L\)</span>, written <span class="math inline">\(F \subseteq L\)</span>. However, not all elements of <span class="math inline">\(M\)</span> are also in <span class="math inline">\(F\)</span>. Specifically, <em>run</em> is in <span class="math inline">\(M\)</span>, but not in <span class="math inline">\(F\)</span>; therefore, <span class="math inline">\(M \nsubseteq F\)</span>.</p>
+<p>If we are looking for an element that is in <span class="math inline">\(M\)</span> or in <span class="math inline">\(L\)</span> or in both, we are talking about the <strong>union</strong> <span class="math inline">\(M \cup L\)</span>:</p>
+<p><span class="math display">\[
+M \cup L = \{eat, drink, sleep, bathe, run\}.
+\]</span></p>
+<p>By contrast, if we are interested in the elements that all sets <span class="math inline">\(L\)</span>, <span class="math inline">\(F\)</span> and <span class="math inline">\(M\)</span> have in common, we are dealing with their <strong>intersection</strong> <span class="math inline">\(L \cap F \cap M\)</span>. In fact, there is only one element that satisfies this condition:</p>
+<p><span class="math display">\[
+L \cap F \cap M = \{eat\}.
+\]</span></p>
 </section>
-<section id="set-theoretic-operations" class="level2">
-<h2 class="anchored" data-anchor-id="set-theoretic-operations">Set-theoretic operations</h2>
-<div id="def-union" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1 (Union) </strong></span>The union of two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is defined as <span class="math display">\[
-A \cup B = \{ x : x \in A \text{ or } x \in B\}.
-\]</span></p>
-</div>
-<div id="exm-union" class="theorem example">
-<p><span class="theorem-title"><strong>Example 1 (Union) </strong></span>Let <span class="math inline">\(M = \{eat, walk, run, sleep\}\)</span>. If we form the union <span class="math inline">\(M \cup F\)</span>, we state that an element <span class="math inline">\(x\)</span> is either in <span class="math inline">\(M\)</span> or in <span class="math inline">\(F\)</span>:</p>
-<p><span class="math display">\[
-M \cup F = \{eat, drink, walk, run, sleep\}
-\]</span></p>
-</div>
-<div id="def-intersection" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2 (Intersection) </strong></span>The intersection of two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is defined as <span class="math display">\[
-A \cap B = \{ x : x \in A \text{ and } x \in B\}.
-\]</span></p>
-</div>
-<div id="exm-intersection" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2 (Intersection) </strong></span>There is only one element that is both in <span class="math inline">\(M\)</span> and in <span class="math inline">\(F\)</span>:</p>
-<p><span class="math display">\[
-M \cap F = \{eat\}
-\]</span></p>
-</div>
 </section>
-<section id="other-common-operations" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="other-common-operations">Other common operations</h2>
-<section id="sums-and-products" class="level3 page-columns page-full">
+<section id="large-operators" class="level2">
+<h2 class="anchored" data-anchor-id="large-operators">Large operators</h2>
+<section id="sums-and-products" class="level3">
 <h3 class="anchored" data-anchor-id="sums-and-products">Sums and products</h3>
-<p>We can express a sum such as <span class="math inline">\(a_1 + a_2 + \dots + a_n\)</span> in a more compact way using the Greek letter <span class="math inline">\(\Sigma\)</span>:</p>
+<p>Long summation expressions tend to be rather unwieldy. For example, if we are taking the sum of all natural numbers from 1 up to 15, writing this out would take up a lot of space (and time):</p>
+<p><span class="math display">\[
+1+2+3+4+5+6+7+8+9+10+11+12+13+14+15.
+\]</span> For this very reason, mathematicians have introduced a more compact notation that only takes a fraction of the time to write while communicating the exact same idea. Using the Greek letter <span class="math inline">\(\Sigma\)</span> (‘sigma’), we could rewrite it as</p>
+<p><span class="math display">\[
+\sum_{i=1}^{15} i.
+\]</span> This notation can be read as <em>the sum from <span class="math inline">\(i = 1\)</span> to <span class="math inline">\(15\)</span></em>. It is the sum of the numbers obtained by letting <span class="math inline">\(i = 1, 2, \dots, 15\)</span>.</p>
+<p>The same principle applies if the terms of the sum are letters. If we have</p>
+<p><span class="math display">\[
+a_1 + a_2 + a_3 + a_4 + a_5,
+\]</span> then we can define a sum where the index <span class="math inline">\(i\)</span> iterates through the elements in the set <span class="math inline">\(\{1, 2, 3, 4, 5\}\)</span>. The letter <span class="math inline">\(a\)</span> remains constant.</p>
+<p><span class="math display">\[
+\sum_{i=1}^5 a_i
+\]</span> Alternatively, to make it even more explicit, we could write</p>
+<p><span class="math display">\[
+\sum_{i\in \{1, 2, 3, 4, 5\}} a_i.
+\]</span></p>
+<p>The index can be denoted by any letter (<span class="math inline">\(j\)</span>, <span class="math inline">\(k\)</span> etc.) but not <span class="math inline">\(n\)</span>, which is reserved for the upper limit:</p>
 <p><span class="math display">\[
 \sum_{i=1}^n a_i = a_1 + a_2 + a_3 + \dots + a_n.
 \]</span></p>
-<p>Here, <span class="math inline">\(i\)</span> is the <strong>index</strong> with starting value <span class="math inline">\(1\)</span> and final value <span class="math inline">\(n\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> In set-theoretic notation, we could say that <span class="math inline">\(i \in \{1, 2, 3, \dots, n\}\)</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup> Note that if the summation has no upper limit, it is an <strong>infinite sum</strong>:</p>
+<p>We can apply the same reasoning to other operations such as products. The only difference is that we’d have to use <span class="math inline">\(\Pi\)</span> (‘pi’) instead of <span class="math inline">\(\Sigma\)</span>. If we are taking the product of all natural numbers from 5 to 10, we’d write</p>
 <p><span class="math display">\[
-\sum_{i=1}^{\infty} = a_1 + a_2 + a_3 + \dots + a_i+ \dots.
-\]</span></p></li><li id="fn2"><p><sup>2</sup> The index can also be denoted by different letters (<span class="math inline">\(j, k\)</span> etc.) except for <span class="math inline">\(n\)</span>.</p></li></div><p>Alternatively, we can also use set-based indexing. If we define <span class="math inline">\(A =\{a_1, a_2, \ldots, a_n\}\)</span> as the set of elements we want to sum, we can write:</p>
+\prod_{i=5}^{10} i = 5 \cdot 6 \cdot 7 \cdot 8 \cdot 9 \cdot 10.
+\]</span> The set of all values that the index below the operator can take on is known as the <strong>index set</strong>. It can be defined as one sees fit. Say, we need the product of all numbers in <span class="math inline">\(K = \{1, 3, 5, 7\}\)</span>. Then the corresponding notation would be</p>
 <p><span class="math display">\[
-\sum_{a \in A} a = a_1 + a_2 + a_3 + \dots +
-a_n.
-\]</span></p>
-<p>Sums are ubiquituous in corpus linguistics. For instance, if <span class="math inline">\(f_i\)</span> represents the frequency of the <span class="math inline">\(i\)</span>-th word in a corpus, then <span class="math inline">\(\sum_{i=1}^n f_i\)</span> represents the total size of the corpus.</p>
-<p>For products, the letter <span class="math inline">\(\Pi\)</span> is used instead of <span class="math inline">\(\Sigma\)</span>. It follows the same pattern:</p>
-<p><span class="math display">\[
-\prod_{i=1}^n a_i = a_1 \cdot a_2 \cdot a_3 \cdots a_n.
+\prod_{i\in K} i = 1 \cdot 3 \cdot 5 \cdot 7.
 \]</span></p>
 </section>
-<section id="union-and-intersection" class="level3">
-<h3 class="anchored" data-anchor-id="union-and-intersection">Union and intersection</h3>
-<p>Assume we have sets <span class="math inline">\(A_1, A_2, \dots, A_n\)</span>. As an extension of <a href="#def-union" class="quarto-xref">Definition 1</a>, we can represent their union as</p>
+<section id="union-and-intersection-over-indexed-sets" class="level3">
+<h3 class="anchored" data-anchor-id="union-and-intersection-over-indexed-sets">Union and intersection over indexed sets</h3>
+<p>So far, we’ve seen how the large-operator symbols <span class="math inline">\(\Sigma\)</span> and <span class="math inline">\(\Pi\)</span> can express sums and products over index ranges or sets. The same notation style can also be used for set operations, such as unions and intersections across a large number of sets.</p>
+<p>Assume we have indexed sets <span class="math inline">\(A_1, A_2, \dots, A_n\)</span>. Instead of writing out the full union</p>
 <p><span class="math display">\[
-\bigcup_{i=1}^n A_i = A_1 \cup A_2 \cup A_3 \cup  \dots \cup A_n.
-\]</span></p>
-<p>The same logic can be applied to <a href="#def-intersection" class="quarto-xref">Definition 2</a>:</p>
+A_1 \cup A_2 \cup A_3 \cup  \dots \cup A_n,
+\]</span> we can use a large union symbol to express this more compactly:</p>
+<p><span class="math display">\[
+\bigcup_{i=1}^n A_i.
+\]</span> Similarly, if we’re interested in the elements common to all sets in the sequence—their intersection—we write:</p>
 <p><span class="math display">\[
 \bigcap_{i=1}^n A_i = A_1 \cap A_2 \cap A_3 \cap \dots \cap A_n.
 \]</span></p>
