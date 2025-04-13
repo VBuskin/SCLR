@@ -30,41 +30,41 @@
     ]
   },
   {
-    "objectID": "blog.html#corpus-linguistics-with-r",
-    "href": "blog.html#corpus-linguistics-with-r",
+    "objectID": "blog.html#nlp-with-r",
+    "href": "blog.html#nlp-with-r",
     "title": "Overview",
-    "section": "Corpus Linguistics with R",
-    "text": "Corpus Linguistics with R",
+    "section": "NLP with R",
+    "text": "NLP with R\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\n3.1 Concordancing\n\n\n\n\n\n\n\n3.2 Regular expressions\n\n\n\n\n\n\n\n3.3 Data annotation\n\n\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Overview"
     ]
   },
   {
-    "objectID": "blog.html#descriptive-statistics",
-    "href": "blog.html#descriptive-statistics",
+    "objectID": "blog.html#statistics",
+    "href": "blog.html#statistics",
     "title": "Overview",
-    "section": "Descriptive Statistics",
-    "text": "Descriptive Statistics\n\nChi-squared test",
+    "section": "Statistics",
+    "text": "Statistics\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\n4.1 Data, variables, samples\n\n\nThis handout introduces key statistical concepts—such as samples, populations, variables, datasets, and data types—with a focus on their application to empirical linguistic research, using R to explore and illustrate these ideas. \n\n\n\n\n4.2 Probability theory\n\n\n\n\n\n\n\n4.4 Continuous data\n\n\n\n\n\n\n\n4.5 Hypothesis testing\n\n\n\n\n\n\n\n4.7 Chi-squared test\n\n\nA binomial distribution is a statistical distribution which can be found in an experiment with only two possible outcomes (0 and 1, also referred to as failure and success, respectively) and which are independent of each other in case of repetition. \n\n\n\n\n4.7 Chi-squared test\n\n\nThe chi-squared (\\(\\chi^2\\)) test helps determine if there is a statistically significant association between two categorical variables. It compares the observed frequencies of categories with those expected under the null hypothesis. The \\(\\chi^2\\) (chi-squared) score quantifies the difference between observed and expected frequencies for every cell in a contingency table. The greater the difference between observed and expected, the higher the \\(\\chi^2\\) score and the lower the \\(p\\)-value, given the degrees of freedom. It is recommended to compute effect size measures and inspect the residuals to assess the nature of the association. \n\n\n\n\n4.8 t-test\n\n\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Overview"
     ]
   },
   {
-    "objectID": "blog.html#inferential-statistics",
-    "href": "blog.html#inferential-statistics",
+    "objectID": "blog.html#models",
+    "href": "blog.html#models",
     "title": "Overview",
-    "section": "Inferential Statistics",
-    "text": "Inferential Statistics",
+    "section": "Models",
+    "text": "Models\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\n6.1 Linear regression\n\n\n\n\n\n\n\n6.2 Logistic Regression\n\n\n\n\n\n\n\n6.3 Mixed-effects regression\n\n\n\n\n\n\n\n6.4 Poisson regression\n\n\n\n\n\n\n\n6.5 Ordinal regression\n\n\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Overview"
     ]
   },
   {
-    "objectID": "blog.html#statistical-modelling-and-machine-learning",
-    "href": "blog.html#statistical-modelling-and-machine-learning",
+    "objectID": "blog.html#machine-learning",
+    "href": "blog.html#machine-learning",
     "title": "Overview",
-    "section": "Statistical Modelling and Machine Learning",
-    "text": "Statistical Modelling and Machine Learning",
+    "section": "Machine Learning",
+    "text": "Machine Learning\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\n7.1 Tree-based methods\n\n\n\n\n\n\n\n7.2 Gradient boosting\n\n\nGradient boosting constitutes a powerful extension of tree-based methods and is generally appreciated for its high predictive performance. Nevertheless, this family of methods, which includes implementations such as AdaBoost, XGBoost, and CatBoost, among many others, is not yet established in corpus-linguistic statistics. A practical scenario is presented to introduce the core ideas of gradient boosting, demonstrate its application to linguistic data as well as point out its advantages and drawbacks. \n\n\n\n\n7.3 Principal Components Analysis\n\n\n\n\n\n\n\n7.4 Exploratory Factor Analysis\n\n\n\n\n\n\n\n7.5 Clustering\n\n\n\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Overview"
     ]
@@ -821,29 +821,18 @@
     "href": "chapters/01-maths.html#set-theory",
     "title": "1.4 Formal aspects",
     "section": "Set theory",
-    "text": "Set theory\nSets are finite or infinite collections of elements. Typically, they are denoted by capital letters (\\(A\\), \\(B\\), etc.). Their elements can virtually anything – letters, numbers, functions, or even more sets. For example, define a set \\(L\\) which contains the words eat, drink, sleep, bathe:1\n1 Note that the order of the elements in a set is irrelevant; even if the elements of \\(L\\) were rearranged, the elements themselves would remain identical: \\(\\{eat, drink, sleep, bathe\\} = \\{drink, bathe, sleep, eat\\}\\).\\[\nL = \\{eat, drink, sleep, bathe\\}.\n\\]\nThe cardinality (or ‘size’) of \\(L\\) is 4 because it contains 4 unique elements. This is usually written as \\(\\mid L \\mid = 4\\).\nWe can characterise the membership of individual elements with regard to a certain set. The element eat is in \\(L\\), i.e., \\(eat \\in L\\). By contrast, convince is not, which is written \\(convince \\notin L\\).\nA set that does not contain any elements is an empty set \\(\\emptyset = \\{\\}\\). As such, it as a subset of every set – even of itself!2\n2 Here is another strange observation: \\(\\emptyset\\) and \\(\\{\\emptyset\\}\\) don’t express the same thing. While \\(\\emptyset\\) contains nothing (\\(\\mid\\emptyset\\mid = 0\\)), \\(\\{ \\emptyset \\}\\) is a set that has one element (\\(\\mid\\{ \\emptyset \\}\\mid = 1\\)), and this one element is actually nothing.\nSubset, union, and intersection\nLet’s define two new sets\n\\[\nF = \\{eat, drink\\}\n\\]\nand\n\\[\nM = \\{eat, run\\}.\n\\]\nWhen comparing \\(F\\) with \\(L\\), we can see that all of the elements in \\(F\\) are also represented in \\(L\\). This renders \\(F\\) a subset of \\(L\\), written \\(F \\subseteq L\\). However, not all elements of \\(M\\) are also in \\(F\\). Specifically, run is in \\(M\\), but not in \\(F\\); therefore, \\(M \\nsubseteq F\\).\nIf we are looking for an element that is in \\(M\\) or in \\(L\\) or in both, we are talking about the union \\(M \\cup L\\):\n\\[\nM \\cup L = \\{eat, drink, sleep, bathe, run\\}.\n\\]\nBy contrast, if we are interested in the elements that all sets \\(L\\), \\(F\\) and \\(M\\) have in common, we are dealing with their intersection \\(L \\cap F \\cap M\\). In fact, there is only one element that satisfies this condition:\n\\[\nL \\cap F \\cap M = \\{eat\\}.\n\\]",
+    "text": "Set theory\nSets are finite or infinite collections of elements. Typically, they are denoted by capital letters (\\(A\\), \\(B\\), etc.). Their elements can virtually anything – letters, numbers, functions, or even more sets. For example, define a set \\(L\\) which contains the words eat, drink, sleep, bathe:1\n1 Note that the order of the elements in a set is irrelevant; even if the elements of \\(L\\) were rearranged, the elements themselves would remain identical: \\(\\{eat, drink, sleep, bathe\\} = \\{drink, bathe, sleep, eat\\}\\).\\[\nL = \\{eat, drink, sleep, bathe\\}.\n\\]\n\n\nShow R code\n# Define L\nL &lt;- c(\"eat\", \"drink\", \"sleep\", \"bathe\") \n\n\nThe cardinality (or ‘size’) of \\(L\\) is 4 because it contains 4 unique elements. This is usually written as \\(\\mid L \\mid = 4\\).\n\n\nShow R code\n# Number of elements in L\nlength(L)\n\n\nWe can characterise the membership of individual elements with regard to a certain set. The element eat is in \\(L\\), i.e., \\(eat \\in L\\). By contrast, convince is not, which is written \\(convince \\notin L\\).\n\n\nShow R code\n# Check element membership\n\"eat\" %in% L\n\n\"convince\" %in% L\n\n\nA set that does not contain any elements is an empty set \\(\\emptyset = \\{\\}\\). As such, it as a subset of every set – even of itself!2\n2 Here is another strange observation: \\(\\emptyset\\) and \\(\\{\\emptyset\\}\\) don’t express the same thing. While \\(\\emptyset\\) contains nothing (\\(\\mid\\emptyset\\mid = 0\\)), \\(\\{ \\emptyset \\}\\) is a set that has one element (\\(\\mid\\{ \\emptyset \\}\\mid = 1\\)), and this one element is actually nothing.\nSubset, union, and intersection\nLet’s define two new sets\n\\[\nG = \\{eat, drink\\}\n\\]\nand\n\\[\nM = \\{eat, run\\}.\n\\]\n\n\nShow R code\n# Define new sets\nG &lt;- c(\"eat\", \"drink\")\n\nM &lt;- c(\"eat\", \"run\")\n\n\nWhen comparing \\(G\\) with \\(L\\), we can see that all of the elements in \\(G\\) are also represented in \\(L\\). This renders \\(G\\) a subset of \\(L\\), written \\(G \\subseteq L\\). However, not all elements of \\(M\\) are also in \\(G\\). Specifically, run is in \\(M\\), but not in \\(F\\); therefore, \\(M \\nsubseteq G\\).\n\n\nShow R code\n# Check if F is a subset of L\nall(F %in% L)\n\n\n# Check if M is a subset of F\nall(M %in% F)\n\n\nIf we are looking for an element that is in \\(M\\) or in \\(L\\) or in both, we are talking about the union \\(M \\cup L\\):\n\\[\nM \\cup L = \\{eat, drink, sleep, bathe, run\\}.\n\\]\n\n\nShow R code\n# Union of M and L\nunion(M, L)\n\n\nBy contrast, if we are interested in the elements that all sets \\(L\\), \\(G\\) and \\(M\\) have in common, we are dealing with their intersection \\(L \\cap G \\cap M\\). In fact, there is only one element that satisfies this condition:\n\\[\nL \\cap G \\cap M = \\{eat\\}.\n\\]\n\n\nShow R code\n# Intersection of two sets\nintersect(L, G)\n\n# Intersection of multiple sets\nReduce(intersect, list(L, G, M))",
     "crumbs": [
       "1. Fundamentals",
       "1.4 Formal aspects"
     ]
   },
   {
-    "objectID": "chapters/01-maths.html#set-theoretic-operations",
-    "href": "chapters/01-maths.html#set-theoretic-operations",
+    "objectID": "chapters/01-maths.html#large-operators",
+    "href": "chapters/01-maths.html#large-operators",
     "title": "1.4 Formal aspects",
-    "section": "Set-theoretic operations",
-    "text": "Set-theoretic operations\n\nDefinition 1 (Union) The union of two sets \\(A\\) and \\(B\\) is defined as \\[\nA \\cup B = \\{ x : x \\in A \\text{ or } x \\in B\\}.\n\\]\n\n\nExample 1 (Union) Let \\(M = \\{eat, walk, run, sleep\\}\\). If we form the union \\(M \\cup F\\), we state that an element \\(x\\) is either in \\(M\\) or in \\(F\\):\n\\[\nM \\cup F = \\{eat, drink, walk, run, sleep\\}\n\\]\n\n\nDefinition 2 (Intersection) The intersection of two sets \\(A\\) and \\(B\\) is defined as \\[\nA \\cap B = \\{ x : x \\in A \\text{ and } x \\in B\\}.\n\\]\n\n\nExample 2 (Intersection) There is only one element that is both in \\(M\\) and in \\(F\\):\n\\[\nM \\cap F = \\{eat\\}\n\\]",
-    "crumbs": [
-      "1. Fundamentals",
-      "1.4 Formal aspects"
-    ]
-  },
-  {
-    "objectID": "chapters/01-maths.html#other-common-operations",
-    "href": "chapters/01-maths.html#other-common-operations",
-    "title": "1.4 Formal aspects",
-    "section": "Other common operations",
-    "text": "Other common operations\n\nSums and products\nWe can express a sum such as \\(a_1 + a_2 + \\dots + a_n\\) in a more compact way using the Greek letter \\(\\Sigma\\):\n\\[\n\\sum_{i=1}^n a_i = a_1 + a_2 + a_3 + \\dots + a_n.\n\\]\nHere, \\(i\\) is the index with starting value \\(1\\) and final value \\(n\\).3 In set-theoretic notation, we could say that \\(i \\in \\{1, 2, 3, \\dots, n\\}\\).4\n3 Note that if the summation has no upper limit, it is an infinite sum:\n\\[\n\\sum_{i=1}^{\\infty} = a_1 + a_2 + a_3 + \\dots + a_i+ \\dots.\n\\]4 The index can also be denoted by different letters (\\(j, k\\) etc.) except for \\(n\\).Alternatively, we can also use set-based indexing. If we define \\(A =\\{a_1, a_2, \\ldots, a_n\\}\\) as the set of elements we want to sum, we can write:\n\\[\n\\sum_{a \\in A} a = a_1 + a_2 + a_3 + \\dots +\na_n.\n\\]\nSums are ubiquituous in corpus linguistics. For instance, if \\(f_i\\) represents the frequency of the \\(i\\)-th word in a corpus, then \\(\\sum_{i=1}^n f_i\\) represents the total size of the corpus.\nFor products, the letter \\(\\Pi\\) is used instead of \\(\\Sigma\\). It follows the same pattern:\n\\[\n\\prod_{i=1}^n a_i = a_1 \\cdot a_2 \\cdot a_3 \\cdots a_n.\n\\]\n\n\nUnion and intersection\nAssume we have sets \\(A_1, A_2, \\dots, A_n\\). As an extension of ?@def-union, we can represent their union as\n\\[\n\\bigcup_{i=1}^n A_i = A_1 \\cup A_2 \\cup A_3 \\cup  \\dots \\cup A_n.\n\\]\nThe same logic can be applied to ?@def-intersection:\n\\[\n\\bigcap_{i=1}^n A_i = A_1 \\cap A_2 \\cap A_3 \\cap \\dots \\cap A_n.\n\\]",
+    "section": "Large operators",
+    "text": "Large operators\n\nSums and products\nLong summation expressions tend to be rather unwieldy. For example, if we are taking the sum of all natural numbers from 1 up to 15, writing this out would take up a lot of space (and time):\n\\[\n1+2+3+4+5+6+7+8+9+10+11+12+13+14+15.\n\\] For this very reason, mathematicians have introduced a more compact notation that only takes a fraction of the time to write while communicating the exact same idea. Using the Greek letter \\(\\Sigma\\) (‘sigma’), we could rewrite it as\n\\[\n\\sum_{i=1}^{15} i.\n\\] This notation can be read as the sum from \\(i = 1\\) to \\(15\\). It is the sum of the numbers obtained by letting \\(i = 1, 2, \\dots, 15\\).\n\n\nShow R code\n# Sum of the number from 1 to 15\nsum(1:15)\n\n\nThe same principle applies if the terms of the sum are letters. If we have\n\\[\na_1 + a_2 + a_3 + a_4 + a_5,\n\\] then we can define a sum where the index \\(i\\) iterates through the elements in the set \\(\\{1, 2, 3, 4, 5\\}\\). The letter \\(a\\) remains constant.\n\\[\n\\sum_{i=1}^5 a_i\n\\] Alternatively, to make it even more explicit, we could write\n\\[\n\\sum_{i\\in \\{1, 2, 3, 4, 5\\}} a_i.\n\\]\nThe index can be denoted by any letter (\\(j\\), \\(k\\) etc.) but not \\(n\\), which is reserved for the upper limit:\n\\[\n\\sum_{i=1}^n a_i = a_1 + a_2 + a_3 + \\dots + a_n.\n\\]\nWe can apply the same reasoning to other operations such as products. The only difference is that we’d have to use \\(\\Pi\\) (‘pi’) instead of \\(\\Sigma\\). If we are taking the product of all natural numbers from 5 to 10, we’d write\n\\[\n\\prod_{i=5}^{10} i = 5 \\cdot 6 \\cdot 7 \\cdot 8 \\cdot 9 \\cdot 10.\n\\]\n\n\nShow R code\n# Product of the numbers from 5 to 10\nprod(5:10)\n\n\nThe set of all values that the index below the operator can take on is known as the index set. It can be defined as one sees fit. Say, we need the product of all numbers in \\(K = \\{1, 3, 5, 7\\}\\). Then the corresponding notation would be\n\\[\n\\prod_{i\\in K} i = 1 \\cdot 3 \\cdot 5 \\cdot 7.\n\\]\n\n\nUnion and intersection over indexed sets\nSo far, we’ve seen how the large-operator symbols \\(\\Sigma\\) and \\(\\Pi\\) can express sums and products over index ranges or sets. The same notation style can also be used for set operations, such as unions and intersections across a large number of sets.\nAssume we have indexed sets \\(A_1, A_2, \\dots, A_n\\). Instead of writing out the full union\n\\[\nA_1 \\cup A_2 \\cup A_3 \\cup  \\dots \\cup A_n,\n\\] we can use a large union symbol to express this more compactly:\n\\[\n\\bigcup_{i=1}^n A_i.\n\\]\n\n\nShow R code\n# Define multiple sets\nA1 &lt;- c(\"a\", \"b\", \"c\")\nA2 &lt;- c(\"a\", \"e\", \"f\")\nA3 &lt;- c(\"a\", \"h\", \"i\")\nA4 &lt;- c(\"a\", \"k\", \"l\")\n\n# Union of all sets\nReduce(union, list(A1, A2, A3, A4))\n\n\nSimilarly, if we’re interested in the elements common to all sets in the sequence—their intersection—we write:\n\\[\n\\bigcap_{i=1}^n A_i = A_1 \\cap A_2 \\cap A_3 \\cap \\dots \\cap A_n.\n\\]\n\n\nShow R code\n# Intersection of all sets\nReduce(intersect, list(A1, A2, A3, A4))",
     "crumbs": [
       "1. Fundamentals",
       "1.4 Formal aspects"
@@ -1982,40 +1971,28 @@
     "href": "index.html",
     "title": "Preface",
     "section": "",
-    "text": "This collection of handouts provides a hands-on introduction to data analysis and statistical methods in quantitative corpus linguistics with R. It is designed with accessibility in mind, assuming no prior knowledge of programming or statistics. All you need to get started is a laptop; everything else will be explained within these pages.\nPrimarily, this reader is geared towards students attending the classes Language Variation (BA) and Statistics for Linguistics (MA) at the Catholic University of Eichstätt-Ingolstadt (Germany). However, it is also meant to equip students currently working on their BA/MA/PhD theses with the tools they need to conduct empirical studies on a wide array of linguistic phenomena. The methods presented here reflect the state-of-the-art in corpus-linguistic research, providing readers with current and relevant analytical techniques.",
-    "crumbs": [
-      "Overview"
-    ]
+    "text": "This collection of handouts provides a hands-on introduction to data analysis and statistical methods in quantitative corpus linguistics with R. It is designed with accessibility in mind, assuming no prior knowledge of programming or statistics. All you need to get started is a laptop; everything else will be explained within these pages.\nPrimarily, this reader is geared towards students attending the classes Language Variation (BA) and Statistics for Linguistics (MA) at the Catholic University of Eichstätt-Ingolstadt (Germany). However, it is also meant to equip students currently working on their BA/MA/PhD theses with the tools they need to conduct empirical studies on a wide array of linguistic phenomena. The methods presented here reflect the state-of-the-art in corpus-linguistic research, providing readers with current and relevant analytical techniques."
   },
   {
     "objectID": "index.html#preface",
     "href": "index.html#preface",
     "title": "Preface",
     "section": "",
-    "text": "This collection of handouts provides a hands-on introduction to data analysis and statistical methods in quantitative corpus linguistics with R. It is designed with accessibility in mind, assuming no prior knowledge of programming or statistics. All you need to get started is a laptop; everything else will be explained within these pages.\nPrimarily, this reader is geared towards students attending the classes Language Variation (BA) and Statistics for Linguistics (MA) at the Catholic University of Eichstätt-Ingolstadt (Germany). However, it is also meant to equip students currently working on their BA/MA/PhD theses with the tools they need to conduct empirical studies on a wide array of linguistic phenomena. The methods presented here reflect the state-of-the-art in corpus-linguistic research, providing readers with current and relevant analytical techniques.",
-    "crumbs": [
-      "Overview"
-    ]
+    "text": "This collection of handouts provides a hands-on introduction to data analysis and statistical methods in quantitative corpus linguistics with R. It is designed with accessibility in mind, assuming no prior knowledge of programming or statistics. All you need to get started is a laptop; everything else will be explained within these pages.\nPrimarily, this reader is geared towards students attending the classes Language Variation (BA) and Statistics for Linguistics (MA) at the Catholic University of Eichstätt-Ingolstadt (Germany). However, it is also meant to equip students currently working on their BA/MA/PhD theses with the tools they need to conduct empirical studies on a wide array of linguistic phenomena. The methods presented here reflect the state-of-the-art in corpus-linguistic research, providing readers with current and relevant analytical techniques."
   },
   {
     "objectID": "index.html#overview",
     "href": "index.html#overview",
     "title": "Preface",
     "section": "Overview",
-    "text": "Overview\nWe begin by establishing the general structure of corpus-linguistic studies, accompanied by key theoretical and practical considerations. The second section introduces R as an analytical tool, covering its core functionality. With these fundamentals in place, we proceed to query corpora directly within R. Chapters four and five focus on describing discrete and continuous outputs, as well as identifying meaningful associations and differences in the data. Finally, to gain more nuanced insights into potential patterns, we apply common machine learning algorithms to fit, evaluate, and interpret statistical models.\nThroughout this journey, readers will develop the skills to conduct robust corpus-linguistic analyses, from basic querying to advanced statistical modeling.",
-    "crumbs": [
-      "Overview"
-    ]
+    "text": "Overview\nWe begin by establishing the general structure of corpus-linguistic studies, accompanied by key theoretical and practical considerations. The second section introduces R as an analytical tool, covering its core functionality. With these fundamentals in place, we proceed to query corpora directly within R. Chapters four and five focus on describing discrete and continuous outputs, as well as identifying meaningful associations and differences in the data. Finally, to gain more nuanced insights into potential patterns, we apply common machine learning algorithms to fit, evaluate, and interpret statistical models.\nThroughout this journey, readers will develop the skills to conduct robust corpus-linguistic analyses, from basic querying to advanced statistical modeling."
   },
   {
     "objectID": "index.html#collaborators",
     "href": "index.html#collaborators",
     "title": "Preface",
     "section": "Collaborators",
-    "text": "Collaborators\nVladimir Buskin, PhD student at the Department of English Language and Linguistics, Catholic University of Eichstätt-Ingolstadt\nThomas Brunner, Assistant Professor at the Department of English Language and Linguistics, Catholic University of Eichstätt-Ingolstadt\nPhilippa Adolf, PhD student at the Department of Romance Studies, University of Vienna",
-    "crumbs": [
-      "Overview"
-    ]
+    "text": "Collaborators\nVladimir Buskin, PhD student at the Department of English Language and Linguistics, Catholic University of Eichstätt-Ingolstadt\nThomas Brunner, Assistant Professor at the Department of English Language and Linguistics, Catholic University of Eichstätt-Ingolstadt\nPhilippa Adolf, PhD student at the Department of Romance Studies, University of Vienna"
   },
   {
     "objectID": "Basics.html",
@@ -2044,56 +2021,5 @@
     "title": "An example from sociolinguistics",
     "section": "Exercises",
     "text": "Exercises\n\nExercise 1 As you read through the sections above, think about what might go wrong at each stage of the study!\n\n\nExercise 2 Read another sociolinguistic study (e.g., Unuabonah and Gut 2018). As you read, identify similar key sections or “building blocks” used in this study (e.g., introduction, research question etc.). What purpose does each section serve in the study’s overall structure?"
-  },
-  {
-    "objectID": "blog.html#nlp-with-r",
-    "href": "blog.html#nlp-with-r",
-    "title": "Overview",
-    "section": "NLP with R",
-    "text": "NLP with R\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\n3.1 Concordancing\n\n\n\n\n\n\n\n3.2 Regular expressions\n\n\n\n\n\n\n\n3.3 Data annotation\n\n\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "blog.html#statistics",
-    "href": "blog.html#statistics",
-    "title": "Overview",
-    "section": "Statistics",
-    "text": "Statistics\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\n4.1 Data, variables, samples\n\n\nThis handout introduces key statistical concepts—such as samples, populations, variables, datasets, and data types—with a focus on their application to empirical linguistic research, using R to explore and illustrate these ideas. \n\n\n\n\n4.2 Probability theory\n\n\n\n\n\n\n\n4.4 Continuous data\n\n\n\n\n\n\n\n4.5 Hypothesis testing\n\n\n\n\n\n\n\n4.7 Chi-squared test\n\n\nA binomial distribution is a statistical distribution which can be found in an experiment with only two possible outcomes (0 and 1, also referred to as failure and success, respectively) and which are independent of each other in case of repetition. \n\n\n\n\n4.7 Chi-squared test\n\n\nThe chi-squared (\\(\\chi^2\\)) test helps determine if there is a statistically significant association between two categorical variables. It compares the observed frequencies of categories with those expected under the null hypothesis. The \\(\\chi^2\\) (chi-squared) score quantifies the difference between observed and expected frequencies for every cell in a contingency table. The greater the difference between observed and expected, the higher the \\(\\chi^2\\) score and the lower the \\(p\\)-value, given the degrees of freedom. It is recommended to compute effect size measures and inspect the residuals to assess the nature of the association. \n\n\n\n\n4.8 t-test\n\n\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "blog.html#models",
-    "href": "blog.html#models",
-    "title": "Overview",
-    "section": "Models",
-    "text": "Models\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\n6.1 Linear regression\n\n\n\n\n\n\n\n6.2 Logistic Regression\n\n\n\n\n\n\n\n6.3 Mixed-effects regression\n\n\n\n\n\n\n\n6.4 Poisson regression\n\n\n\n\n\n\n\n6.5 Ordinal regression\n\n\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "blog.html#machine-learning",
-    "href": "blog.html#machine-learning",
-    "title": "Overview",
-    "section": "Machine Learning",
-    "text": "Machine Learning\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\n7.1 Tree-based methods\n\n\n\n\n\n\n\n7.2 Gradient boosting\n\n\nGradient boosting constitutes a powerful extension of tree-based methods and is generally appreciated for its high predictive performance. Nevertheless, this family of methods, which includes implementations such as AdaBoost, XGBoost, and CatBoost, among many others, is not yet established in corpus-linguistic statistics. A practical scenario is presented to introduce the core ideas of gradient boosting, demonstrate its application to linguistic data as well as point out its advantages and drawbacks. \n\n\n\n\n7.3 Principal Components Analysis\n\n\n\n\n\n\n\n7.4 Exploratory Factor Analysis\n\n\n\n\n\n\n\n7.5 Clustering\n\n\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "chapters/01-maths.html#large-operators",
-    "href": "chapters/01-maths.html#large-operators",
-    "title": "1.4 Formal aspects",
-    "section": "Large operators",
-    "text": "Large operators\n\nSums and products\nLong summation expressions tend to be rather unwieldy. For example, if we are taking the sum of all natural numbers from 1 up to 15, writing this out would take up a lot of space (and time):\n\\[\n1+2+3+4+5+6+7+8+9+10+11+12+13+14+15.\n\\] For this very reason, mathematicians have introduced a more compact notation that only takes a fraction of the time to write while communicating the exact same idea. Using the Greek letter \\(\\Sigma\\) (‘sigma’), we could rewrite it as\n\\[\n\\sum_{i=1}^{15} i.\n\\] This notation can be read as the sum from \\(i = 1\\) to \\(15\\). It is the sum of the numbers obtained by letting \\(i = 1, 2, \\dots, 15\\).\nThe same principle applies if the terms of the sum are letters. If we have\n\\[\na_1 + a_2 + a_3 + a_4 + a_5,\n\\] then we can define a sum where the index \\(i\\) iterates through the elements in the set \\(\\{1, 2, 3, 4, 5\\}\\). The letter \\(a\\) remains constant.\n\\[\n\\sum_{i=1}^5 a_i\n\\] Alternatively, to make it even more explicit, we could write\n\\[\n\\sum_{i\\in \\{1, 2, 3, 4, 5\\}} a_i.\n\\]\nThe index can be denoted by any letter (\\(j\\), \\(k\\) etc.) but not \\(n\\), which is reserved for the upper limit:\n\\[\n\\sum_{i=1}^n a_i = a_1 + a_2 + a_3 + \\dots + a_n.\n\\]\nWe can apply the same reasoning to other operations such as products. The only difference is that we’d have to use \\(\\Pi\\) (‘pi’) instead of \\(\\Sigma\\). If we are taking the product of all natural numbers from 5 to 10, we’d write\n\\[\n\\prod_{i=5}^{10} i = 5 \\cdot 6 \\cdot 7 \\cdot 8 \\cdot 9 \\cdot 10.\n\\] The set of all values that the index below the operator can take on is known as the index set. It can be defined as one sees fit. Say, we need the product of all numbers in \\(K = \\{1, 3, 5, 7\\}\\). Then the corresponding notation would be\n\\[\n\\prod_{i\\in K} i = 1 \\cdot 3 \\cdot 5 \\cdot 7.\n\\]\n\n\nUnion and intersection over indexed sets\nSo far, we’ve seen how the large-operator symbols \\(\\Sigma\\) and \\(\\Pi\\) can express sums and products over index ranges or sets. The same notation style can also be used for set operations, such as unions and intersections across a large number of sets.\nAssume we have indexed sets \\(A_1, A_2, \\dots, A_n\\). Instead of writing out the full union\n\\[\nA_1 \\cup A_2 \\cup A_3 \\cup  \\dots \\cup A_n,\n\\] we can use a large union symbol to express this more compactly:\n\\[\n\\bigcup_{i=1}^n A_i.\n\\] Similarly, if we’re interested in the elements common to all sets in the sequence—their intersection—we write:\n\\[\n\\bigcap_{i=1}^n A_i = A_1 \\cap A_2 \\cap A_3 \\cap \\dots \\cap A_n.\n\\]",
-    "crumbs": [
-      "1. Fundamentals",
-      "1.4 Formal aspects"
-    ]
   }
 ]
