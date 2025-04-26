@@ -15,11 +15,11 @@ website:
         menu:
           - text: "1.1 Basics"
             href: chapters/01-basics.qmd
-          - text: "1.2 Research Questions"
+          - text: "1.2 Research questions"
             href: chapters/01-rqs.qmd
-          - text: "1.3 Linguistic Variables"
+          - text: "1.3 Linguistic variables"
             href: chapters/01-linguistic_variables.qmd
-          - text: "1.4 Formal Aspects"
+          - text: "1.4 Set theory and mathematical notation"
             href: chapters/01-maths.qmd
   
       - text: "Introduction to R"
@@ -43,7 +43,7 @@ website:
             href: chapters/03-concordancing.qmd
           - text: "3.2 Regular expressions"
             href: chapters/03-regex.qmd
-          - text: "3.3 Data Annotation"
+          - text: "3.3 Data annotation"
             href: chapters/03-data-annotation.qmd
   
       - text: "Statistics"
