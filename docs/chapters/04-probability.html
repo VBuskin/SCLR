@@ -5702,8 +5702,8 @@ R \sim \mathcal{N}(\mu = 500, \sigma = 150),
 </section>
 <section id="tier-2" class="level2">
 <h2 class="anchored" data-anchor-id="tier-2">Tier 2</h2>
-<div>
-<p>If a variable follows a binomial distribution and we know the number of trials <span class="math inline">\(n\)</span> and the probability of success <span class="math inline">\(\pi\)</span>, we can compute:</p>
+<div id="exr-prob-4" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4 </strong></span>If a variable follows a binomial distribution and we know the number of trials <span class="math inline">\(n\)</span> and the probability of success <span class="math inline">\(\pi\)</span>, we can compute:</p>
 <ul>
 <li>the probability of observing a specific number of successes with <code>dbinom()</code>:</li>
 </ul>
@@ -5754,15 +5754,15 @@ R \sim \mathcal{N}(\mu = 500, \sigma = 150),
 </div>
 </div>
 </div>
-<div id="exr-prob-4" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 4 </strong></span>Let <span class="math inline">\(D\)</span> be a Poisson-distributed random variable which counts the total number of fillers such as <em>uhm</em>, <em>er</em>, and <em>like</em> per 100 words. It has the <span class="math inline">\(pmf\)</span></p>
+<div id="exr-prob-5" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 5 </strong></span>Let <span class="math inline">\(D\)</span> be a Poisson-distributed random variable which counts the total number of fillers such as <em>uhm</em>, <em>er</em>, and <em>like</em> per 100 words. It has the <span class="math inline">\(pmf\)</span></p>
 <p><span class="math display">\[
 f(x, \lambda) = \frac{\lambda^{x} e^{-\lambda}}{x!}.
 \]</span></p>
 <p>The study by <span class="citation" data-cites="bortfeldDisfluencyRatesConversation2001">Bortfeld et al. (<a href="#ref-bortfeldDisfluencyRatesConversation2001" role="doc-biblioref">2001</a>)</span> suggests that <span class="math inline">\(\lambda = 2\)</span> would be a suitable rate parameter. Plot the <span class="math inline">\(pmf\)</span> using <code>dpois()</code> for <span class="math inline">\(x \in \{0, \dots, 10\}\)</span>. (Tip: Check the documentation by typing <code>?dpois</code> into the console.)</p>
 </div>
-<div id="exr-prob-5" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 5 </strong></span>Consider the distribution of frame elements for the verb <em>eat</em> (INGESTION):</p>
+<div id="exr-prob-6" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 6 </strong></span>Consider the distribution of frame elements for the verb <em>eat</em> (INGESTION):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>eat_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -5782,8 +5782,8 @@ f(x, \lambda) = \frac{\lambda^{x} e^{-\lambda}}{x!}.
 </section>
 <section id="tier-3" class="level2">
 <h2 class="anchored" data-anchor-id="tier-3">Tier 3</h2>
-<div id="exr-prob-6" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 6 </strong></span>The empirical study of dispersion has attracted significant attention in recent years <span class="citation" data-cites="sonningEvaluationKeynessMetrics2024 griesFrequencyDispersionAssociation2024">(<a href="#ref-sonningEvaluationKeynessMetrics2024" role="doc-biblioref">Sönning 2024</a>; <a href="#ref-griesFrequencyDispersionAssociation2024" role="doc-biblioref">Gries 2024</a>)</span>. A key challenge is finding dispersion measures that are minimally correlated with token frequency. One such measure is the Kullback-Leibler divergence (KLD), which comes from information theory and is closely related to entropy.</p>
+<div id="exr-prob-7" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 7 </strong></span>The empirical study of dispersion has attracted significant attention in recent years <span class="citation" data-cites="sonningEvaluationKeynessMetrics2024 griesFrequencyDispersionAssociation2024">(<a href="#ref-sonningEvaluationKeynessMetrics2024" role="doc-biblioref">Sönning 2024</a>; <a href="#ref-griesFrequencyDispersionAssociation2024" role="doc-biblioref">Gries 2024</a>)</span>. A key challenge is finding dispersion measures that are minimally correlated with token frequency. One such measure is the Kullback-Leibler divergence (KLD), which comes from information theory and is closely related to entropy.</p>
 <p>Mathematically, KLD measures the difference between two probability distributions <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>:</p>
 <p><span class="math display">\[
 KLD(p \parallel q) = \sum\limits_{x} p(x) \log \frac{p(x)}{q(x)}
