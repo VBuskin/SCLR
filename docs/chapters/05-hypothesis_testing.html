@@ -5006,7 +5006,7 @@ white-space: nowrap;
   <li><a href="#sampling-distributions" id="toc-sampling-distributions" class="nav-link" data-scroll-target="#sampling-distributions">Sampling distributions</a></li>
   <li><a href="#statistical-significance" id="toc-statistical-significance" class="nav-link" data-scroll-target="#statistical-significance">Statistical significance</a></li>
   <li><a href="#what-could-go-wrong-type-i-and-type-ii-errors" id="toc-what-could-go-wrong-type-i-and-type-ii-errors" class="nav-link" data-scroll-target="#what-could-go-wrong-type-i-and-type-ii-errors">What could go wrong? Type I and Type II errors</a></li>
-  <li><a href="#computing-p-value" id="toc-computing-p-value" class="nav-link" data-scroll-target="#computing-p-value">Computing <span class="math inline">\(p\)</span>-value</a></li>
+  <li><a href="#computing-the-p-value" id="toc-computing-the-p-value" class="nav-link" data-scroll-target="#computing-the-p-value">Computing the <span class="math inline">\(p\)</span>-value</a></li>
   </ul></li>
   <li><a href="#practical-considerations" id="toc-practical-considerations" class="nav-link" data-scroll-target="#practical-considerations">Practical considerations</a></li>
   </ul>
@@ -5085,57 +5085,112 @@ Is this the only way of testing hypotheses?
 <p>Statistical hypotheses always come in pairs: A <strong>null hypothesis</strong> is accompanied by an <strong>alternative hypothesis</strong>. They are set up before (!) seeing the data and justified by previous research.</p>
 <ul>
 <li><p>The <strong>null hypothesis</strong> <span class="math inline">\(H_0\)</span> describes the “default state of the world” <span class="citation" data-cites="james_introduction_2021">(<a href="#ref-james_introduction_2021" role="doc-biblioref">James et al. 2021</a>: 555)</span>. It claims there is no noteworthy effect to be observed in the data.</p></li>
-<li><p>The <strong>alternative hypothesis</strong> <span class="math inline">\(H_1\)</span> (or <span class="math inline">\(H_a\)</span>) plainly states that the <span class="math inline">\(H_0\)</span> is false, suggesting that there is an effect of some kind.</p></li>
+<li><p>The <strong>alternative hypothesis</strong> <span class="math inline">\(H_1\)</span> (or <span class="math inline">\(H_a\)</span>) plainly states that <span class="math inline">\(H_0\)</span> is false, suggesting that there is an effect of some kind.</p></li>
 </ul>
-<div class="callout callout-style-default callout-tip callout-titled" title="Example: Hypotheses for categorical data">
+<section id="categorical-data" class="level4">
+<h4 class="anchored" data-anchor-id="categorical-data">Categorical data</h4>
+<p>We are interested in finding out whether the <code>Type</code> of an English genitive (‘s’ or ‘of-sc’) depends on <code>Possessor Animacy</code> (‘animate’ vs. ‘inanimate’). Our hypotheses are:</p>
+<ul>
+<li><p><span class="math inline">\(H_0:\)</span> Genitive <code>Type</code> and <code>Possessor Animancy</code> are independent.</p></li>
+<li><p><span class="math inline">\(H_1:\)</span> Genitive <code>Type</code> and <code>Possessor Animancy</code> are <strong>not</strong> independent.</p></li>
+</ul>
+<blockquote class="blockquote">
+<p>According to a <span class="math inline">\(\chi^2\)</span>-test of independence, there is a statistically significant relationship between genitive type and possessor animacy (<span class="math inline">\(p &lt; 0.001\)</span>, <span class="math inline">\(\chi^2 = 106.44\)</span>, <span class="math inline">\(df = 1\)</span>).</p>
+</blockquote>
+<div class="callout callout-style-default callout-note callout-titled" title="What does independence really mean?">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example: Hypotheses for categorical data
+What does independence really mean?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We are interested in finding out whether English clause <code>ORDER</code> (‘sc-mc’ or ‘mc-sc’) depends on the type of the subordinate clause (<code>SUBORDTYPE</code>), which can be either temporal (‘temp’) or causal (‘caus’).</p>
-<p>Our hypotheses are:</p>
-<ul>
-<li><p><span class="math inline">\(H_0:\)</span> The variables <code>ORDER</code> and <code>SUBORDTYPE</code> are independent.</p></li>
-<li><p><span class="math inline">\(H_1:\)</span> The variables <code>ORDER</code> and <code>SUBORDTYPE</code> are <strong>not</strong> independent.</p></li>
-</ul>
+<p>The core idea is “that the probability distribution of the response variable is the same for each group” <span class="citation" data-cites="agrestiFoundationsStatisticsData2022">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">Agresti and Kateri 2022</a>: 177)</span>. Assume genitive <code>Type</code> is the dependent variable and <code>Possessor Animacy</code> the independent variable. Then independence would entail that the probabilities of the outcomes of the response variable <code>Type = &quot;s&quot;</code> and <code>Type = &quot;of&quot;</code> are not influenced by whether they occur in the groups <code>Possessor Animacy = &quot;animate&quot;</code> or <code>Possessor Animacy = &quot;inanimate&quot;</code>.</p>
+<p>If we consider two variables at the same time, such as <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, they are said to have <strong>marginal probability functions</strong>, which we can call <span class="math inline">\(f_1(\text{Type})\)</span> and <span class="math inline">\(f_2(\text{Animacy})\)</span> here. If we condition the outcomes of both variables on each other, the following equivalence will hold:</p>
+<p><span id="eq-indep"><span class="math display">\[
+f(\text{Type} \mid \text{Animacy}) = f_1(\text{Type}) \text{ and } f(\text{Animacy} \mid \text{Type}) = f_2(\text{Animacy}).
+\tag{1}\]</span></span></p>
+<p>Thus, the null hypothesis assumes that the probabilities of each combination of values (such as <code>Type</code> and <code>Possessor Animacy</code>), denoted by <span class="math inline">\(\pi_{ij}\)</span>, have the relationship in <a href="#eq-indep" class="quarto-xref">Equation 1</a>. This can be stated succinctly as</p>
+<p><span id="eq-nullhyp-math"><span class="math display">\[
+H_0 : \pi_{ij} = P(X = j)P(Y = i),
+\tag{2}\]</span></span></p>
+<p>where <span class="math inline">\(P(X = j)\)</span> denotes the the probability that the random variable <span class="math inline">\(X\)</span> takes the value <span class="math inline">\(j\)</span> and <span class="math inline">\(P(Y = i)\)</span> the probability that the random variable <span class="math inline">\(Y\)</span> takes the value <span class="math inline">\(i\)</span>.</p>
+<p>For illustration, consider the data below:</p>
+<table class="table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 21%">
+<col style="width: 32%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th></th>
+<th></th>
+<th><span class="math inline">\(\text{Possessor Animacy}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td><span class="math inline">\(\text{animate}\)</span></td>
+<td><span class="math inline">\(\text{inanimate}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\text{Genitive}\)</span></td>
+<td><span class="math inline">\(\text{s}\)</span></td>
+<td><span class="math inline">\(\pi_{11}\)</span></td>
+<td><span class="math inline">\(\pi_{12}\)</span></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><span class="math inline">\(of\)</span></td>
+<td><span class="math inline">\(\pi_{21}\)</span></td>
+<td><span class="math inline">\(\pi_{22}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Independence would be given if for each cell the following relationships would hold:</p>
+<p><span class="math display">\[
+\begin{align}
+\pi_{11} &amp;= P(X = \text{animate})P(Y = \text{s}) \\
+\pi_{12} &amp;= P(X = \text{inanimate})P(Y = \text{s}) \\
+\pi_{21} &amp;= P(X = \text{animate})P(Y = \text{of}) \\
+\pi_{22} &amp;= P(X = \text{inanimate})P(Y = \text{of}) \\
+\end{align}
+\]</span></p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Example: Hypotheses for continuous data">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example: Hypotheses for continuous data
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</section>
+<section id="continuous-data" class="level4">
+<h4 class="anchored" data-anchor-id="continuous-data">Continuous data</h4>
 <p>As part of a phonetic study, we compare the base frequencies of the F1 formants of vowels (in Hz) for male and female speakers of Apache. We forward the following hypotheses:</p>
 <ul>
 <li><p><span class="math inline">\(H_0:\)</span> mean <code>F1 frequency</code> of men <span class="math inline">\(=\)</span> mean <code>F1 frequency</code> of women.</p></li>
 <li><p><span class="math inline">\(H_1:\)</span> mean <code>F1 frequency</code> of men <span class="math inline">\(\ne\)</span> mean <code>F1 frequency</code> of women.</p></li>
 </ul>
-</div>
-</div>
-</div>
-<p>To be precise, we use the hypotheses to make statements about a population parameter <span class="math inline">\(\theta\)</span>, which can be a mean <span class="math inline">\(\mu\)</span> for continuous data or a proportion <span class="math inline">\(\pi\)</span> for categorical data. Formally, the null and alternative hypotheses can be restated as in <a href="#eq-hypotheses" class="quarto-xref">Equation 1</a>.</p>
+<blockquote class="blockquote">
+<p>According to a two-sample <span class="math inline">\(t\)</span>-test, there is a significant difference between the mean F1 frequencies of male and female speakers of Apache (<span class="math inline">\(t(112.19) = 2.44\)</span>, <span class="math inline">\(p &lt; 0.05\)</span>).</p>
+</blockquote>
+</section>
+<section id="generalisation" class="level4">
+<h4 class="anchored" data-anchor-id="generalisation">Generalisation</h4>
+<p>To be precise, we use the hypotheses to make statements about a population parameter <span class="math inline">\(\theta\)</span>, which can be a mean <span class="math inline">\(\mu\)</span> for continuous data or a proportion <span class="math inline">\(\pi\)</span> for categorical data. Formally, the null and alternative hypotheses can be restated as in <a href="#eq-hypotheses" class="quarto-xref">Equation 3</a>.</p>
 <p><span id="eq-hypotheses"><span class="math display">\[
 \begin{align}
 H_0: \theta = 0  \\
 H_1: \theta \neq 0
 \end{align}
-\tag{1}\]</span></span></p>
+\tag{3}\]</span></span></p>
 <p>In the NHST world, we’re dealing with a “This town ain’t big enough for the both of us” situation: While we have to state both <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_1\)</span>, only one of them can remain at the end of the day. But how do we decide between these two?</p>
+</section>
 </section>
 <section id="test-statistics" class="level3">
 <h3 class="anchored" data-anchor-id="test-statistics">Test statistics</h3>
@@ -5151,7 +5206,7 @@ H_1: \theta \neq 0
 <h3 class="anchored" data-anchor-id="sampling-distributions">Sampling distributions</h3>
 <p>Probability distributions of sample statistics are called <strong>sampling distributions</strong>. A fundamental statistical insight is that sample statistics (specifically means and sums of continuous random variables) converge onto a standard normal distribution with <span class="math inline">\(\mu = 0\)</span> and <span class="math inline">\(\sigma = 1\)</span>. This proven statement is known as the Central Limit Theorem <span class="citation" data-cites="heumann_introduction_2022">(<a href="#ref-heumann_introduction_2022" role="doc-biblioref">Heumann, Schomaker, and Shalabh 2022</a>: 547)</span>. However, if the population standard deviation is unknown, the Student <span class="math inline">\(t\)</span> distribution provides a reasonable approximation. It has a single parameter <span class="math inline">\(v\)</span> determining its shape, and it stands for the degrees of freedom.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="$t$ distribution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -5160,41 +5215,41 @@ H_1: \theta \neq 0
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: &quot;Show the code&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the degrees of freedom</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df_t <span class="ot">&lt;-</span> <span class="dv">10</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the degrees of freedom</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df_t <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a sequence of x values</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>x_t <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a sequence of x values</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>x_t <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the t-distribution density</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>y_t <span class="ot">&lt;-</span> <span class="fu">dt</span>(x_t, <span class="at">df =</span> df_t)</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the t-distribution density</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>y_t <span class="ot">&lt;-</span> <span class="fu">dt</span>(x_t, <span class="at">df =</span> df_t)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>t_distribution_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x_t, <span class="at">y =</span> y_t)</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>t_distribution_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x_t, <span class="at">y =</span> y_t)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate the plot</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(t_distribution_data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="co"># Line for the density curve</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;t-Distribution&quot;</span>,</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Probability density function with 10 degrees of freedom&quot;</span>,</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;t value&quot;</span>,</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Probability density&quot;</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.4</span>), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>)) <span class="sc">+</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>)</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate the plot</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(t_distribution_data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="co"># Line for the density curve</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;t-Distribution&quot;</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Probability density function with 10 degrees of freedom&quot;</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;t value&quot;</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Probability density&quot;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.4</span>), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="dv">4</span>)) <span class="sc">+</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
 ℹ Please use `linewidth` instead.</code></pre>
@@ -5212,7 +5267,7 @@ H_1: \theta \neq 0
 </div>
 <p>The <span class="math inline">\(\chi^2\)</span> distribution is closely related to the <span class="math inline">\(t\)</span> distribution, sharing the degrees of freedom parameter <span class="math inline">\(v\)</span>. In essence, it is the distribution of squared (standard) normally distributed random variables <span class="math inline">\(Z^2\)</span>. Another example are sums of squares <span class="math inline">\(\sum_{i=1}^n(x_i - \mu)^2\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="$\chi^2$ distribution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -5221,7 +5276,7 @@ H_1: \theta \neq 0
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <details class="code-fold">
@@ -5279,7 +5334,6 @@ H_1: \theta \neq 0
 <p><span class="math display">\[
 P(T \geq \text{observed value} \mid H_0 \text{ is true}).
 \]</span> If <span class="math inline">\(p\)</span> is lower than a pre-defined threshold (typically <span class="math inline">\(0.05\)</span>), also known as the <strong>significance level</strong> <span class="math inline">\(\alpha\)</span>, we can reject <span class="math inline">\(H_0\)</span>. However, if <span class="math inline">\(p \geq\)</span> 0.05, this <strong>neither justifies rejecting nor accepting</strong> the null hypothesis <span class="citation" data-cites="baguleySeriousStatsGuide2012">(<a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">Baguley 2012</a>: 121)</span>.</p>
-<p>For example, a <span class="math inline">\(p\)</span>-value of <span class="math inline">\(0.02\)</span> means that we would see a certain test statistic <span class="math inline">\(T\)</span> only 2% of the time if <span class="math inline">\(H_0\)</span> were true. Since <span class="math inline">\(0.02\)</span> lies below our significance level <span class="math inline">\(\alpha\)</span> = <span class="math inline">\(0.05\)</span>, this would suggest a statistically significant relationship in the data, and we could therefore reject <span class="math inline">\(H_0\)</span>.</p>
 </section>
 <section id="what-could-go-wrong-type-i-and-type-ii-errors" class="level3">
 <h3 class="anchored" data-anchor-id="what-could-go-wrong-type-i-and-type-ii-errors">What could go wrong? Type I and Type II errors</h3>
@@ -5310,12 +5364,40 @@ P(T \geq \text{observed value} \mid H_0 \text{ is true}).
 </tr>
 </tbody>
 </table>
+<p>There is a trade-off between Type I and Type II errors <span class="citation" data-cites="agrestiFoundationsStatisticsData2022">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">Agresti and Kateri 2022</a>: 182-186)</span>:</p>
+<ul>
+<li>If we try to decrease <span class="math inline">\(P\)</span>(Type I) by selecting a lower <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(P\)</span>(Type II) will inevitably increase.</li>
+<li>If we increase the sample size to lower <span class="math inline">\(P\)</span> (Type II), <span class="math inline">\(P\)</span>(Type I) will increase again.</li>
+</ul>
+<p>It is common practice to computer the <strong>power</strong> 1 - <span class="math inline">\(P\)</span>(Type II) of test, in order to estimate the probability of correctly rejecting <span class="math inline">\(H_0\)</span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pwr)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># w = effect size (between 0 and 1)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># df = degrees of freedom</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># sig.level = significance level alpha</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># power = 1 - beta</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.chisq.test</span>(<span class="at">w =</span> <span class="fl">0.5</span>, <span class="at">df =</span> <span class="dv">1</span>, <span class="at">sig.level =</span> <span class="fl">0.05</span>, <span class="at">power =</span> <span class="fl">0.95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Chi squared power calculation 
+
+              w = 0.5
+              N = 51.97884
+             df = 1
+      sig.level = 0.05
+          power = 0.95
+
+NOTE: N is the number of observations</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We&#39;d need a sample size of N = 52 to detect an effect with effect size 0.5, alpha = 0.05, beta = 0.05, and 1 degree of freedom (low data complexity, e.g., simple 2x2 contingency table).</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="computing-p-value" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="computing-p-value">Computing <span class="math inline">\(p\)</span>-value</h3>
+<section id="computing-the-p-value" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="computing-the-p-value">Computing the <span class="math inline">\(p\)</span>-value</h3>
 <p>Let’s say that the statistical analysis of clause <code>ORDER</code> and <code>SUBORDTYPE</code> has returned a test statistic of <span class="math inline">\(\chi^2 = 6.5\)</span> for 2 <span class="math inline">\(df\)</span>. In order to compute the corresponding <span class="math inline">\(p\)</span>-value we need to consult the <strong>sampling distribution</strong> of this test statistic.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="$\chi^2$ distribution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -5324,41 +5406,41 @@ P(T \geq \text{observed value} \mid H_0 \text{ is true}).
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load ggplot2</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the degrees of freedom</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a sequence of x values</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">30</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the chi-squared density</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">dchisq</span>(x, <span class="at">df =</span> df)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>chi_squared_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate the plot</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(chi_squared_data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="co"># Line for the density curve</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Chi-Squared Distribution&quot;</span>,</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Probability density function with 2 degrees of freedom&quot;</span>,</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Chi-squared value&quot;</span>,</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Probability density&quot;</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.05</span>), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">30</span>)) <span class="sc">+</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>)</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load ggplot2</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the degrees of freedom</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a sequence of x values</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">30</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the chi-squared density</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">dchisq</span>(x, <span class="at">df =</span> df)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>chi_squared_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate the plot</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(chi_squared_data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Chi-Squared Distribution&quot;</span>,</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Probability density function with 2 degrees of freedom&quot;</span>,</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Chi-squared value&quot;</span>,</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Probability density&quot;</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.05</span>), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">30</span>)) <span class="sc">+</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>)</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -5371,14 +5453,14 @@ P(T \geq \text{observed value} \mid H_0 \text{ is true}).
 </div>
 </div>
 </div>
-<p>Because continuous functions have an infinite number of <span class="math inline">\(x\)</span>-values, the probability of any single value must be 0.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Therefore, if we are interested in obtaining actual probabilities from the PDF, we can only do so for intervals of values. The probability that a value <span class="math inline">\(X\)</span> falls into the interval <span class="math inline">\(a &lt; X &lt; b\)</span> is in fact equivalent to the area under the curve between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> (cf. <a href="#eq-pdf" class="quarto-xref">Equation 2</a>).</p>
+<p>Because continuous functions have an infinite number of <span class="math inline">\(x\)</span>-values, the probability of any single value must be 0.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Therefore, if we are interested in obtaining actual probabilities from the PDF, we can only do so for intervals of values. The probability that a value <span class="math inline">\(X\)</span> falls into the interval <span class="math inline">\(a &lt; X &lt; b\)</span> is in fact equivalent to the area under the curve between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> (cf. <a href="#eq-pdf" class="quarto-xref">Equation 4</a>).</p>
 <div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup> The proof for the underlying theorem is given in Heumann et al. <span class="citation" data-cites="heumann_introduction_2022">(<a href="#ref-heumann_introduction_2022" role="doc-biblioref">2022</a>: 544)</span>.</p></li></div><p><span id="eq-pdf"><span class="math display">\[
 P(a &lt; X &lt; b) = \int_a^b f(x)dx.
-\tag{2}\]</span></span></p>
-<p>Recall the PDF <span class="math inline">\(f(x)\)</span> of the <span class="math inline">\(\chi^2\)</span>-distribution with 2 degrees of freedom. The <span class="math inline">\(p\)</span>-value corresponds to the green area under the curve ranging from <span class="math inline">\(x = 6.5\)</span> up to <span class="math inline">\(\infty\)</span>, which can be restated formally in <a href="#eq-pdf-chisq" class="quarto-xref">Equation 3</a>. This brings us back to the definition of the <span class="math inline">\(p\)</span>-value: It is the probability that the <span class="math inline">\(\chi^2\)</span> score is equal to 6.5 or <strong>higher</strong>, i.e., <span class="math inline">\(P(\chi^2 \geq 6.5)\)</span>.</p>
+\tag{4}\]</span></span></p>
+<p>Recall the PDF <span class="math inline">\(f(x)\)</span> of the <span class="math inline">\(\chi^2\)</span>-distribution with 2 degrees of freedom. The <span class="math inline">\(p\)</span>-value corresponds to the green area under the curve ranging from <span class="math inline">\(x = 6.5\)</span> up to <span class="math inline">\(\infty\)</span>, which can be restated formally in <a href="#eq-pdf-chisq" class="quarto-xref">Equation 5</a>. This brings us back to the definition of the <span class="math inline">\(p\)</span>-value: It is the probability that the <span class="math inline">\(\chi^2\)</span> score is equal to 6.5 or <strong>higher</strong>, i.e., <span class="math inline">\(P(\chi^2 \geq 6.5)\)</span>.</p>
 <p><span id="eq-pdf-chisq"><span class="math display">\[
 P(6.5 &lt; X &lt; \infty) = \int_{6.5}^\infty f(x)dx.
-\tag{3}\]</span></span></p>
+\tag{5}\]</span></span></p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
