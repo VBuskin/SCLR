@@ -5101,30 +5101,6 @@ Script
 <li><p><span class="math inline">\(H_0:\)</span> The variables <code>Type</code> and <code>Possessor Animacy</code> are independent.</p></li>
 <li><p><span class="math inline">\(H_1:\)</span> The variables <code>Type</code> and <code>Possessor Animacy</code> are <strong>not</strong> independent.</p></li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled" title="What does independence really mean?">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-What does independence really mean?
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The core idea is “that the probability distribution of the response variable is the same for each group” <span class="citation" data-cites="agrestiFoundationsStatisticsData2022">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">Agresti and Kateri 2022</a>: 177)</span>. Assume genitive <code>Type</code> is the dependent variable and <code>Possessor Animacy</code> the independent variable. Then independence would entail that the probabilities of the outcomes of the response variable <code>Type = &quot;s&quot;</code> and <code>Type = &quot;of&quot;</code> are not influenced by whether they occur in the groups <code>Possessor Animacy = &quot;animate&quot;</code> or <code>Possessor Animacy = &quot;inanimate&quot;</code>.</p>
-<p>Suppose <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are discrete random variables. If we consider two variables at the same time, such as <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, they are said to have <strong>marginal probability functions</strong> <span class="math inline">\(f_1(x)\)</span> and <span class="math inline">\(f_2(y)\)</span>. If we condition the outcomes of both variables on each other, the following equivalence will hold:</p>
-<p><span id="eq-indep"><span class="math display">\[
-f(x \mid y) = f_1(x) \text{ and } f(y \mid x) = f_2(y).
-\tag{1}\]</span></span></p>
-<p>Thus, the null hypothesis assumes that the probabilities of each combination of values (such as <code>Type</code> and <code>Possessor Animacy</code>), denoted by <span class="math inline">\(\pi_{ij}\)</span>, have the relationship in <a href="#eq-indep" class="quarto-xref">Equation 1</a>. This can be stated succinctly as</p>
-<p><span id="eq-nullhyp-math"><span class="math display">\[
-H_0 : \pi_{ij} = P(X = j)P(Y = i).
-\tag{2}\]</span></span></p>
-</div>
-</div>
-</div>
 <p>Next, we compute a test statistic that indicates how strongly our data conforms to proportions expected under <span class="math inline">\(H_0\)</span>. To this end, we will need two types of values:</p>
 <ul>
 <li><p>the <strong>observed frequencies</strong> <span class="math inline">\(f_{ij}\)</span> present in our data set</p></li>
@@ -5272,10 +5248,10 @@ H_0 : \pi_{ij} = P(X = j)P(Y = i).
 </tbody>
 </table>
 <div style="margin-top: 20px;"></div>
-<p>The expected frequencies <span class="math inline">\(e_{ij}\)</span> are given by the formula in <a href="#eq-exp-freq" class="quarto-xref">Equation 3</a>. In concrete terms, we go through each cell in the cross-table and multiply the corresponding row sums with the column sums, dividing the result by the total number of occurrences in the sample. For example, there are <span class="math inline">\(592\)</span> occurrences of <code>of</code> genitives in the <code>animate</code> group. The row sum is <span class="math inline">\(592+ 2511 = 3103\)</span> and the column sum is <span class="math inline">\(592 + 1451 = 2043\)</span>. Next, we take their product <span class="math inline">\(3103 \cdot 2043\)</span> and divide it by the total number of observations, which is <span class="math inline">\(592 + 2511 + 1451 + 544 = 5098\)</span>. Thus we obtain an expected frequency of <span class="math inline">\(\frac{3103 \times 2043}{5098} \approx 1243\)</span> under the null hypothesis.</p>
+<p>The expected frequencies <span class="math inline">\(e_{ij}\)</span> are given by the formula in <a href="#eq-exp-freq" class="quarto-xref">Equation 1</a>. In concrete terms, we go through each cell in the cross-table and multiply the corresponding row sums with the column sums, dividing the result by the total number of occurrences in the sample. For example, there are <span class="math inline">\(592\)</span> occurrences of <code>of</code> genitives in the <code>animate</code> group. The row sum is <span class="math inline">\(592+ 2511 = 3103\)</span> and the column sum is <span class="math inline">\(592 + 1451 = 2043\)</span>. Next, we take their product <span class="math inline">\(3103 \cdot 2043\)</span> and divide it by the total number of observations, which is <span class="math inline">\(592 + 2511 + 1451 + 544 = 5098\)</span>. Thus we obtain an expected frequency of <span class="math inline">\(\frac{3103 \times 2043}{5098} \approx 1243\)</span> under the null hypothesis.</p>
 <p><span id="eq-exp-freq"><span class="math display">\[
 e_{ij} = \frac{i\textrm{th row sum} \times j \textrm{th column sum}}{\textrm{sample size}}
-\tag{3}\]</span></span></p>
+\tag{1}\]</span></span></p>
 <p>The expected frequencies for our combination of variables is shown below. In which cells can you see the greatest deviations between observed and expected frequencies?</p>
 <div class="cell">
 <details class="code-fold">
@@ -5303,14 +5279,14 @@ s   799.4871  1195.513</code></pre>
 </section>
 <section id="conducting-the-test" class="level3">
 <h3 class="anchored" data-anchor-id="conducting-the-test">Conducting the test</h3>
-<p>The <span class="math inline">\(\chi^2\)</span>-test now offers a convenient way of quantifying the differences between the two tables above. It measures how much the observed frequencies <strong>deviate</strong> from the expected frequencies <strong>for each cell</strong> in a contingency table <span class="citation" data-cites="heumann_introduction_2022">(cf. <a href="#ref-heumann_introduction_2022" role="doc-biblioref">Heumann, Schomaker, and Shalabh 2022</a>: 249-251)</span>. The gist of this procedure is summarised in <a href="#eq-chisq-simple" class="quarto-xref">Equation 4</a>.</p>
+<p>The <span class="math inline">\(\chi^2\)</span>-test now offers a convenient way of quantifying the differences between the two tables above. It measures how much the observed frequencies <strong>deviate</strong> from the expected frequencies <strong>for each cell</strong> in a contingency table <span class="citation" data-cites="heumann_introduction_2022">(cf. <a href="#ref-heumann_introduction_2022" role="doc-biblioref">Heumann, Schomaker, and Shalabh 2022</a>: 249-251)</span>. The gist of this procedure is summarised in <a href="#eq-chisq-simple" class="quarto-xref">Equation 2</a>.</p>
 <p><span id="eq-chisq-simple"><span class="math display">\[
 \text{Chi-squared } \chi^2 =\frac{(\text{observed} - \text{expected})^2}{\text{expected}}
-\tag{4}\]</span></span></p>
+\tag{2}\]</span></span></p>
 <p>Let <span class="math inline">\(I\)</span> denote the total number of rows and <span class="math inline">\(J\)</span> the total number of columns, with degress of freedom equal to <span class="math inline">\((I-1) \cdot (J-1)\)</span>. We compute the joint squared deviations between <span class="math inline">\(f_{ij}\)</span> and <span class="math inline">\(e_{ij}\)</span> for every row-column combination:</p>
 <p><span id="eq-chisq"><span class="math display">\[
 \chi^2 = \sum_{i=1}^{I}\sum_{j=1}^{J}{\frac{(f_{ij} - e_{ij})^2}{e_{ij}}}
-\tag{5}\]</span></span></p>
+\tag{3}\]</span></span></p>
 <p>A visual representation is given in the table below.</p>
 <table class="table">
 <colgroup>
@@ -5428,7 +5404,7 @@ Important
 <p>Dependent observations (e.g., multiple measurements per participant) are a common problem of linguistic data and should always be controlled for. The gold standard are hierarchical (multilevel) models which respect grouping structures.</p>
 <p>If the (expected) frequencies are low, it is recommended to use a more robust test such as the <strong>Fisher’s Exact Test</strong> or the <strong>log-likelihood ratio test</strong> (<span class="math inline">\(G\)</span>-test).</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Fisher&#39;s Exact Test">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -5437,7 +5413,7 @@ Fisher’s Exact Test
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>While the <span class="math inline">\(\chi^2\)</span>-test can only approximate the <span class="math inline">\(p\)</span>-value, Fisher’s Exact Test can provide an exact solution. Note that for anything more complex than a <span class="math inline">\(2 \times 2\)</span> table, it becomes considerably more computationally expensive; if it takes too long, set <code>simulate.p.value = TRUE</code>.</p>
 <p>Drawing on the hypergeometric distribution (see <code>?dhyper()</code>), it computes the probability of all frequency tables that are equal or more extreme than the one observed.</p>
@@ -5461,7 +5437,7 @@ odds ratio
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="$G$-test">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -5470,12 +5446,12 @@ odds ratio
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The <span class="math inline">\(G^2\)</span>-statistic is analogous to <span class="math inline">\(\chi^2\)</span>, but it tends to be more robust for lower observed counts. It is defined as</p>
 <p><span id="eq-g2"><span class="math display">\[
 G^2 = 2\sum_{i=1}^{I}\sum_{j=1}^{J} f_{ij} \ln\left({\frac{f_{ij}}{e_{ij}}}\right)
-\tag{6}\]</span></span></p>
+\tag{4}\]</span></span></p>
 <p>and implemented in R via the <code>DescTools</code> package.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load library (install if necessary)</span></span>
@@ -5523,9 +5499,9 @@ G = 1502.8, X-squared df = 1, p-value &lt; 2.2e-16</code></pre>
 </section>
 <section id="pearson-residuals" class="level2">
 <h2 class="anchored" data-anchor-id="pearson-residuals">Pearson residuals</h2>
-<p>If we’re interested in what cells show the greatest difference between observed and expected frequencies, an option would be to inspect the Pearson residuals (cf. <a href="#eq-pear-res" class="quarto-xref">Equation 7</a>).</p>
+<p>If we’re interested in what cells show the greatest difference between observed and expected frequencies, an option would be to inspect the Pearson residuals (cf. <a href="#eq-pear-res" class="quarto-xref">Equation 5</a>).</p>
 <p><span id="eq-pear-res"><span class="math display">\[ \text{residuals} = \frac{\text{observed} - \text{expected}}{\sqrt{\text{expected}}}
-\tag{7}\]</span></span></p>
+\tag{5}\]</span></span></p>
 <p>These can be accessed via the test results stored <code>freqs_test</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>freqs_test<span class="sc">$</span>residuals</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5548,7 +5524,7 @@ G = 1502.8, X-squared df = 1, p-value &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Testing the residuals: Configural Frequency Analysis">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -5557,7 +5533,7 @@ Testing the residuals: Configural Frequency Analysis
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The chi-squared test only provides a <span class="math inline">\(p\)</span>-value for the entire contingency table. But what if we wanted to test the residuals for their significance as well? Configural Frequency Analysis <span class="citation" data-cites="krauth_lienert_kfa">(<a href="#ref-krauth_lienert_kfa" role="doc-biblioref">Krauth and Lienert 1973</a>)</span> allows us to do exactly that: It performs a significance test for <strong>all combinations of variable values</strong> in a cross-table. Moreover, CFA is not limited to two variables only. Technically, users can test for associations between arbitrary numbers of variables, but should be aware of the increasing complexity of interpretation.</p>
 <div class="cell">
@@ -5613,7 +5589,7 @@ Var1 Var2
 <p>The <span class="math inline">\(p\)</span>-value only indicates the <strong>presence of correlation</strong>, but not its strength – regardless of how low it may be. It does not convey how much two variables determine each other. For this reason, it is highly recommended to report an <strong>effect size measure</strong> alongside the <span class="math inline">\(p\)</span>-value. One such measure is Cramér’s <span class="math inline">\(V\)</span>, which takes values in the interval <span class="math inline">\([0, 1]\)</span>:</p>
 <p><span id="eq-effsize-v"><span class="math display">\[
 V = \sqrt{\frac{\chi^2}{n \times (min(nrow, ncol) - 1)}}.
-\tag{8}\]</span></span></p>
+\tag{6}\]</span></span></p>
 <p>The package <code>confintr</code> implements this in its <code>cramersv()</code> function:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cramersv</span>(freqs_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
