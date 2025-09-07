@@ -5059,7 +5059,7 @@ white-space: nowrap;
 </section>
 <section id="the-poisson-family" class="level2">
 <h2 class="anchored" data-anchor-id="the-poisson-family">The Poisson family</h2>
-<p>Frequency data is ubiquitous in corpus linguistics. Given its numeric nature, it seems tempting to model such data using <a href="Linear_regression.qmd">linear regression</a>, but doing so is bound to cause problems. Partially owing to the fact that count data is always positive, the residuals more often than not deviate from normality and additionally display non-constant variance. The figures below illustrate these issues for a linear model fitted to simulated count data.</p>
+<p>Frequency data is ubiquitous in corpus linguistics. Given its numeric nature, it seems tempting to model such data using <a href="../chapters/06-linear_regression.html">linear regression</a>, but doing so is bound to cause problems. Partially owing to the fact that count data is always positive, the residuals more often than not deviate from normality and additionally display non-constant variance. The figures below illustrate these issues for a linear model fitted to simulated count data.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -5069,7 +5069,7 @@ white-space: nowrap;
 </div>
 </div>
 </div>
-<p>A probability distribution that is much better equipped for this special case of discrete, yet numeric data is the <strong>Poisson distribution</strong>. Assuming a Poisson-distributed variable <span class="math inline">\(X\)</span>, its exact shape is determined by a single parameter, <span class="math inline">\(\lambda\)</span> (lambda), which is both its mean <strong>and</strong> its variance. In other words,</p>
+<p>A probability distribution that is much better equipped for this special case of discrete, yet numeric data is the <strong>Poisson distribution</strong>. Assuming a Poisson-distributed variable <span class="math inline">\(X\)</span>, its exact shape is determined by a single parameter, <span class="math inline">\(\lambda\)</span> (‘lambda’), which is both its expected value (i.e., the mean) and its variance. In shorthand notation,</p>
 <p><span id="eq-pois"><span class="math display">\[
 X \sim Pois(\lambda).
 \tag{1}\]</span></span></p>
@@ -5086,7 +5086,7 @@ X \sim Pois(\lambda).
 </section>
 <section id="poisson-regression" class="level2">
 <h2 class="anchored" data-anchor-id="poisson-regression">Poisson regression</h2>
-<p>Recall the linear regression <strong>?@eq-multreg</strong>, where the dependent variable <span class="math inline">\(Y\)</span> was modelled as a function of the linear sum of predictor terms <span class="math inline">\(\beta_pX_p\)</span> for <span class="math inline">\(p\)</span> independent variables.</p>
+<p>Recall how in linear regression, the dependent variable <span class="math inline">\(Y\)</span> was modelled as a function of the linear sum of predictor terms <span class="math inline">\(\beta_pX_p\)</span> for <span class="math inline">\(1, \dots, p\)</span> independent variables.</p>
 <p>The <strong>Poisson model</strong> is very similar to the linear regression model, with the main differences being the logarithmic transformation of the response and the exclusion of the error term:</p>
 <p><span id="eq-pois-full"><span class="math display">\[ \ln(Y) = \beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_pX_p.
 \tag{2}\]</span></span></p>

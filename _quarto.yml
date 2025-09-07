@@ -152,12 +152,10 @@ website:
                 text: "4.3 Descriptive statistics"
               - href: "chapters/05-hypothesis_testing.qmd"
                 text: "4.4 Hypothesis testing"
-              - href: "chapters/05-binomial-test.qmd"
-                text: "4.5 Binomial test"
               - href: "chapters/05-chi_square_test.qmd"
-                text: "4.6 Chi-squared test"
+                text: "4.5 Chi-squared test"
               - href: "chapters/05-t_test.qmd"
-                text: "4.7 t-test"
+                text: "4.6 t-test"
                 
       - id: models
         contents:
