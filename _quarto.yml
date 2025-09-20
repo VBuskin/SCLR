@@ -43,7 +43,9 @@ website:
             href: chapters/03-concordancing.qmd
           - text: "3.2 Regular expressions"
             href: chapters/03-regex.qmd
-          - text: "3.3 Data annotation"
+          - text: "3.3 The CQP interface"
+            href: chapters/03-cqp.qmd
+          - text: "3.4 Data annotation"
             href: chapters/03-data-annotation.qmd
   
       - text: "Statistics"
