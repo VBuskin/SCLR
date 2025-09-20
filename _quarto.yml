@@ -15,10 +15,10 @@ website:
         menu:
           - text: "1.1 Basics"
             href: chapters/01-basics.qmd
-          - text: "1.2 Research questions"
+          - text: "1.2 Linguistic variables"
+            href: chapters/01-linguistic_variables.qmd            
+          - text: "1.3 Research questions"
             href: chapters/01-rqs.qmd
-          - text: "1.3 Linguistic variables"
-            href: chapters/01-linguistic_variables.qmd
           - text: "1.4 Set theory and mathematical notation"
             href: chapters/01-maths.qmd
   
