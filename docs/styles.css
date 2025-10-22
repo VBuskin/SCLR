@@ -1,0 +1,45 @@
+/* Center the main content */
+.quarto-container {
+  display: block;
+  justify-content: center;
+  width: 100%;
+  max-width: none;
+}
+
+
+/* Ensure the content itself does not stretch too wide */
+.quarto-container-content {
+  max-width: 900px; /* A fixed width that works well for readability */
+  width: 90%; /* Percentage-based width for responsiveness */
+  margin: 0 auto; /* Center the content */
+}
+
+/* If you have a sidebar, adjust the main content positioning */
+.sidebar-content ~ .content-block {
+  padding-left: 20px;
+  max-width: calc(100% - 40px);
+}
+
+p, li, .description, .abstract, blockquote, .content-block {
+  text-align: justify !important;
+  hyphens: auto;
+  word-spacing: -0.5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: left !important;
+}
+
+a {
+  white-space: nowrap;
+}
+
+pre code {
+  white-space: pre-wrap;
+}
+
+code:not(pre code) {
+  white-space: nowrap;
+}
+
+
