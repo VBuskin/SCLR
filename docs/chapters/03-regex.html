@@ -4627,7 +4627,7 @@ Script
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">valuetype =</span> <span class="st">&quot;regex&quot;</span>,</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">window =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The number of hits has more than doubled. However, upon closer inspection, we’ll notice a few false positives, namely <em>providential</em>, <em>provider</em> and <em>providers</em>:</p>
+<p>If we apply the <code>nrow()</code> function to <code>kwic_provide</code>, we will see that the data frame contains 419 observations. However, upon closer inspection, there appear to be quite a few false positives (<em>providential</em>, <em>provider</em> and <em>providers</em>):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(kwic_provide<span class="sc">$</span>keyword)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -4638,12 +4638,74 @@ Script
            3           72           52            1 </code></pre>
 </div>
 </div>
-<p>There are two ways to handle the output:</p>
+<p>There are two ways to handle this kind of output:</p>
 <ol type="1">
-<li><strong>Refine the search expression</strong> further to only match those cases of interest.</li>
+<li><strong>Refine the search expression</strong> further until you only match relevant instances.</li>
 <li>Manually <strong>sort out irrelevant cases</strong> during qualitative annotation in a spreadsheet software.</li>
 </ol>
 <p>As a rule of thumb, you should consider improving your search expression if you obtain hundreds or even thousands of false hits. Should there be only few false positives, it’s usually easier to simply mark them as “irrelevant” in your spreadsheet. A full workflow is demonstrated in this unit on <a href="../chapters/03-data-annotation.html">data annotation</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Understanding true and false positives">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Understanding true and false positives
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>When evaluating the accuracy of a regular expression (or a machine learning model such as binary/softmax classifier), we can use a <strong>confusion matrix</strong> to categorise the results:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 35%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;"><strong>Actual Positive</strong> (should match)</th>
+<th style="text-align: center;"><strong>Actual Negative</strong> (should not match)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Predicted Positive</strong> (pattern matches)</td>
+<td style="text-align: center;">True Positive (TP) ✓</td>
+<td style="text-align: center;">False Positive (FP) ✗</td>
+</tr>
+<tr class="even">
+<td><strong>Predicted Negative</strong> (pattern does not match)</td>
+<td style="text-align: center;">False Negative (FN) ✗</td>
+<td style="text-align: center;">True Negative (TN) ✓</td>
+</tr>
+</tbody>
+</table>
+<p>Using the current pattern <code>provid(e(s)?|ing|ed)</code>:</p>
+<ul>
+<li><strong>True Positives (TP)</strong>: <em>provide, provides, providing, provided</em> (correctly matched relevant word forms)</li>
+<li><strong>False Positives (FP)</strong>: <em>providential, provider, providers</em> (incorrectly matched irrelevant words)</li>
+<li><strong>False Negatives (FN)</strong>: None in this case (we probably didn’t miss any relevant cases)</li>
+<li><strong>True Negatives (TN)</strong>: <em>proximity, product</em> etc. (correctly excluded irrelevant words)</li>
+</ul>
+<p>Two very common accuracy metrics are <strong>precision</strong> and <strong>recall</strong>. Precision answers the question: ‘Of all matches, how many are correct?’.</p>
+<p><span class="math display">\[
+\text{Precision} = \frac{\text{TP}}{\text{TP} + \text{FP}}
+\]</span> By contrast, recall tells us: ‘Of all correct instances in the corpus, how many did we find?’.</p>
+<p><span class="math display">\[
+\text{Recall} = \frac{\text{TP}}{\text{TP} + \text{FN}}
+\]</span></p>
+<p>The choice between one or the other metrics depends on which cell in the confusion matrix is considered more costly when predicted/matched incorrectly.</p>
+<ul>
+<li>High precision means a small proportion of false positives (e.g., a doctor who rarely misdiagnoses their patients; few false alarms).</li>
+<li>Analogously, maximising recall corresponds to missing as few true positives as possible (e.g., ensuring that all true safety hazards on a construction site are detected, regardless of false alarms).</li>
+</ul>
+<p>If both precision and recall are important, the <strong>F1 score</strong> offers a balanced measure.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="a-regex-cheatsheet" class="level2">
 <h2 class="anchored" data-anchor-id="a-regex-cheatsheet">A RegEx Cheatsheet</h2>
@@ -4927,7 +4989,7 @@ Note
 </div>
 <p>One R package that supplies functions for tokenisation, POS-tagging and even dependency parsing for dozens of languages is <code>udpipe</code>. They all rely on one common set of tags known as <strong>Universal Dependencies</strong>, which are listed here:</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Universial dependencies -- Tagset">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -4936,7 +4998,7 @@ Universial dependencies – Tagset
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Cf. <a href="https://universaldependencies.org/u/pos/" class="uri">https://universaldependencies.org/u/pos/</a>.</p>
 <table class="caption-top table">
