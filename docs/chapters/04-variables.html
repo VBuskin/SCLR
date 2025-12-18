@@ -4371,9 +4371,10 @@ white-space: nowrap;
 <section id="recommended-reading" class="level2">
 <h2 class="anchored" data-anchor-id="recommended-reading">Recommended reading</h2>
 <blockquote class="blockquote">
-<p><span class="citation" data-cites="heumann_introduction_2022">Heumann, Schomaker, and Shalabh (<a href="#ref-heumann_introduction_2022" role="doc-biblioref">2022</a>)</span>: Chapters 1 &amp; 7</p>
-<p><span class="citation" data-cites="baguleySeriousStatsGuide2012">Baguley (<a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">2012</a>)</span>: Chapter 1</p>
-<p><span class="citation" data-cites="agrestiFoundationsStatisticsData2022">Agresti and Kateri (<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">2022</a>)</span>: Chapter 1.2</p>
+<p>Baayen <span class="citation" data-cites="baayen_analyzing_2008">(<a href="#ref-baayen_analyzing_2008" role="doc-biblioref">2008</a>: Chapter 2)</span></p>
+<p>Baguley <span class="citation" data-cites="baguleySeriousStatsGuide2012">(<a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">2012</a>: Chapter 1)</span></p>
+<p>Agresti &amp; Kateri <span class="citation" data-cites="agrestiFoundationsStatisticsData2022">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">2022</a>: Chapter 1.2)</span></p>
+<p>Heumann et al. <span class="citation" data-cites="heumann_introduction_2022">(<a href="#ref-heumann_introduction_2022" role="doc-biblioref">2022</a>: Chapters 1 &amp; 7)</span></p>
 </blockquote>
 <p>Many concepts in statistics rely on set theory and mathematical operations. For a refresher, see <a href="../chapters/01-maths.html">1.4 Set theory and mathematical notation</a>.</p>
 </section>
@@ -4462,8 +4463,8 @@ Example: Sample space of genitives
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="exm-1" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2</strong></span> Given a single observed NP which is marked for possessive case, we may characterise its formal marking as either ‘s’ (synthetic genitive) or as ‘of’ (analytic/periphrastic). For simplicity, we will call these options <span class="math inline">\(S\)</span> and <span class="math inline">\(O\)</span>. The sample space of <code>Genitive</code> could be thus described as</p>
+<div>
+<p>Given a single observed NP which is marked for possessive case, we may characterise its formal marking as either ‘s’ (synthetic genitive) or as ‘of’ (analytic/periphrastic). For simplicity, we will call these options <span class="math inline">\(S\)</span> and <span class="math inline">\(O\)</span>. The sample space of <code>Genitive</code> could be thus described as</p>
 <p><span class="math display">\[
 S_{\text{Genitive}} = \{\text{S}, \text{O}\}.
 \]</span></p>
@@ -4476,7 +4477,7 @@ S_{\text{Genitive (3 NPs)}} = \{\text{SSS}, \text{SSO},\text{SOS}, \text{SOO},\t
 </div>
 </div>
 </div>
-<p><strong>Random variables</strong> allow us to map outcomes from the sample space onto the real numbers <span class="math inline">\(\mathbb{R}\)</span>. Quite conveniently, we could define a discrete random variable <span class="math inline">\(X\)</span> that counts the total number of <em>s</em>-genitives in a sample of size <span class="math inline">\(n\)</span>. Note, however, that the random variable is not random – it is the result of a random process. Other random variables could be</p>
+<p><strong>Random variables</strong> allow us to map outcomes from the sample space onto the real numbers <span class="math inline">\(\mathbb{R}\)</span>. Quite conveniently, we could define a random variable <span class="math inline">\(X\)</span> that counts the total number of <em>s</em>-genitives in a sample of size <span class="math inline">\(n\)</span>. Note, however, that the random variable is not random – it is the result of a random process. Other random variables could be</p>
 <ul>
 <li>the number of ‘heads’ after tossing a coin 30 times,</li>
 <li>getting a ‘6’ when rolling a die 500 times, or</li>
@@ -4494,10 +4495,10 @@ Random variables: Formal definition and example
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>A random variable is a <strong>function</strong> <span class="math inline">\(X\)</span> which maps onto each outcome <span class="math inline">\(s \in S\)</span> exactly one number <span class="math inline">\(X(s) = x\)</span> with <span class="math inline">\(x \in \mathbb{R}\)</span>:</p>
+<p>Strictly speaking, a random variable is a <strong>function</strong> <span class="math inline">\(X\)</span> which maps onto each outcome <span class="math inline">\(s \in S\)</span> exactly one number <span class="math inline">\(X(s) = x\)</span> with <span class="math inline">\(x \in \mathbb{R}\)</span>:</p>
 <p><span class="math display">\[
 X : S \to \mathbb{R}.
-\]</span> Recall our Hong Kong English example (<a href="#exm-1" class="quarto-xref">Example 2</a>), where we had 3,000 subject observations. Rather than tracking every possible sequence, we can define a random variable</p>
+\]</span>Recall our Hong Kong English example (<a href="#exm-1" class="quarto-xref">Example 1</a>), where we had 3,000 subject observations. Rather than tracking every possible sequence, we can define a random variable</p>
 <p><span class="math display">\[X_{\text{overt}} : S \to \mathbb{R},\]</span></p>
 <p>which simply counts the total number of overt subjects. If we observe 2,100 overt subjects, then <span class="math inline">\(X_{\text{overt}} = 2100\)</span>.</p>
 </div>
@@ -4505,7 +4506,7 @@ X : S \to \mathbb{R}.
 </div>
 </section>
 </section>
-<section id="datasets" class="level2">
+<section id="datasets" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="datasets">Datasets</h2>
 <p>Information on variables and their values is conventionally arranged in a <strong>dataset</strong>, which is essentially a matrix with <span class="math inline">\(n\)</span> <strong>rows</strong> (= observations) and <span class="math inline">\(p\)</span> <strong>columns</strong> (= variables). The data matrix has the general form in <a href="#eq-dataset" class="quarto-xref">Equation 1</a> (see <span class="citation" data-cites="heumann_introduction_2022">(<a href="#ref-heumann_introduction_2022" role="doc-biblioref">Heumann, Schomaker, and Shalabh 2022</a>: Chap. 1.4)</span> for details).</p>
 <p><span id="eq-dataset"><span class="math display">\[
@@ -4541,7 +4542,7 @@ Example: Data matrix
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div id="exm-3" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3</strong></span> Let’s create a small example dataset:</p>
+<p><span class="theorem-title"><strong>Example 2</strong></span> Let’s create a small example dataset:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>example_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Speaker =</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;D&quot;</span>),</span>
@@ -4598,25 +4599,25 @@ Example: Data matrix
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_sample</span>(example_data, <span class="at">n =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Observation Speaker Age Genitive
-1           1       A  25        S
-2           4       D  41        S</code></pre>
+1           2       B  34        O
+2           3       C  29        S</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section id="data-types" class="level3">
+<section id="data-types" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="data-types">Data types</h3>
-<p>In general, we distinguish between <strong>discrete/categorical</strong> variables, which can only take a limited set of unique values, and <strong>continuous</strong> variables, which can take infinitely many values within a specified range.</p>
-<p>We can further subdivide discrete and continuous variables into into nominal, ordinal, interval-scaled, and ratio-scaled ones:</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Nominal (discrete)">
+<p>In general, we distinguish between <strong>discrete</strong> variables, which can only take a limited set of unique values, and <strong>continuous</strong> variables, which can take infinitely many values within a specified range.</p>
+<p>Variables can also be classified in terms of their relative informativeness:<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup> Note that discrete nominal and ordinal variables are also referred to as <strong>categorical variables</strong>.</p></div></div><div class="callout callout-style-default callout-note callout-titled" title="Nominal">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Nominal (discrete)
+Nominal
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -4626,13 +4627,13 @@ Nominal (discrete)
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Ordinal (discrete)">
+<div class="callout callout-style-default callout-note callout-titled" title="Ordinal">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Ordinal (discrete)
+Ordinal
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -4645,13 +4646,13 @@ Ordinal (discrete)
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Interval-scaled (continuous)">
+<div class="callout callout-style-default callout-note callout-titled" title="Interval-scaled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Interval-scaled (continuous)
+Interval-scaled
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -4663,13 +4664,13 @@ Interval-scaled (continuous)
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Ratio-scaled (continuous)">
+<div class="callout callout-style-default callout-note callout-titled" title="Ratio-scaled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Ratio-scaled (continuous)
+Ratio-scaled
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -4705,14 +4706,14 @@ Ratio-scaled (continuous)
 </ol>
 </div>
 <div id="exr-var-2" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> Explain why frequency data is actually discrete.</p>
+<p><span class="theorem-title"><strong>Exercise 2</strong></span> Explain why frequency data is actually discrete. What is their level of measurement (nominal, ordinal, interval-scale, ratio-scale)? Give an example to justify your answer.</p>
 </div>
 </section>
 <section id="tier-2" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="tier-2">Tier 2</h2>
 <div id="exr-var-3" class="theorem exercise page-columns page-full">
-<p><span class="theorem-title"><strong>Exercise 3</strong></span> Download the dataset <code>Paquot_Larsson_2020_data.xlsx</code> from the supplementary materials and store it in your working directory.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup> The dataset was published as part of Paquot &amp; Larsson <span class="citation" data-cites="paquotDescriptiveStatisticsVisualization2020">(<a href="#ref-paquotDescriptiveStatisticsVisualization2020" role="doc-biblioref">2020</a>)</span>.</p></div></div><p>Load it into R using the code below (see also <a href="../chapters/02-importing_exporting.html">2.6 Importing/Exporting</a> for details). Then identify the variable types (nominal, ordinal etc.) for all columns in the <code>cl.order</code> dataset.</p>
+<p><span class="theorem-title"><strong>Exercise 3</strong></span> Download the dataset <code>Paquot_Larsson_2020_data.xlsx</code> from the supplementary materials and store it in your working directory.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup> The dataset was published as part of Paquot &amp; Larsson <span class="citation" data-cites="paquotDescriptiveStatisticsVisualization2020">(<a href="#ref-paquotDescriptiveStatisticsVisualization2020" role="doc-biblioref">2020</a>)</span>.</p></div></div><p>Load it into R using the code below (see also <a href="../chapters/02-importing_exporting.html">2.6 Importing/Exporting</a> for details). Then identify the variable types (nominal, ordinal etc.) for all columns in the <code>cl.order</code> dataset.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl) <span class="co"># install this library prior to loading</span></span>
@@ -4967,6 +4968,9 @@ Number of (unique) values in R
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-agrestiFoundationsStatisticsData2022" class="csl-entry" role="listitem">
 Agresti, Alan, and Maria Kateri. 2022. <em>Foundations of Statistics for Data Scientists: With r and Python</em>. Boca Raton: <span>CRC</span> Press.
+</div>
+<div id="ref-baayen_analyzing_2008" class="csl-entry" role="listitem">
+Baayen, R. Harald. 2008. <em>Analyzing Linguistic Data: A Practical Introduction to Statistics Using r</em>. Camrbidge: Cambridge University Press.
 </div>
 <div id="ref-baguleySeriousStatsGuide2012" class="csl-entry" role="listitem">
 Baguley, Thomas. 2012. <em>Serious <span>Stats</span>: <span>A</span> <span>Guide</span> to <span>Advanced</span> <span>Statistics</span> for the <span>Behavioral</span> <span>Sciences</span></em>. Houndmills, Basingstoke: Palgrave Macmillan.
