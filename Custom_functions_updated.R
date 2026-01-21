@@ -10,6 +10,7 @@ library(tidyverse)
 library(quanteda)
 library(sampling)
 library(data.table)
+library(readr)
 
 # (2) "data": Requires the data frame produced by a kwic() query
 # (3) "size": Requires the size the of the stratified sample.
@@ -123,13 +124,15 @@ library(quanteda)
 library(dplyr)
 library(tibble)
 
-# ------------------------------------------------------------------
 # 1. Function: prepare_metadata
 # Downloads Schweinberger's ICE-IR biodata, collapses speaker-level
 # info to document-level, and aligns with a quanteda tokens object
-# ------------------------------------------------------------------
 
-prepare_metadata <- function(tokens_obj, meta_url = "http://martinschweinberger.de/docs/data/BiodataIceIreland.txt") {
+##### Ireland -----------------------------------------------------------------
+
+
+
+prepare_metadata_ireland <- function(tokens_obj, meta_url = "http://martinschweinberger.de/docs/data/BiodataIceIreland.txt") {
   
   # Load speaker-level metadata
   ice_meta <- read.table(
@@ -172,10 +175,8 @@ prepare_metadata <- function(tokens_obj, meta_url = "http://martinschweinberger.
   return(tokens_obj)
 }
 
-# ------------------------------------------------------------------
 # 2. Function: kwic_metadata
 # Runs KWIC on a tokens object and automatically joins document-level metadata
-# ------------------------------------------------------------------
 
 kwic_metadata <- function(tokens_obj, pattern, window = 10) {
   
@@ -211,11 +212,68 @@ kwic_metadata <- function(tokens_obj, pattern, window = 10) {
 
 
 
+# Source your custom functions directly from GitHub
+source("https://raw.githubusercontent.com/VBuskin/SCLR/refs/heads/main/Custom_functions_updated.R")
+
+
+ICE_IR <- readRDS("ICE_IR.RDS")  # your tokens object
+ICE_NZ <- readRDS("ICE_NZ.RDS")
+
+# Prepare docvars automatically
+ICE_IR <- prepare_metadata_ireland(ICE_IR)
+
+# Run KWIC with metadata automatically attached
+kwic_results <- kwic_metadata(ICE_IR, "eat")
+kwic_results
 
 
 
+#### New Zealand -------------------------------------------------------------
+
+prepare_metadata_nz <- function(tokens_obj,
+                                meta_url = "http://martinschweinberger.de/docs/data/BiodataIceNewZealand.txt") {
+  
+  # Load metadata
+  ice_meta_nz <- readr::read_tsv(url(meta_url), show_col_types = FALSE)
+  
+  # Standardize join key
+  ice_meta_nz <- ice_meta_nz %>%
+    mutate(docname = toupper(gsub("[^A-Z0-9]", "", text.id))) %>%
+    group_by(docname) %>%
+    summarise(
+      n_speakers = n(),
+      speakers   = paste(spk.ref[!is.na(spk.ref)], collapse = ","),
+      sex        = paste(unique(na.omit(sex)), collapse = ","),
+      age        = paste(unique(na.omit(age)), collapse = ","),
+      ethnicity  = paste(unique(na.omit(ethnicity)), collapse = ","),
+      occupation = paste(unique(na.omit(occupation)), collapse = ","),
+      .groups = "drop"
+    ) %>%
+    mutate(
+      # Replace empty strings with NA
+      speakers   = dplyr::na_if(speakers, ""),
+      sex        = dplyr::na_if(sex, ""),
+      age        = dplyr::na_if(age, ""),
+      ethnicity  = dplyr::na_if(ethnicity, ""),
+      occupation = dplyr::na_if(occupation, "")
+    )
+  
+  # Standardize docnames in tokens object: remove extension
+  token_docnames <- toupper(gsub("\\.TXT$", "", docnames(tokens_obj)))
+  
+  # Join metadata
+  doc_meta <- tibble(docname = token_docnames) %>%
+    left_join(ice_meta_nz, by = "docname")
+  
+  # Assign docvars, keeping order
+  docvars(tokens_obj) <- doc_meta
+  
+  return(tokens_obj)
+}
 
 
-
-
+# Example
+#ICE_NZ <- prepare_metadata_nz(ICE_NZ)
+#kwic_results <- kwic_metadata(ICE_NZ, "eat")
+#kwic_results
 
