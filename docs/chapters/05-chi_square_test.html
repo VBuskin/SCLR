@@ -4403,7 +4403,7 @@ Script
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(confintr) <span class="co"># for effect size calculation</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>genitive <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;Grafmiller_genitive_alternation.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>genitive <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;Grafmiller_genitive_alternation.xlsx&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="the-pearson-chi2-test-of-independence" class="level2">
@@ -4595,11 +4595,14 @@ s   799.4871  1195.513</code></pre>
 <p><span id="eq-chisq-simple"><span class="math display">\[
 \text{Chi-squared } \chi^2 =\frac{(\text{observed} - \text{expected})^2}{\text{expected}}
 \tag{2}\]</span></span></p>
-<p>Let <span class="math inline">\(I\)</span> denote the total number of rows and <span class="math inline">\(J\)</span> the total number of columns, with degress of freedom equal to <span class="math inline">\((I-1) \cdot (J-1)\)</span>. We compute the joint squared deviations between <span class="math inline">\(f_{ij}\)</span> and <span class="math inline">\(e_{ij}\)</span> for every row-column combination:</p>
+<p>Let <span class="math inline">\(I\)</span> denote the total number of rows and <span class="math inline">\(J\)</span> the total number of columns, with degress of freedom (<span class="math inline">\(df\)</span>) equal to <span class="math inline">\((I-1) \cdot (J-1)\)</span>. Assuming a 2 <span class="math inline">\(\times\)</span> 2 table with 1 <span class="math inline">\(df\)</span>, we compute the joint squared deviations between <span class="math inline">\(f_{ij}\)</span> and <span class="math inline">\(e_{ij}\)</span> for every row-column combination:</p>
 <p><span id="eq-chisq"><span class="math display">\[
-\chi^2 = \sum_{i=1}^{I}\sum_{j=1}^{J}{\frac{(f_{ij} - e_{ij})^2}{e_{ij}}}
-\tag{3}\]</span></span></p>
-<p>A visual representation is given in the table below.</p>
+\chi^2 = \frac{(f_{11} - e_{11})^2}{e_{11}} + \frac{(f_{12} - e_{12})^2}{e_{12}} + \frac{(f_{21} - e_{21})^2}{e_{21}} + \frac{(f_{22} - e_{22})^2}{e_{22}}
+\tag{3}\]</span></span> In crisp summation notation:</p>
+<p><span id="eq-chis2"><span class="math display">\[
+\chi^2  = \sum_{i=1}^{I}\sum_{j=1}^{J}{\frac{(f_{ij} - e_{ij})^2}{e_{ij}}}
+\tag{4}\]</span></span></p>
+<p>The piecewise calculation of <span class="math inline">\(\chi^2\)</span> is summarised in the table below:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 14%">
@@ -4669,6 +4672,7 @@ s   799.4871  1195.513</code></pre>
 </tr>
 </tbody>
 </table>
+<div style="margin-top: 20px;"></div>
 <p>The implementation in R is a simple one-liner. Keep in mind that we have to supply <strong>absolute frequencies</strong> to <code>chisq.test()</code> rather than percentages.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>freqs_test <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(observed_freqs)</span>
@@ -4763,7 +4767,7 @@ odds ratio
 <p>The <span class="math inline">\(G^2\)</span>-statistic is analogous to <span class="math inline">\(\chi^2\)</span>, but it tends to be more robust for lower observed counts. It is defined as</p>
 <p><span id="eq-g2"><span class="math display">\[
 G^2 = 2\sum_{i=1}^{I}\sum_{j=1}^{J} f_{ij} \ln\left({\frac{f_{ij}}{e_{ij}}}\right)
-\tag{4}\]</span></span></p>
+\tag{5}\]</span></span></p>
 <p>and implemented in R via the <code>DescTools</code> package.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load library (install if necessary)</span></span>
@@ -4811,9 +4815,9 @@ G = 1502.8, X-squared df = 1, p-value &lt; 2.2e-16</code></pre>
 </section>
 <section id="pearson-residuals" class="level2">
 <h2 class="anchored" data-anchor-id="pearson-residuals">Pearson residuals</h2>
-<p>If we’re interested in what cells show the greatest difference between observed and expected frequencies, an option would be to inspect the Pearson residuals (cf. <a href="#eq-pear-res" class="quarto-xref">Equation 5</a>).</p>
+<p>If we’re interested in what cells show the greatest difference between observed and expected frequencies, an option would be to inspect the Pearson residuals (cf. <a href="#eq-pear-res" class="quarto-xref">Equation 6</a>).</p>
 <p><span id="eq-pear-res"><span class="math display">\[ \text{residuals} = \frac{\text{observed} - \text{expected}}{\sqrt{\text{expected}}}
-\tag{5}\]</span></span></p>
+\tag{6}\]</span></span></p>
 <p>These can be accessed via the test results stored <code>freqs_test</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>freqs_test<span class="sc">$</span>residuals</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4901,7 +4905,7 @@ Var1 Var2
 <p>The <span class="math inline">\(p\)</span>-value only indicates the <strong>presence of correlation</strong>, but not its strength – regardless of how low it may be. It does not convey how much two variables determine each other. For this reason, it is highly recommended to report an <strong>effect size measure</strong> alongside the <span class="math inline">\(p\)</span>-value. One such measure is Cramér’s <span class="math inline">\(V\)</span>, which takes values in the interval <span class="math inline">\([0, 1]\)</span>:</p>
 <p><span id="eq-effsize-v"><span class="math display">\[
 V = \sqrt{\frac{\chi^2}{n \times (min(nrow, ncol) - 1)}}.
-\tag{6}\]</span></span></p>
+\tag{7}\]</span></span></p>
 <p>The package <code>confintr</code> implements this in its <code>cramersv()</code> function:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cramersv</span>(freqs_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
