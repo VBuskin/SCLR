@@ -4595,9 +4595,9 @@ s   799.4871  1195.513</code></pre>
 <p><span id="eq-chisq-simple"><span class="math display">\[
 \text{Chi-squared } \chi^2 =\frac{(\text{observed} - \text{expected})^2}{\text{expected}}
 \tag{2}\]</span></span></p>
-<p>Let <span class="math inline">\(I\)</span> denote the total number of rows and <span class="math inline">\(J\)</span> the total number of columns, with degress of freedom (<span class="math inline">\(df\)</span>) equal to <span class="math inline">\((I-1) \cdot (J-1)\)</span>. Assuming a 2 <span class="math inline">\(\times\)</span> 2 table with 1 <span class="math inline">\(df\)</span>, we compute the joint squared deviations between <span class="math inline">\(f_{ij}\)</span> and <span class="math inline">\(e_{ij}\)</span> for every row-column combination:</p>
+<p>Let <span class="math inline">\(I\)</span> denote the total number of rows and <span class="math inline">\(J\)</span> the total number of columns, with degress of freedom (<span class="math inline">\(df\)</span>) equal to <span class="math inline">\((I-1) \cdot (J-1)\)</span>. We compute the joint squared deviations between <span class="math inline">\(f_{ij}\)</span> and <span class="math inline">\(e_{ij}\)</span> for every column-row combination:</p>
 <p><span id="eq-chisq"><span class="math display">\[
-\chi^2 = \frac{(f_{11} - e_{11})^2}{e_{11}} + \frac{(f_{12} - e_{12})^2}{e_{12}} + \frac{(f_{21} - e_{21})^2}{e_{21}} + \frac{(f_{22} - e_{22})^2}{e_{22}}
+\chi^2 = \frac{(f_{11} - e_{11})^2}{e_{11}} + \frac{(f_{12} - e_{12})^2}{e_{12}} + \frac{(f_{21} - e_{21})^2}{e_{21}} + \frac{(f_{22} - e_{22})^2}{e_{22}} + \dots + \frac{(f_{ij} - e_{ij})^2}{e_{ij}}
 \tag{3}\]</span></span> In crisp summation notation:</p>
 <p><span id="eq-chis2"><span class="math display">\[
 \chi^2  = \sum_{i=1}^{I}\sum_{j=1}^{J}{\frac{(f_{ij} - e_{ij})^2}{e_{ij}}}
@@ -4665,7 +4665,7 @@ s   799.4871  1195.513</code></pre>
 <td></td>
 <td><span class="math inline">\(y_i\)</span></td>
 <td><span class="math inline">\(\frac{(f_{i1} - e_{i1})^2}{e_{i1}}\)</span></td>
-<td><span class="math inline">\(\frac{(f_{i2} - e_{i1})^2}{e_{i2}}\)</span></td>
+<td><span class="math inline">\(\frac{(f_{i2} - e_{i2})^2}{e_{i2}}\)</span></td>
 <td>…</td>
 <td><span class="math inline">\(\frac{(f_{ij} - e_{ij})^2}{e_{ij}}\)</span></td>
 <td></td>
