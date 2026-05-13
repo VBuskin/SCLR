@@ -4326,6 +4326,7 @@ white-space: nowrap;
   <ul class="collapse">
   <li><a href="#tier-1" id="toc-tier-1" class="nav-link" data-scroll-target="#tier-1">Tier 1</a></li>
   <li><a href="#tier-2" id="toc-tier-2" class="nav-link" data-scroll-target="#tier-2">Tier 2</a></li>
+  <li><a href="#tier-3" id="toc-tier-3" class="nav-link" data-scroll-target="#tier-3">Tier 3</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -4383,7 +4384,7 @@ Script
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can find the full R script associated with this unit <a href="https://osf.io/dx7ez/files/zbg68">here</a>.</p>
+<p>You can find the full R script associated with this unit <a href="https://osf.io/dx7ez/files/y8j3e">here</a>.</p>
 </div>
 </div>
 </section>
@@ -4649,8 +4650,8 @@ Example: Data matrix
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_sample</span>(example_data, <span class="at">n =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Observation Speaker Age Genitive
-1           3       C  29        S
-2           4       D  41        S</code></pre>
+1           2       B  34        O
+2           3       C  29        S</code></pre>
 </div>
 </div>
 </div>
@@ -4958,6 +4959,19 @@ Import from Excel
 </section>
 <section id="exercises" class="level1 page-columns page-full">
 <h1>Exercises</h1>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solutions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can find the solutions to the exercises <a href="https://osf.io/dx7ez/files/y8j3e">here</a>.</p>
+</div>
+</div>
 <section id="tier-1" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="tier-1">Tier 1</h2>
 <div id="exr-var-1" class="theorem exercise">
@@ -4985,7 +4999,7 @@ Import from Excel
 <p><span class="theorem-title"><strong>Exercise 3</strong></span> Download the dataset <code>Paquot_Larsson_2020_data.xlsx</code> from the supplementary materials and store it in a folder you can easily access from within RStudio. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup> The dataset was published as part of Paquot &amp; Larsson <span class="citation" data-cites="paquotDescriptiveStatisticsVisualization2020">(<a href="#ref-paquotDescriptiveStatisticsVisualization2020" role="doc-biblioref">2020</a>)</span>.</p></div></div><p>Load the .xlsx file into R and name it <code>cl.order</code>. Identify the variable types (nominal, ordinal etc.) for all columns in the <code>cl.order</code> dataset.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="What&#39;s in the file? The `str()` function">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -4994,7 +5008,7 @@ What’s in the file? The <code>str()</code> function
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The easiest way to get a general overview of the full data set is to apply the <code>str()</code> function to the respective data frame.</p>
 <div class="cell">
@@ -5036,7 +5050,7 @@ What’s in the file? The <code>str()</code> function
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Further details on the variables">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -5045,7 +5059,7 @@ Further details on the variables
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><p><code>ORDER</code>: Does the subordinate clause come before or after the main clause?</p></li>
@@ -5059,7 +5073,7 @@ Further details on the variables
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Number of (unique) values in R">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -5068,7 +5082,7 @@ Number of (unique) values in R
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>To count the number of items in a vector, which correspond to the total number <span class="math inline">\(n\)</span> of attested values of <span class="math inline">\(X\)</span>, we can use <code>length()</code>:</p>
 <div class="cell">
@@ -5102,7 +5116,7 @@ Number of (unique) values in R
 <p><span class="theorem-title"><strong>Exercise 4</strong></span> Explain why frequency data is discrete. What is their level of measurement (nominal, ordinal, interval-scale, ratio-scale)? Give an example to justify your answer.</p>
 </div>
 <div id="exr-var-5" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 7</strong></span> Download the file <code>SCOPE_reduced.RDS</code> from <a href="https://osf.io/3w29d">this repository</a> and read it into a variable named <code>SCOPE</code>. It contains data from the the South Carolina Psycholinguistic Metabase <span class="citation" data-cites="gaoSCOPESouthCarolina2022">(<a href="#ref-gaoSCOPESouthCarolina2022" role="doc-biblioref">Gao, Shinkareva, and Desai 2022</a>)</span>, specifically:</p>
+<p><span class="theorem-title"><strong>Exercise 5</strong></span> Download the file <code>SCOPE_reduced.RDS</code> from <a href="https://osf.io/3w29d">this repository</a> and read it into a variable named <code>SCOPE</code>. It contains data from the the South Carolina Psycholinguistic Metabase <span class="citation" data-cites="gaoSCOPESouthCarolina2022">(<a href="#ref-gaoSCOPESouthCarolina2022" role="doc-biblioref">Gao, Shinkareva, and Desai 2022</a>)</span>, specifically:</p>
 <ul>
 <li><p>Number of meanings (<code>Nsenses_WordNet</code>)</p></li>
 <li><p>Emotional valence ratings, which describe the pleasantness of a lexical stimulus on a scale from 1 to 9 (<code>Valence_Warr</code>)</p></li>
@@ -5147,10 +5161,12 @@ Number of (unique) values in R
 </div>
 </div>
 <p>As <span class="math inline">\(n\)</span> increases, <span class="math inline">\(\hat{\mu}_{\text{Valence}}\)</span> seems to stabilise around a fixed value. What does the convergence tell us about the relationship between sample statistics and population parameters? What does this suggest about the minimum sample size a researcher would need to obtain a reliable estimate of <span class="math inline">\(\hat{\mu}_{\text{Valence}}\)</span>?</p>
+</div>
+</section>
 <section id="tier-3" class="level2">
 <h2 class="anchored" data-anchor-id="tier-3">Tier 3</h2>
 <div id="exr-var-6" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 5</strong></span> The <code>tidyverse</code> function <code>slice_sample()</code> allows users to randomly sample rows from a data frame, with every row having the same probability of being selected. We will do so without replacement for the <code>cl.order</code> data, choosing 50 rows at random.</p>
+<p><span class="theorem-title"><strong>Exercise 6</strong></span> The <code>tidyverse</code> function <code>slice_sample()</code> allows users to randomly sample rows from a data frame, with every row having the same probability of being selected. We will do so without replacement for the <code>cl.order</code> data, choosing 50 rows at random.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -5258,12 +5274,10 @@ Number of (unique) values in R
 </ol>
 </div>
 <div id="exr-var-7" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 6</strong></span> Assuming three randomly chosen observations from the <code>cl.order</code> dataset, describe the sample space <span class="math inline">\(S\)</span> for the variable <code>ORDER</code>. Define at least two random variables with domain (= input space) <span class="math inline">\(S\)</span>, specifying for each what it counts or measures.</p>
+<p><span class="theorem-title"><strong>Exercise 7</strong></span> Assuming three randomly chosen observations from the <code>cl.order</code> dataset, describe the sample space <span class="math inline">\(S\)</span> for the variable <code>ORDER</code>. Define at least two random variables with domain (= input space) <span class="math inline">\(S\)</span>, specifying for each what it counts or measures.</p>
 </div>
 
 
-</section>
-</div>
 
 </section>
 </section>
