@@ -4320,6 +4320,12 @@ white-space: nowrap;
   <li><a href="#where-does-the-p-value-come-from" id="toc-where-does-the-p-value-come-from" class="nav-link" data-scroll-target="#where-does-the-p-value-come-from">Where does the <span class="math inline">\(p\)</span>-value come from?</a></li>
   </ul></li>
   <li><a href="#practical-considerations" id="toc-practical-considerations" class="nav-link" data-scroll-target="#practical-considerations">Practical considerations</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#tier-1" id="toc-tier-1" class="nav-link" data-scroll-target="#tier-1">Tier 1</a></li>
+  <li><a href="#tier-2" id="toc-tier-2" class="nav-link" data-scroll-target="#tier-2">Tier 2</a></li>
+  <li><a href="#tier-3" id="toc-tier-3" class="nav-link" data-scroll-target="#tier-3">Tier 3</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -4426,7 +4432,7 @@ What does independence really mean?
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The core idea is “that the probability distribution of the response variable is the same for each group” <span class="citation" data-cites="agrestiFoundationsStatisticsData2022">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">Agresti and Kateri 2022</a>: 177)</span>. Assume genitive <code>Type</code> is the dependent variable and <code>Possessor Animacy</code> the independent variable. Then independence would entail that the probabilities of the outcomes of the response variable <code>Type = &quot;s&quot;</code> and <code>Type = &quot;of&quot;</code> are not influenced by whether they occur in the groups <code>Possessor Animacy = &quot;animate&quot;</code> or <code>Possessor Animacy = &quot;inanimate&quot;</code>.</p>
+<p>The core idea is “that the probability distribution of the response variable is the same for each group” <span class="citation" data-cites="agrestiFoundationsStatisticsData2022">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">Agresti and Kateri 2022</a>: 177)</span>. Assume genitive <code>Type</code> is the dependent variable and <code>Possessor Animacy</code> the independent variable. Then independence would entail that the probabilities of the outcomes of the dependent variable <code>Type = &quot;s&quot;</code> and <code>Type = &quot;of&quot;</code> are not influenced by whether they occur in the groups <code>Possessor Animacy = &quot;animate&quot;</code> or <code>Possessor Animacy = &quot;inanimate&quot;</code>.</p>
 <p>If we consider two variables at the same time, such as <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, they are said to have <strong>marginal probability functions</strong>, which we can call <span class="math inline">\(f_1(\text{Type})\)</span> and <span class="math inline">\(f_2(\text{Animacy})\)</span> here. If we condition the outcomes of both variables on each other, the following equivalence will hold if the variables are independent:</p>
 <p><span id="eq-indep"><span class="math display">\[
 f(\text{Type} \mid \text{Animacy}) = f_1(\text{Type}) \text{ and } f(\text{Animacy} \mid \text{Type}) = f_2(\text{Animacy}).
@@ -4520,7 +4526,7 @@ Sampling distributions
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>A fundamental theoretical insight is that sample statistics (specifically means and sums of continuous random variables) converge onto a standard normal distribution with <span class="math inline">\(\mu = 0\)</span> and <span class="math inline">\(\sigma = 1\)</span>. This proven statement is known as the Central Limit Theorem <span class="citation" data-cites="heumann_introduction_2022">(<a href="#ref-heumann_introduction_2022" role="doc-biblioref">Heumann, Schomaker, and Shalabh 2022</a>: 547)</span>. However, if the population standard deviation is unknown, the Student <span class="math inline">\(t\)</span> distribution provides a reasonable approximation. It has a single parameter <span class="math inline">\(v\)</span> determining its shape, and it stands for the degrees of freedom.</p>
+<p>A fundamental theoretical insight is that sample statistics (specifically means and sums of continuous random variables) converge onto a standard normal distribution with <span class="math inline">\(\mu = 0\)</span> and <span class="math inline">\(\sigma = 1\)</span>. This proven statement is known as the <strong>Central Limit Theorem</strong> <span class="citation" data-cites="heumann_introduction_2022">(<a href="#ref-heumann_introduction_2022" role="doc-biblioref">Heumann, Schomaker, and Shalabh 2022</a>: 547)</span>. However, if the population standard deviation is unknown, the Student <span class="math inline">\(t\)</span> distribution provides a reasonable approximation. It has a single parameter <span class="math inline">\(v\)</span> determining its shape, and it stands for the degrees of freedom.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="$t$ distribution">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -4681,8 +4687,9 @@ P(T \geq \text{observed value} \mid H_0 \text{ is true}).
 </table>
 <p>There is a trade-off between Type I and Type II errors <span class="citation" data-cites="agrestiFoundationsStatisticsData2022">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">Agresti and Kateri 2022</a>: 182-186)</span>:</p>
 <ul>
-<li>If we try to decrease <span class="math inline">\(P\)</span>(Type I) by selecting a lower <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(P\)</span>(Type II) will inevitably increase.</li>
-<li>If we increase the sample size to lower <span class="math inline">\(P\)</span> (Type II), <span class="math inline">\(P\)</span>(Type I) will increase again.</li>
+<li>If we lower the significance level <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(P\)</span>(Type I) will decrease and <span class="math inline">\(P\)</span>(Type II) will increase.</li>
+<li>Conversely, increasing <span class="math inline">\(\alpha\)</span> reduces <span class="math inline">\(\beta\)</span>, but makes Type I errors more likely.</li>
+<li>Increasing the sample size is one way of reducing <span class="math inline">\(\beta\)</span> (and increasing power) without chaning <span class="math inline">\(\alpha\)</span>.</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled" title="Statistical power">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
@@ -4696,7 +4703,7 @@ Statistical power
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>It is recommended to computer the <strong>power</strong> 1 - <span class="math inline">\(P\)</span>(Type II) of a test, in order to estimate the probability of correctly rejecting <span class="math inline">\(H_0\)</span>. The <code>pwr</code> library provides a convenient interface:</p>
+<p>It is recommended to compute the <strong>power</strong> 1 - <span class="math inline">\(P\)</span>(Type II) of a test, in order to estimate the probability of correctly rejecting <span class="math inline">\(H_0\)</span>. The <code>pwr</code> library provides a convenient interface:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pwr)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -4834,9 +4841,104 @@ Common pitfalls <span class="citation" data-cites="agrestiFoundationsStatisticsD
 </ul>
 </div>
 </div>
+</section>
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
+<section id="tier-1" class="level2">
+<h2 class="anchored" data-anchor-id="tier-1">Tier 1</h2>
+<div id="exr-ht-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 1</strong></span> A hypothesis test has returned a <span class="math inline">\(p\)</span>-value of 0.03. Which of the following interpretations is correct? Explain briefly why the other options are incorrect.</p>
+<ol type="a">
+<li>The probability that <span class="math inline">\(H_0\)</span> is true is 0.03.</li>
+<li>Assuming <span class="math inline">\(H_0\)</span> is true, the observed result would occur with a probability of 0.03 or less.</li>
+<li>There is a 97% chance that the alternative hypothesis is true.</li>
+</ol>
+</div>
+<div id="exr-ht-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 2</strong></span> A study reports:</p>
+<blockquote class="blockquote">
+<p>The result was not statistically significant.</p>
+</blockquote>
+<ul>
+<li>Can we conclude there is no effect?</li>
+<li>Can we conclude that the null hypothesis is true?</li>
+<li>What <em>can</em> we conclude?</li>
+</ul>
+</div>
+</section>
+<section id="tier-2" class="level2">
+<h2 class="anchored" data-anchor-id="tier-2">Tier 2</h2>
+<div id="exr-ht-3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3</strong></span> For each of the research questions below, formulate a <span class="math inline">\(H_0\)</span> and a <span class="math inline">\(H_1\)</span>:</p>
+<ol type="a">
+<li>Does the use of progressive aspect depend on text genre?</li>
+<li>Do native and learner speakers differ in their average sentence length?</li>
+<li>Is word frequency correlated with age of acquisition?</li>
+</ol>
+</div>
+<div id="exr-ht-4" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 4</strong></span> A researcher plans a study and fails to properly control for statistical power, limiting it to 0.01. Interpret what a power of 0.01 means in terms of long-run decision outcomes when <span class="math inline">\(H_1\)</span> is true. Compare it to a study with a power of 0.80 – how does the reliability of conclusions change?</p>
+</div>
+</section>
+<section id="tier-3" class="level2">
+<h2 class="anchored" data-anchor-id="tier-3">Tier 3</h2>
+<div id="exr-ht-5" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 5</strong></span> Suppose a <span class="math inline">\(\chi^2\)</span>-test produces a test statistic <span class="math inline">\(\chi^2 = 8.2\)</span> for degrees of freedom <span class="math inline">\(df = 3\)</span>. Compute the corresponding <span class="math inline">\(p\)</span>-value and verify that the result corresponds to the shaded tail area under the <span class="math inline">\(\chi^2\)</span>-distribution. Explain why the integral begins at 8.2 and not at 0.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Hint">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Adjust the sample code from the last section (degrees of freedom and observed test statistic) to match the values given in the task:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the degrees of freedom</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a sequence of x values</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">30</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the chi-squared density</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">dchisq</span>(x, <span class="at">df =</span> df)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>chi_squared_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the integral for highlighting</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>highlight_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(chi_squared_data, x <span class="sc">&gt;=</span> <span class="fl">6.5</span> <span class="sc">&amp;</span> x <span class="sc">&lt;=</span> <span class="dv">20</span>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate the plot</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(chi_squared_data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">data =</span> highlight_data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y), </span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">fill =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> <span class="co"># integral</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Chi-Squared Distribution&quot;</span>,</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Probability density function with 2 degrees of freedom&quot;</span>,</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Chi-squared value&quot;</span>,</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Probability density&quot;</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.05</span>), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">30</span>)) <span class="sc">+</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>)</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 
+</section>
 </section>
 
 
