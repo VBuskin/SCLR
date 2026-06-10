@@ -4313,13 +4313,17 @@ white-space: nowrap;
   <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation">Preparation</a></li>
   <li><a href="#the-pearson-chi2-test-of-independence" id="toc-the-pearson-chi2-test-of-independence" class="nav-link" data-scroll-target="#the-pearson-chi2-test-of-independence">The Pearson <span class="math inline">\(\chi^2\)</span>-test of independence</a>
   <ul class="collapse">
-  <li><a href="#observerd-frequencies" id="toc-observerd-frequencies" class="nav-link" data-scroll-target="#observerd-frequencies">Observerd frequencies</a></li>
+  <li><a href="#observed-frequencies" id="toc-observed-frequencies" class="nav-link" data-scroll-target="#observed-frequencies">Observed frequencies</a></li>
   <li><a href="#expected-frequencies" id="toc-expected-frequencies" class="nav-link" data-scroll-target="#expected-frequencies">Expected frequencies</a></li>
   <li><a href="#conducting-the-test" id="toc-conducting-the-test" class="nav-link" data-scroll-target="#conducting-the-test">Conducting the test</a></li>
   <li><a href="#assumptions-of-the-chi-squared-test" id="toc-assumptions-of-the-chi-squared-test" class="nav-link" data-scroll-target="#assumptions-of-the-chi-squared-test">Assumptions of the chi-squared test</a></li>
   <li><a href="#how-do-i-make-sense-of-the-test-results" id="toc-how-do-i-make-sense-of-the-test-results" class="nav-link" data-scroll-target="#how-do-i-make-sense-of-the-test-results">How do I make sense of the test results?</a></li>
   </ul></li>
-  <li><a href="#pearson-residuals" id="toc-pearson-residuals" class="nav-link" data-scroll-target="#pearson-residuals">Pearson residuals</a></li>
+  <li><a href="#pearson-residuals" id="toc-pearson-residuals" class="nav-link" data-scroll-target="#pearson-residuals">Pearson residuals</a>
+  <ul class="collapse">
+  <li><a href="#testing-the-residuals" id="toc-testing-the-residuals" class="nav-link" data-scroll-target="#testing-the-residuals">Testing the residuals</a></li>
+  <li><a href="#configural-frequency-analysis" id="toc-configural-frequency-analysis" class="nav-link" data-scroll-target="#configural-frequency-analysis">Configural frequency analysis</a></li>
+  </ul></li>
   <li><a href="#effect-size" id="toc-effect-size" class="nav-link" data-scroll-target="#effect-size">Effect size</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
   </ul>
@@ -4418,9 +4422,13 @@ Script
 <li><p>the <strong>observed frequencies</strong> <span class="math inline">\(f_{ij}\)</span> present in our data set</p></li>
 <li><p>the <strong>expected frequencies</strong> <span class="math inline">\(e_{ij}\)</span>, which we would expect to see if <span class="math inline">\(H_0\)</span> were true,</p></li>
 </ul>
-<p>where <span class="math inline">\(f, e \in \mathbb{N}\)</span>. The indices <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> uniquely identify the cell counts in all column-row combinations of a contingency table.</p>
-<section id="observerd-frequencies" class="level3">
-<h3 class="anchored" data-anchor-id="observerd-frequencies">Observerd frequencies</h3>
+<p>where <span class="math inline">\(f, e \in \mathbb{N}\)</span>. The indices <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> uniquely identify the cell counts in all column-row combinations of a contingency table. Reframing the hypotheses in terms of these two quantities, we have:</p>
+<ul>
+<li><p><span class="math inline">\(H_0:\)</span> The observed frequencies of <code>Type</code> and <code>Possessor Animacy</code> match the frequencies we would expect under independence, i.e., <span class="math inline">\(f_{ij} = e_{ij}\)</span>.</p></li>
+<li><p><span class="math inline">\(H_1:\)</span> The observed frequencies of <code>Type</code> and <code>Possessor Animacy</code> differ from their expected frequencies in at least one cell, i.e, <span class="math inline">\(f_{ij} \neq e_{ij}\)</span> for some <span class="math inline">\((i, j)\)</span>.</p></li>
+</ul>
+<section id="observed-frequencies" class="level3">
+<h3 class="anchored" data-anchor-id="observed-frequencies">Observed frequencies</h3>
 <p>The table below represents a generic contingency table where <span class="math inline">\(Y\)</span> and <span class="math inline">\(X\)</span> are categorical variables and have the values <span class="math inline">\(Y = \{y_1, y_2, \dots, y_i \}\)</span> and <span class="math inline">\(X = \{x_1, x_2, \dots, x_j\}\)</span>. In the table, each cell indicates the count of observation <span class="math inline">\(f_{ij}\)</span> corresponding to the <span class="math inline">\(i\)</span>-th row and <span class="math inline">\(j\)</span>-th column.</p>
 <table class="caption-top table">
 <thead>
@@ -4560,10 +4568,11 @@ Script
 </tbody>
 </table>
 <div style="margin-top: 20px;"></div>
-<p>The expected frequencies <span class="math inline">\(e_{ij}\)</span> are given by the formula in <a href="#eq-exp-freq" class="quarto-xref">Equation 1</a>. In concrete terms, we go through each cell in the cross-table and multiply the corresponding row sums with the column sums, dividing the result by the total number of occurrences in the sample. For example, there are <span class="math inline">\(592\)</span> occurrences of <code>of</code> genitives in the <code>animate</code> group. The row sum is <span class="math inline">\(592+ 2511 = 3103\)</span> and the column sum is <span class="math inline">\(592 + 1451 = 2043\)</span>. Next, we take their product <span class="math inline">\(3103 \cdot 2043\)</span> and divide it by the total number of observations, which is <span class="math inline">\(592 + 2511 + 1451 + 544 = 5098\)</span>. Thus we obtain an expected frequency of <span class="math inline">\(\frac{3103 \times 2043}{5098} \approx 1243\)</span> under the null hypothesis.</p>
+<p>The expected frequencies <span class="math inline">\(e_{ij}\)</span> are given by the formula in <a href="#eq-exp-freq" class="quarto-xref">Equation 1</a>.</p>
 <p><span id="eq-exp-freq"><span class="math display">\[
 e_{ij} = \frac{i\textrm{th row sum} \times j \textrm{th column sum}}{\textrm{sample size}}
 \tag{1}\]</span></span></p>
+<p>In concrete terms, we go through each cell in the cross-table and multiply the corresponding row sums with the column sums, dividing the result by the total number of occurrences in the sample. For example, there are <span class="math inline">\(592\)</span> occurrences of <code>of</code> genitives in the <code>animate</code> group. The row sum is <span class="math inline">\(592+ 2511 = 3103\)</span> and the column sum is <span class="math inline">\(592 + 1451 = 2043\)</span>. Next, we take their product <span class="math inline">\(3103 \cdot 2043\)</span> and divide it by the total number of observations, which is <span class="math inline">\(592 + 2511 + 1451 + 544 = 5098\)</span>. Thus we obtain an expected frequency of <span class="math inline">\(\frac{3103 \times 2043}{5098} \approx 1243\)</span> under the null hypothesis.</p>
 <p>The expected frequencies for our combination of variables is shown below. In which cells can you see the greatest deviations between observed and expected frequencies?</p>
 <div class="cell">
 <details class="code-fold">
@@ -4595,7 +4604,7 @@ s   799.4871  1195.513</code></pre>
 <p><span id="eq-chisq-simple"><span class="math display">\[
 \text{Chi-squared } \chi^2 =\frac{(\text{observed} - \text{expected})^2}{\text{expected}}
 \tag{2}\]</span></span></p>
-<p>Let <span class="math inline">\(I\)</span> denote the total number of rows and <span class="math inline">\(J\)</span> the total number of columns, with degress of freedom (<span class="math inline">\(df\)</span>) equal to <span class="math inline">\((I-1) \cdot (J-1)\)</span>. We compute the joint squared deviations between <span class="math inline">\(f_{ij}\)</span> and <span class="math inline">\(e_{ij}\)</span> for every column-row combination:</p>
+<p>Let <span class="math inline">\(I\)</span> denote the total number of rows and <span class="math inline">\(J\)</span> the total number of columns, with degress of freedom (<span class="math inline">\(df\)</span>) equal to <span class="math inline">\((I-1) \cdot (J-1)\)</span>. We compute the joint squared deviations between <span class="math inline">\(f_{ij}\)</span> and <span class="math inline">\(e_{ij}\)</span> for every row-column combination:</p>
 <p><span id="eq-chisq"><span class="math display">\[
 \chi^2 = \frac{(f_{11} - e_{11})^2}{e_{11}} + \frac{(f_{12} - e_{12})^2}{e_{12}} + \frac{(f_{21} - e_{21})^2}{e_{21}} + \frac{(f_{22} - e_{22})^2}{e_{22}} + \dots + \frac{(f_{ij} - e_{ij})^2}{e_{ij}}
 \tag{3}\]</span></span> In crisp summation notation:</p>
@@ -4815,10 +4824,10 @@ G = 1502.8, X-squared df = 1, p-value &lt; 2.2e-16</code></pre>
 </section>
 <section id="pearson-residuals" class="level2">
 <h2 class="anchored" data-anchor-id="pearson-residuals">Pearson residuals</h2>
-<p>If we’re interested in what cells show the greatest difference between observed and expected frequencies, an option would be to inspect the Pearson residuals (cf. <a href="#eq-pear-res" class="quarto-xref">Equation 6</a>).</p>
+<p>If we’re interested in what cells show the greatest difference between observed and expected frequencies, an option would be to inspect the Pearson residuals. These are obtained by taking the square root of the <span class="math inline">\(\chi^2\)</span> score:</p>
 <p><span id="eq-pear-res"><span class="math display">\[ \text{residuals} = \frac{\text{observed} - \text{expected}}{\sqrt{\text{expected}}}
 \tag{6}\]</span></span></p>
-<p>These can be accessed via the test results stored <code>freqs_test</code>.</p>
+<p>The residuals approximately follow a standard normal distribution <span class="math inline">\(N(0, 1)\)</span> and can be accessed via the test results stored in <code>freqs_test</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>freqs_test<span class="sc">$</span>residuals</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -4839,34 +4848,35 @@ G = 1502.8, X-squared df = 1, p-value &lt; 2.2e-16</code></pre>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Testing the residuals: Configural Frequency Analysis">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Testing the residuals: Configural Frequency Analysis
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The chi-squared test only provides a <span class="math inline">\(p\)</span>-value for the entire contingency table. But what if we wanted to test the residuals for their significance as well? Configural Frequency Analysis <span class="citation" data-cites="krauth_lienert_kfa">(<a href="#ref-krauth_lienert_kfa" role="doc-biblioref">Krauth and Lienert 1973</a>)</span> allows us to do exactly that: It performs a significance test for <strong>all combinations of variable values</strong> in a cross-table. Moreover, CFA is not limited to two variables only. Technically, users can test for associations between arbitrary numbers of variables, but should be aware of the increasing complexity of interpretation.</p>
+<section id="testing-the-residuals" class="level3">
+<h3 class="anchored" data-anchor-id="testing-the-residuals">Testing the residuals</h3>
+<p>The chi-squared test only provides a <span class="math inline">\(p\)</span>-value for the entire contingency table. But what if we wanted to test the residuals for their significance as well? For a single cell, we can easily obtain the corresponding p-value from the normal distribution. For example, <em>of</em> genitives with animate referents have a <span class="math inline">\(z\)</span>-score (Pearson residual) of -18.48, which suggests that the observed frequency is much lower than the expected frequency. The probability of seeing this (or an even lower value), <span class="math inline">\(P(X \leq 18.48)\)</span>, is astronomically small.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cfa) <span class="co"># install library beforehand</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the observed counts and convert them to a data frame</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>config_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(observed_freqs)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to matrix</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>configs <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(config_df[, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])  <span class="co"># first two columns contain the configurations (= combinations of variable values)</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>counts <span class="ot">&lt;-</span> config_df<span class="sc">$</span>Freq <span class="co"># Freq column contains the corresponding counts</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform CFA on configuarations and counts; apply Bonferroni correction for multiple testing</span></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>cfa_output <span class="ot">&lt;-</span> <span class="fu">cfa</span>(configs, counts, <span class="at">bonferroni =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Print output</span></span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cfa_output)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">18.48</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.495907e-76</code></pre>
+</div>
+</div>
+<p>We can conclude that the observed frequency of <em>of</em> with animate referents is <strong>significantly</strong> less frequent than expected under the null hypothesis (<span class="math inline">\(z = -18.48, p &lt; 0.001\)</span>).</p>
+</section>
+<section id="configural-frequency-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="configural-frequency-analysis">Configural frequency analysis</h3>
+<p>Configural Frequency Analysis <span class="citation" data-cites="krauth_lienert_kfa">Schrepp (<a href="#ref-schreppUseConfiguralFrequency2006" role="doc-biblioref">2006</a>)</span> is a convenient implementation of this approach which systematically controls for multiple comparisons (the so-called <strong>family-wise error rate</strong>). It performs a significance test for <strong>all combinations of variable values</strong> in a cross-table. Moreover, CFA is not limited to two variables only. Technically, users can test for associations between arbitrary numbers of variables, but should be aware of the increasing complexity of interpretation.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cfa) <span class="co"># install library beforehand</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the observed counts and convert them to a data frame</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>config_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(observed_freqs)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to matrix</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>configs <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(config_df[, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])  <span class="co"># first two columns contain the configurations (= combinations of variable values)</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>counts <span class="ot">&lt;-</span> config_df<span class="sc">$</span>Freq <span class="co"># Freq column contains the corresponding counts</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform CFA on configuarations and counts; apply Bonferroni correction for multiple testing</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>cfa_output <span class="ot">&lt;-</span> <span class="fu">cfa</span>(configs, counts, <span class="at">bonferroni =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Print output</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cfa_output)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 *** Analysis of configuration frequencies (CFA) ***
@@ -4896,9 +4906,21 @@ Var1 Var2
    2    2 </code></pre>
 </div>
 </div>
-</div>
-</div>
-</div>
+<p>We can interpret the findings as follows:</p>
+<ul>
+<li><p>Observed &gt; Expected</p>
+<ul>
+<li><p>s &amp; animate (significant): The <em>s</em>-genitive occurs more frequently than expected if the possessor is animate (<span class="math inline">\(\chi^2\)</span>= 530.93, p = 0).</p></li>
+<li><p>of &amp; inanimate (significant): The <em>of</em>-genitive occurs more frequently than expected if the possessor is inanimate (<span class="math inline">\(\chi^2\)</span> = 355.51, p = 0).</p></li>
+</ul></li>
+<li><p>Observed &lt; Expected</p>
+<ul>
+<li><p>s &amp; inanimate (significant): The <em>s</em>-genitive occurs less frequently than expected if the possessor is inanimate (<span class="math inline">\(\chi^2\)</span> = 1195.51, p = 0).</p></li>
+<li><p>of &amp; animate (significant): The <em>of</em>-genitive occurs less frequently than expected if the possessor is animate (<span class="math inline">\(\chi^2\)</span> = 341.35, p = 0).</p></li>
+</ul></li>
+</ul>
+<p>The full table (<span class="math inline">\(n\)</span> = 5098) is significant at <span class="math inline">\(p = 0\)</span> (<span class="math inline">\(\chi^2\)</span> = 1455.60).</p>
+</section>
 </section>
 <section id="effect-size" class="level2">
 <h2 class="anchored" data-anchor-id="effect-size">Effect size</h2>
@@ -4908,17 +4930,18 @@ V = \sqrt{\frac{\chi^2}{n \times (min(nrow, ncol) - 1)}}.
 \tag{7}\]</span></span></p>
 <p>The package <code>confintr</code> implements this in its <code>cramersv()</code> function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cramersv</span>(freqs_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cramersv</span>(freqs_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.5339337</code></pre>
 </div>
 </div>
 <p>The association between two categorical variables is stronger, the closer <span class="math inline">\(V\)</span> approximates 1. Conversely, if <span class="math inline">\(V = 0\)</span>, then the variables are completely independent. There are various guidelines in the literature that provide thresholds for “small”, “moderate” and “large” effects, yet these are rarely justified on theoretical grounds and could be viewed as arbitrary.</p>
+<p>In CFA, <span class="math inline">\(Q\)</span> is a cell-wise effect size measure ranging from 0 to 1.</p>
 </section>
 <section id="exercises" class="level2">
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
 <div id="exr-hyp-1" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1</strong></span> Schröter &amp; Kortmann <span class="citation" data-cites="schroter_pronoun_2016">(<a href="#ref-schroter_pronoun_2016" role="doc-biblioref">2016</a>)</span> investigate the relationship between subject realisation (<code>overt</code> vs. <code>null</code>) and the grammatical category Person (<code>1.p</code>. vs. <code>2.p.</code> vs. <code>3.p.</code>) in three varieties of English (<code>Great Britain</code> vs. <code>Hong Kong</code> vs. <code>Singapore</code>). They report the following test results <span class="citation" data-cites="schroter_pronoun_2016">(<a href="#ref-schroter_pronoun_2016" role="doc-biblioref">2016</a>: 235)</span>:</p>
+<p><span class="theorem-title"><strong>Exercise 1</strong></span> Schröter &amp; Kortmann <span class="citation" data-cites="schroter_pronoun_2016">(<a href="#ref-schroter_pronoun_2016" role="doc-biblioref">2016</a>)</span> investigate the relationship between subject realisation (<code>overt</code> vs. <code>null</code>) and the grammatical category Person (<code>1.p</code>. vs. <code>2.p.</code> vs. <code>3.p.</code>) in three varieties of English (<code>Great Britain</code> vs. <code>Hong Kong</code> vs. <code>Singapore</code>). They test the association between subject realisation and person in each of the three varieties, reporting the following test results <span class="citation" data-cites="schroter_pronoun_2016">(<a href="#ref-schroter_pronoun_2016" role="doc-biblioref">2016</a>: 235)</span>:</p>
 <blockquote class="blockquote">
 <p>Chi-square test results: <span class="math display">\[
 \begin{align}
@@ -4935,16 +4958,18 @@ V = \sqrt{\frac{\chi^2}{n \times (min(nrow, ncol) - 1)}}.
 </ul>
 </div>
 <div id="exr-chisq-2" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2</strong></span> Conduct a small-scale analysis of genitive <code>Type</code> by <code>Genre</code> (~ 1 page). Structure your write-up as follows:</p>
+<p><span class="theorem-title"><strong>Exercise 2</strong></span> Using the <code>genitive</code> dataset, write an R script that investigates the association between genitive <code>Type</code> and <code>Genre</code>. Your script should:</p>
 <ul>
-<li>Research question and hypotheses</li>
-<li>Statistical methods</li>
-<li>Results (frequency tables, plots, test results, effect size)</li>
-<li>Interpretation of standardised residuals</li>
-<li>(Optional: Interpretation of configural frequency analysis)</li>
-<li>Brief theoretical assessment</li>
-<li>Conclusion</li>
+<li>State your null and alternative hypotheses as comments at the top of the script.</li>
+<li>Compute and print a contingency table of observed frequencies.</li>
+<li>Conduct a <span class="math inline">\(\chi^2\)</span>-test and report the results (<span class="math inline">\(p\)</span>-value, degrees of freedom).</li>
+<li>Calculate an appropriate effect size measure.</li>
+<li>Calculate and print the expected frequencies.</li>
+<li>Compute and visualize the Pearson residuals.</li>
+<li>(Optional) Perform a configural frequency analysis.</li>
+<li>Give a brief theoretical assessment of the results.</li>
 </ul>
+<p>Make sure your script is well-commented so that each step is clearly documented.</p>
 </div>
 
 
@@ -4966,6 +4991,9 @@ Heumann, Christian, Michael Schomaker, and Shalabh. 2022. <em>Introduction to St
 </div>
 <div id="ref-krauth_lienert_kfa" class="csl-entry" role="listitem">
 Krauth, J., and G. A. Lienert. 1973. <em>Die Konfigurationsfrequenzanalyse (KFA) Und Ihre Anwendung in Psychologie Und Medizin</em>. Reprint 1995. Weinheim: Beltz Psychologie Verlagsunion.
+</div>
+<div id="ref-schreppUseConfiguralFrequency2006" class="csl-entry" role="listitem">
+Schrepp, Martin. 2006. <span>“The Use of Configural Frequency Analysis for Explorative Data Analysis.”</span> <em>British Journal of Mathematical and Statistical Psychology</em> 59 (1): 59–73. <a href="https://doi.org/10.1348/000711005X66761">https://doi.org/10.1348/000711005X66761</a>.
 </div>
 <div id="ref-schroter_pronoun_2016" class="csl-entry" role="listitem">
 Schröter, Verena, and Bernd Kortmann. 2016. <span>“Pronoun Deletion in Hong Kong English and Colloquial Singaporean English.”</span> <em>World Englishes</em> 35 (2): 221–41. <a href="https://doi.org/10.1111/weng.12192">https://doi.org/10.1111/weng.12192</a>.
