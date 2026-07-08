@@ -4549,6 +4549,11 @@ white-space: nowrap;
   <li><a href="#visualisation" id="toc-visualisation" class="nav-link" data-scroll-target="#visualisation">Visualisation</a></li>
   <li><a href="#interpret-the-model" id="toc-interpret-the-model" class="nav-link" data-scroll-target="#interpret-the-model">Interpret the model</a></li>
   </ul></li>
+  <li><a href="#looking-under-the-hood" id="toc-looking-under-the-hood" class="nav-link" data-scroll-target="#looking-under-the-hood">Looking under the hood</a>
+  <ul class="collapse">
+  <li><a href="#some-hidden-metrics" id="toc-some-hidden-metrics" class="nav-link" data-scroll-target="#some-hidden-metrics">Some hidden metrics</a></li>
+  <li><a href="#how-do-you-actually-estimate-beta-in-logistic-regression" id="toc-how-do-you-actually-estimate-beta-in-logistic-regression" class="nav-link" data-scroll-target="#how-do-you-actually-estimate-beta-in-logistic-regression">How do you actually estimate <span class="math inline">\(\beta\)</span> in logistic regression?</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -4618,7 +4623,7 @@ Script
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can find the full R script associated with this unit <a href="https://osf.io/wfgv6">here</a>.</p>
+<p>%&gt;% You can find the full R script associated with this unit <a href="https://osf.io/wfgv6">here</a>.</p>
 </div>
 </div>
 <p>Consider the data from Buskin’s <span class="citation" data-cites="buskinDefiniteNullInstantiation2025">(<a href="#ref-buskinDefiniteNullInstantiation2025" role="doc-biblioref">2025</a>)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> corpus-study on subject pronoun realisation:</p>
@@ -5356,6 +5361,216 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <p>The full logistic regression model is significantly better than a null model with no predictors (Likelihood Ratio Test: <span class="math inline">\(\chi^2 = 111.33\)</span>, <span class="math inline">\(df = 7\)</span>, <span class="math inline">\(p &lt; 0.001\)</span>) and has acceptable fit (Nagelkerke’s-<span class="math inline">\(R^2\)</span> = <span class="math inline">\(0.09\)</span>). However, heavy multicollinearity has been detected and traced back to <code>Referentiality</code>; removing this feature resolved the issue and did not affect model fit.</p>
 <p>The model coefficients of the reduced model indicate that null subjects are significantly more likely in Singapore English compared to British English (Estimate = 0.97, 95% CI [0.53, 1.43], <span class="math inline">\(p &lt; 0.001\)</span>). This effect is moderate with an <span class="math inline">\(OR\)</span> of 2.63 (95% CI [1.70, 4.16]), suggesting that the odds of subject omission are approximately 2.6 times higher in the Singaporean variety.</p>
 <p>…</p>
+</section>
+</section>
+<section id="looking-under-the-hood" class="level2">
+<h2 class="anchored" data-anchor-id="looking-under-the-hood">Looking under the hood</h2>
+<section id="some-hidden-metrics" class="level3">
+<h3 class="anchored" data-anchor-id="some-hidden-metrics">Some hidden metrics</h3>
+<p>Beside the coefficients, the model object <code>Reference.glm2</code> stores a variety of additional metrics, some of which appear to be rather cryptic:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 8
+  null.deviance df.null logLik   AIC   BIC deviance df.residual  nobs
+          &lt;dbl&gt;   &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;       &lt;int&gt; &lt;int&gt;
+1         1499.    4837  -694. 1404. 1455.    1388.        4830  4838</code></pre>
+</div>
+</div>
+<ul>
+<li><code>logLik</code> is the log-likelihood of the model at the maximum likelihood estimate <span class="math inline">\(\ell(\hat{\beta})\)</span> (cf. <a href="#eq-loglf3" class="quarto-xref">Equation 9</a>). Closer to 0 (less negative) means a better fit; however, this measure isn’t typically reported.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">logLik</span>(Reference.glm2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&#39;log Lik.&#39; -693.7532 (df=8)</code></pre>
+</div>
+</div>
+<ul>
+<li><code>deviance</code> (residual deviance) is <span class="math inline">\(-2\ell(\hat\beta)\)</span> for the fitted model. It’s the logistic-regression analogue of the residual sum of squares in linear regression. Once again, smaller values indicate better fit.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>Reference.glm<span class="sc">$</span>deviance</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1387.506</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">2</span><span class="sc">*</span><span class="fu">logLik</span>(Reference.glm2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&#39;log Lik.&#39; 1387.506 (df=8)</code></pre>
+</div>
+</div>
+<ul>
+<li><code>null.deviance</code> is the deviance of an intercept-only model with no predictors.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>Reference.glm<span class="sc">$</span>null.deviance</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1498.836</code></pre>
+</div>
+</div>
+<p>These two deviance measures can be used to obtain Pseudo-<span class="math inline">\(R^2\)</span> measure to assess the overall fit of the model.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(Reference.glm2<span class="sc">$</span>model)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>D_model <span class="ot">&lt;-</span> Reference.glm2<span class="sc">$</span>deviance</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>D_null <span class="ot">&lt;-</span> Reference.glm2<span class="sc">$</span>null.deviance</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Get Cox &amp; Snell&#39;s R^2; it&#39;s not used widely because of its awkward scale</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>R2_CS  <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">exp</span>(<span class="sc">-</span>(D_null <span class="sc">-</span> D_model) <span class="sc">/</span> n)</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Equivalent to</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="fu">PseudoR2</span>(Reference.glm2, <span class="st">&quot;CoxSnell&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> CoxSnell 
+0.0227487 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rescale to [0,1]</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>R2_max <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">exp</span>(<span class="sc">-</span>D_null <span class="sc">/</span> n) <span class="co"># get maximum possible value Cox &amp; Snell&#39;s R^2 can take on</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>R2_N   <span class="ot">&lt;-</span> R2_CS <span class="sc">/</span> R2_max <span class="co"># normalise</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Equivalent to</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="fu">PseudoR2</span>(Reference.glm2, <span class="st">&quot;Nagelkerke&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Nagelkerke 
+0.08538986 </code></pre>
+</div>
+</div>
+<ul>
+<li><code>AIC/BIC</code>: Akaike Information Criterion/Bayesian Information Criterion. AIC (<span class="math inline">\(-2\ell(\hat{\beta}) + 2 \times (\text{number of parameters})\)</span>) penalises the model for including too many predictors, especially if they are uninformative; this penalty is even stronger in the BIC. Typically, models with lower AIC/BIC are preferred.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(Reference.glm2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1403.506</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of parameters = number of estimated coefficients (including intercept)</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>n_params <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">coef</span>(Reference.glm2))</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate AIC manually</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="dv">2</span><span class="sc">*</span><span class="fu">logLik</span>(Reference.glm2) <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>n_params</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&#39;log Lik.&#39; 1403.506 (df=8)</code></pre>
+</div>
+</div>
+<ul>
+<li><code>df.null</code> and <code>df.residual</code>: Degrees of freedom for the fitted and null models respectively; they correspond to (<span class="math inline">\(n - \text{number of parameters}\)</span>).</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: residual df</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(Reference.glm2<span class="sc">$</span>y) <span class="sc">-</span> n_params</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4830</code></pre>
+</div>
+</div>
+<ul>
+<li><code>nobs</code>: Mumber of observations <span class="math inline">\(n\)</span>.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(Reference.glm2<span class="sc">$</span>y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4838</code></pre>
+</div>
+</div>
+</section>
+<section id="how-do-you-actually-estimate-beta-in-logistic-regression" class="level3">
+<h3 class="anchored" data-anchor-id="how-do-you-actually-estimate-beta-in-logistic-regression">How do you actually estimate <span class="math inline">\(\beta\)</span> in logistic regression?</h3>
+<p>Recall the likelihood function:</p>
+<p><span class="math display">\[
+\ell(\beta) = \sum_{i=1}^n y_i \log(\pi_i) + (1 - y_i) \log(1 - \pi_i)
+\]</span> We need to find the parameter value of <span class="math inline">\(\beta\)</span> for which the likelihood is as high as possible. This is achieved by setting all derivatives to zero:</p>
+<p><span class="math display">\[
+\frac{\partial\ell(\beta)}{\partial \beta} = \sum_{i=1}^n x_{ij}(y_i - \pi_i) = 0 \quad \text{ for } j = 0, 1, \dots, p
+\]</span></p>
+<p>These are known as the score equations. As there is no closed-form solution for this problem, we will need to use an algorithm that will provide us with an approximate answer. A popular approach is the Newton-Raphson method, which requires us to compute a matrix of second partial derivatives known as the <strong>Hessian</strong>:</p>
+<p><span class="math display">\[
+\frac{\partial^2\ell(\beta)}{\partial\boldsymbol{\beta} \partial\boldsymbol{\beta}^\top} = -\mathbf{X}^\top\mathbf{W}\mathbf{X} \quad \text{where }\mathbf{W} = \text{diag}(\boldsymbol{\pi}_i(1- \boldsymbol{\pi}_i))
+\]</span> The algorithm continuously updates its current solution using the following rule until it finds a stable solution:</p>
+<p><span class="math display">\[
+\beta^{\text{new}} = \beta^{\text{old}} - \left (\frac{\partial^2\ell(\beta)}{\partial\boldsymbol{\beta} \partial\boldsymbol{\beta}^\top}\right)^{-1}  \frac{\partial\ell(\beta)}{\partial \beta},
+\]</span> usually starting at 0. For illustration, here is a strongly simplified and computationally inefficient implementation in R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(Reference <span class="sc">~</span> Register <span class="sc">+</span> Variety <span class="sc">+</span> Person, <span class="at">data =</span> data_pro)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data_pro<span class="sc">$</span>Reference <span class="sc">==</span> <span class="st">&quot;null&quot;</span>)</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialise beta at 0</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="fu">ncol</span>(X))</span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Newton-Raphson (also known as &quot;iteratively reweighted least squares&quot;)</span></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (iter <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>) {</span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>  pi <span class="ot">&lt;-</span> <span class="fu">plogis</span>(X <span class="sc">%*%</span> beta)                     <span class="co"># π_i = p(x_i; beta)</span></span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>  score <span class="ot">&lt;-</span> <span class="fu">t</span>(X) <span class="sc">%*%</span> (y <span class="sc">-</span> pi)                   <span class="co"># score eq. X^T(y - p_i)</span></span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a>  W <span class="ot">&lt;-</span> <span class="fu">diag</span>(<span class="fu">as.vector</span>(pi <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> pi)))           <span class="co"># weights W = diag(π_i(1-π_i))</span></span>
+<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a>  hessian <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fu">t</span>(X) <span class="sc">%*%</span> W <span class="sc">%*%</span> X                  <span class="co"># Hessian -X^T W X</span></span>
+<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a>  beta <span class="ot">&lt;-</span> beta <span class="sc">-</span> <span class="fu">solve</span>(hessian) <span class="sc">%*%</span> score       <span class="co"># Newton step</span></span>
+<span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">manual_coef</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">glm_coef</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-3.440203</td>
+<td style="text-align: right;">-3.440203</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RegisterS1B</td>
+<td style="text-align: left;">RegisterS1B</td>
+<td style="text-align: right;">0.110245</td>
+<td style="text-align: right;">0.110245</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">VarietyHK</td>
+<td style="text-align: left;">VarietyHK</td>
+<td style="text-align: right;">0.985620</td>
+<td style="text-align: right;">0.985620</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VarietySING</td>
+<td style="text-align: left;">VarietySING</td>
+<td style="text-align: right;">0.966151</td>
+<td style="text-align: right;">0.966151</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Person1</td>
+<td style="text-align: left;">Person1</td>
+<td style="text-align: right;">-0.915536</td>
+<td style="text-align: right;">-0.915536</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Person2</td>
+<td style="text-align: left;">Person2</td>
+<td style="text-align: right;">-1.667630</td>
+<td style="text-align: right;">-1.667630</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Personit</td>
+<td style="text-align: left;">Personit</td>
+<td style="text-align: right;">0.812971</td>
+<td style="text-align: right;">0.812971</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Personthere</td>
+<td style="text-align: left;">Personthere</td>
+<td style="text-align: right;">-2.636748</td>
+<td style="text-align: right;">-2.636745</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
 
