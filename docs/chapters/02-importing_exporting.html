@@ -4149,6 +4149,7 @@ white-space: nowrap;
   <li><a href="#recommended-reading" id="toc-recommended-reading" class="nav-link active" data-scroll-target="#recommended-reading">Recommended reading</a></li>
   <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation">Preparation</a>
   <ul class="collapse">
+  <li><a href="#where-does-r-look-for-files" id="toc-where-does-r-look-for-files" class="nav-link" data-scroll-target="#where-does-r-look-for-files">Where does R look for files?</a></li>
   <li><a href="#exporting-data" id="toc-exporting-data" class="nav-link" data-scroll-target="#exporting-data">Exporting data</a></li>
   <li><a href="#sec-import" id="toc-sec-import" class="nav-link" data-scroll-target="#sec-import">Importing data</a></li>
   </ul></li>
@@ -4224,17 +4225,47 @@ Script
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(writexl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>If you haven’t installed them yet, the R console will throw an error message. For instructions on how to install an R package, consult the unit on <a href="Libraries.qmd">Libraries</a>.</p>
+<p>If you haven’t installed them yet, the R console will throw an error message. For instructions on how to install an R package, consult the unit on <a href="../chapters/02-libraries.html">Libraries</a>.</p>
+<section id="where-does-r-look-for-files" class="level3">
+<h3 class="anchored" data-anchor-id="where-does-r-look-for-files">Where does R look for files?</h3>
+<p>Whenever we save or load a file without specifying a full path, R uses a default folder: the <strong>working directory</strong>. It is important to know that this is <em>not</em> necessarily the folder your R script is stored in. You can check your current working directory at any time:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<pre><code>[1] &quot;C:/Users/yourname/Documents&quot;</code></pre>
+<div class="callout callout-style-default callout-tip callout-titled" title="Setting the working directory">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Setting the working directory
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>There are two common ways of telling R where to look:</p>
+<ul>
+<li><p><strong>RStudio Projects (recommended)</strong>: Go to <code>File</code> &gt; <code>New Project</code> &gt; <code>New Directory</code> (or <code>Existing Directory</code>) and choose a folder for your term paper. Whenever you open the project (via the <code>.Rproj</code> file), the working directory is automatically set to that folder. Keep your scripts and data files in there, and everything will be found.</p></li>
+<li><p><strong><code>setwd()</code></strong>: Alternatively, you can set the working directory manually, e.g., <code>setwd(&quot;C:/Users/yourname/Documents/term_paper&quot;)</code>. In RStudio, you can also go to <code>Session</code> &gt; <code>Set Working Directory</code> &gt; <code>To Source File Location</code>.</p></li>
+</ul>
+<p>If your data files are in a subfolder of your working directory (e.g., a folder called <code>data</code>), you can simply include the folder name in the file name: <code>&quot;data/frequency_data.csv&quot;</code>.</p>
+<p>An error message such as <code>cannot open file &#39;frequency_data.csv&#39;: No such file or directory</code> almost always means that R is looking in the wrong folder!</p>
+</div>
+</div>
+</div>
+</section>
 <section id="exporting-data" class="level3">
 <h3 class="anchored" data-anchor-id="exporting-data">Exporting data</h3>
 <p>Assume we’d like to export our data frame with word frequencies to a local file on our system. Let’s briefly regenerate the data frame:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate data frame</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">lemma =</span> <span class="fu">c</span>(<span class="st">&quot;start&quot;</span>, <span class="st">&quot;enjoy&quot;</span>, <span class="st">&quot;begin&quot;</span>, <span class="st">&quot;help&quot;</span>), </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">frequency =</span> <span class="fu">c</span>(<span class="dv">418</span>, <span class="dv">139</span>, <span class="dv">337</span>, <span class="dv">281</span>))</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Print contents</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate data frame</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">lemma =</span> <span class="fu">c</span>(<span class="st">&quot;start&quot;</span>, <span class="st">&quot;enjoy&quot;</span>, <span class="st">&quot;begin&quot;</span>, <span class="st">&quot;help&quot;</span>), </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">frequency =</span> <span class="fu">c</span>(<span class="dv">418</span>, <span class="dv">139</span>, <span class="dv">337</span>, <span class="dv">281</span>))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Print contents</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  lemma frequency
 1 start       418
@@ -4245,11 +4276,11 @@ Script
 </div>
 <p>There are two common formats in which tabular data can be stored:</p>
 <ul>
-<li><p>as .<strong>csv</strong>-files (‘<strong>c</strong>omma-<strong>s</strong>eparated <strong>v</strong>alues’; native format of LibreOffice Calc)</p></li>
+<li><p>as .<strong>csv</strong>-files (‘<strong>c</strong>omma-<strong>s</strong>eparated <strong>v</strong>alues’; a plain text format that can be opened by any spreadsheet software, e.g., LibreOffice Calc or MS Excel)</p></li>
 <li><p>as .<strong>xls</strong>/.<strong>xlsx</strong>-files (Microsoft Excel)</p></li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled" title="Export to CSV">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -4258,23 +4289,42 @@ Export to CSV
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>To save our <code>data</code> data frame in .csv-format, we can use the <code>write_table()</code> function:</p>
+<p>To save our <code>data</code> data frame in .csv-format, we can use the <code>write.csv()</code> function. The argument <code>row.names = FALSE</code> prevents R from adding the row numbers (1, 2, 3, …) as an extra column to the file:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(data, <span class="st">&quot;frequency_data.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(data, <span class="st">&quot;frequency_data.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The file is now stored at the location of your current R script. You can open this file …</p>
+<p>The file is now stored in your working directory. You can open this file …</p>
 <ul>
 <li><p>in <strong>LibreOffice</strong></p></li>
 <li><p>in <strong>Microsoft Excel</strong> via <code>File</code> &gt; <code>Import</code> &gt; <code>CSV file</code> &gt; Select the file &gt; <code>Delimited</code> and then <code>Next</code> &gt; <code>Comma</code> and <code>Next</code> &gt; <code>General</code> and <code>Finish</code>.</p></li>
 </ul>
 <p>Clearly, opening CSV files in MS Excel is quite cumbersome, which is why it’s better to export it as an Excel file directly.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="CSV files and German Excel">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+CSV files and German Excel
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If your computer uses German language settings, Excel expects CSV files to use semicolons (<code>;</code>) as separators and commas (<code>,</code>) as decimal marks (e.g., <code>3,14</code> instead of <code>3.14</code>). Opening a regular CSV file will then display all values crammed into a single column. The functions <code>write.csv2()</code> and <code>read.csv2()</code> use exactly these conventions:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv2</span>(data, <span class="st">&quot;frequency_data_de.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Export to Excel">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -4283,13 +4333,13 @@ Export to Excel
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>We use the <code>write_xlsx()</code> function provided by the package <code>writexl</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_xlsx</span>(data, <span class="st">&quot;frequency_data.xlsx&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_xlsx</span>(data, <span class="st">&quot;frequency_data.xlsx&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The file is now stored at the location of your currently active R script. You should now be able to open it in MS Excel without any issues.</p>
+<p>The file is now stored in your working directory. You should now be able to open it in MS Excel without any issues.</p>
 </div>
 </div>
 </div>
@@ -4298,7 +4348,7 @@ Export to Excel
 <h3 class="anchored" data-anchor-id="sec-import">Importing data</h3>
 <p>Let’s read the two files back into R.</p>
 <div class="callout callout-style-default callout-note callout-titled" title="Import from CSV">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -4307,24 +4357,12 @@ Import from CSV
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>To import the CSV file, we can use the <code>read.csv()</code> function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>imported_csv <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;frequency_data.csv&quot;</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(imported_csv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  X lemma frequency
-1 1 start       418
-2 2 enjoy       139
-3 3 begin       337
-4 4  help       281</code></pre>
-</div>
-</div>
-<p>It appears that <code>read.csv()</code> has also written the row numbers to the file. This is not the desired outcome and can be prevented by adding an additional argument:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>imported_csv <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;frequency_data.csv&quot;</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(imported_csv) <span class="co"># Problem solved!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>imported_csv <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;frequency_data.csv&quot;</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(imported_csv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  lemma frequency
 1 start       418
@@ -4333,8 +4371,46 @@ Import from CSV
 4  help       281</code></pre>
 </div>
 </div>
+<div class="callout callout-style-default callout-important callout-titled" title="Help, there&#39;s a mysterious column X!">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Help, there’s a mysterious column X!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If a CSV file is exported without <code>row.names = FALSE</code>, <code>write.csv()</code> stores the row numbers in the file as an unnamed first column. When reading it back in, <code>read.csv()</code> turns this column into a variable called <code>X</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(data, <span class="st">&quot;frequency_data_rownames.csv&quot;</span>) <span class="co"># row numbers are written to the file</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read.csv</span>(<span class="st">&quot;frequency_data_rownames.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  X lemma frequency
+1 1 start       418
+2 2 enjoy       139
+3 3 begin       337
+4 4  help       281</code></pre>
+</div>
+</div>
+<p>The best solution is to fix the problem at the source, i.e., to export with <code>row.names = FALSE</code>. If you can’t re-export the file (e.g., because you received it from someone else), you can tell <code>read.csv()</code> to use the first column as row names instead:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read.csv</span>(<span class="st">&quot;frequency_data_rownames.csv&quot;</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  lemma frequency
+1 start       418
+2 enjoy       139
+3 begin       337
+4  help       281</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-warning callout-titled" title="A note on file encodings and separators">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -4343,7 +4419,7 @@ A note on file encodings and separators
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>When working with CSV files, you may encounter issues with character encodings and separators, especially when:</p>
 <ul>
@@ -4351,19 +4427,22 @@ A note on file encodings and separators
 <li>dealing with text containing special characters (é, ü, ñ, etc.), or</li>
 <li>importing files created in different regions (e.g., European vs. US).</li>
 </ul>
-<p>The most common encoding-related parameters for read.csv() are:</p>
+<p>The most common parameters for <code>read.csv()</code> are:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For files with special characters (recommended default)</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;myfile.csv&quot;</span>, <span class="at">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># For files from Windows systems</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;myfile.csv&quot;</span>, <span class="at">encoding =</span> <span class="st">&quot;latin1&quot;</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># For files using semicolons and commas as decimal points</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;myfile.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;;&quot;</span>, <span class="at">dec =</span> <span class="st">&quot;,&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For files with special characters (recommended default)</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;myfile.csv&quot;</span>, <span class="at">fileEncoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># For older files from Windows systems</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;myfile.csv&quot;</span>, <span class="at">fileEncoding =</span> <span class="st">&quot;latin1&quot;</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># For files using semicolons as separators and commas as decimal points</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;myfile.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;;&quot;</span>, <span class="at">dec =</span> <span class="st">&quot;,&quot;</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ... which is equivalent to:</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;myfile.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li>If you see garbled text like Ã© instead of é, try specifying <code>encoding = &quot;UTF-8&quot;</code>.</li>
+<li>If you see garbled text like Ã© instead of é, try specifying <code>fileEncoding = &quot;UTF-8&quot;</code>.</li>
 <li>If your data appears in a single column, check if your file uses semicolons (<code>;</code>) instead of commas (<code>,</code>) as separators.</li>
 <li>If numeric values are incorrect, verify whether the file uses commas or periods as decimal separators.</li>
 </ul>
@@ -4374,7 +4453,7 @@ A note on file encodings and separators
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="Import from Excel">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -4383,12 +4462,12 @@ Import from Excel
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>For importing the Excel file, we’ll use the <code>read_xlsx()</code> function from the <code>readxl</code> package:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>imported_excel <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;frequency_data.xlsx&quot;</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(imported_excel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>imported_excel <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;frequency_data.xlsx&quot;</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(imported_excel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 2
   lemma frequency
@@ -4407,23 +4486,27 @@ Import from Excel
 </section>
 <section id="a-convenient-alternative-rds-files" class="level2">
 <h2 class="anchored" data-anchor-id="a-convenient-alternative-rds-files">A convenient alternative: RDS files</h2>
-<p>If the main goal is to save an intermediary result and make it available for later use, the most efficient solution is to save the object to a local R data file ending in <code>.RDS</code>. Since it compressed data, .RDS files can be considered analogous to .zip files, which are very commonly used for other data types.</p>
+<p>If the main goal is to save an intermediary result and make it available for later use, the most efficient solution is to save the object to a local R data file ending in <code>.RDS</code>. RDS files have two major advantages:</p>
+<ul>
+<li><p>They store R objects <strong>exactly as they are</strong>. When data passes through CSV or Excel files, R has to guess the data type of each column when reading it back in (e.g., whether <code>418</code> is a number or a string), and it doesn’t always guess correctly. An RDS file, by contrast, preserves all data types, column names and other properties of the object.</p></li>
+<li><p>They store data in compressed form, similar to .zip files, which keeps even large datasets (e.g., entire corpora) small on your hard drive.</p></li>
+</ul>
 <p>In practice, we use the <code>saveRDS()</code> function and supply it with …</p>
 <ul>
 <li><p>… an R object (e.g., a vector, data frame, matrix, graphs, statistical models – anything goes!) as well as</p></li>
 <li><p>… the desired name of the file.</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save data frame &quot;data&quot; to the file &quot;frequency_data.RDS&quot;</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(data, <span class="st">&quot;frequency_data.RDS&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save data frame &quot;data&quot; to the file &quot;frequency_data.RDS&quot;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(data, <span class="st">&quot;frequency_data.RDS&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>To read a file back in, we need to indicate the file name (or the full file path if the file is located in a different folder).</p>
+<p>To read a file back in, we need to indicate the file name (or the path relative to the working directory if the file is located in a subfolder, e.g., <code>&quot;data/frequency_data.RDS&quot;</code>).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in &quot;frequency_data.RDS&quot; and assign the contents to &quot;data2&quot;</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;frequency_data.RDS&quot;</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify contents</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in &quot;frequency_data.RDS&quot; and assign the contents to &quot;data2&quot;</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;frequency_data.RDS&quot;</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify contents</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  lemma frequency
 1 start       418
@@ -4449,7 +4532,7 @@ Solutions
 </div>
 </div>
 <div id="exr-impexp-1" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 1</strong></span> Download the file <code>SCOPE_reduced.RDS</code> from <a href="https://osf.io/3w29d">this repository</a> and read it into a variable named <code>SCOPE</code>. It contains data from the the South Carolina Psycholinguistic Metabase <span class="citation" data-cites="gaoSCOPESouthCarolina2022">(<a href="#ref-gaoSCOPESouthCarolina2022" role="doc-biblioref">Gao, Shinkareva, and Desai 2022</a>)</span>, specifically:</p>
+<p><span class="theorem-title"><strong>Exercise 1</strong></span> Download the file <code>SCOPE_reduced.RDS</code> from <a href="https://osf.io/3w29d">this repository</a> and read it into a variable named <code>SCOPE</code>. It contains data from the South Carolina Psycholinguistic Metabase <span class="citation" data-cites="gaoSCOPESouthCarolina2022">(<a href="#ref-gaoSCOPESouthCarolina2022" role="doc-biblioref">Gao, Shinkareva, and Desai 2022</a>)</span>, specifically:</p>
 <ul>
 <li><p>Number of meanings (<code>Nsenses_WordNet</code>)</p></li>
 <li><p>Emotional valence ratings, which describe the pleasantness of a lexical stimulus on a scale from 1 to 9 (<code>Valence_Warr</code>)</p></li>
@@ -4473,7 +4556,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This task is very similar to Exercise 3 in <a href="../chapters/02-data_frames.html">2.4 Data frames</a>!</p>
+<p>This task is very similar to Exercise 3 in <a href="../chapters/02-data_frames.html">1.4 Data frames</a>!</p>
 </div>
 </div>
 </div>
@@ -4483,17 +4566,17 @@ Tip
 <div id="exr-impexp-4" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 4</strong></span> Separators determine how tabular data is stored internally. Investigate what happens when you read in <code>frequency_data.csv</code> with different separator settings:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comma separator (default)</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>imported_csv1 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;frequency_data.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(imported_csv1)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Tab separator</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>imported_csv2 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;frequency_data.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(imported_csv2)</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Semi-colon separator</span></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>imported_csv3 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;frequency_data.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;;&quot;</span>)</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(imported_csv3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comma separator (default)</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>imported_csv1 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;frequency_data.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(imported_csv1)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Tab separator</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>imported_csv2 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;frequency_data.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(imported_csv2)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Semi-colon separator</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>imported_csv3 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;frequency_data.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;;&quot;</span>)</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(imported_csv3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 

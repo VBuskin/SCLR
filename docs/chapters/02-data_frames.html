@@ -4795,8 +4795,8 @@ Why do we need to use “or” (|) and not “and” (&amp;)?
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The <code>tidyverse</code>-ecosystem is a collection of packages specifically designed for handling typical data science tasks as comfortably and elegantly as possible, supplying countless helper functions for data manipulation, transformation and visualisation. Installation instructions are provided in <a href="../chapters/02-libraries.html">2.3 Libraries</a>.</p>
-<p>A extensive guide to the main <code>tidyverse</code> functions is provided in Chapter 3 of the free eBook <a href="https://r4ds.hadley.nz">R For Data Science (2nd edition)</a>. Due to its clarity, most of the more advanced code in this reader will draw on <code>tidyverse</code> syntax.</p>
+<p>The <code>tidyverse</code>-ecosystem is a collection of packages specifically designed for handling typical data science tasks as comfortably and elegantly as possible, supplying countless helper functions for data manipulation, transformation and visualisation. Installation instructions are provided in <a href="../chapters/02-libraries.html">1.5 Libraries</a>.</p>
+<p>An extensive guide to the main <code>tidyverse</code> functions is provided in Chapter 3 of the free eBook <a href="https://r4ds.hadley.nz">R For %&gt;% Science (2nd edition)</a>. Due to its clarity, most of the more advanced code in this reader will draw on <code>tidyverse</code> syntax.</p>
 <p>Let’s generate a <code>tidyverse</code>-style data frame, the <strong>tibble</strong>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -4860,7 +4860,7 @@ Why do we need to use “or” (|) and not “and” (&amp;)?
 <span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(frequency <span class="sc">&gt;</span> <span class="dv">300</span>)</span>
 <span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Read as: &quot;Take data2 and show me those rows that correspond to the lemma  &#39;start&#39; or &#39;help&#39; or both.&quot;</span></span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>data2 <span class="sc">%&gt;%</span> </span>
 <span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(lemma <span class="sc">==</span> <span class="st">&quot;start&quot;</span> <span class="sc">|</span> lemma <span class="sc">==</span> <span class="st">&quot;help&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -4998,7 +4998,7 @@ Hint 2
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>It is possible to subset a dataframe and access a specific column vector at the same:</p>
+<p>It is possible to subset a dataframe and access a specific column vector at the same time:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>modals_df[modals_df<span class="sc">$</span>modal <span class="sc">==</span> <span class="st">&quot;can&quot;</span>,]<span class="sc">$</span>period1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -5065,8 +5065,8 @@ Hint 2
 <span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Tidyverse</span></span>
 <span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>complex_food_analysis2 <span class="ot">&lt;-</span> <span class="fu">case_when</span>(</span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>  things <span class="sc">%in%</span> fruits <span class="sc">~</span> <span class="st">&quot;fruit&quot;</span>, <span class="co"># if elements from &quot;things&quot; are in &quot;fruits&quot;, print &quot;yes&quot;, else</span></span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>  things <span class="sc">%in%</span> vegetables <span class="sc">~</span> <span class="st">&quot;vegetable&quot;</span>, <span class="co"># if they&#39;re in &quot;vegetables&quot;, print &quot;yes&quot;, else</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>  things <span class="sc">%in%</span> fruits <span class="sc">~</span> <span class="st">&quot;fruit&quot;</span>, <span class="co"># if elements from &quot;things&quot; are in &quot;fruits&quot;, print &quot;fruit&quot;, else</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>  things <span class="sc">%in%</span> vegetables <span class="sc">~</span> <span class="st">&quot;vegetable&quot;</span>, <span class="co"># if they&#39;re in &quot;vegetables&quot;, print &quot;vegetable&quot;, else</span></span>
 <span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>  <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;unknown&quot;</span>     <span class="co"># print &quot;unknown&quot;           </span></span>
 <span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
