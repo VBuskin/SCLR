@@ -2,10 +2,6 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/chapters/01-basics.html",
-      "/chapters/01-linguistic_variables.html",
-      "/chapters/01-rqs.html",
-      "/chapters/01-maths.html",
       "/chapters/02-first_steps.html",
       "/chapters/02-exploring_rstudio.html",
       "/chapters/02-vectors.html",

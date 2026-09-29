@@ -1,0 +1,151 @@
+---
+title: "Overview"
+listing:
+#  - id: fundamentals-listings
+#    contents: 
+#      - "chapters/01-basics.qmd"
+#      - "chapters/01-linguistic_variables.qmd"
+#      - "chapters/01-rqs.qmd"
+#      - "chapters/01-maths.qmd"
+      
+#    sort: "file"
+#    sort-ui: false
+#    filter-ui: false
+#    type: table
+#    fields: [title, description]
+  - id: r-listings
+    contents: 
+      - "chapters/02-first_steps.qmd"
+      - "chapters/02-exploring_rstudio.qmd"
+      - "chapters/02-vectors.qmd"
+      - "chapters/02-data_frames.qmd"
+      - "chapters/02-libraries.qmd"
+      - "chapters/02-importing_exporting.qmd"
+  
+    sort: "file"
+    sort-ui: false
+    filter-ui: false
+    type: table
+    fields: [title, description]
+    
+  - id: nlp-listings
+    contents: 
+      - "chapters/03-concordancing.qmd"
+      - "chapters/03-regex.qmd"
+      - "chapters/03-cqp.qmd"
+      - "chapters/03-data-annotation.qmd"
+
+    sort: "file"
+    sort-ui: false
+    filter-ui: false
+    type: table
+    fields: [title, description]    
+  
+  - id: stats-listings
+    contents: 
+      - "chapters/04-variables.qmd"
+      - "chapters/04-probability.qmd"
+      - "chapters/04-descriptive_stats.qmd"
+      - "chapters/05-hypothesis_testing.qmd"
+      - "chapters/05-chi_square_test.qmd"
+      - "chapters/05-t_test.qmd"
+
+    sort: "file"
+    sort-ui: false
+    filter-ui: false
+    type: table
+    fields: [title, description]
+
+  - id: models-listings
+    contents: 
+      - "chapters/06-linear_regression.qmd"
+      - "chapters/06-logistic_regression.qmd"
+      - "chapters/06-mixed_effects_regression.qmd"
+      - "chapters/06-poisson_regression.qmd"
+      - "chapters/06-ordinal_regression.qmd"
+
+    sort: "file"
+    sort-ui: false
+    filter-ui: false
+    type: table
+    fields: [title, description]     
+
+  - id: ml-listings
+    contents: 
+      - "chapters/06-trees_forests.qmd"
+      - "chapters/06-gradient_boosting.qmd"
+      - "chapters/07-PCA.qmd"
+      - "chapters/07-EFA.qmd"
+      - "chapters/07-clustering.qmd"
+
+    sort: "file"
+    sort-ui: false
+    filter-ui: false
+    type: table
+    fields: [title, description]    
+    
+author: 
+    - name: "Vladimir Buskin"
+      affiliations: 
+        - "Catholic University of Eichstätt-Ingolstadt"
+      orcid: "0009-0005-5824-1012"
+      url: "https://www.ku.de/en/slf/anglistik-amerikanistik/lehrstuehle-professuren/chair-of-english-language-and-linguistics/team/translate-to-englisch-vladimir-buskin"
+    - name: "Thomas Brunner"
+      url: "https://www.ku.de/en/slf/anglistik-amerikanistik/lehrstuehle-professuren/chair-of-english-language-and-linguistics/team/dr-thomas-brunner"
+      affiliations:
+        - "Catholic University of Eichstätt-Ingolstadt"
+    - name: "Philippa Adolf"
+      orcid: "0009-0006-3710-7030"
+      url: "https://de.linkedin.com/in/philippa-adolf-66a379268"
+      affiliations:
+        - "University of Vienna"
+format:
+  html:
+    toc: true
+---
+
+
+This collection of handouts provides a hands-on introduction to data
+analysis and statistical methods in quantitative corpus linguistics with
+R. It is designed with accessibility in mind, assuming no prior
+knowledge of programming or statistics. All you need to get started is a
+laptop; everything else will be explained within these pages.
+
+Primarily, this reader is geared towards students attending the classes
+**Language Variation** (BA) and **Statistics for Linguistics** (MA) at
+the Catholic University of Eichstätt-Ingolstadt (Germany). However, it
+is also meant to equip students currently working on their **BA/MA/PhD
+theses** with the tools they need to conduct empirical studies on a wide
+array of linguistic phenomena. The methods presented here reflect the
+state-of-the-art in corpus-linguistic research, providing readers with
+current and relevant analytical techniques.
+
+
+## Introduction to R
+
+::: {#r-listings}
+:::
+
+## NLP with R
+
+
+::: {#nlp-listings}
+:::
+
+## Statistics
+
+::: {#stats-listings}
+:::
+
+## Models
+
+::: {#models-listings}
+:::
+
+## Machine Learning
+
+::: {#ml-listings}
+:::
+
+
+
