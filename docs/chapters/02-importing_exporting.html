@@ -4247,8 +4247,8 @@ Setting the working directory
 <div class="callout-body-container callout-body">
 <p>There are two common ways of telling R where to look:</p>
 <ul>
-<li><p><strong>RStudio Projects (recommended)</strong>: Go to <code>File</code> &gt; <code>New Project</code> &gt; <code>New Directory</code> (or <code>Existing Directory</code>) and choose a folder for your term paper. Whenever you open the project (via the <code>.Rproj</code> file), the working directory is automatically set to that folder. Keep your scripts and data files in this folder, and R will find everything.</p></li>
-<li><p><strong><code>setwd()</code></strong>: Alternatively, you can set the working directory manually, e.g., <code>setwd(&quot;C:/Users/yourname/Documents/term_paper&quot;)</code>. In RStudio, you can also go to <code>Session</code> &gt; <code>Set Working Directory</code> &gt; <code>To Source File Location</code>.</p></li>
+<li><p><strong>RStudio Projects (recommended)</strong>: Go to <code>File</code> &gt; <code>New Project</code> &gt; <code>New Directory</code> (or <code>Existing Directory</code>) and choose a folder for your project (e.g., a term paper, thesis or research article). Whenever you open the project (via the <code>.Rproj</code> file), the working directory is automatically set to that folder. Keep your scripts and data files in this folder, and R will find everything.</p></li>
+<li><p><strong><code>setwd()</code></strong>: Alternatively, you can set the working directory manually, e.g., <code>setwd(&quot;C:/Users/yourname/Documents/my_project&quot;)</code>. In RStudio, you can also go to <code>Session</code> &gt; <code>Set Working Directory</code> &gt; <code>To Source File Location</code>.</p></li>
 </ul>
 <p>If your data files are in a subfolder of your working directory (e.g., a folder called <code>data</code>), you can simply include the folder name in the file name: <code>&quot;data/frequency_data.csv&quot;</code>.</p>
 <p>An error message such as <code>cannot open file &#39;frequency_data.csv&#39;: No such file or directory</code> almost always means that R is looking in the wrong folder!</p>
