@@ -4296,8 +4296,6 @@ white-space: nowrap;
   <ul class="collapse">
   <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types">Data types</a></li>
   <li><a href="#dependent-vs.-independent-variables" id="toc-dependent-vs.-independent-variables" class="nav-link" data-scroll-target="#dependent-vs.-independent-variables">Dependent vs. independent variables</a></li>
-  <li><a href="#loading-datasets-into-r" id="toc-loading-datasets-into-r" class="nav-link" data-scroll-target="#loading-datasets-into-r">Loading datasets into R</a></li>
-  <li><a href="#a-convenient-alternative-rds-files" id="toc-a-convenient-alternative-rds-files" class="nav-link" data-scroll-target="#a-convenient-alternative-rds-files">A convenient alternative: RDS files</a></li>
   </ul></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
   <ul class="collapse">
@@ -4306,7 +4304,7 @@ white-space: nowrap;
   <li><a href="#tier-3" id="toc-tier-3" class="nav-link" data-scroll-target="#tier-3">Tier 3</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="04-variables.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full column-body" id="quarto-document-content">
@@ -4627,8 +4625,8 @@ Example: Data matrix
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_sample</span>(example_data, <span class="at">n =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Observation Speaker Age Genitive
-1           1       A  25        S
-2           2       B  34        O</code></pre>
+1           2       B  34        O
+2           4       D  41        S</code></pre>
 </div>
 </div>
 </div>
@@ -4716,222 +4714,263 @@ Ratio-scaled
 <p>In empirical studies, it is often of interest whether one variable is linked to changes in the values of another variable. When exploring such <strong>associations</strong> (or <strong>correlations</strong>), we need to take another heuristic step to clarify the direction of the influence.</p>
 <p>In a linguistic context, we denote the variable whose usage patterns we’d like to explain as the <strong>dependent</strong> or <strong>response</strong> variable. A list of possible dependent variables is provided in the section on <a href="../chapters/01-linguistic_variables.html">Linguistic variables</a>.</p>
 <p>Its outcomes are said to depend on one or more <strong>independent variables</strong>. These are also often referred to as <strong>explanatory</strong> variables as they are supposed to explain variation in the response variable. In (socio-)linguistics, these include but are not limited to a speaker’s age, gender, socio-economic class (e.g., working class vs. middle class), their local variety, or the register of the speech context (e.g., casual exchange vs. business transaction).</p>
-</section>
-<section id="loading-datasets-into-r" class="level3">
-<h3 class="anchored" data-anchor-id="loading-datasets-into-r">Loading datasets into R</h3>
-<p>We will need <code>readxl</code> and <code>writexl</code> to aid us with importing and exporting MS Excel files.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(writexl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>If you haven’t installed these libraries yet, the R console will throw an error message. For instructions on how to install an R package, consult the unit on <a href="Libraries.qmd">Libraries</a>.</p>
-<section id="exporting-data" class="level4">
-<h4 class="anchored" data-anchor-id="exporting-data">Exporting data</h4>
-<p>Suppose we’d like to export our data frame with word frequencies to a local file on our system. Let’s briefly regenerate the data frame:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate data frame</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">lemma =</span> <span class="fu">c</span>(<span class="st">&quot;start&quot;</span>, <span class="st">&quot;enjoy&quot;</span>, <span class="st">&quot;begin&quot;</span>, <span class="st">&quot;help&quot;</span>), </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">frequency =</span> <span class="fu">c</span>(<span class="dv">418</span>, <span class="dv">139</span>, <span class="dv">337</span>, <span class="dv">281</span>))</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Print contents</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  lemma frequency
+<!--
+
+### Loading datasets into R
+
+We will need `readxl` and `writexl` to aid us with importing and exporting MS Excel files.
+
+
+::: {.cell}
+
+```{.r .cell-code}
+library(readxl)
+library(writexl)
+```
+:::
+
+
+If you haven't installed these libraries yet, the R console will throw an error message. For instructions on how to install an R package, consult the unit on [Libraries](Libraries.qmd).
+
+#### Exporting data
+
+Suppose we'd like to export our data frame with word frequencies to a local file on our system. Let's briefly regenerate the data frame:
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Generate data frame
+data <- data.frame(lemma = c("start", "enjoy", "begin", "help"), 
+                   frequency = c(418, 139, 337, 281))
+
+# Print contents
+print(data)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+  lemma frequency
 1 start       418
 2 enjoy       139
 3 begin       337
-4  help       281</code></pre>
-</div>
-</div>
-<p>There are two common formats in which tabular data can be stored:</p>
-<ul>
-<li><p>as .<strong>csv</strong>-files (‘<strong>c</strong>omma-<strong>s</strong>eparated <strong>v</strong>alues’; native format of LibreOffice Calc, for example)</p></li>
-<li><p>as .<strong>xls</strong>/.<strong>xlsx</strong>-files (Microsoft Excel)</p></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled" title="Export to CSV">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Export to CSV
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>To save our <code>data</code> data frame in .csv-format, we can use the <code>write.csv()</code> function:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(data, <span class="st">&quot;frequency_data.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The file is now stored at the location of your current R script. You can open this file …</p>
-<ul>
-<li><p>in <strong>LibreOffice</strong></p></li>
-<li><p>in <strong>Microsoft Excel</strong> via <code>File</code> &gt; <code>Import</code> &gt; <code>CSV file</code> &gt; Select the file &gt; <code>Delimited</code> and then <code>Next</code> &gt; <code>Comma</code> and <code>Next</code> &gt; <code>General</code> and <code>Finish</code>.</p></li>
-</ul>
-<p>Clearly, opening CSV files in MS Excel is quite cumbersome, which is why it’s better to export it as an Excel file directly.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Export to Excel">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Export to Excel
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>We use the <code>write_xlsx()</code> function provided by the package <code>writexl</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_xlsx</span>(data, <span class="st">&quot;frequency_data.xlsx&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The file is now stored at the location of your currently active R script. You should now be able to open it in MS Excel without any issues.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="sec-import" class="level4">
-<h4 class="anchored" data-anchor-id="sec-import">Importing data</h4>
-<p>Let’s read the two files back into R.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Import from CSV">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Import from CSV
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>To import the CSV file, we can use the <code>read.csv()</code> function:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>imported_csv <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;frequency_data.csv&quot;</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(imported_csv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  X lemma frequency
+4  help       281
+```
+
+
+:::
+:::
+
+
+There are two common formats in which tabular data can be stored:
+
+-   as .**csv**-files ('**c**omma-**s**eparated **v**alues'; native format of LibreOffice Calc, for example)
+
+-   as .**xls**/.**xlsx**-files (Microsoft Excel)
+
+::: {.callout-note collapse="true" title="Export to CSV"}
+To save our `data` data frame in .csv-format, we can use the `write.csv()` function:
+
+
+::: {.cell}
+
+```{.r .cell-code}
+write.csv(data, "frequency_data.csv")
+```
+:::
+
+
+The file is now stored at the location of your current R script. You can open this file ...
+
+-   in **LibreOffice**
+
+-   in **Microsoft Excel** via `File` \> `Import` \> `CSV file` \> Select the file \> `Delimited` and then `Next` \> `Comma` and `Next` \> `General` and `Finish`.
+
+Clearly, opening CSV files in MS Excel is quite cumbersome, which is why it's better to export it as an Excel file directly.
+:::
+
+::: {.callout-note collapse="true" title="Export to Excel"}
+We use the `write_xlsx()` function provided by the package `writexl`.
+
+
+::: {.cell}
+
+```{.r .cell-code}
+write_xlsx(data, "frequency_data.xlsx")
+```
+:::
+
+
+The file is now stored at the location of your currently active R script. You should now be able to open it in MS Excel without any issues.
+:::
+
+#### Importing data {#sec-import}
+
+Let's read the two files back into R.
+
+:::: {.callout-note collapse="true" title="Import from CSV"}
+To import the CSV file, we can use the `read.csv()` function:
+
+
+::: {.cell}
+
+```{.r .cell-code}
+imported_csv <- read.csv("frequency_data.csv")
+print(imported_csv)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+  X lemma frequency
 1 1 start       418
 2 2 enjoy       139
 3 3 begin       337
-4 4  help       281</code></pre>
-</div>
-</div>
-<p>It appears that <code>read.csv()</code> has also written the row numbers to the file. This is not the desired outcome and can be prevented by adding an additional argument:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>imported_csv <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;frequency_data.csv&quot;</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(imported_csv) <span class="co"># Problem solved!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  lemma frequency
-1 start       418
-2 enjoy       139
-3 begin       337
-4  help       281</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled" title="A note on file encodings and separators">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-A note on file encodings and separators
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>When working with CSV files, you may encounter issues with character encodings and separators, especially when:</p>
-<ul>
-<li>working with files from different operating systems,</li>
-<li>dealing with text containing special characters (é, ü, ñ, etc.), or</li>
-<li>importing files created in different regions (e.g., European vs. US).</li>
-</ul>
-<p>The most common encoding-related parameters for read.csv() are:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For files with special characters (recommended default)</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;myfile.csv&quot;</span>, <span class="at">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># For files from Windows systems</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;myfile.csv&quot;</span>, <span class="at">encoding =</span> <span class="st">&quot;latin1&quot;</span>)</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># For files using semicolons and commas as decimal points</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;myfile.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;;&quot;</span>, <span class="at">dec =</span> <span class="st">&quot;,&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>If you see garbled text like Ã© instead of é, try specifying <code>encoding = &quot;UTF-8&quot;</code>.</li>
-<li>If your data appears in a single column, check if your file uses semicolons (<code>;</code>) instead of commas (<code>,</code>) as separators.</li>
-<li>If numeric values are incorrect, verify whether the file uses commas or periods as decimal separators.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Import from Excel">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Import from Excel
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>For importing the Excel file, we’ll use the <code>read_xlsx()</code> function from the <code>readxl</code> package:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>imported_excel <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">&quot;frequency_data.xlsx&quot;</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(imported_excel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 2
+4 4  help       281
+```
+
+
+:::
+:::
+
+
+It appears that `read.csv()` has also written the row numbers to the file. This is not the desired outcome and can be prevented by adding an additional argument:
+
+
+::: {.cell}
+
+```{.r .cell-code}
+imported_csv <- read.csv("frequency_data.csv", row.names = 1)
+print(imported_csv) # Problem solved!
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
   lemma frequency
-  &lt;chr&gt;     &lt;dbl&gt;
 1 start       418
 2 enjoy       139
 3 begin       337
-4 help        281</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>That’s it! Nevertheless, remember to always check your imported data to ensure it has been read in correctly, especially when working with CSV files.</p>
-</section>
-</section>
-<section id="a-convenient-alternative-rds-files" class="level3">
-<h3 class="anchored" data-anchor-id="a-convenient-alternative-rds-files">A convenient alternative: RDS files</h3>
-<p>If the main goal is to save an intermediary result and make it available for later use, the most efficient solution is to save the object to a local R data file ending in <code>.RDS</code>. Since it compressed data, .RDS files can be considered analogous to .zip files, which are very commonly used for other data types.</p>
-<p>In practice, we use the <code>saveRDS()</code> function and supply it with …</p>
-<ul>
-<li><p>… an R object (e.g., a vector, data frame, matrix, graphs, statistical models – anything goes!) as well as</p></li>
-<li><p>… the desired name of the file.</p></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save data frame &quot;data&quot; to the file &quot;frequency_data.RDS&quot;</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(data, <span class="st">&quot;frequency_data.RDS&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>To read a file back in, we need to indicate the file name (or the full file path if the file is located in a different folder).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in &quot;frequency_data.RDS&quot; and assign the contents to &quot;data2&quot;</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;frequency_data.RDS&quot;</span>)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify contents</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  lemma frequency
+4  help       281
+```
+
+
+:::
+:::
+
+
+::: {.callout-warning collapse="true" title="A note on file encodings and separators"}
+When working with CSV files, you may encounter issues with character encodings and separators, especially when:
+
+-   working with files from different operating systems,
+-   dealing with text containing special characters (é, ü, ñ, etc.), or
+-   importing files created in different regions (e.g., European vs. US).
+
+The most common encoding-related parameters for read.csv() are:
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# For files with special characters (recommended default)
+data <- read.csv("myfile.csv", encoding = "UTF-8")
+
+# For files from Windows systems
+data <- read.csv("myfile.csv", encoding = "latin1")
+
+# For files using semicolons and commas as decimal points
+data <- read.csv("myfile.csv", sep = ";", dec = ",")
+```
+:::
+
+
+-   If you see garbled text like Ã© instead of é, try specifying `encoding = "UTF-8"`.
+-   If your data appears in a single column, check if your file uses semicolons (`;`) instead of commas (`,`) as separators.
+-   If numeric values are incorrect, verify whether the file uses commas or periods as decimal separators.
+:::
+::::
+
+::: {.callout-note collapse="true" title="Import from Excel"}
+For importing the Excel file, we'll use the `read_xlsx()` function from the `readxl` package:
+
+
+::: {.cell}
+
+```{.r .cell-code}
+imported_excel <- read_xlsx("frequency_data.xlsx")
+print(imported_excel)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+# A tibble: 4 × 2
+  lemma frequency
+  <chr>     <dbl>
 1 start       418
 2 enjoy       139
 3 begin       337
-4  help       281</code></pre>
-</div>
-</div>
+4 help        281
+```
+
+
+:::
+:::
+
+:::
+
+That's it! Nevertheless, remember to always check your imported data to ensure it has been read in correctly, especially when working with CSV files.
+
+### A convenient alternative: RDS files
+
+If the main goal is to save an intermediary result and make it available for later use, the most efficient solution is to save the object to a local R data file ending in `.RDS`. Since it compressed data, .RDS files can be considered analogous to .zip files, which are very commonly used for other data types.
+
+In practice, we use the `saveRDS()` function and supply it with ...
+
+-   ... an R object (e.g., a vector, data frame, matrix, graphs, statistical models -- anything goes!) as well as
+
+-   ... the desired name of the file.
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Save data frame "data" to the file "frequency_data.RDS"
+saveRDS(data, "frequency_data.RDS")
+```
+:::
+
+
+To read a file back in, we need to indicate the file name (or the full file path if the file is located in a different folder).
+
+
+::: {.cell}
+
+```{.r .cell-code}
+# Read in "frequency_data.RDS" and assign the contents to "data2"
+data2 <- readRDS("frequency_data.RDS")
+
+# Verify contents
+print(data2)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+  lemma frequency
+1 start       418
+2 enjoy       139
+3 begin       337
+4  help       281
+```
+
+
+:::
+:::
+
+
+-->
 </section>
 </section>
 <section id="exercises" class="level1 page-columns page-full">
@@ -4976,7 +5015,7 @@ Solutions
 <p><span class="theorem-title"><strong>Exercise 3</strong></span> Download the dataset <code>Paquot_Larsson_2020_data.xlsx</code> from the supplementary materials and store it in a folder you can easily access from within RStudio. <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup> The dataset was published as part of Paquot &amp; Larsson <span class="citation" data-cites="paquotDescriptiveStatisticsVisualization2020">(<a href="#ref-paquotDescriptiveStatisticsVisualization2020" role="doc-biblioref">2020</a>)</span>.</p></div></div><p>Load the .xlsx file into R and name it <code>cl.order</code>. Identify the variable types (nominal, ordinal etc.) for all columns in the <code>cl.order</code> dataset.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="What&#39;s in the file? The `str()` function">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -4985,11 +5024,11 @@ What’s in the file? The <code>str()</code> function
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The easiest way to get a general overview of the full data set is to apply the <code>str()</code> function to the respective data frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(cl.order)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(cl.order)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [403 × 8] (S3: tbl_df/tbl/data.frame)
  $ CASE       : num [1:403] 4777 1698 953 1681 4055 ...
@@ -5010,7 +5049,7 @@ What’s in the file? The <code>str()</code> function
 </ul>
 <p>Another intuitive way to display the structure of a data matrix is to simply show the first few rows:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cl.order)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cl.order)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
    CASE ORDER SUBORDTYPE LEN_MC LEN_SC LENGTH_DIFF CONJ     MORETHAN2CL
@@ -5027,7 +5066,7 @@ What’s in the file? The <code>str()</code> function
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Further details on the variables">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -5036,7 +5075,7 @@ Further details on the variables
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><p><code>ORDER</code>: Does the subordinate clause come before or after the main clause?</p></li>
@@ -5050,7 +5089,7 @@ Further details on the variables
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Number of (unique) values in R">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -5059,25 +5098,25 @@ Number of (unique) values in R
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>To count the number of items in a vector, which correspond to the total number <span class="math inline">\(n\)</span> of attested values of <span class="math inline">\(X\)</span>, we can use <code>length()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(cl.order<span class="sc">$</span>SUBORDTYPE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(cl.order<span class="sc">$</span>SUBORDTYPE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 403</code></pre>
 </div>
 </div>
 <p>In fact, it is equivalent to the number of rows in the full data frame:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(cl.order)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(cl.order)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 403</code></pre>
 </div>
 </div>
 <p>The function <code>unique()</code> shows all unique items (= “types”) in a vector, reflecting the possible outcomes for a single observation:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(cl.order<span class="sc">$</span>SUBORDTYPE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(cl.order<span class="sc">$</span>SUBORDTYPE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;temp&quot; &quot;caus&quot;</code></pre>
 </div>
@@ -5111,23 +5150,23 @@ Number of (unique) values in R
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a range of sample sizes to try</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>sample_sizes <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">10</span>, <span class="dv">15000</span>, <span class="at">by =</span> <span class="dv">50</span>)</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># For each sample size, draw a random sample and compute x_bar</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>x_bars <span class="ot">&lt;-</span> <span class="fu">sapply</span>(sample_sizes, <span class="cf">function</span>(n) {</span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  sample_data <span class="ot">&lt;-</span> SCOPE <span class="sc">%&gt;%</span> </span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Valence_Warr)) <span class="sc">%&gt;%</span></span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">slice_sample</span>(<span class="at">n =</span> n, <span class="at">replace =</span> <span class="cn">FALSE</span>)  <span class="co"># without replacement</span></span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(sample_data<span class="sc">$</span>Valence_Warr)</span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the results</span></span>
-<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sample_sizes, x_bars,</span>
-<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;l&quot;</span>,</span>
-<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Sample size (n)&quot;</span>,</span>
-<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Observed sample mean&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a range of sample sizes to try</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>sample_sizes <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">10</span>, <span class="dv">15000</span>, <span class="at">by =</span> <span class="dv">50</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># For each sample size, draw a random sample and compute x_bar</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>x_bars <span class="ot">&lt;-</span> <span class="fu">sapply</span>(sample_sizes, <span class="cf">function</span>(n) {</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  sample_data <span class="ot">&lt;-</span> SCOPE <span class="sc">%&gt;%</span> </span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Valence_Warr)) <span class="sc">%&gt;%</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">slice_sample</span>(<span class="at">n =</span> n, <span class="at">replace =</span> <span class="cn">FALSE</span>)  <span class="co"># without replacement</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(sample_data<span class="sc">$</span>Valence_Warr)</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the results</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(sample_sizes, x_bars,</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">&quot;l&quot;</span>,</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Sample size (n)&quot;</span>,</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Observed sample mean&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -5145,16 +5184,16 @@ Number of (unique) values in R
 <div id="exr-var-6" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 6</strong></span> The <code>tidyverse</code> function <code>slice_sample()</code> allows users to randomly sample rows from a data frame, with every row having the same probability of being selected. We will do so without replacement for the <code>cl.order</code> data, choosing 50 rows at random.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># For reproducibility, it is highly recommended to set a random seed. This makes sure we will get the &quot;same&quot; random result every time we execute our code.</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract a random sample of 50 rows</span></span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>cl.order.random <span class="ot">&lt;-</span> cl.order <span class="sc">%&gt;%</span></span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cl.order.random)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># For reproducibility, it is highly recommended to set a random seed. This makes sure we will get the &quot;same&quot; random result every time we execute our code.</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract a random sample of 50 rows</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>cl.order.random <span class="ot">&lt;-</span> cl.order <span class="sc">%&gt;%</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cl.order.random)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 50 × 8
     CASE ORDER SUBORDTYPE LEN_MC LEN_SC LENGTH_DIFF CONJ          MORETHAN2CL
@@ -5174,47 +5213,47 @@ Number of (unique) values in R
 </div>
 <p>Another common approach is <strong>stratified sampling</strong>, which is a method of sampling from a population where the population is divided into distinct subgroups (strata) based on a characteristic, and a sample is drawn from each subgroup to ensure proportional representation.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sampling)</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>strat_sample <span class="ot">&lt;-</span> <span class="cf">function</span>(data, variable, size) {</span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Capture the variable symbol</span></span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  var_sym <span class="ot">&lt;-</span> <span class="fu">enquo</span>(variable)</span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>  var_name <span class="ot">&lt;-</span> rlang<span class="sc">::</span><span class="fu">as_name</span>(var_sym)</span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Proportions in the population (= sampling weights)</span></span>
-<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>  data_prop <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="fu">pull</span>(data, <span class="sc">!!</span>var_sym)) <span class="sc">/</span> <span class="fu">nrow</span>(data)</span>
-<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Sizes of the stratified sample</span></span>
-<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>  strat_sample_sizes <span class="ot">&lt;-</span> <span class="fu">round</span>(size <span class="sc">*</span> data_prop)</span>
-<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Convert variable of interest to factor</span></span>
-<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>  data[[var_name]] <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(data[[var_name]])</span>
-<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Draw the sample</span></span>
-<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>  clause_strat_sample <span class="ot">&lt;-</span> <span class="fu">strata</span>(data, </span>
-<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>                                <span class="at">stratanames =</span> var_name,</span>
-<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a>                                <span class="at">size =</span> strat_sample_sizes, </span>
-<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a>                                <span class="co"># Stratified sampling without replacement</span></span>
-<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a>                                <span class="at">method =</span> <span class="st">&quot;srswor&quot;</span>)</span>
-<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Output df</span></span>
-<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a>  output_sample <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="fu">getdata</span>(data, clause_strat_sample)) <span class="sc">%&gt;%</span> </span>
-<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span>Prob, <span class="sc">-</span>Stratum, <span class="sc">-</span>ID_unit)</span>
-<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(output_sample)</span>
-<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the function</span></span>
-<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a>cl.order.strat <span class="ot">&lt;-</span> <span class="fu">strat_sample</span>(cl.order, ORDER, <span class="at">size =</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sampling)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>strat_sample <span class="ot">&lt;-</span> <span class="cf">function</span>(data, variable, size) {</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Capture the variable symbol</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  var_sym <span class="ot">&lt;-</span> <span class="fu">enquo</span>(variable)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  var_name <span class="ot">&lt;-</span> rlang<span class="sc">::</span><span class="fu">as_name</span>(var_sym)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Proportions in the population (= sampling weights)</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  data_prop <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="fu">pull</span>(data, <span class="sc">!!</span>var_sym)) <span class="sc">/</span> <span class="fu">nrow</span>(data)</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Sizes of the stratified sample</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>  strat_sample_sizes <span class="ot">&lt;-</span> <span class="fu">round</span>(size <span class="sc">*</span> data_prop)</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Convert variable of interest to factor</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>  data[[var_name]] <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(data[[var_name]])</span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Draw the sample</span></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>  clause_strat_sample <span class="ot">&lt;-</span> <span class="fu">strata</span>(data, </span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>                                <span class="at">stratanames =</span> var_name,</span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>                                <span class="at">size =</span> strat_sample_sizes, </span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>                                <span class="co"># Stratified sampling without replacement</span></span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>                                <span class="at">method =</span> <span class="st">&quot;srswor&quot;</span>)</span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Output df</span></span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>  output_sample <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="fu">getdata</span>(data, clause_strat_sample)) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span>Prob, <span class="sc">-</span>Stratum, <span class="sc">-</span>ID_unit)</span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(output_sample)</span>
+<span id="cb26-31"><a href="#cb26-31" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb26-32"><a href="#cb26-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-33"><a href="#cb26-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the function</span></span>
+<span id="cb26-34"><a href="#cb26-34" aria-hidden="true" tabindex="-1"></a>cl.order.strat <span class="ot">&lt;-</span> <span class="fu">strat_sample</span>(cl.order, ORDER, <span class="at">size =</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s compare the results of the different sampling procedures:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check proportions in the original dataset</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>cl.order <span class="sc">%&gt;%</span></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(ORDER) <span class="sc">%&gt;%</span> </span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pct =</span> n<span class="sc">/</span><span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check proportions in the original dataset</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>cl.order <span class="sc">%&gt;%</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(ORDER) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pct =</span> n<span class="sc">/</span><span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   ORDER     n   pct
@@ -5222,10 +5261,10 @@ Number of (unique) values in R
 1 mc-sc   275 0.682
 2 sc-mc   128 0.318</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check proportions in the random sample</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>cl.order.random <span class="sc">%&gt;%</span> </span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">count</span>(ORDER) <span class="sc">%&gt;%</span> </span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(<span class="at">pct =</span> n<span class="sc">/</span><span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check proportions in the random sample</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>cl.order.random <span class="sc">%&gt;%</span> </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">count</span>(ORDER) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(<span class="at">pct =</span> n<span class="sc">/</span><span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   ORDER     n   pct
@@ -5233,10 +5272,10 @@ Number of (unique) values in R
 1 mc-sc    29  0.58
 2 sc-mc    21  0.42</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check proportions in the stratified sample</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>cl.order.strat <span class="sc">%&gt;%</span> </span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">count</span>(ORDER) <span class="sc">%&gt;%</span> </span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(<span class="at">pct =</span> n<span class="sc">/</span><span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check proportions in the stratified sample</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>cl.order.strat <span class="sc">%&gt;%</span> </span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">count</span>(ORDER) <span class="sc">%&gt;%</span> </span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(<span class="at">pct =</span> n<span class="sc">/</span><span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   ORDER     n   pct
