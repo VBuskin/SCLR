@@ -4389,10 +4389,6 @@ white-space: nowrap;
     <a class="dropdown-item" href="../chapters/06-poisson_regression.html">
  <span class="dropdown-text">4.4 Poisson regression</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../chapters/06-ordinal_regression.html">
- <span class="dropdown-text">4.5 Ordinal regression</span></a>
-  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -4488,12 +4484,6 @@ white-space: nowrap;
   <div class="sidebar-item-container"> 
   <a href="../chapters/06-poisson_regression.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">4.4 Poisson regression</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/06-ordinal_regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">4.5 Ordinal regression</span></a>
   </div>
 </li>
       </ul>
@@ -5071,7 +5061,7 @@ Referentialitynon-referential 0           0           0         0
 Referentialitynon-referential 0       0       1        1          </code></pre>
 </div>
 </div>
-<p>Since <code>Referentiality</code> is completely determined by <code>Person</code> (presumably because the non-referential subjects coincide with the dummy pronouns <em>it</em> and <em>there</em>), refitting the model without <code>Referentiality</code> solves the problem:</p>
+<p>Since <code>Referentiality</code> is completely determined by <code>Person</code> (because the non-referential subjects coincide with the dummy pronouns <em>it</em> and <em>there</em>), refitting the model without <code>Referentiality</code> solves the problem:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>Reference.glm2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(Reference <span class="sc">~</span> Register <span class="sc">+</span> Variety <span class="sc">+</span> Person, <span class="at">data =</span> data_pro, <span class="at">family =</span> <span class="st">&quot;binomial&quot;</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
