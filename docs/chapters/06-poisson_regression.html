@@ -4337,6 +4337,7 @@ white-space: nowrap;
 <blockquote class="blockquote">
 <p>Winter <span class="citation" data-cites="winter_statistics_2020">(<a href="#ref-winter_statistics_2020" role="doc-biblioref">2020</a>: Chapter 13)</span></p>
 <p>Baguley <span class="citation" data-cites="baguleySeriousStatsGuide2012">(<a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">2012</a>: Chapter 17.5)</span></p>
+<p>Agresti &amp; Kateri <span class="citation" data-cites="agrestiFoundationsStatisticsData2022">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">2022</a>: Chapters 2.4.6–2.4.7, 7.1, 7.4–7.5)</span></p>
 <p>Gelman &amp; Hill <span class="citation" data-cites="gelmanDataAnalysisUsing2007">(<a href="#ref-gelmanDataAnalysisUsing2007" role="doc-biblioref">2007</a>: Chapter 6.2)</span></p>
 </blockquote>
 </section>
@@ -4354,7 +4355,7 @@ white-space: nowrap;
 </section>
 <section id="why-not-linear-regression" class="level2">
 <h2 class="anchored" data-anchor-id="why-not-linear-regression">Why not linear regression?</h2>
-<p>Frequency data is ubiquitous in corpus linguistics. Given its numeric nature, it seems tempting to model such data using <a href="../chapters/06-linear_regression.html">linear regression</a>, but doing so is bound to cause problems. Counts are <strong>non-negative integers</strong> (0, 1, 2, …), whereas the linear model assumes a continuous, normally distributed response that can, in principle, take any value. As a consequence,</p>
+<p>Frequency data is ubiquitous in corpus linguistics. Given its numeric nature, it seems tempting to model such data using <a href="../chapters/06-linear_regression.html">linear regression</a>. This may give adequate results in some cases, e.g., in large samples, but particularly when the counts are small, it tends to cause problems <span class="citation" data-cites="baguleySeriousStatsGuide2012">(<a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">Baguley 2012</a>: 694–696)</span>. Counts are <strong>non-negative integers</strong> (0, 1, 2, …), whereas the linear model places no bounds on its predictions and assumes normally distributed residuals with constant variance. As a consequence,</p>
 <ul>
 <li>the linear model may predict <strong>negative</strong> counts, which are impossible,</li>
 <li>the residuals tend to be <strong>non-normal</strong>, and</li>
@@ -4373,11 +4374,11 @@ white-space: nowrap;
 </section>
 <section id="the-poisson-distribution" class="level2">
 <h2 class="anchored" data-anchor-id="the-poisson-distribution">The Poisson distribution</h2>
-<p>A probability distribution that is much better equipped for this special case of discrete, yet numeric data is the <strong>Poisson distribution</strong>. Assuming a Poisson-distributed variable <span class="math inline">\(X\)</span>, its exact shape is determined by a single parameter, <span class="math inline">\(\lambda\)</span> (‘lambda’), which is both its expected value (i.e., the mean) and its variance. In shorthand notation,</p>
+<p>A probability distribution that is much better equipped for this special case of discrete, yet numeric data is the <strong>Poisson distribution</strong>. It describes counts of events that occur independently of each other and at a constant rate, e.g., within a given period of time or stretch of text <span class="citation" data-cites="agrestiFoundationsStatisticsData2022">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">Agresti and Kateri 2022</a>: 50)</span>. Assuming a Poisson-distributed variable <span class="math inline">\(X\)</span>, its exact shape is determined by a single parameter, <span class="math inline">\(\lambda\)</span> (‘lambda’), which is both its expected value (i.e., the mean) and its variance. In shorthand notation,</p>
 <p><span id="eq-pois"><span class="math display">\[
 X \sim Pois(\lambda), \qquad E(X) = Var(X) = \lambda.
 \tag{1}\]</span></span></p>
-<p>Its probability mass function has a notable <strong>positive</strong> (right) skew: Most of the probability mass lies on small counts, with a long tail stretching towards larger counts. The skew becomes less conspicuous for increasingly higher parameter values.</p>
+<p>Its probability mass function has a notable <strong>positive</strong> (right) skew: Most of the probability mass lies on small counts, with a long tail stretching towards larger counts. Since its skewness coefficient equals <span class="math inline">\(1/\sqrt{\lambda}\)</span>, the skew becomes less conspicuous for increasingly higher parameter values <span class="citation" data-cites="agrestiFoundationsStatisticsData2022">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">Agresti and Kateri 2022</a>: 51)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -4403,7 +4404,7 @@ The Poisson probability mass function
 <p><span id="eq-pois-pmf"><span class="math display">\[
 P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}, \qquad k = 0, 1, 2, \dots
 \tag{2}\]</span></span></p>
-<p>where <span class="math inline">\(k! = k \cdot (k-1) \cdot \ldots \cdot 1\)</span> (and <span class="math inline">\(0! = 1\)</span>). For instance, if a word occurs on average <span class="math inline">\(\lambda = 3.5\)</span> times per text, the probability that it does not occur at all in a given text is <span class="math inline">\(P(X = 0) = e^{-3.5} \approx 0.03\)</span>. In R, these probabilities are computed by <code>dpois()</code>, e.g., <code>dpois(0, lambda = 3.5)</code>.</p>
+<p>where <span class="math inline">\(k! = k \cdot (k-1) \cdot \ldots \cdot 1\)</span> (and <span class="math inline">\(0! = 1\)</span>). For instance, if a word occurs on average <span class="math inline">\(\lambda = 3.5\)</span> times per text, the probability that it does not occur at all in a given text is <span class="math inline">\(P(X = 0) = e^{-3.5} \approx 0.03\)</span>. In R, these probabilities are computed by <code>dpois()</code>, e.g., <code>dpois(0, lambda = 3.5)</code>. For a derivation of the mean and variance, see Agresti and Kateri <span class="citation" data-cites="agrestiFoundationsStatisticsData2022">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">2022</a>: 51)</span>.</p>
 </div>
 </div>
 </div>
@@ -4411,20 +4412,20 @@ P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}, \qquad k = 0, 1, 2, \dots
 <section id="poisson-regression" class="level2">
 <h2 class="anchored" data-anchor-id="poisson-regression">Poisson regression</h2>
 <p>Recall how in linear regression, the dependent variable <span class="math inline">\(Y\)</span> was modelled as a function of the linear sum of predictor terms <span class="math inline">\(\beta_pX_p\)</span> for <span class="math inline">\(1, \dots, p\)</span> independent variables.</p>
-<p>The <strong>Poisson model</strong> keeps this linear predictor but links it to the response in a different way. It assumes that each observed count <span class="math inline">\(Y\)</span> comes from a Poisson distribution whose expected value <span class="math inline">\(\lambda\)</span> depends on the predictors, and it models the <strong>logarithm</strong> of <span class="math inline">\(\lambda\)</span>:</p>
+<p>The <strong>Poisson model</strong> keeps this linear predictor but links it to the response in a different way. Like logistic regression, it is a <strong>generalised linear model</strong> (GLM), which consists of three components: a probability distribution for the response, a linear predictor and a link function connecting the two <span class="citation" data-cites="agrestiFoundationsStatisticsData2022">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">Agresti and Kateri 2022</a>: 263–264)</span>. It assumes that each observed count <span class="math inline">\(Y\)</span> comes from a Poisson distribution whose expected value <span class="math inline">\(\lambda\)</span> depends on the predictors, and it models the <strong>logarithm</strong> of <span class="math inline">\(\lambda\)</span>:</p>
 <p><span id="eq-pois-full"><span class="math display">\[
 Y \sim Pois(\lambda), \qquad \ln(\lambda) = \beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_pX_p.
 \tag{3}\]</span></span></p>
 <p>Two aspects of this model are worth noting:</p>
 <ul>
-<li>It is the expected count <span class="math inline">\(\lambda\)</span> that is log-transformed, not the observed counts <span class="math inline">\(Y\)</span> themselves. This is fortunate, since <span class="math inline">\(\ln(0)\)</span> is undefined, but zero counts are perfectly common. The logarithm is the <strong>link function</strong> of the model, much like the logit in <a href="../chapters/06-logistic_regression.html">logistic regression</a>, and it ensures that the predicted counts are always positive.</li>
+<li>It is the expected count <span class="math inline">\(\lambda\)</span> that is log-transformed, not the observed counts <span class="math inline">\(Y\)</span> themselves. This is fortunate, since <span class="math inline">\(\ln(0)\)</span> is undefined, but zero counts are perfectly common. The logarithm is the <strong>link function</strong> of the model, much like the logit in <a href="../chapters/06-logistic_regression.html">logistic regression</a>. While the expected count cannot be negative, its logarithm can take any real value, just like the linear predictor <span class="citation" data-cites="agrestiFoundationsStatisticsData2022">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">Agresti and Kateri 2022</a>: 264)</span>. This also ensures that the predicted counts are always positive.</li>
 <li>There is no separate error term. The random variation of the counts around <span class="math inline">\(\lambda\)</span> is described by the Poisson distribution itself.</li>
 </ul>
 <p>To remove the logarithm and obtain the model output on a more intuitive scale, we simply exponentiate both sides:</p>
 <p><span id="eq-pois-exp"><span class="math display">\[
 \lambda = e^{\beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_pX_p} = e^{\beta_0} \cdot e^{\beta_1X_1} \cdot e^{\beta_2X_2} \cdot \ldots \cdot e^{\beta_pX_p}.
 \tag{4}\]</span></span></p>
-<p>The right-hand side shows that the predictors do not <em>add</em> to the expected count, but <strong>multiply</strong> it. This is key to interpreting the model output.</p>
+<p>The right-hand side shows that the predictors do not add to the expected count, but <strong>multiply</strong> it <span class="citation" data-cites="baguleySeriousStatsGuide2012 agrestiFoundationsStatisticsData2022">(<a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">Baguley 2012</a>: 697; <a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">Agresti and Kateri 2022</a>: 285)</span>. This is key to interpreting the model output.</p>
 <section id="application-in-r" class="level3">
 <h3 class="anchored" data-anchor-id="application-in-r">Application in R</h3>
 <p>The data provided by Winter <span class="citation" data-cites="winter_statistics_2020">(<a href="#ref-winter_statistics_2020" role="doc-biblioref">2020</a>)</span> contains frequency data for several hundred English adjectives (<code>Freq</code> column) as well as ratings of how strongly they are experienced through each of the five senses (<code>Sight</code>, <code>Touch</code>, <code>Sound</code>, <code>Taste</code> and <code>Smell</code>). The ratings range from 0 to 5 and were originally compiled by Lynott and Connell <span class="citation" data-cites="LynottConnell2009">(<a href="#ref-LynottConnell2009" role="doc-biblioref">2009</a>)</span>.</p>
@@ -4516,7 +4517,7 @@ Number of Fisher Scoring iterations: 7</code></pre>
 </section>
 <section id="interpretation" class="level3">
 <h3 class="anchored" data-anchor-id="interpretation">Interpretation</h3>
-<p>Since the predictors multiply the expected count (<a href="#eq-pois-exp" class="quarto-xref">Equation 4</a>), a one-unit increase in <span class="math inline">\(X\)</span> changes the expected count by the factor <span class="math inline">\(e^\beta\)</span>. Equivalently, the percentage increase (or decrease, respectively) is given by <span class="math inline">\(100(e^\beta - 1)\)</span>.</p>
+<p>Since the predictors multiply the expected count (<a href="#eq-pois-exp" class="quarto-xref">Equation 4</a>), a one-unit increase in <span class="math inline">\(X\)</span> changes the expected count by the factor <span class="math inline">\(e^\beta\)</span>. Equivalently, the percentage increase (or decrease, respectively) is given by <span class="math inline">\(100(e^\beta - 1)\)</span> <span class="citation" data-cites="baguleySeriousStatsGuide2012">(<a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">Baguley 2012</a>: 697)</span>. For coefficients close to zero, <span class="math inline">\(\beta\)</span> itself approximates the proportional change, e.g., <span class="math inline">\(\beta = 0.08\)</span> corresponds to an increase of roughly 8%. This shortcut becomes increasingly inaccurate as <span class="math inline">\(\beta\)</span> moves away from zero, e.g., beyond <span class="math inline">\(\pm 0.2\)</span> <span class="citation" data-cites="baguleySeriousStatsGuide2012">(<a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">Baguley 2012</a>: 697)</span>.</p>
 <p>As we can see, adjectives with higher <code>Sight</code> ratings (i.e., highly visual adjectives) are associated with the greatest increase in frequency of occurrence. The predictor <code>Sight</code> has an estimate of approximately <span class="math inline">\(0.87\)</span> (<span class="math inline">\(p &lt; 0.001\)</span>, 95% CI [0.87, 0.88]), so each one-unit increase in the sight rating multiplies the expected frequency by <span class="math inline">\(e^{0.87} \approx 2.39\)</span>. This corresponds to an increase of <span class="math inline">\(100(e^{0.87} - 1) \approx 138.69\%\)</span>.</p>
 <p>By contrast, <code>Smell</code> is associated with a lower frequency: Its estimate of <span class="math inline">\(-0.1\)</span> translates into a change of <span class="math inline">\(100(e^{-0.1} - 1) \approx -9.52\%\)</span> for each one-unit increase in smell ratings. In essence: Smelly adjectives are unpopular!</p>
 <p>Or are they? Before we draw any conclusions, we need to check a crucial assumption of the model.</p>
@@ -4524,9 +4525,9 @@ Number of Fisher Scoring iterations: 7</code></pre>
 </section>
 <section id="overdispersion" class="level2">
 <h2 class="anchored" data-anchor-id="overdispersion">Overdispersion</h2>
-<p>According to <a href="#eq-pois" class="quarto-xref">Equation 1</a>, the variance of a Poisson-distributed variable equals its mean. In practice, however, counts often vary much more than the Poisson model allows. This is called <strong>overdispersion</strong>, and it is the rule rather than the exception for linguistic frequency data: Some words are simply much more frequent than others in ways the predictors cannot capture.</p>
-<p>Overdispersion does not bias the estimates themselves, but it causes the model to <strong>underestimate the standard errors</strong>. As a result, the <span class="math inline">\(p\)</span>-values are too small and the confidence intervals too narrow. The tiny standard errors we observed above are therefore not a sign of robust estimates, but a warning sign.</p>
-<p>A simple diagnostic is the <strong>dispersion ratio</strong>, i.e., the sum of the squared Pearson residuals divided by the residual degrees of freedom. If the Poisson assumption holds, it should be close to 1.</p>
+<p>According to <a href="#eq-pois" class="quarto-xref">Equation 1</a>, the variance of a Poisson-distributed variable equals its mean. In practice, however, counts often vary much more than the Poisson model allows, which is called <strong>overdispersion</strong> <span class="citation" data-cites="agrestiFoundationsStatisticsData2022">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">Agresti and Kateri 2022</a>: 51–52)</span>. A common cause is heterogeneity: If the rate at which an event occurs varies between observations because of factors that are not part of the model, the counts effectively stem from a mixture of Poisson distributions with different means. Such a mixture has a larger variance than a single Poisson distribution <span class="citation" data-cites="agrestiFoundationsStatisticsData2022">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">Agresti and Kateri 2022</a>: 52, 288–289)</span>. Linguistic frequency data is a prime example: Words are not spread evenly across texts, but tend to cluster in texts on particular topics, so that their rate of occurrence varies considerably.</p>
+<p>If the model is otherwise correctly specified, i.e., it has the right link function and predictors, overdispersion does not invalidate the estimates themselves, but it causes the model to <strong>underestimate the standard errors</strong> <span class="citation" data-cites="agrestiFoundationsStatisticsData2022 baguleySeriousStatsGuide2012">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">Agresti and Kateri 2022</a>: 289; <a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">Baguley 2012</a>: 696)</span>. As a result, the <span class="math inline">\(p\)</span>-values are too small and the confidence intervals too narrow. The tiny standard errors we observed above are therefore not a sign of robust estimates, but a warning sign.</p>
+<p>A simple diagnostic is the <strong>dispersion ratio</strong> <span class="math inline">\(\hat{\varphi}\)</span> (‘phi hat’), i.e., the sum of the squared Pearson residuals (the Pearson <span class="math inline">\(\chi^2\)</span> statistic) divided by the residual degrees of freedom <span class="citation" data-cites="baguleySeriousStatsGuide2012">(<a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">Baguley 2012</a>: 695–696)</span>. If the Poisson assumption holds, it should be close to 1.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dispersion ratio</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>dispersion <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">residuals</span>(freq.m1, <span class="at">type =</span> <span class="st">&quot;pearson&quot;</span>)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="fu">df.residual</span>(freq.m1)</span>
@@ -4536,14 +4537,15 @@ Number of Fisher Scoring iterations: 7</code></pre>
 <pre><code>[1] 13380.68</code></pre>
 </div>
 </div>
-<p>There is no universally agreed threshold, but values well above 1 indicate overdispersion. A ratio of about 1.3381^{4} means that the residual variance is roughly 1.3381^{4} times larger than what the Poisson model assumes, so it is clearly inappropriate for these data.</p>
+<p>Owing to sampling error, <span class="math inline">\(\hat{\varphi}\)</span> will hardly ever be exactly 1. There is no universally agreed threshold, but even small deviations matter: With <span class="math inline">\(\hat{\varphi} = 1.2\)</span>, the standard errors are almost 10% too small, and values of 2 or more are considered a serious problem <span class="citation" data-cites="baguleySeriousStatsGuide2012">(<a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">Baguley 2012</a>: 695–696)</span>. A ratio of about 13381 means that the residual variance is roughly 13381 times larger than what the Poisson model assumes, so it is clearly inappropriate for these data.</p>
+<p>Note, however, that apparent overdispersion can also result from a poorly specified model, e.g., when important predictors are missing. Similarly, if the data contain several counts from the same speakers or texts, a <a href="../chapters/06-mixed_effects_regression.html">mixed-effects model</a> should be considered <span class="citation" data-cites="baguleySeriousStatsGuide2012">(<a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">Baguley 2012</a>: 698)</span>.</p>
 <section id="negative-binomial-regression" class="level3">
 <h3 class="anchored" data-anchor-id="negative-binomial-regression">Negative binomial regression</h3>
-<p>The most common remedy is <strong>negative binomial regression</strong>. It has the same log link and the same interpretation as the Poisson model, but it adds a dispersion parameter <span class="math inline">\(\theta\)</span> (‘theta’) that allows the variance to exceed the mean:</p>
+<p>Instead of merely correcting the standard errors, the preferred approach is to fit a model that allows the variance to differ from the mean <span class="citation" data-cites="baguleySeriousStatsGuide2012">(<a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">Baguley 2012</a>: 699)</span>. A popular option is <strong>negative binomial regression</strong>. It has the same log link and the same interpretation as the Poisson model, but it adds a dispersion parameter <span class="math inline">\(\theta\)</span> (‘theta’) that allows the variance to exceed the mean <span class="citation" data-cites="agrestiFoundationsStatisticsData2022 baguleySeriousStatsGuide2012">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">Agresti and Kateri 2022</a>: 290; <a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">Baguley 2012</a>: 702–703)</span>:</p>
 <p><span id="eq-nb-var"><span class="math display">\[
 Var(Y) = \lambda + \frac{\lambda^2}{\theta}.
 \tag{5}\]</span></span></p>
-<p>The smaller <span class="math inline">\(\theta\)</span>, the stronger the overdispersion; as <span class="math inline">\(\theta\)</span> grows very large, the model approaches the Poisson model. Negative binomial models can be fitted with <code>glm.nb()</code> from the <code>MASS</code> package, which comes pre-installed with R.</p>
+<p>The smaller <span class="math inline">\(\theta\)</span>, the stronger the overdispersion; as <span class="math inline">\(\theta\)</span> grows very large, the model approaches the Poisson model. The negative binomial distribution can be derived as a mixture of Poisson distributions whose means vary according to a gamma distribution, which corresponds directly to the heterogeneity described above <span class="citation" data-cites="agrestiFoundationsStatisticsData2022">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">Agresti and Kateri 2022</a>: 289–290)</span>. Negative binomial models can be fitted with <code>glm.nb()</code> from the <code>MASS</code> package, which comes pre-installed with R.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit negative binomial regression model</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># MASS:: accesses the function without loading the package,</span></span>
@@ -4583,7 +4585,7 @@ Number of Fisher Scoring iterations: 1
  2 x log-likelihood:  -5311.6140 </code></pre>
 </div>
 </div>
-<p>The output resembles that of the Poisson model, with the estimated <span class="math inline">\(\theta\)</span> reported at the bottom. Crucially, the standard errors are now considerably larger. Both models can be compared using the AIC (lower values indicate a better fit; see <a href="../chapters/06-logistic_regression.html">4.2 Logistic regression</a>):</p>
+<p>The output resembles that of the Poisson model, with the estimated <span class="math inline">\(\theta\)</span> reported at the bottom. Crucially, the standard errors are now considerably larger. Both models can be compared using the AIC (lower values indicate a better fit; see <a href="../chapters/06-logistic_regression.html">4.2 Logistic regression</a> and Agresti and Kateri <span class="citation" data-cites="agrestiFoundationsStatisticsData2022">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">2022</a>: 291)</span> for an example):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(freq.m1, freq.nb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -4622,6 +4624,7 @@ freq.nb  7    5325.614</code></pre>
 </div>
 </div>
 <p>The coefficients are interpreted exactly as before, using <span class="math inline">\(100(e^\beta - 1)\)</span>.</p>
+<p>Count data with many more zeros than expected under either distribution, e.g., because some texts simply never contain the phenomenon in question, may call for zero-inflated or hurdle models, which are beyond the scope of this handout <span class="citation" data-cites="baguleySeriousStatsGuide2012">(<a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">Baguley 2012</a>: 695, 704–705)</span>.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Quasi-Poisson models">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -4634,7 +4637,7 @@ Quasi-Poisson models
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>An alternative to the negative binomial model is the <strong>quasi-Poisson</strong> model, which can be fitted with <code>glm(..., family = &quot;quasipoisson&quot;)</code>. It produces the same estimates as the Poisson model, but multiplies the standard errors by <span class="math inline">\(\sqrt{\text{dispersion ratio}}\)</span>. Since it does not rely on a full probability distribution, it does not provide an AIC.</p>
+<p>An alternative to the negative binomial model is the <strong>quasi-Poisson</strong> model, which can be fitted with <code>glm(..., family = &quot;quasipoisson&quot;)</code>. It assumes that the variance is proportional to the mean, i.e., <span class="math inline">\(Var(Y) = \varphi\lambda\)</span>, and produces the same estimates as the Poisson model, but multiplies the standard errors by <span class="math inline">\(\sqrt{\hat{\varphi}}\)</span> <span class="citation" data-cites="baguleySeriousStatsGuide2012">(<a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">Baguley 2012</a>: 696, 702)</span>. Since it does not rely on a full probability distribution, it does not provide an AIC. Note the difference to the negative binomial model, whose variance increases quadratically with the mean (<a href="#eq-nb-var" class="quarto-xref">Equation 5</a>). The choice between the two is not always easy, but since the negative binomial model is arguably the more principled approach, Baguley <span class="citation" data-cites="baguleySeriousStatsGuide2012">(<a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">2012</a>: 703–704)</span> recommends it as the default.</p>
 </div>
 </div>
 </div>
@@ -4642,8 +4645,8 @@ Quasi-Poisson models
 </section>
 <section id="counts-from-texts-of-different-sizes-offsets" class="level2">
 <h2 class="anchored" data-anchor-id="counts-from-texts-of-different-sizes-offsets">Counts from texts of different sizes: Offsets</h2>
-<p>In corpus linguistics, counts are often obtained from texts or subcorpora of different sizes. A text with 10,000 words naturally contains more passives than one with 1,000 words, regardless of its register. Here, we are interested in <strong>rates</strong> (e.g., passives per word) rather than raw counts.</p>
-<p>Poisson and negative binomial models handle this by means of an <strong>offset</strong>, i.e., the logarithm of the text size, which is added to the model with its coefficient fixed at 1:</p>
+<p>In corpus linguistics, counts are often obtained from texts or subcorpora of different sizes. A text with 10,000 words naturally contains more passives than one with 1,000 words, regardless of its register. Here, we are interested in <strong>rates</strong> (e.g., passives per word) rather than raw counts. Whenever the opportunity to observe the event differs between observations, the model needs to take this <strong>exposure</strong> into account <span class="citation" data-cites="baguleySeriousStatsGuide2012">(<a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">Baguley 2012</a>: 700)</span>.</p>
+<p>Poisson and negative binomial models handle this by means of an <strong>offset</strong>, i.e., the logarithm of the text size, which is added to the model as a predictor whose coefficient is fixed at 1 rather than estimated <span class="citation" data-cites="agrestiFoundationsStatisticsData2022 baguleySeriousStatsGuide2012">(<a href="#ref-agrestiFoundationsStatisticsData2022" role="doc-biblioref">Agresti and Kateri 2022</a>: 286; <a href="#ref-baguleySeriousStatsGuide2012" role="doc-biblioref">Baguley 2012</a>: 700–701)</span>:</p>
 <p><span id="eq-offset"><span class="math display">\[
 \ln(\lambda) = \ln(\text{text size}) + \beta_0 + \beta_1X_1 + ... + \beta_pX_p \quad \Leftrightarrow \quad \ln\left(\frac{\lambda}{\text{text size}}\right) = \beta_0 + \beta_1X_1 + ... + \beta_pX_p
 \tag{6}\]</span></span></p>
@@ -4662,7 +4665,7 @@ Quasi-Poisson models
 <p><span class="theorem-title"><strong>Exercise 2</strong></span> Compare the output of the negative binomial model <code>freq.nb</code> with that of the Poisson model <code>freq.m1</code>. Which predictors still have a significant effect on frequency? How do the estimates and their standard errors differ? Does the conclusion that smelly adjectives are unpopular still hold?</p>
 </div>
 <div id="exr-pois-3" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3</strong></span> Fit a quasi-Poisson model to the adjective data and verify that its standard errors equal those of the Poisson model multiplied by <span class="math inline">\(\sqrt{\text{dispersion ratio}}\)</span>.</p>
+<p><span class="theorem-title"><strong>Exercise 3</strong></span> Fit a quasi-Poisson model to the adjective data and verify that its standard errors equal those of the Poisson model multiplied by <span class="math inline">\(\sqrt{\hat{\varphi}}\)</span> (up to rounding).</p>
 </div>
 <div id="exr-pois-4" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 4</strong></span> All frequencies in the adjective data were taken from the same corpus. Would it make sense to include an offset in the model? Why or why not?</p>
@@ -4673,6 +4676,9 @@ Quasi-Poisson models
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-agrestiFoundationsStatisticsData2022" class="csl-entry" role="listitem">
+Agresti, Alan, and Maria Kateri. 2022. <em>Foundations of Statistics for Data Scientists: With r and Python</em>. Boca Raton: <span>CRC</span> Press.
+</div>
 <div id="ref-baguleySeriousStatsGuide2012" class="csl-entry" role="listitem">
 Baguley, Thomas. 2012. <em>Serious <span>Stats</span>: <span>A</span> <span>Guide</span> to <span>Advanced</span> <span>Statistics</span> for the <span>Behavioral</span> <span>Sciences</span></em>. Houndmills, Basingstoke: Palgrave Macmillan.
 </div>
