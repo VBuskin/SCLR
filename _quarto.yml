@@ -62,6 +62,10 @@ website:
             href: chapters/05-chi_square_test.qmd
           - text: "3.6 t-test"
             href: chapters/05-t_test.qmd
+          - text: "3.7 ANOVA"
+            href: chapters/05-anova.qmd
+          - text: "3.8 Case study"
+            href: chapters/05-case_study.qmd
   
       - text: "Models"
         menu:
@@ -69,12 +73,12 @@ website:
             href: chapters/06-linear_regression.qmd
           - text: "4.2 Logistic regression"
             href: chapters/06-logistic_regression.qmd
-          - text: "4.3 Mixed-effects regression"
-            href: chapters/06-mixed_effects_regression.qmd
-          - text: "4.4 Poisson regression"
+        #  - text: "4.3 Mixed-effects regression"
+         #   href: chapters/06-mixed_effects_regression.qmd
+          - text: "4.3 Poisson regression"
             href: chapters/06-poisson_regression.qmd
-          - text: "4.5 Ordinal regression"
-            href: chapters/06-ordinal_regression.qmd
+        #  - text: "4.5 Ordinal regression"
+         #   href: chapters/06-ordinal_regression.qmd
   
       - text: "Machine Learning"
         menu:
@@ -82,12 +86,12 @@ website:
             href: chapters/06-trees_forests.qmd
           - text: "5.2 Gradient boosting"
             href: chapters/06-gradient_boosting.qmd
-          - text: "5.3 PCA"
-            href: chapters/07-PCA.qmd
-          - text: "5.4 EFA"
-            href: chapters/07-EFA.qmd
-          - text: "5.5 Clustering"
-            href: chapters/07-clustering.qmd
+    #      - text: "5.3 PCA"
+    #        href: chapters/07-PCA.qmd
+    #      - text: "5.4 EFA"
+    #        href: chapters/07-EFA.qmd
+    #      - text: "5.5 Clustering"
+     #       href: chapters/07-clustering.qmd
       
     right:
       - icon: github
@@ -137,8 +141,10 @@ website:
                 text: "2.1 Concordancing"
               - href: "chapters/03-regex.qmd"
                 text: "2.2 Regular expressions"
+              - href: "chapters/03-cqp.qmd"
+                text: "2.3 The CQP interface"
               - href: "chapters/03-data-annotation.qmd"
-                text: "2.3 Data Annotation"
+                text: "2.4 Data annotation"
                 
       - id: intro-to-stats
         contents:
@@ -156,6 +162,10 @@ website:
                 text: "3.5 Chi-squared test"
               - href: "chapters/05-t_test.qmd"
                 text: "3.6 t-test"
+              - href: "chapters/05-anova.qmd"
+                text: "3.7 ANOVA"
+              - href: "chapters/05-case_study.qmd"
+                text: "3.8 Case study"
                 
       - id: models
         contents:
@@ -165,12 +175,12 @@ website:
                 text: "4.1 Linear regression"
               - href: "chapters/06-logistic_regression.qmd"
                 text: "4.2 Logistic regression"
-              - href: "chapters/06-mixed_effects_regression.qmd"
-                text: "4.3 Mixed-effects regression"
+            #  - href: "chapters/06-mixed_effects_regression.qmd"
+            #    text: "4.3 Mixed-effects regression"
               - href: "chapters/06-poisson_regression.qmd"
-                text: "4.4 Poisson regression"
-              - href: "chapters/06-ordinal_regression.qmd"
-                text: "4.5 Ordinal regression"
+                text: "4.3 Poisson regression"
+            #  - href: "chapters/06-ordinal_regression.qmd"
+             #   text: "4.5 Ordinal regression"
               
       - id: machine-learning
         contents:
@@ -180,16 +190,18 @@ website:
                 text: "5.1 Tree-based methods"
               - href: "chapters/06-gradient_boosting.qmd"
                 text: "5.2 Gradient boosting"
-              - href: "chapters/07-PCA.qmd"
-                text: "5.3 PCA"
-              - href: "chapters/07-EFA.qmd"
-                text: "5.4 EFA"
-              - href: "chapters/07-clustering.qmd"
-                text: "5.5 Clustering"
+          #    - href: "chapters/07-PCA.qmd"
+          #      text: "5.3 PCA"
+          #    - href: "chapters/07-EFA.qmd"
+          #      text: "5.4 EFA"
+          #    - href: "chapters/07-clustering.qmd"
+          #      text: "5.5 Clustering"
   
   page-navigation: true
 blog:
     order: date desc  # Newest first (or `order: date asc` for oldest first)
+
+bibliography: R.bib  # top level, so that it applies to both HTML and PDF
 
 format:
   html:
@@ -198,6 +210,55 @@ format:
     css: styles.css
     toc: true
     reference-location: margin
-    bibliography: R.bib
     number-sections: false
     code-overflow: wrap
+  pdf:
+    # Only used for handouts that add 'pdf: default' to their own format block,
+    # or when rendering a single file with 'quarto render <file> --to pdf'.
+    date: last-modified           # when the .qmd file was last saved
+    date-format: "D MMMM YYYY, HH:mm"
+    documentclass: scrartcl
+    papersize: a4
+    classoption: [DIV=11]
+    template-partials:
+      - title.tex                 # adds affiliations and ORCID to the title block
+    link-citations: true          # in-text citations link to the bibliography entry
+    hyperrefoptions:
+      - linktoc=all               # TOC: both the titles and the page numbers are clickable
+      - pdfpagemode=UseOutlines   # open the PDF with the bookmarks panel visible
+      - bookmarksopen=true        # show the bookmarks expanded
+      - bookmarksopenlevel=1
+    reference-location: document  # footnotes at the bottom of the page instead of the margin
+    number-sections: false
+    include-in-header:
+      text: |
+        \usepackage{fvextra}
+        \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+        % Running header: site name on the left, unit title on the right (not on the title page)
+        \usepackage[headsepline]{scrlayer-scrpage}
+        \pagestyle{scrheadings}
+        \clearpairofpagestyles
+        \makeatletter
+        \ihead{\small Statistics for Corpus Linguists}
+        \ohead{\small\@title}
+        \makeatother
+        \cfoot*{\pagemark}
+        % 'References' heading on the same level as the '##' headings (TOC + bookmarks)
+        \AddToHook{env/CSLReferences/before}{%
+          \subsection*{References}\phantomsection\addcontentsline{toc}{subsection}{References}}
+    include-before-body:
+      text: |
+        % Number exercises, definitions etc. continuously (1, 2, 3, ...) instead of
+        % by section (0.1, 0.2, ...), since sections are unnumbered
+        \makeatletter
+        \@ifundefined{c@exercise}{}{\counterwithout{exercise}{section}}
+        \@ifundefined{c@definition}{}{\counterwithout{definition}{section}}
+        \@ifundefined{c@theorem}{}{\counterwithout{theorem}{section}}
+        \@ifundefined{c@lemma}{}{\counterwithout{lemma}{section}}
+        \@ifundefined{c@corollary}{}{\counterwithout{corollary}{section}}
+        \@ifundefined{c@proposition}{}{\counterwithout{proposition}{section}}
+        \@ifundefined{c@conjecture}{}{\counterwithout{conjecture}{section}}
+        \@ifundefined{c@example}{}{\counterwithout{example}{section}}
+        \@ifundefined{c@refremark}{}{\counterwithout{refremark}{section}}
+        \@ifundefined{c@refsolution}{}{\counterwithout{refsolution}{section}}
+        \makeatother

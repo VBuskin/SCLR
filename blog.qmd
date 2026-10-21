@@ -49,6 +49,8 @@ listing:
       - "chapters/05-hypothesis_testing.qmd"
       - "chapters/05-chi_square_test.qmd"
       - "chapters/05-t_test.qmd"
+      - "chapters/05-anova.qmd"
+      - "chapters/05-case_study.qmd"
 
     sort: "file"
     sort-ui: false
@@ -60,9 +62,9 @@ listing:
     contents: 
       - "chapters/06-linear_regression.qmd"
       - "chapters/06-logistic_regression.qmd"
-      - "chapters/06-mixed_effects_regression.qmd"
+#     - "chapters/06-mixed_effects_regression.qmd"
       - "chapters/06-poisson_regression.qmd"
-      - "chapters/06-ordinal_regression.qmd"
+#     - "chapters/06-ordinal_regression.qmd"
 
     sort: "file"
     sort-ui: false
@@ -74,9 +76,9 @@ listing:
     contents: 
       - "chapters/06-trees_forests.qmd"
       - "chapters/06-gradient_boosting.qmd"
-      - "chapters/07-PCA.qmd"
-      - "chapters/07-EFA.qmd"
-      - "chapters/07-clustering.qmd"
+#     - "chapters/07-PCA.qmd"
+#     - "chapters/07-EFA.qmd"
+#     - "chapters/07-clustering.qmd"
 
     sort: "file"
     sort-ui: false
