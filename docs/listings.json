@@ -18,16 +18,13 @@
       "/chapters/05-hypothesis_testing.html",
       "/chapters/05-chi_square_test.html",
       "/chapters/05-t_test.html",
+      "/chapters/05-anova.html",
+      "/chapters/05-case_study.html",
       "/chapters/06-linear_regression.html",
       "/chapters/06-logistic_regression.html",
-      "/chapters/06-mixed_effects_regression.html",
       "/chapters/06-poisson_regression.html",
-      "/chapters/06-ordinal_regression.html",
       "/chapters/06-trees_forests.html",
-      "/chapters/06-gradient_boosting.html",
-      "/chapters/07-PCA.html",
-      "/chapters/07-EFA.html",
-      "/chapters/07-clustering.html"
+      "/chapters/06-gradient_boosting.html"
     ]
   }
 ]

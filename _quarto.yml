@@ -1,6 +1,18 @@
 project:
   type: website
   output-dir: docs
+  # Render all .qmd files except unpublished or obsolete handouts, so that they
+  # are not reachable on the website (a full 'quarto render' also removes their
+  # previously rendered pages from docs/)
+  render:
+    - "*.qmd"
+    - "!chapters/01-*.qmd"                      # 1. Fundamentals
+    - "!chapters/06-mixed_effects_regression.qmd"
+    - "!chapters/06-ordinal_regression.qmd"
+    - "!chapters/07-*.qmd"                      # PCA, EFA, clustering
+    - "!chapters/04-categorical_data.qmd"       # obsolete earlier versions
+    - "!chapters/04-chi_square_test.qmd"
+    - "!Register_workflow.qmd"                  # merged into 2.4 and 3.8
 
 website:
   reader-mode: true
@@ -213,6 +225,17 @@ format:
     number-sections: false
     code-overflow: wrap
   pdf:
+    # Draw R plots with the cairo_pdf device, which (unlike the default pdf device)
+    # renders Unicode characters such as Greek letters (μ, σ, λ) correctly
+    knitr:
+      opts_chunk:
+        dev: quartz_pdf
+    # Monospace font for code: the default (Latin Modern Mono) has no Greek letters,
+    # so 'λ' in code chunks disappears from the PDF. Uncomment ONE font that is
+    # installed on your computer:
+    # monofont: "Menlo"              # macOS
+    # monofont: "Consolas"           # Windows
+    # monofont: "DejaVu Sans Mono"   # Linux
     # Only used for handouts that add 'pdf: default' to their own format block,
     # or when rendering a single file with 'quarto render <file> --to pdf'.
     date: last-modified           # when the .qmd file was last saved
