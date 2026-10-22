@@ -4141,6 +4141,10 @@ white-space: nowrap;
     <a class="dropdown-item" href="../chapters/05-anova.html">
  <span class="dropdown-text">3.7 ANOVA</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../chapters/05-case_study.html">
+ <span class="dropdown-text">3.8 Case study</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -4158,7 +4162,7 @@ white-space: nowrap;
   </li>  
         <li>
     <a class="dropdown-item" href="../chapters/06-poisson_regression.html">
- <span class="dropdown-text">4.4 Poisson regression</span></a>
+ <span class="dropdown-text">4.3 Poisson regression</span></a>
   </li>  
     </ul>
   </li>
@@ -5122,7 +5126,7 @@ POS    1.021578  2        1.005351</code></pre>
 \tag{14}\]</span></span></p>
 <p>Usually, a visual inspection using <code>qqnorm()</code> is sufficient, but the Shapiro-Wilk test <code>shapiro.test()</code> can also be run on the model residuals. Note that a <span class="math inline">\(p\)</span>-value below 0.05 provides evidence for non-normality. For right-skewed response variables such as reaction times, a common remedy is to model the log-transformed response instead, e.g., <code>log(RT)</code> (cf. the histograms above).</p>
 <ul>
-<li><strong>Independent errors</strong>: The observations (and hence their errors) should be independent of each other. If there are several observations per speaker or item, mixed-effects models are more appropriate (see <a href="../chapters/06-mixed_effects_regression.html">4.3 Mixed-effects regression</a>).</li>
+<li><strong>Independent errors</strong>: The observations (and hence their errors) should be independent of each other. If there are several observations per speaker or item, mixed-effects models are more appropriate (see <a href="06-mixed_effects_regression.qmd">4.3 Mixed-effects regression</a>).</li>
 </ul>
 <div class="cell">
 <details class="code-fold">
